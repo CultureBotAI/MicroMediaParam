@@ -68,6 +68,10 @@ help:
 	@echo "  $(YELLOW)compute-properties$(NC)     - Calculate pH, salinity, and ionic strength"
 	@echo "  $(YELLOW)media-summary$(NC)          - Generate final media summary table"
 	@echo ""
+	@echo "$(GREEN)Chemical Database Targets:$(NC)"
+	@echo "  $(YELLOW)update-chemical-db$(NC)     - Update chemical properties database from IUPAC sources"
+	@echo "  $(YELLOW)test-chemical-db$(NC)       - Test chemical database update with sample compounds"
+	@echo ""
 	@echo "$(GREEN)Setup Targets:$(NC)"
 	@echo "  $(YELLOW)install$(NC)                - Install Python dependencies"
 	@echo "  $(YELLOW)install-dev$(NC)            - Install development dependencies"
@@ -212,6 +216,22 @@ media-summary: $(MEDIA_SUMMARY)
 $(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_NORMALIZED)
 	@echo "$(BLUE)Creating comprehensive media summary...$(NC)"
 	$(PYTHON) create_media_summary.py
+
+# Chemical Database Management
+
+# Update chemical properties database from IUPAC sources
+.PHONY: update-chemical-db
+update-chemical-db: install
+	@echo "$(BLUE)Updating chemical properties database from IUPAC sources...$(NC)"
+	$(PYTHON) update_chemical_properties.py --update-from-mappings
+	@echo "$(GREEN)✓ Chemical database updated$(NC)"
+
+# Test chemical database update with sample compounds
+.PHONY: test-chemical-db
+test-chemical-db: install
+	@echo "$(BLUE)Testing chemical database update...$(NC)"
+	$(PYTHON) update_chemical_properties.py --test-mode
+	@echo "$(GREEN)✓ Chemical database test completed$(NC)"
 
 # Setup and environment targets
 
