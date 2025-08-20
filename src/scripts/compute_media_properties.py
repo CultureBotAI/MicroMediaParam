@@ -73,6 +73,8 @@ class MediaPropertiesCalculator:
         """
         Build database of chemical properties for common media components.
         
+        Loads chemical properties from external TSV file for better maintainability.
+        
         Data sources:
         - CRC Handbook of Chemistry and Physics
         - NIST Chemistry WebBook
@@ -80,223 +82,67 @@ class MediaPropertiesCalculator:
         """
         db = {}
         
-        # Inorganic salts and acids
-        db['nacl'] = ChemicalProperties(
-            name='Sodium chloride',
-            molecular_weight=58.44,
-            pka_values=[],  # Strong electrolyte
-            charge_states=[0],
-            ion_charges={'Na+': 1, 'Cl-': -1},
-            solubility=360.0
-        )
+        # Load from external TSV file
+        properties_file = Path(__file__).parent.parent.parent / 'chemical_properties.tsv'
         
-        db['kcl'] = ChemicalProperties(
-            name='Potassium chloride',
-            molecular_weight=74.55,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'K+': 1, 'Cl-': -1},
-            solubility=344.0
-        )
-        
-        db['mgcl2'] = ChemicalProperties(
-            name='Magnesium chloride',
-            molecular_weight=95.21,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Mg2+': 2, 'Cl-': -1},
-            solubility=546.0
-        )
-        
-        db['cacl2'] = ChemicalProperties(
-            name='Calcium chloride',
-            molecular_weight=110.98,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Ca2+': 2, 'Cl-': -1},
-            solubility=745.0
-        )
-        
-        db['na2so4'] = ChemicalProperties(
-            name='Sodium sulfate',
-            molecular_weight=142.04,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Na+': 1, 'SO42-': -2},
-            solubility=284.0
-        )
-        
-        db['k2hpo4'] = ChemicalProperties(
-            name='Dipotassium phosphate',
-            molecular_weight=174.18,
-            pka_values=[2.15, 7.20, 12.35],  # Phosphoric acid pKa values
-            charge_states=[-1, 0, 1, 2],
-            ion_charges={'K+': 1, 'PO43-': -3, 'HPO42-': -2, 'H2PO4-': -1},
-            solubility=1670.0
-        )
-        
-        db['kh2po4'] = ChemicalProperties(
-            name='Monopotassium phosphate',
-            molecular_weight=136.09,
-            pka_values=[2.15, 7.20, 12.35],
-            charge_states=[-1, 0, 1, 2],
-            ion_charges={'K+': 1, 'H2PO4-': -1},
-            solubility=252.0
-        )
-        
-        db['nh4cl'] = ChemicalProperties(
-            name='Ammonium chloride',
-            molecular_weight=53.49,
-            pka_values=[9.25],  # NH4+/NH3 pKa
-            charge_states=[0, 1],
-            ion_charges={'NH4+': 1, 'Cl-': -1},
-            solubility=383.0
-        )
-        
-        # Buffers and organic acids
-        db['tris'] = ChemicalProperties(
-            name='Tris(hydroxymethyl)aminomethane',
-            molecular_weight=121.14,
-            pka_values=[8.07],  # At 25°C
-            charge_states=[0, 1],
-            ion_charges={'Tris-H+': 1},
-            solubility=675.0
-        )
-        
-        db['hepes'] = ChemicalProperties(
-            name='HEPES',
-            molecular_weight=238.31,
-            pka_values=[7.55],  # At 25°C
-            charge_states=[-1, 0],
-            ion_charges={'HEPES-': -1},
-            solubility=100.0
-        )
-        
-        db['sodium acetate'] = ChemicalProperties(
-            name='Sodium acetate',
-            molecular_weight=82.03,
-            pka_values=[4.76],  # Acetic acid pKa
-            charge_states=[-1, 0],
-            ion_charges={'Na+': 1, 'CH3COO-': -1},
-            solubility=464.0
-        )
-        
-        # Nutrients and carbon sources
-        db['glucose'] = ChemicalProperties(
-            name='Glucose',
-            molecular_weight=180.16,
-            pka_values=[],  # Non-ionizable
-            charge_states=[0],
-            ion_charges={},
-            solubility=909.0
-        )
-        
-        db['sucrose'] = ChemicalProperties(
-            name='Sucrose',
-            molecular_weight=342.30,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={},
-            solubility=2000.0
-        )
-        
-        # Amino acids (common in complex media)
-        db['glycine'] = ChemicalProperties(
-            name='Glycine',
-            molecular_weight=75.07,
-            pka_values=[2.34, 9.60],  # Amino and carboxyl groups
-            charge_states=[-1, 0, 1],
-            ion_charges={'COO-': -1, 'NH3+': 1},
-            solubility=249.9
-        )
-        
-        db['alanine'] = ChemicalProperties(
-            name='L-Alanine',
-            molecular_weight=89.09,
-            pka_values=[2.34, 9.69],
-            charge_states=[-1, 0, 1],
-            ion_charges={'COO-': -1, 'NH3+': 1},
-            solubility=167.2
-        )
-        
-        # Trace elements
-        db['feso4'] = ChemicalProperties(
-            name='Iron(II) sulfate',
-            molecular_weight=151.91,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Fe2+': 2, 'SO42-': -2},
-            solubility=240.0
-        )
-        
-        db['znso4'] = ChemicalProperties(
-            name='Zinc sulfate',
-            molecular_weight=161.47,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Zn2+': 2, 'SO42-': -2},
-            solubility=965.0
-        )
-        
-        db['cuso4'] = ChemicalProperties(
-            name='Copper(II) sulfate',
-            molecular_weight=159.61,
-            pka_values=[],
-            charge_states=[0],
-            ion_charges={'Cu2+': 2, 'SO42-': -2},
-            solubility=316.0
-        )
-        
-        # Unmapped compounds with inferred properties
-        db['sodium_malate'] = ChemicalProperties(
-            name='Sodium malate',
-            molecular_weight=156.07,  # C4H5NaO5 (calculated)
-            pka_values=[3.40, 5.20],  # Malic acid pKa values
-            charge_states=[-2, -1, 0],
-            ion_charges={'Na+': 1, 'Malate2-': -2, 'HMalate-': -1},
-            solubility=800.0  # Estimated high solubility
-        )
-        
-        db['disodium_fumarate'] = ChemicalProperties(
-            name='Disodium fumarate',
-            molecular_weight=178.05,  # C4H2Na2O4 (calculated)
-            pka_values=[3.03, 4.44],  # Fumaric acid pKa values
-            charge_states=[-2, -1, 0],
-            ion_charges={'Na+': 1, 'Fumarate2-': -2},
-            solubility=650.0  # Estimated high solubility
-        )
-        
-        db['sodium_formate'] = ChemicalProperties(
-            name='Sodium formate',
-            molecular_weight=68.01,  # CHNaO2 (calculated)
-            pka_values=[3.75],  # Formic acid pKa
-            charge_states=[-1, 0],
-            ion_charges={'Na+': 1, 'HCOO-': -1},
-            solubility=1280.0  # Literature value
-        )
-        
-        # Note: sodium acetate already exists in the database
-        
-        # Complex mixtures with estimated properties
-        db['peptone_mix'] = ChemicalProperties(
-            name='Peptone mixture',
-            molecular_weight=200.0,  # Estimated average MW for peptides
-            pka_values=[2.5, 9.0],  # Typical amino/carboxyl groups
-            charge_states=[-1, 0, 1],
-            ion_charges={'COO-': -1, 'NH3+': 1},
-            solubility=500.0,  # Estimated moderate solubility
-            activity_coeff=0.8  # Reduced activity due to complexity
-        )
-        
-        db['yeast_extract'] = ChemicalProperties(
-            name='Yeast extract',
-            molecular_weight=150.0,  # Estimated average MW
-            pka_values=[6.5],  # Mixed buffering capacity
-            charge_states=[-1, 0],
-            ion_charges={'Phosphate-': -1},  # Contains phosphates, amino acids
-            solubility=300.0,  # Partially soluble
-            activity_coeff=0.7  # Complex mixture
-        )
+        try:
+            df = pd.read_csv(properties_file, sep='\t')
+            
+            for _, row in df.iterrows():
+                # Parse pKa values
+                pka_values = []
+                if pd.notna(row['pka_values']) and row['pka_values']:
+                    pka_values = [float(x.strip()) for x in row['pka_values'].split(',')]
+                
+                # Parse charge states
+                charge_states = []
+                if pd.notna(row['charge_states']) and row['charge_states']:
+                    charge_states = [int(x.strip()) for x in row['charge_states'].split(',')]
+                
+                # Parse ion charges
+                ion_charges = {}
+                if pd.notna(row['ion_charges']) and row['ion_charges']:
+                    for ion_pair in row['ion_charges'].split(','):
+                        if ':' in ion_pair:
+                            ion, charge = ion_pair.strip().split(':')
+                            ion_charges[ion] = int(charge)
+                
+                # Create ChemicalProperties object
+                db[row['compound_name']] = ChemicalProperties(
+                    name=row['description'] if pd.notna(row['description']) else row['compound_name'],
+                    molecular_weight=float(row['molecular_weight']),
+                    pka_values=pka_values,
+                    charge_states=charge_states,
+                    ion_charges=ion_charges,
+                    solubility=float(row['solubility_g_per_L']) if pd.notna(row['solubility_g_per_L']) else 1000.0,
+                    activity_coeff=float(row['activity_coefficient']) if pd.notna(row['activity_coefficient']) else 1.0
+                )
+                
+            logger.info(f"Loaded {len(db)} chemical compounds from {properties_file}")
+            
+        except FileNotFoundError:
+            logger.error(f"Chemical properties file not found: {properties_file}")
+            logger.info("Falling back to minimal hardcoded database")
+            # Minimal fallback database with just a few essential compounds
+            db['nacl'] = ChemicalProperties(
+                name='Sodium chloride',
+                molecular_weight=58.44,
+                pka_values=[],
+                charge_states=[0],
+                ion_charges={'Na+': 1, 'Cl-': -1},
+                solubility=360.0
+            )
+            db['glucose'] = ChemicalProperties(
+                name='Glucose',
+                molecular_weight=180.16,
+                pka_values=[],
+                charge_states=[0],
+                ion_charges={},
+                solubility=909.0
+            )
+        except Exception as e:
+            logger.error(f"Error loading chemical properties: {e}")
+            logger.info("Using minimal fallback database")
         
         return db
     

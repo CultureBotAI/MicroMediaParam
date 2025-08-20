@@ -34,6 +34,7 @@ LOW_CONFIDENCE_MAPPINGS := low_confidence_compound_mappings.tsv
 HIGH_CONFIDENCE_NORMALIZED := high_confidence_compound_mappings_normalized.tsv
 LOW_CONFIDENCE_NORMALIZED := low_confidence_compound_mappings_normalized.tsv
 MEDIA_SUMMARY := media_summary.tsv
+CHEMICAL_PROPERTIES := chemical_properties.tsv
 
 # Log files
 LOGS := *.log
@@ -197,7 +198,7 @@ compute-properties: $(MEDIA_PROPERTIES_DIR)/.done
 	@echo "$(GREEN)✓ Media properties calculation completed$(NC)"
 
 # Calculate pH, salinity, ionic strength for each medium
-$(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_NORMALIZED)
+$(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_NORMALIZED) $(CHEMICAL_PROPERTIES)
 	@echo "$(BLUE)Computing media properties (pH, salinity, ionic strength)...$(NC)"
 	@bash $(SCRIPTS_DIR)/media_properties.sh
 	@mkdir -p $(MEDIA_PROPERTIES_DIR) && touch $(MEDIA_PROPERTIES_DIR)/.done

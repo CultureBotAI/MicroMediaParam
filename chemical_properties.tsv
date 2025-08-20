@@ -1,0 +1,43 @@
+compound_name	molecular_weight	pka_values	charge_states	ion_charges	solubility_g_per_L	activity_coefficient	description
+nacl	58.44		0	Na+:1,Cl-:-1	360.0	1.0	Sodium chloride
+kcl	74.55		0	K+:1,Cl-:-1	344.0	1.0	Potassium chloride
+mgcl2	95.21		0	Mg2+:2,Cl-:-1	546.0	1.0	Magnesium chloride
+cacl2	110.98		0	Ca2+:2,Cl-:-1	745.0	1.0	Calcium chloride
+na2so4	142.04		0	Na+:1,SO42-:-2	284.0	1.0	Sodium sulfate
+k2hpo4	174.18	2.15,7.20,12.35	-1,0,1,2	K+:1,PO43-:-3,HPO42-:-2,H2PO4-:-1	1670.0	1.0	Dipotassium phosphate
+kh2po4	136.09	2.15,7.20,12.35	-1,0,1,2	K+:1,H2PO4-:-1	252.0	1.0	Monopotassium phosphate
+nh4cl	53.49	9.25	0,1	NH4+:1,Cl-:-1	383.0	1.0	Ammonium chloride
+tris	121.14	8.07	0,1	Tris-H+:1	675.0	1.0	Tris(hydroxymethyl)aminomethane
+hepes	238.31	7.55	-1,0	HEPES-:-1	100.0	1.0	HEPES buffer
+sodium acetate	82.03	4.76	-1,0	Na+:1,CH3COO-:-1	464.0	1.0	Sodium acetate
+glucose	180.16		0		909.0	1.0	Glucose
+sucrose	342.30		0		2000.0	1.0	Sucrose
+glycine	75.07	2.34,9.60	-1,0,1	COO-:-1,NH3+:1	249.9	1.0	Glycine
+alanine	89.09	2.34,9.69	-1,0,1	COO-:-1,NH3+:1	167.2	1.0	L-Alanine
+feso4	151.91		0	Fe2+:2,SO42-:-2	240.0	1.0	Iron(II) sulfate
+znso4	161.47		0	Zn2+:2,SO42-:-2	965.0	1.0	Zinc sulfate
+cuso4	159.61		0	Cu2+:2,SO42-:-2	316.0	1.0	Copper(II) sulfate
+sodium_malate	156.07	3.40,5.20	-2,-1,0	Na+:1,Malate2-:-2,HMalate-:-1	800.0	1.0	Sodium malate
+disodium_fumarate	178.05	3.03,4.44	-2,-1,0	Na+:1,Fumarate2-:-2	650.0	1.0	Disodium fumarate
+sodium_formate	68.01	3.75	-1,0	Na+:1,HCOO-:-1	1280.0	1.0	Sodium formate
+peptone_mix	200.0	2.5,9.0	-1,0,1	COO-:-1,NH3+:1	500.0	0.8	Peptone mixture
+yeast_extract	150.0	6.5	-1,0	Phosphate-:-1	300.0	0.7	Yeast extract
+caco3	100.09	6.37,10.33	0,-1,-2	Ca2+:2,CO32-:-2	0.0013	1.0	Calcium carbonate
+nahco3	84.01	6.37,10.33	-1,0,1	Na+:1,HCO3-:-1	96.0	1.0	Sodium bicarbonate
+na2co3	105.99	6.37,10.33	-2,-1,0	Na+:1,CO32-:-2	215.0	1.0	Sodium carbonate
+mgso4	120.37		0	Mg2+:2,SO42-:-2	353.0	1.0	Magnesium sulfate
+mnso4	151.00		0	Mn2+:2,SO42-:-2	598.0	1.0	Manganese sulfate
+h3bo3	61.83	9.24	0,-1	BO33-:-3	49.8	1.0	Boric acid
+zncl2	136.30		0	Zn2+:2,Cl-:-1	4080.0	1.0	Zinc chloride
+fecl3	162.20		0	Fe3+:3,Cl-:-1	922.0	1.0	Iron(III) chloride
+fecl2	126.75		0	Fe2+:2,Cl-:-1	645.0	1.0	Iron(II) chloride
+nicl2	129.60		0	Ni2+:2,Cl-:-1	642.0	1.0	Nickel(II) chloride
+cocl2	129.84		0	Co2+:2,Cl-:-1	529.0	1.0	Cobalt(II) chloride
+cucl2	134.45		0	Cu2+:2,Cl-:-1	708.0	1.0	Copper(II) chloride
+na2moo4	205.92		0	Na+:1,MoO42-:-2	390.0	1.0	Sodium molybdate
+na2wo4	293.82		0	Na+:1,WO42-:-2	842.0	1.0	Sodium tungstate
+na2seo3	172.94		0	Na+:1,SeO32-:-2	850.0	1.0	Sodium selenite
+kno3	101.10		0	K+:1,NO3-:-1	320.0	1.0	Potassium nitrate
+nano3	84.99		0	Na+:1,NO3-:-1	921.0	1.0	Sodium nitrate
+na2hpo4	141.96	2.15,7.20,12.35	-2,-1,0,1	Na+:1,HPO42-:-2	119.0	1.0	Disodium phosphate
+nah2po4	119.98	2.15,7.20,12.35	-1,0,1,2	Na+:1,H2PO4-:-1	850.0	1.0	Sodium dihydrogen phosphate
