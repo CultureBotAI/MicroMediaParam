@@ -356,6 +356,84 @@ class ChemicalPropertyExtractor:
         logger.info(f"Processed {len(processed_compounds)} unique compounds")
         return processed_compounds
     
+    def process_raw_data_list(self, raw_data_file: Path) -> List[ProcessedChemicalProperties]:
+        """
+        Process raw chemical data from list format JSON file.
+        
+        Args:
+            raw_data_file: Path to JSON file with list of chemical data
+            
+        Returns:
+            List of processed chemical properties
+        """
+        with open(raw_data_file, 'r') as f:
+            raw_data = json.load(f)
+        
+        if not isinstance(raw_data, list):
+            raise ValueError("Expected list format for raw data")
+        
+        processed_compounds = []
+        seen_compounds = set()  # Avoid duplicates
+        
+        logger.info(f"Processing {len(raw_data)} compounds from list format")
+        
+        for compound_data in raw_data:
+            name = compound_data.get('name', '').strip()
+            if not name or name.lower() in seen_compounds:
+                continue
+            
+            seen_compounds.add(name.lower())
+            
+            # Extract basic properties
+            formula = compound_data.get('formula', '')
+            molecular_weight = compound_data.get('molecular_weight')
+            
+            # If no molecular weight from source, estimate
+            if not molecular_weight and formula:
+                try:
+                    molecular_weight = self.estimate_molecular_weight(formula)
+                except:
+                    molecular_weight = None
+            
+            # Get or estimate pKa values
+            pka_values = compound_data.get('pka_values', [])
+            if not pka_values and formula:
+                pka_values = self.estimate_pka_values(name, formula)
+            
+            # Determine charge states
+            charge_states = self.determine_charge_states(pka_values)
+            
+            # Get ion charges from molecular formula
+            try:
+                elements, ion_charges = self.parse_molecular_formula(formula)
+            except:
+                ion_charges = {}
+            
+            # Estimate solubility
+            solubility = compound_data.get('solubility')
+            if solubility is None:
+                solubility = self.estimate_solubility(name, formula)
+            
+            # Create processed compound
+            processed_compound = ProcessedChemicalProperties(
+                compound_name=name,
+                molecular_weight=molecular_weight or 100.0,  # Default if not available
+                pka_values=pka_values,
+                charge_states=charge_states,
+                ion_charges=ion_charges,
+                solubility_g_per_L=solubility,
+                activity_coefficient=1.0,  # Default
+                description=f"Processed from IUPAC sources",
+                formula=formula,
+                source=', '.join(compound_data.get('sources', ['unknown']))
+            )
+            
+            processed_compounds.append(processed_compound)
+            logger.debug(f"Processed compound: {name}")
+        
+        logger.info(f"Successfully processed {len(processed_compounds)} unique compounds")
+        return processed_compounds
+    
     def _estimate_molecular_weight(self, name: str, formula: str) -> Optional[float]:
         """Estimate molecular weight from name or formula."""
         # Simple estimation based on common compounds

@@ -168,17 +168,36 @@ class CompoundMapper:
     def _build_hydration_patterns(self) -> List[str]:
         """Build patterns for removing hydration states."""
         return [
-            r'\s*[·•]\s*\d+\s*h2o',      # · 2 H2O
-            r'\s*\.\s*\d+\s*h2o',        # . 2 H2O  
-            r'\s*x\s*\d+\s*h2o',         # x 2 H2O
-            r'\s*\*\s*\d+\s*h2o',        # * 2 H2O
-            r'\s+\d+\s*h2o',             # space 2 H2O
-            r'\s*\(\d+\s*h2o\)',         # (2 H2O)
-            r'\s*hydrate',               # hydrate
-            r'\s*monohydrate',           # monohydrate
-            r'\s*dihydrate',             # dihydrate
-            r'\s*trihydrate',            # trihydrate
-            r'\s*heptahydrate',          # heptahydrate
+            # Various hydration notations with numbers
+            r'\s*[·•]\s*\d*\s*h2o',      # · 2 H2O or · H2O
+            r'\s*\.\s*\d*\s*h2o',        # . 2 H2O or . H2O
+            r'\s*x\s*\d*\s*h2o',         # x 2 H2O or x H2O  
+            r'\s*\*\s*\d*\s*h2o',        # * 2 H2O or * H2O
+            r'\s+\d*\s*h2o',             # space 2 H2O or space H2O
+            r'\s*\(\d*\s*h2o\)',         # (2 H2O) or (H2O)
+            
+            # Hydration with variable notation (x)
+            r'\s*x\s+h2o',               # x h2o (space separated)
+            r'\s*×\s*\d*\s*h2o',         # × 2 H2O (multiplication symbol)
+            r'\s*×\s+h2o',               # × h2o
+            
+            # Named hydrates (full word boundaries)
+            r'\s*\bhydrate\b',           # hydrate
+            r'\s*\bmonohydrate\b',       # monohydrate
+            r'\s*\bdihydrate\b',         # dihydrate
+            r'\s*\btrihydrate\b',        # trihydrate
+            r'\s*\btetrahydrate\b',      # tetrahydrate
+            r'\s*\bpentahydrate\b',      # pentahydrate
+            r'\s*\bhexahydrate\b',       # hexahydrate
+            r'\s*\bheptahydrate\b',      # heptahydrate
+            r'\s*\boctahydrate\b',       # octahydrate
+            r'\s*\bnonahydrate\b',       # nonahydrate
+            r'\s*\bdecahydrate\b',       # decahydrate
+            
+            # Generic water notation
+            r'\s*\+\s*\d*\s*h2o',        # + 2 H2O
+            r'\s*·\s*n\s*h2o',           # · n H2O
+            r'\s*x\s*n\s*h2o',           # x n H2O
         ]
     
     def _build_synonym_database(self) -> Dict[str, Set[str]]:
@@ -250,9 +269,19 @@ class CompoundMapper:
         normalized = re.sub(r'\s*\([^)]*grade[^)]*\)', '', normalized)  # Remove grade info
         normalized = re.sub(r'\s*\([^)]*purity[^)]*\)', '', normalized)  # Remove purity info
         
-        # Remove hydration states
-        for pattern in self.hydration_patterns:
-            normalized = re.sub(pattern, '', normalized, flags=re.IGNORECASE)
+        # Remove hydration states (apply multiple times to catch complex cases)
+        for _ in range(2):  # Apply twice to catch nested patterns
+            for pattern in self.hydration_patterns:
+                normalized = re.sub(pattern, '', normalized, flags=re.IGNORECASE)
+        
+        # Clean up artifacts from hydration removal
+        normalized = re.sub(r'\s*\(\s*\d*\s*\)\s*$', '', normalized)  # Remove empty parentheses
+        normalized = re.sub(r'\s*\+\s*$', '', normalized)             # Remove trailing +
+        normalized = re.sub(r'\s*×\s*$', '', normalized)              # Remove trailing ×
+        normalized = re.sub(r'\s*·\s*n\s*$', '', normalized)          # Remove trailing · n
+        normalized = re.sub(r'\s*x\s*n?\s*$', '', normalized)         # Remove trailing x or x n
+        normalized = re.sub(r'\s*\bmon[oa]?\s*$', '', normalized)     # Remove trailing mono/mona
+        normalized = re.sub(r'\s*\btri?\s*$', '', normalized)         # Remove trailing tri
         
         # Clean up extra whitespace
         normalized = re.sub(r'\s+', ' ', normalized).strip()

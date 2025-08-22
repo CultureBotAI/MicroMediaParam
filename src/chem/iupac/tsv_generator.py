@@ -280,18 +280,18 @@ class ChemicalPropertiesTSVGenerator:
                 
                 # Check pKa values format
                 pka_str = row['pka_values']
-                if pka_str and pka_str.strip():
+                if pd.notna(pka_str) and str(pka_str).strip():
                     try:
-                        pka_values = [float(x.strip()) for x in pka_str.split(',')]
+                        pka_values = [float(x.strip()) for x in str(pka_str).split(',')]
                     except ValueError:
                         logger.error(f"{compound_name}: Invalid pKa format: {pka_str}")
                         return False
                 
                 # Check ion charges format
                 ion_charges_str = row['ion_charges']
-                if ion_charges_str and ion_charges_str.strip():
+                if pd.notna(ion_charges_str) and str(ion_charges_str).strip():
                     try:
-                        for pair in ion_charges_str.split(','):
+                        for pair in str(ion_charges_str).split(','):
                             if ':' not in pair:
                                 raise ValueError("Missing colon separator")
                             ion, charge = pair.strip().split(':')

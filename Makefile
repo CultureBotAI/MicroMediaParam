@@ -68,9 +68,39 @@ help:
 	@echo "  $(YELLOW)compute-properties$(NC)     - Calculate pH, salinity, and ionic strength"
 	@echo "  $(YELLOW)media-summary$(NC)          - Generate final media summary table"
 	@echo ""
-	@echo "$(GREEN)Chemical Database Targets:$(NC)"
-	@echo "  $(YELLOW)update-chemical-db$(NC)     - Update chemical properties database from IUPAC sources"
-	@echo "  $(YELLOW)test-chemical-db$(NC)       - Test chemical database update with sample compounds"
+	@echo "$(GREEN)Chemical Database Targets (IUPAC):$(NC)"
+	@echo "  $(YELLOW)iupac-full-pipeline$(NC)     - Complete IUPAC pipeline: analyze → download → process → generate"
+	@echo "  $(YELLOW)iupac-update-from-mappings$(NC) - Update database from existing compound mappings"
+	@echo "  $(YELLOW)iupac-process-composition-mapping$(NC) - Process all compounds from composition_kg_mapping.tsv"
+	@echo "  $(YELLOW)iupac-add-compounds$(NC)     - Add specific compounds (use COMPOUNDS='list')"
+	@echo "  $(YELLOW)iupac-test$(NC)              - Test IUPAC system with sample compounds"
+	@echo ""
+	@echo "$(GREEN)Chemical Database Targets (PubChem):$(NC)"
+	@echo "  $(YELLOW)pubchem-full-pipeline$(NC)   - Complete PubChem pipeline with bulk FTP downloads"
+	@echo "  $(YELLOW)pubchem-process-composition-mapping$(NC) - Process all compounds from composition_kg_mapping.tsv"
+	@echo "  $(YELLOW)pubchem-download-compounds$(NC) - Download specific compounds (use COMPOUNDS='list')"
+	@echo "  $(YELLOW)pubchem-test$(NC)            - Test PubChem system with sample compounds"
+	@echo ""
+	@echo "$(GREEN)OAK CHEBI Mapping Targets:$(NC)"
+	@echo "  $(YELLOW)oak-chebi-mapping$(NC)       - Complete pipeline: extract compounds → OAK annotate → apply mappings"
+	@echo "  $(YELLOW)extract-non-chebi-compounds$(NC) - Extract compounds needing CHEBI mapping (342 compounds)"
+	@echo "  $(YELLOW)oak-chebi-annotate$(NC)      - Run OAK annotation against CHEBI ontology"
+	@echo "  $(YELLOW)apply-oak-chebi-mappings$(NC) - Apply OAK results to composition mapping"
+	@echo "  $(YELLOW)oak-chebi-test$(NC)          - Test OAK connection with sample compounds"
+	@echo "  $(YELLOW)oak-chebi-status$(NC)        - Show OAK CHEBI mapping status"
+	@echo "  $(YELLOW)oak-chebi-clean$(NC)         - Clean OAK CHEBI mapping files"
+	@echo ""
+	@echo "$(GREEN)IUPAC Pipeline Steps:$(NC)"
+	@echo "  $(YELLOW)iupac-analyze-compounds$(NC) - Analyze existing data for download targets"
+	@echo "  $(YELLOW)iupac-download-data$(NC)     - Download chemical data from IUPAC sources"
+	@echo "  $(YELLOW)iupac-process-data$(NC)      - Process raw data into chemical properties"
+	@echo "  $(YELLOW)iupac-generate-tsv$(NC)      - Generate chemical_properties.tsv file"
+	@echo ""
+	@echo "$(GREEN)IUPAC Utilities:$(NC)"
+	@echo "  $(YELLOW)iupac-status$(NC)            - Show IUPAC data status and statistics"
+	@echo "  $(YELLOW)iupac-validate-tsv$(NC)      - Validate chemical_properties.tsv format"
+	@echo "  $(YELLOW)iupac-clean$(NC)             - Clean IUPAC data files"
+	@echo "  $(YELLOW)iupac-restore-backup$(NC)    - Restore chemical_properties.tsv from backup"
 	@echo ""
 	@echo "$(GREEN)Setup Targets:$(NC)"
 	@echo "  $(YELLOW)install$(NC)                - Install Python dependencies"
@@ -217,21 +247,375 @@ $(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_NORMALIZED)
 	@echo "$(BLUE)Creating comprehensive media summary...$(NC)"
 	$(PYTHON) create_media_summary.py
 
-# Chemical Database Management
+# Chemical Database Management (IUPAC Data Processing)
 
-# Update chemical properties database from IUPAC sources
-.PHONY: update-chemical-db
-update-chemical-db: install
-	@echo "$(BLUE)Updating chemical properties database from IUPAC sources...$(NC)"
-	$(PYTHON) update_chemical_properties.py --update-from-mappings
-	@echo "$(GREEN)✓ Chemical database updated$(NC)"
+# IUPAC data directory and files
+IUPAC_DATA_DIR := data/chemical_processing
+IUPAC_RAW_DATA := $(IUPAC_DATA_DIR)/raw_chemical_data.json
+IUPAC_PROCESSED_DATA := $(IUPAC_DATA_DIR)/processed_chemical_data.json
+IUPAC_MAPPING_REPORT := $(IUPAC_DATA_DIR)/compound_mapping_report.tsv
+CHEMICAL_DB_BACKUP := chemical_properties_backup.tsv
 
-# Test chemical database update with sample compounds
-.PHONY: test-chemical-db
-test-chemical-db: install
-	@echo "$(BLUE)Testing chemical database update...$(NC)"
-	$(PYTHON) update_chemical_properties.py --test-mode
-	@echo "$(GREEN)✓ Chemical database test completed$(NC)"
+# Create IUPAC data directory
+$(IUPAC_DATA_DIR):
+	@mkdir -p $(IUPAC_DATA_DIR)
+	@echo "$(GREEN)✓ Created IUPAC data directory$(NC)"
+
+# Generate compound mapping report from existing data
+.PHONY: iupac-analyze-compounds
+iupac-analyze-compounds: install $(IUPAC_DATA_DIR)
+	@echo "$(BLUE)Analyzing existing compounds for IUPAC data download...$(NC)"
+	$(PYTHON) -c "\
+import sys, asyncio; \
+sys.path.insert(0, 'src'); \
+from chem.iupac.compound_mapper import CompoundMapper; \
+from pathlib import Path; \
+mapper = CompoundMapper(); \
+mappings_files = [Path('$(HIGH_CONFIDENCE_NORMALIZED)'), Path('$(COMPOSITION_MAPPING)'), Path('$(UNACCOUNTED_MATCHES)')]; \
+target_compounds = mapper.create_download_target_list(mappings_files); \
+print(f'Found {len(target_compounds)} compounds for IUPAC download'); \
+with open('$(IUPAC_DATA_DIR)/target_compounds.txt', 'w') as f: f.write('\\n'.join(target_compounds)) \
+"
+	@echo "$(GREEN)✓ Compound analysis completed: $(IUPAC_DATA_DIR)/target_compounds.txt$(NC)"
+
+# Download chemical data from IUPAC sources
+.PHONY: iupac-download-data
+iupac-download-data: install iupac-analyze-compounds
+	@echo "$(BLUE)Downloading chemical data from IUPAC sources...$(NC)"
+	@if [ -f "$(IUPAC_DATA_DIR)/target_compounds.txt" ]; then \
+		COMPOUNDS=$$(head -10 "$(IUPAC_DATA_DIR)/target_compounds.txt" | tr '\n' ',' | sed 's/,$$//'); \
+		echo "Downloading data for: $$COMPOUNDS"; \
+		$(PYTHON) -m src.chem.iupac.pipeline --download-compounds "$$COMPOUNDS" --data-dir $(IUPAC_DATA_DIR); \
+	else \
+		echo "$(RED)No target compounds found. Run 'make iupac-analyze-compounds' first$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)✓ Chemical data download completed$(NC)"
+
+# Process raw IUPAC data into chemical properties
+.PHONY: iupac-process-data
+iupac-process-data: install
+	@echo "$(BLUE)Processing raw IUPAC data...$(NC)"
+	@if [ -f "$(IUPAC_RAW_DATA)" ]; then \
+		$(PYTHON) -m src.chem.iupac.pipeline --process-only --data-dir $(IUPAC_DATA_DIR); \
+	else \
+		echo "$(RED)No raw data found. Run 'make iupac-download-data' first$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)✓ Data processing completed$(NC)"
+
+# Generate updated chemical_properties.tsv from IUPAC data
+.PHONY: iupac-generate-tsv
+iupac-generate-tsv: install iupac-process-data
+	@echo "$(BLUE)Generating chemical_properties.tsv from IUPAC data...$(NC)"
+	@# Backup existing file
+	@if [ -f "$(CHEMICAL_PROPERTIES)" ]; then \
+		cp "$(CHEMICAL_PROPERTIES)" "$(CHEMICAL_DB_BACKUP)"; \
+		echo "Backed up existing chemical_properties.tsv to $(CHEMICAL_DB_BACKUP)"; \
+	fi
+	@$(PYTHON) -c "\
+import sys; \
+sys.path.insert(0, 'src'); \
+from chem.iupac.tsv_generator import ChemicalPropertiesTSVGenerator; \
+from pathlib import Path; \
+generator = ChemicalPropertiesTSVGenerator(); \
+processed_file = Path('$(IUPAC_PROCESSED_DATA)'); \
+output_file = Path('$(CHEMICAL_PROPERTIES)'); \
+generator.generate_tsv_from_json(processed_file, output_file, merge_with_existing=True) if processed_file.exists() else print('No processed data found') \
+"
+	@echo "$(GREEN)✓ chemical_properties.tsv updated$(NC)"
+
+# Complete IUPAC pipeline: analyze → download → process → generate
+.PHONY: iupac-full-pipeline
+iupac-full-pipeline: install $(IUPAC_DATA_DIR)
+	@echo "$(BLUE)Running complete IUPAC chemical data pipeline...$(NC)"
+	$(PYTHON) update_chemical_properties.py --full-update --data-dir $(IUPAC_DATA_DIR)
+	@echo "$(GREEN)✓ Full IUPAC pipeline completed$(NC)"
+
+# Quick update chemical database from existing mappings
+.PHONY: iupac-update-from-mappings
+iupac-update-from-mappings: install
+	@echo "$(BLUE)Updating chemical database from existing compound mappings...$(NC)"
+	$(PYTHON) update_chemical_properties.py --update-from-mappings --data-dir $(IUPAC_DATA_DIR)
+	@echo "$(GREEN)✓ Chemical database updated from mappings$(NC)"
+
+# Process compounds from composition_kg_mapping.tsv with robust error handling
+.PHONY: iupac-process-composition-mapping
+iupac-process-composition-mapping: install $(IUPAC_DATA_DIR)
+	@echo "$(BLUE)Processing compounds from composition_kg_mapping.tsv with robust error handling...$(NC)"
+	@if [ -f "composition_kg_mapping.tsv" ]; then \
+		echo "Found composition_kg_mapping.tsv with $$(tail -n +2 composition_kg_mapping.tsv | wc -l) entries"; \
+		echo "Extracting unique compound names..."; \
+		UNIQUE_COMPOUNDS=$$(cut -f2 composition_kg_mapping.tsv | tail -n +2 | sort | uniq | wc -l); \
+		echo "Found $$UNIQUE_COMPOUNDS unique compounds for processing"; \
+		$(PYTHON) -m src.chem.iupac.pipeline --from-mapping-file composition_kg_mapping.tsv --data-dir $(IUPAC_DATA_DIR); \
+	else \
+		echo "$(RED)composition_kg_mapping.tsv not found. Run 'make mapping' first$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)✓ Composition mapping processing completed with full error reporting$(NC)"
+
+# Add specific compounds to chemical database
+.PHONY: iupac-add-compounds
+iupac-add-compounds: install
+	@echo "$(BLUE)Adding compounds to chemical database...$(NC)"
+	@echo "Usage: make iupac-add-compounds COMPOUNDS='sodium chloride,glucose,calcium carbonate'"
+	@if [ -z "$(COMPOUNDS)" ]; then \
+		echo "$(RED)Error: No compounds specified. Use: make iupac-add-compounds COMPOUNDS='compound1,compound2'$(NC)"; \
+		exit 1; \
+	fi
+	$(PYTHON) update_chemical_properties.py --add-compounds "$(COMPOUNDS)" --data-dir $(IUPAC_DATA_DIR)
+	@echo "$(GREEN)✓ Compounds added to chemical database$(NC)"
+
+# Test IUPAC system with sample compounds
+.PHONY: iupac-test
+iupac-test: install $(IUPAC_DATA_DIR)
+	@echo "$(BLUE)Testing IUPAC chemical data system...$(NC)"
+	$(PYTHON) update_chemical_properties.py --test-mode --data-dir $(IUPAC_DATA_DIR)
+	@echo "$(GREEN)✓ IUPAC system test completed$(NC)"
+
+# Validate chemical_properties.tsv format
+.PHONY: iupac-validate-tsv
+iupac-validate-tsv: install
+	@echo "$(BLUE)Validating chemical_properties.tsv format...$(NC)"
+	@$(PYTHON) -c "\
+import sys; \
+sys.path.insert(0, 'src'); \
+from chem.iupac.tsv_generator import ChemicalPropertiesTSVGenerator; \
+from pathlib import Path; \
+generator = ChemicalPropertiesTSVGenerator(); \
+tsv_file = Path('$(CHEMICAL_PROPERTIES)'); \
+is_valid = generator.validate_tsv_format(tsv_file) if tsv_file.exists() else False; \
+print('✓ TSV format validation passed') if is_valid else (print('✗ TSV format validation failed') or sys.exit(1)) if tsv_file.exists() else (print('Chemical properties file not found: $(CHEMICAL_PROPERTIES)') or sys.exit(1)) \
+"
+	@echo "$(GREEN)✓ TSV validation completed$(NC)"
+
+# Show IUPAC data status and statistics
+.PHONY: iupac-status
+iupac-status:
+	@echo "$(BLUE)IUPAC Chemical Data Status$(NC)"
+	@echo "========================="
+	@echo ""
+	@echo "$(YELLOW)Data Directory:$(NC)"
+	@[ -d $(IUPAC_DATA_DIR) ] && echo "✓ $(IUPAC_DATA_DIR) exists" || echo "✗ $(IUPAC_DATA_DIR) missing"
+	@echo ""
+	@echo "$(YELLOW)IUPAC Data Files:$(NC)"
+	@[ -f "$(IUPAC_RAW_DATA)" ] && echo "✓ Raw data: $$(du -h $(IUPAC_RAW_DATA) | cut -f1)" || echo "✗ Raw data: Missing"
+	@[ -f "$(IUPAC_PROCESSED_DATA)" ] && echo "✓ Processed data: $$(du -h $(IUPAC_PROCESSED_DATA) | cut -f1)" || echo "✗ Processed data: Missing"
+	@[ -f "$(IUPAC_MAPPING_REPORT)" ] && echo "✓ Mapping report: $$(wc -l < $(IUPAC_MAPPING_REPORT)) compounds" || echo "✗ Mapping report: Missing"
+	@echo ""
+	@echo "$(YELLOW)Chemical Properties Database:$(NC)"
+	@[ -f "$(CHEMICAL_PROPERTIES)" ] && echo "✓ chemical_properties.tsv: $$(tail -n +2 $(CHEMICAL_PROPERTIES) | wc -l) compounds" || echo "✗ chemical_properties.tsv: Missing"
+	@[ -f "$(CHEMICAL_DB_BACKUP)" ] && echo "✓ Backup available: $(CHEMICAL_DB_BACKUP)" || echo "✗ No backup available"
+	@echo ""
+	@echo "$(YELLOW)Target Compounds:$(NC)"
+	@[ -f "$(IUPAC_DATA_DIR)/target_compounds.txt" ] && echo "✓ Target list: $$(wc -l < $(IUPAC_DATA_DIR)/target_compounds.txt) compounds" || echo "✗ Target list: Missing"
+
+# Clean IUPAC data files
+.PHONY: iupac-clean
+iupac-clean:
+	@echo "$(BLUE)Cleaning IUPAC data files...$(NC)"
+	@if [ -d "$(IUPAC_DATA_DIR)" ]; then \
+		rm -rf $(IUPAC_DATA_DIR); \
+		echo "✓ Removed $(IUPAC_DATA_DIR)"; \
+	fi
+	@if [ -f "$(CHEMICAL_DB_BACKUP)" ]; then \
+		rm -f $(CHEMICAL_DB_BACKUP); \
+		echo "✓ Removed backup file"; \
+	fi
+	@echo "$(GREEN)✓ IUPAC data cleanup completed$(NC)"
+
+# Restore chemical_properties.tsv from backup
+.PHONY: iupac-restore-backup
+iupac-restore-backup:
+	@echo "$(BLUE)Restoring chemical_properties.tsv from backup...$(NC)"
+	@if [ -f "$(CHEMICAL_DB_BACKUP)" ]; then \
+		cp "$(CHEMICAL_DB_BACKUP)" "$(CHEMICAL_PROPERTIES)"; \
+		echo "✓ Restored $(CHEMICAL_PROPERTIES) from backup"; \
+	else \
+		echo "$(RED)✗ No backup file found: $(CHEMICAL_DB_BACKUP)$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)✓ Backup restoration completed$(NC)"
+
+# Legacy targets for backward compatibility
+.PHONY: update-chemical-db test-chemical-db
+update-chemical-db: iupac-update-from-mappings
+test-chemical-db: iupac-test
+
+# PubChem Chemical Data Processing Pipeline
+
+# PubChem data directory and files
+PUBCHEM_DATA_DIR := data/pubchem_processing
+PUBCHEM_RAW_DATA := $(PUBCHEM_DATA_DIR)/pubchem_raw_data.json
+PUBCHEM_PROCESSED_DATA := $(PUBCHEM_DATA_DIR)/pubchem_processed_data.json
+PUBCHEM_COMPARISON_REPORT := $(PUBCHEM_DATA_DIR)/pubchem_comparison_report.json
+
+# Create PubChem data directory
+$(PUBCHEM_DATA_DIR):
+	@mkdir -p $(PUBCHEM_DATA_DIR)
+	@echo "$(GREEN)✓ Created PubChem data directory$(NC)"
+
+# Complete PubChem pipeline with bulk FTP downloads and robust error handling
+.PHONY: pubchem-full-pipeline
+pubchem-full-pipeline: install $(PUBCHEM_DATA_DIR)
+	@echo "$(BLUE)Running complete PubChem chemical data pipeline...$(NC)"
+	$(PYTHON) -m src.chem.pubchem.pipeline --full-pipeline --data-dir $(PUBCHEM_DATA_DIR)
+	@echo "$(GREEN)✓ Full PubChem pipeline completed$(NC)"
+
+# Process compounds from composition_kg_mapping.tsv with PubChem
+.PHONY: pubchem-process-composition-mapping
+pubchem-process-composition-mapping: install $(PUBCHEM_DATA_DIR)
+	@echo "$(BLUE)Processing compounds from composition_kg_mapping.tsv using PubChem...$(NC)"
+	@if [ -f "composition_kg_mapping.tsv" ]; then \
+		echo "Found composition_kg_mapping.tsv with $$(tail -n +2 composition_kg_mapping.tsv | wc -l) entries"; \
+		echo "Extracting unique compound names for PubChem processing..."; \
+		UNIQUE_COMPOUNDS=$$(cut -f2 composition_kg_mapping.tsv | tail -n +2 | sort | uniq | wc -l); \
+		echo "Found $$UNIQUE_COMPOUNDS unique compounds for PubChem processing"; \
+		$(PYTHON) -m src.chem.pubchem.pipeline --from-mapping-file composition_kg_mapping.tsv --data-dir $(PUBCHEM_DATA_DIR); \
+	else \
+		echo "$(RED)composition_kg_mapping.tsv not found. Run 'make mapping' first$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)✓ PubChem composition mapping processing completed with full error reporting$(NC)"
+
+# Download specific compounds using PubChem
+.PHONY: pubchem-download-compounds
+pubchem-download-compounds: install $(PUBCHEM_DATA_DIR)
+	@echo "$(BLUE)Downloading specific compounds from PubChem...$(NC)"
+	@echo "Usage: make pubchem-download-compounds COMPOUNDS='sodium chloride,glucose,calcium carbonate'"
+	@if [ -z "$(COMPOUNDS)" ]; then \
+		echo "$(RED)Error: No compounds specified. Use: make pubchem-download-compounds COMPOUNDS='compound1,compound2'$(NC)"; \
+		exit 1; \
+	fi
+	$(PYTHON) -m src.chem.pubchem.pipeline --download-compounds "$(COMPOUNDS)" --data-dir $(PUBCHEM_DATA_DIR)
+	@echo "$(GREEN)✓ PubChem compound download completed$(NC)"
+
+# Test PubChem system with sample compounds
+.PHONY: pubchem-test
+pubchem-test: install $(PUBCHEM_DATA_DIR)
+	@echo "$(BLUE)Testing PubChem chemical data system...$(NC)"
+	$(PYTHON) -m src.chem.pubchem.pipeline --download-compounds "glucose,sodium chloride,glycine" --data-dir $(PUBCHEM_DATA_DIR)
+	@echo "$(GREEN)✓ PubChem system test completed$(NC)"
+
+# Show PubChem data status and statistics
+.PHONY: pubchem-status
+pubchem-status:
+	@echo "$(BLUE)PubChem Chemical Data Status$(NC)"
+	@echo "============================"
+	@echo ""
+	@echo "$(YELLOW)Data Directory:$(NC)"
+	@[ -d $(PUBCHEM_DATA_DIR) ] && echo "✓ $(PUBCHEM_DATA_DIR) exists" || echo "✗ $(PUBCHEM_DATA_DIR) missing"
+	@echo ""
+	@echo "$(YELLOW)PubChem Data Files:$(NC)"
+	@[ -f "$(PUBCHEM_RAW_DATA)" ] && echo "✓ Raw data: $$(du -h $(PUBCHEM_RAW_DATA) | cut -f1)" || echo "✗ Raw data: Missing"
+	@[ -f "$(PUBCHEM_PROCESSED_DATA)" ] && echo "✓ Processed data: $$(du -h $(PUBCHEM_PROCESSED_DATA) | cut -f1)" || echo "✗ Processed data: Missing"
+	@[ -f "$(PUBCHEM_COMPARISON_REPORT)" ] && echo "✓ Comparison report: $$(du -h $(PUBCHEM_COMPARISON_REPORT) | cut -f1)" || echo "✗ Comparison report: Missing"
+	@echo ""
+	@echo "$(YELLOW)PubChem Cache:$(NC)"
+	@[ -d "$(PUBCHEM_DATA_DIR)/cache" ] && echo "✓ Cache directory: $$(du -sh $(PUBCHEM_DATA_DIR)/cache | cut -f1)" || echo "✗ Cache directory: Missing"
+	@[ -d "$(PUBCHEM_DATA_DIR)/bulk" ] && echo "✓ Bulk data: $$(du -sh $(PUBCHEM_DATA_DIR)/bulk | cut -f1)" || echo "✗ Bulk data: Missing"
+
+# Clean PubChem data files
+.PHONY: pubchem-clean
+pubchem-clean:
+	@echo "$(BLUE)Cleaning PubChem data files...$(NC)"
+	@if [ -d "$(PUBCHEM_DATA_DIR)" ]; then \
+		rm -rf $(PUBCHEM_DATA_DIR); \
+		echo "✓ Removed $(PUBCHEM_DATA_DIR)"; \
+	fi
+	@echo "$(GREEN)✓ PubChem data cleanup completed$(NC)"
+
+# OAK CHEBI Mapping Pipeline
+
+# OAK CHEBI mapping files and directories
+OAK_DATA_DIR := data
+CHEBI_LEXICAL_INDEX := $(OAK_DATA_DIR)/chebi_lexical_index.db
+COMPOUNDS_FOR_CHEBI := compounds_for_chebi_mapping.txt
+NON_CHEBI_DETAILS := non_chebi_mapping_details.tsv
+OAK_CHEBI_ANNOTATIONS := oak_chebi_annotations.json
+UPDATED_COMPOSITION_MAPPING := composition_kg_mapping_with_oak_chebi.tsv
+
+# Create OAK data directory
+$(OAK_DATA_DIR):
+	@mkdir -p $(OAK_DATA_DIR)
+	@echo "$(GREEN)✓ Created OAK data directory$(NC)"
+
+# Extract compounds that need CHEBI mapping (not mapped to CHEBI currently)
+.PHONY: extract-non-chebi-compounds
+extract-non-chebi-compounds: $(COMPOSITION_MAPPING)
+	@echo "$(BLUE)Extracting compounds that need CHEBI mapping...$(NC)"
+	$(PYTHON) extract_non_chebi_compounds.py
+	@echo "$(GREEN)✓ Extracted $$(wc -l < $(COMPOUNDS_FOR_CHEBI)) compounds for CHEBI mapping$(NC)"
+
+# Run OAK CHEBI annotation on filtered compounds
+.PHONY: oak-chebi-annotate
+oak-chebi-annotate: $(COMPOUNDS_FOR_CHEBI) $(OAK_DATA_DIR)
+	@echo "$(BLUE)Running OAK CHEBI annotation on $$(wc -l < $(COMPOUNDS_FOR_CHEBI)) compounds...$(NC)"
+	@echo "$(YELLOW)This may take 5-10 minutes to build the CHEBI lexical index...$(NC)"
+	runoak -i sqlite:obo:chebi annotate \
+		--text-file $(COMPOUNDS_FOR_CHEBI) \
+		--output-type json \
+		--lexical-index-file $(CHEBI_LEXICAL_INDEX) \
+		--output $(OAK_CHEBI_ANNOTATIONS)
+	@echo "$(GREEN)✓ OAK CHEBI annotation completed$(NC)"
+
+# Apply OAK CHEBI annotations to composition mapping
+.PHONY: apply-oak-chebi-mappings
+apply-oak-chebi-mappings: $(OAK_CHEBI_ANNOTATIONS)
+	@echo "$(BLUE)Applying OAK CHEBI mappings to composition mapping...$(NC)"
+	$(PYTHON) apply_oak_chebi_mappings.py \
+		--annotations-file $(OAK_CHEBI_ANNOTATIONS) \
+		--compounds-file $(COMPOUNDS_FOR_CHEBI) \
+		--output-file $(UPDATED_COMPOSITION_MAPPING)
+	@echo "$(GREEN)✓ Applied OAK CHEBI mappings to $(UPDATED_COMPOSITION_MAPPING)$(NC)"
+
+# Complete OAK CHEBI mapping pipeline
+.PHONY: oak-chebi-mapping
+oak-chebi-mapping: extract-non-chebi-compounds oak-chebi-annotate apply-oak-chebi-mappings
+	@echo "$(GREEN)✓ Complete OAK CHEBI mapping pipeline completed$(NC)"
+	@echo "$(YELLOW)Updated composition mapping available in: $(UPDATED_COMPOSITION_MAPPING)$(NC)"
+
+# Test OAK connection and annotation with sample compounds
+.PHONY: oak-chebi-test
+oak-chebi-test: $(OAK_DATA_DIR)
+	@echo "$(BLUE)Testing OAK CHEBI annotation with sample compounds...$(NC)"
+	@echo -e "glucose\\ncitric acid\\nsodium chloride" > test_compounds.txt
+	runoak -i sqlite:obo:chebi annotate \
+		--text-file test_compounds.txt \
+		--output-type json \
+		--lexical-index-file $(CHEBI_LEXICAL_INDEX)
+	@rm test_compounds.txt
+	@echo "$(GREEN)✓ OAK CHEBI test completed$(NC)"
+
+# Show OAK CHEBI mapping status
+.PHONY: oak-chebi-status
+oak-chebi-status:
+	@echo "$(BLUE)OAK CHEBI Mapping Status$(NC)"
+	@echo "========================"
+	@echo ""
+	@echo "$(YELLOW)Input Files:$(NC)"
+	@[ -f "$(COMPOSITION_MAPPING)" ] && echo "✓ Composition mapping: $$(wc -l < $(COMPOSITION_MAPPING)) rows" || echo "✗ Composition mapping: Missing"
+	@[ -f "$(COMPOUNDS_FOR_CHEBI)" ] && echo "✓ Compounds for CHEBI: $$(wc -l < $(COMPOUNDS_FOR_CHEBI)) compounds" || echo "✗ Compounds for CHEBI: Missing"
+	@echo ""
+	@echo "$(YELLOW)OAK Data:$(NC)"
+	@[ -d "$(OAK_DATA_DIR)" ] && echo "✓ OAK data directory exists" || echo "✗ OAK data directory: Missing"
+	@[ -f "$(CHEBI_LEXICAL_INDEX)" ] && echo "✓ CHEBI lexical index: $$(du -h $(CHEBI_LEXICAL_INDEX) | cut -f1)" || echo "✗ CHEBI lexical index: Missing"
+	@[ -f "$(OAK_CHEBI_ANNOTATIONS)" ] && echo "✓ OAK annotations: $$(du -h $(OAK_CHEBI_ANNOTATIONS) | cut -f1)" || echo "✗ OAK annotations: Missing"
+	@echo ""
+	@echo "$(YELLOW)Output Files:$(NC)"
+	@[ -f "$(NON_CHEBI_DETAILS)" ] && echo "✓ Non-CHEBI details: $$(wc -l < $(NON_CHEBI_DETAILS)) rows" || echo "✗ Non-CHEBI details: Missing"
+	@[ -f "$(UPDATED_COMPOSITION_MAPPING)" ] && echo "✓ Updated mapping: $$(wc -l < $(UPDATED_COMPOSITION_MAPPING)) rows" || echo "✗ Updated mapping: Missing"
+
+# Clean OAK CHEBI mapping files
+.PHONY: oak-chebi-clean
+oak-chebi-clean:
+	@echo "$(BLUE)Cleaning OAK CHEBI mapping files...$(NC)"
+	@rm -f $(COMPOUNDS_FOR_CHEBI) $(NON_CHEBI_DETAILS) $(OAK_CHEBI_ANNOTATIONS) $(UPDATED_COMPOSITION_MAPPING)
+	@if [ -f "$(CHEBI_LEXICAL_INDEX)" ]; then \
+		echo "$(YELLOW)Keeping CHEBI lexical index for reuse: $(CHEBI_LEXICAL_INDEX)$(NC)"; \
+	fi
+	@echo "$(GREEN)✓ OAK CHEBI mapping cleanup completed$(NC)"
 
 # Setup and environment targets
 
@@ -366,4 +750,12 @@ validate:
 .PHONY: all help install install-dev setup-venv test lint format quality \
         data-acquisition data-conversion mapping map-compositions-to-kg compound-matching merge-mappings \
         enhance-ingredients normalize-hydration compute-properties media-summary \
+        iupac-analyze-compounds iupac-download-data iupac-process-data iupac-generate-tsv \
+        iupac-full-pipeline iupac-update-from-mappings iupac-process-composition-mapping iupac-add-compounds iupac-test \
+        iupac-validate-tsv iupac-status iupac-clean iupac-restore-backup \
+        pubchem-full-pipeline pubchem-process-composition-mapping pubchem-download-compounds pubchem-test \
+        pubchem-status pubchem-clean \
+        extract-non-chebi-compounds oak-chebi-annotate apply-oak-chebi-mappings oak-chebi-mapping \
+        oak-chebi-test oak-chebi-status oak-chebi-clean \
+        update-chemical-db test-chemical-db \
         clean clean-all status validate quick

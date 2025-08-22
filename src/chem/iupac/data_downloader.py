@@ -270,6 +270,73 @@ class IUPACDataDownloader:
         
         return results
     
+    async def download_compound_data(self, compound_name: str) -> Optional[Dict]:
+        """
+        Download data for a single compound from all sources with error handling.
+        
+        Args:
+            compound_name: Name of the compound to download
+            
+        Returns:
+            Dictionary with combined data from all sources, or None if all failed
+        """
+        compound_data = {
+            'name': compound_name,
+            'formula': None,
+            'molecular_weight': None,
+            'cas_number': None,
+            'chebi_id': None,
+            'pubchem_cid': None,
+            'sources': []
+        }
+        
+        # Try PubChem first (most reliable)
+        try:
+            pubchem_results = await self.download_pubchem_data([compound_name])
+            if pubchem_results:
+                data = pubchem_results[0]
+                compound_data['formula'] = data.formula
+                compound_data['molecular_weight'] = data.molecular_weight
+                compound_data['pubchem_cid'] = data.pubchem_cid
+                compound_data['sources'].append('pubchem')
+        except Exception as e:
+            logger.debug(f"PubChem failed for {compound_name}: {e}")
+        
+        # Try ChEBI
+        try:
+            chebi_results = await self.download_chebi_data([compound_name])
+            if chebi_results:
+                data = chebi_results[0]
+                if not compound_data['formula']:
+                    compound_data['formula'] = data.formula
+                if not compound_data['molecular_weight']:
+                    compound_data['molecular_weight'] = data.molecular_weight
+                compound_data['chebi_id'] = data.chebi_id
+                compound_data['sources'].append('chebi')
+        except Exception as e:
+            logger.debug(f"ChEBI failed for {compound_name}: {e}")
+        
+        # Try NIST (curated data)
+        try:
+            nist_results = await self.download_nist_data([compound_name])
+            if nist_results:
+                data = nist_results[0]
+                if not compound_data['cas_number']:
+                    compound_data['cas_number'] = data.cas_number
+                if not compound_data['formula']:
+                    compound_data['formula'] = data.formula
+                if not compound_data['molecular_weight']:
+                    compound_data['molecular_weight'] = data.molecular_weight
+                compound_data['sources'].append('nist')
+        except Exception as e:
+            logger.debug(f"NIST failed for {compound_name}: {e}")
+        
+        # Return data if we got something useful, otherwise None
+        if compound_data['sources']:
+            return compound_data
+        else:
+            return None
+    
     async def download_all_sources(self, compound_names: Optional[List[str]] = None) -> Dict[str, List[ChemicalData]]:
         """
         Download chemical data from all available sources.
@@ -332,6 +399,16 @@ class IUPACDataDownloader:
         
         async with aiofiles.open(output_file, 'w') as f:
             await f.write(json.dumps(json_data, indent=2))
+        
+        logger.info(f"Saved raw chemical data to {output_file}")
+    
+    async def save_raw_data_list(self, data: List[Dict], filename: str = "raw_chemical_data.json"):
+        """Save raw downloaded data (list format) to JSON file."""
+        output_file = self.output_dir / filename
+        
+        # Data is already in dictionary format, just save it
+        async with aiofiles.open(output_file, 'w') as f:
+            await f.write(json.dumps(data, indent=2))
         
         logger.info(f"Saved raw chemical data to {output_file}")
 
