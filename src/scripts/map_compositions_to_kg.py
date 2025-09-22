@@ -23,7 +23,7 @@ class CompositionKGMapper:
     def __init__(self, 
                  kg_nodes_file: str = "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/merged/20250222/merged-kg_nodes.tsv",
                  composition_dir: str = "media_compositions",
-                 json_dir: str = "media_pdfs",
+                 json_dir: str = "media_compositions",
                  output_file: str = "composition_kg_mapping.tsv",
                  similarity_threshold: int = 85):
         
@@ -187,12 +187,12 @@ class CompositionKGMapper:
             
             elif isinstance(data, dict):
                 # Handle dictionary format
-                components = data.get('components', [])
+                components = data.get('components', data.get('composition', []))
                 if isinstance(components, list):
                     for component in components:
                         if isinstance(component, dict):
                             compound = component.get('name', component.get('compound', ''))
-                            amount = component.get('amount', component.get('g_l'))
+                            amount = component.get('amount', component.get('concentration', component.get('g_l')))
                             unit = component.get('unit', 'g/L')
                             optional = component.get('optional', '')
                             
@@ -269,7 +269,10 @@ class CompositionKGMapper:
                 self.results.append(result)
         
         logger.info(f"Processed {len(json_files)} JSON files, extracted {len(self.results)} compound entries")
-        logger.info(f"Compound mapping summary: {mapped_compounds}/{total_compounds} compounds mapped ({mapped_compounds/total_compounds*100:.1f}% success rate)")
+        if total_compounds > 0:
+            logger.info(f"Compound mapping summary: {mapped_compounds}/{total_compounds} compounds mapped ({mapped_compounds/total_compounds*100:.1f}% success rate)")
+        else:
+            logger.warning("No compounds found to map")
     
     def _save_results(self):
         """Save mapping results to TSV file."""

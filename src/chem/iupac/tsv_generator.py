@@ -98,7 +98,7 @@ class ChemicalPropertiesTSVGenerator:
         
         # Convert processed compounds to TSV format
         tsv_data = []
-        existing_names = {row.get('compound_name', '').lower() for row in existing_data}
+        existing_names = {str(row.get('compound_name', '')).lower() for row in existing_data if row.get('compound_name')}
         
         for compound in processed_compounds:
             if not self.validate_compound_data(compound):

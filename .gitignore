@@ -48,7 +48,15 @@ media_compositions/
 media_properties/
 .python-version
 
+# Large pipeline files
+pipeline_output/
+growth_media_urls.txt
+metpo_data/
+sort
+
 # Keep important project files
 !chemical_properties.tsv
 !requirements.txt
 !pyproject.toml
+!src/**/*.json
+!tests/**/*.json

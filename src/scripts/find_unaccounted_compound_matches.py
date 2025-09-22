@@ -41,11 +41,13 @@ class UnaccountedCompoundMatcher:
     def __init__(self, 
                  chebi_file: str = "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv",
                  media_properties_dir: str = "media_properties",
-                 min_similarity: int = 70):
+                 min_similarity: int = 70,
+                 fast_mode: bool = False):
         
         self.chebi_file = chebi_file
         self.media_properties_dir = Path(media_properties_dir)
         self.min_similarity = min_similarity
+        self.fast_mode = fast_mode
         
         # Storage for results
         self.unaccounted_compounds = Counter()
@@ -241,8 +243,25 @@ class UnaccountedCompoundMatcher:
         normalized = re.sub(r'^[+-]', '', normalized)
         normalized = re.sub(r'^\([dlr+-]+\)-?', '', normalized)
         
-        # Remove parenthetical content (often stereochemistry or chemical details)
-        normalized = re.sub(r'\([^)]*\)', '', normalized)
+        # Remove parenthetical content EXCEPT chemical formulas
+        # Preserve patterns like (NH4), (PO4), (SO4), etc.
+        # Only remove parentheses that contain stereochemistry or descriptive text
+        
+        # Common stereochemistry patterns to remove
+        stereo_patterns = [
+            r'\([dlr][+-]?\)',  # (d), (l), (r), (d+), etc.
+            r'\([+-]\)',        # (+), (-)
+            r'\(cis\)', r'\(trans\)',  # (cis), (trans)
+            r'\(alpha\)', r'\(beta\)', r'\(gamma\)',  # Greek letters
+            r'\([eEzZrRsS]\)',  # E/Z, R/S stereochemistry
+        ]
+        
+        for pattern in stereo_patterns:
+            normalized = re.sub(pattern, '', normalized, flags=re.IGNORECASE)
+        
+        # DO NOT remove parentheses with chemical formulas
+        # These contain uppercase letters followed by optional lowercase and numbers
+        # Examples: (NH4), (PO4), (SO4), (CO3), etc.
         
         # Normalize common chemical notation
         normalized = re.sub(r'\s*,\s*', ', ', normalized)  # Standardize comma spacing
@@ -450,7 +469,7 @@ class UnaccountedCompoundMatcher:
                                 break
                 
                 # 3. Try fuzzy matching on normalized names (if no hydration match found)
-                if best_score < 90:
+                if best_score < 90 and not self.fast_mode:
                     fuzzy_results = process.extractOne(
                         normalized_compound, 
                         chebi_names, 
@@ -465,8 +484,8 @@ class UnaccountedCompoundMatcher:
                         best_chebi_data = chebi_compounds[matched_name]
                         matching_method = "fuzzy_normalized"
                 
-                # 4. Also try fuzzy matching on original labels
-                if best_score < 90:  # Only if we don't have a very good match
+                # 4. Also try fuzzy matching on original labels (only for high-priority compounds in fast mode)
+                if best_score < 90 and (not self.fast_mode or normalized_compound in ['(nh4)2co3', '(nh4)2hpo4', '(nh4)2so4', 'nh4cl', '(nh4)hco3']):
                     label_results = process.extractOne(
                         normalized_compound,
                         chebi_labels,
@@ -624,6 +643,9 @@ def main():
                         type=int, 
                         default=70,
                         help='Minimum similarity score for matches (0-100)')
+    parser.add_argument('--fast-mode', 
+                        action='store_true',
+                        help='Fast mode: prioritize exact matches and reduce fuzzy search')
     parser.add_argument('-v', '--verbose', 
                         action='store_true',
                         help='Verbose logging')
@@ -637,7 +659,8 @@ def main():
     matcher = UnaccountedCompoundMatcher(
         chebi_file=args.chebi_file,
         media_properties_dir=args.media_dir,
-        min_similarity=args.min_similarity
+        min_similarity=args.min_similarity,
+        fast_mode=args.fast_mode
     )
     
     # Run matching process

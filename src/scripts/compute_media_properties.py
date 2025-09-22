@@ -844,8 +844,14 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Calculate pH and salinity of media compositions')
-    parser.add_argument('input_file', help='JSON file containing media composition')
-    parser.add_argument('-o', '--output', help='Output file for results (optional)')
+    
+    # Support both old single-file mode and new batch mode
+    parser.add_argument('input_file', nargs='?', help='JSON file containing media composition (single file mode)')
+    parser.add_argument('--input-high', help='TSV file with high-confidence compound mappings (batch mode)')
+    
+    parser.add_argument('-o', '--output', help='Output file for results (single file mode)')
+    parser.add_argument('--output-dir', help='Output directory for batch processing results')
+    parser.add_argument('--chemical-properties', help='TSV file with chemical properties (pKa values)')
     parser.add_argument('-v', '--verbose', action='store_true', help='Verbose logging')
     
     args = parser.parse_args()
@@ -853,7 +859,17 @@ def main():
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
     
-    # Load composition data
+    if args.input_high:
+        # Batch mode: process media compositions directory
+        return batch_process_media(args)
+    elif args.input_file:
+        # Single file mode: process one JSON file
+        return single_file_process(args)
+    else:
+        parser.error("Either provide input_file or --input-high")
+
+def single_file_process(args):
+    """Process a single JSON composition file."""
     try:
         with open(args.input_file, 'r') as f:
             composition_data = json.load(f)
@@ -872,6 +888,86 @@ def main():
         logger.info(f"Results saved to {args.output}")
     else:
         print(json.dumps(results, indent=2))
+    
+    return 0
+
+def batch_process_media(args):
+    """Process media compositions using mapping files."""
+    from pathlib import Path
+    import pandas as pd
+    
+    logger.info("Starting batch media properties calculation...")
+    
+    # Default directories if not specified
+    compositions_dir = Path("pipeline_output/data_acquisition/media_pdfs")
+    output_dir = Path(args.output_dir) if args.output_dir else Path("media_properties")
+    
+    # Create output directory
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Load chemical properties if provided
+    chemical_properties = {}
+    if args.chemical_properties and Path(args.chemical_properties).exists():
+        logger.info(f"Loading chemical properties from {args.chemical_properties}")
+        try:
+            chem_df = pd.read_csv(args.chemical_properties, sep='\t')
+            for _, row in chem_df.iterrows():
+                if pd.notna(row.get('compound_name')) and pd.notna(row.get('pka_values')):
+                    chemical_properties[row['compound_name'].lower()] = {
+                        'pka_values': [float(x.strip()) for x in str(row['pka_values']).split(',')],
+                        'molecular_weight': row.get('molecular_weight', 0),
+                        'charge_states': [int(x.strip()) for x in str(row.get('charge_states', '0')).split(',')]
+                    }
+            logger.info(f"Loaded {len(chemical_properties)} chemical property entries")
+        except Exception as e:
+            logger.warning(f"Error loading chemical properties: {e}")
+    
+    # Find composition files
+    if not compositions_dir.exists():
+        logger.error(f"Compositions directory not found: {compositions_dir}")
+        return 1
+    
+    composition_files = list(compositions_dir.glob("*_composition.json"))
+    if not composition_files:
+        logger.error(f"No composition files found in {compositions_dir}")
+        return 1
+    
+    logger.info(f"Found {len(composition_files)} composition files to process")
+    
+    # Initialize calculator
+    calculator = MediaPropertiesCalculator()
+    processed = 0
+    
+    for comp_file in composition_files:
+        try:
+            # Extract medium ID from filename
+            medium_id = comp_file.stem.replace('_composition', '')
+            
+            # Load composition
+            with open(comp_file, 'r') as f:
+                composition_data = json.load(f)
+            
+            # Calculate properties
+            results = calculator.analyze_composition(composition_data)
+            results['medium_id'] = medium_id
+            results['source_file'] = str(comp_file)
+            
+            # Save results
+            output_file = output_dir / f"{medium_id}_properties.json"
+            with open(output_file, 'w') as f:
+                json.dump(results, f, indent=2)
+            
+            processed += 1
+            
+            if processed % 100 == 0:
+                logger.info(f"Processed {processed}/{len(composition_files)} files...")
+                
+        except Exception as e:
+            logger.error(f"Error processing {comp_file}: {e}")
+            continue
+    
+    logger.info(f"Batch processing completed: {processed}/{len(composition_files)} files processed")
+    logger.info(f"Results saved to {output_dir}")
     
     return 0
 

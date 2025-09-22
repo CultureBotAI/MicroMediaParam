@@ -188,10 +188,11 @@ $(MEDIA_TEXTS_DIR)/.done: $(MEDIA_PDFS_DIR)/.done
 	$(PYTHON) $(SCRIPTS_DIR)/convert_pdfs_to_text.py
 	@mkdir -p $(MEDIA_TEXTS_DIR) && touch $(MEDIA_TEXTS_DIR)/.done
 
-# Convert JSON compositions to markdown tables
-$(MEDIA_COMPOSITIONS_DIR)/.done: $(MEDIA_PDFS_DIR)/.done
-	@echo "$(BLUE)Converting JSON compositions to markdown...$(NC)"
-	$(PYTHON) $(SCRIPTS_DIR)/convert_json_to_markdown.py
+# Extract ALL compositions using comprehensive ingredient extraction
+$(MEDIA_COMPOSITIONS_DIR)/.done: $(MEDIA_TEXTS_DIR)/.done
+	@echo "$(BLUE)Extracting ALL chemical compositions using comprehensive multi-strategy approach...$(NC)"
+	@echo "$(YELLOW)Goal: Capture ALL ingredients from media files using multiple extraction strategies$(NC)"
+	$(PYTHON) extract_all_compositions.py
 	@mkdir -p $(MEDIA_COMPOSITIONS_DIR) && touch $(MEDIA_COMPOSITIONS_DIR)/.done
 
 # Stage 3: DB Mapping - Download IUPAC/PubChem & Build Chemical Properties Database (ingredient → pKa, properties)
@@ -204,7 +205,7 @@ $(CHEMICAL_PROPERTIES): $(MEDIA_COMPOSITIONS_DIR)/.done
 	@echo "$(BLUE)DB Mapping: Building ingredient → chemical properties database...$(NC)"
 	@echo "$(YELLOW)Goal: Maximize ingredients with pKa and molecular properties$(NC)"
 	@echo "$(YELLOW)Phase 1: DOWNLOADING IUPAC chemical data (test compounds + processing)...$(NC)"
-	$(PYTHON) -m src.chem.iupac.pipeline --test-mode --data-dir $(IUPAC_DATA_DIR) || echo "$(YELLOW)IUPAC download/processing completed with warnings$(NC)"
+	$(PYTHON) -m src.chem.iupac.pipeline --download-compounds "glucose,sodium chloride,glycine,citric acid,potassium phosphate" --data-dir $(IUPAC_DATA_DIR) || echo "$(YELLOW)IUPAC download/processing completed with warnings$(NC)"
 	@echo "$(YELLOW)Phase 2: DOWNLOADING PubChem chemical data (5 reference compounds)...$(NC)"
 	$(PYTHON) -m src.chem.pubchem.pipeline --download-compounds "glucose,sodium chloride,glycine,citric acid,potassium phosphate" --data-dir $(PUBCHEM_DATA_DIR) || echo "$(YELLOW)PubChem download/processing completed with warnings$(NC)"
 	@echo "$(YELLOW)Phase 3: Generating unified chemical properties database from downloaded data...$(NC)"
@@ -328,7 +329,7 @@ media-summary: $(MEDIA_SUMMARY)
 $(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_MAPPINGS)
 	@echo "$(BLUE)Creating comprehensive media summary with enhanced compound mappings...$(NC)"
 	@echo "$(YELLOW)ADVANTAGE: Summary includes hydrate-normalized + ingredient-enhanced data$(NC)"
-	$(PYTHON) create_media_summary.py --input-high $(HIGH_CONFIDENCE_MAPPINGS) --media-properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
+	$(PYTHON) create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_MAPPINGS) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
 
 # Chemical Database Management (IUPAC Data Processing)
 

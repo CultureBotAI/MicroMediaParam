@@ -327,7 +327,7 @@ def main():
     print(f"📊 Found {len(unmapped_compounds)} unmapped compounds")
     
     # Test with first 10 for speed
-    test_compounds = unmapped_compounds[:10]
+    test_compounds = unmapped_compounds
     print(f"🧪 Testing with first {len(test_compounds)} compounds:")
     for i, compound in enumerate(test_compounds, 1):
         print(f"  {i:2d}. {compound}")

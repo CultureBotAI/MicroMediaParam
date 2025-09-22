@@ -297,22 +297,23 @@ class MediaPDFDownloader:
         pdf_success = False
         json_success = False
         
-        # Check if PDF already downloaded
-        filename = f"medium_{medium_id}.pdf"
-        filepath = self.output_dir / filename
-        if filepath.exists():
-            logger.debug(f"PDF {filename} already exists")
-            pdf_success = True
-            self.skipped_count += 1
-        else:
-            # Get PDF URL from the medium page
-            pdf_url = await self.get_pdf_url_from_mediadive_page(medium_url)
-            
-            if pdf_url:
-                # Download the PDF
-                pdf_success = await self.download_pdf(pdf_url, medium_id)
+        # Check if PDF already downloaded (unless JSON only mode)
+        if not self.json_only:
+            filename = f"medium_{medium_id}.pdf"
+            filepath = self.output_dir / filename
+            if filepath.exists():
+                logger.debug(f"PDF {filename} already exists")
+                pdf_success = True
+                self.skipped_count += 1
             else:
-                logger.debug(f"No PDF found for medium {medium_id}")
+                # Get PDF URL from the medium page
+                pdf_url = await self.get_pdf_url_from_mediadive_page(medium_url)
+                
+                if pdf_url:
+                    # Download the PDF
+                    pdf_success = await self.download_pdf(pdf_url, medium_id)
+                else:
+                    logger.debug(f"No PDF found for medium {medium_id}")
         
         # Download the molecular composition JSON
         json_success = await self.download_mediadive_composition_json(medium_url)
@@ -327,7 +328,11 @@ class MediaPDFDownloader:
     async def process_url(self, url: str) -> bool:
         """Process a single URL (either direct PDF or MediaDive URL)."""
         if self.is_direct_pdf_url(url):
-            return await self.download_direct_pdf(url)
+            if not self.json_only:
+                return await self.download_direct_pdf(url)
+            else:
+                logger.debug(f"Skipping direct PDF URL in JSON-only mode: {url}")
+                return False
         else:
             return await self.download_from_mediadive_url(url)
     
@@ -378,7 +383,7 @@ class MediaPDFDownloader:
 
 async def main():
     """Main function to download media PDFs."""
-    url_file = "growth_media_urls__mediadive_dsmz.txt"
+    url_file = "growth_media_urls.txt"
     
     if not Path(url_file).exists():
         logger.error(f"URL file not found: {url_file}")

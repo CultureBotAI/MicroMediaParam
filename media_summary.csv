@@ -1,0 +1,6 @@
+medium_id,medium_name,description,ph,ph_confidence,salinity_percent,salinity_confidence,ionic_strength,total_dissolved_solids,compounds_recognized,compounds_estimated,total_coverage
+1,LB Medium (Luria-Bertani),Standard rich medium for bacterial culture,5.65,low,0.012,high,0.094444,25.0,0.0,66.7,66.7
+5,Nutrient Broth,Basic medium for cultivation of non-fastidious organisms,5.8,low,0.0125,high,0.097778,16.0,0.0,100.0,100.0
+4,Marine Broth 2216,Medium for cultivation of marine bacteria,5.54,low,0.0462,high,0.425998,37.2,0.0,100.0,100.0
+3,TSB (Tryptic Soy Broth),General purpose medium for cultivation of bacteria,5.57,low,0.0101,high,0.078409,30.0,20.0,60.0,80.0
+2,M9 Minimal Medium,Defined minimal medium for E. coli,5.25,low,0.0113,high,0.087372,15.78,14.3,85.7,100.0
