@@ -35,47 +35,59 @@ pip install -e ".[dev]"
 
 ```bash
 # Process hydrated compounds and create knowledge graph mappings
-python analyze_hydrated_compounds.py
+python src/analysis/analyze_hydrated_compounds.py
 
 # Calculate molecular weights for all compounds
-python calculate_molecular_weights.py
+python src/quality/calculate_molecular_weights.py
 
 # Add ChEBI labels and formulas
-python add_chebi_labels.py
-python add_chebi_formulas.py
+python src/mapping/add_chebi_labels.py
+python src/mapping/add_chebi_formulas.py
 
 # Fix any mapping inconsistencies
-python fix_mapping_issues.py
+python src/quality/fix_mapping_issues.py
 ```
 
 ## Core Scripts
 
-### Chemical Analysis
+### Chemical Analysis (`src/analysis/`)
 - **`analyze_hydrated_compounds.py`**: Analyzes hydration patterns across all chemical compounds
 - **`analyze_hydrated_ingredient_mappings.py`**: Specifically analyzes ingredient-level hydration mappings
 - **`extract_non_chebi_compounds.py`**: Identifies compounds without ChEBI mappings for manual review
+- **`analyze_extraction_quality.py`**: Quality assessment of compound extraction
+- **`analyze_missing_ingredients.py`**: Analysis of missing ingredient mappings
 
-### Hydration Processing  
+### Hydration Processing (`src/hydration/`)
 - **`normalize_hydration_enhanced.py`**: Enhanced hydration normalization with multiple pattern matching
 - **`fix_hydrated_compound_mappings.py`**: Fixes hydration parsing errors in compound mappings
 
-### Knowledge Graph Integration
+### Knowledge Graph Integration (`src/mapping/`)
 - **`apply_oak_chebi_mappings.py`**: Applies ChEBI mappings using OAK (Ontology Access Kit)
 - **`chebi_fuzzy_matcher.py`**: Fuzzy string matching for ChEBI compound resolution
 - **`add_chebi_labels.py`**: Adds human-readable ChEBI compound names (16,388 labels)
 - **`add_chebi_formulas.py`**: Adds standardized chemical formulas from ChEBI
+- **`add_missing_chebi_mappings.py`**: Adds missing ChEBI mappings to dataset
+- **`apply_fuzzy_mappings.py`**: Applies fuzzy string matching for compound resolution
+- **`apply_hydrate_mappings.py`**: Maps hydrated compound forms to base compounds
 
-### Quality Control
+### Quality Control (`src/quality/`)
 - **`calculate_molecular_weights.py`**: Calculates accurate molecular weights replacing default 100.0 values
 - **`fix_mapping_issues.py`**: Fixes concentration notation and incorrect mappings
 - **`fix_utf8_symbols.py`**: Converts UTF-8 chemical symbols to ASCII for compatibility
 - **`fix_remaining_mismatches.py`**: Resolves final ChEBI ID inconsistencies
 - **`fix_znso4_mismatches.py`**: Specific fixes for zinc sulfate mapping discrepancies
+- **`check_improved_quality.py`**: Quality validation and improvement checking
 
-### Analysis Tools
+### Analysis Tools (`src/tools/`)
 - **`analyze_column_redundancy.py`**: Analyzes data column redundancy and purpose
-- **`test_direct_api.py`**: Tests direct API access for chemical databases
-- **`test_pubchem_quick.py`**: Quick PubChem API validation tests
+- **`test_properties.py`**: Tests chemical property calculations
+- **`clean_base_compounds.py`**: Cleans and standardizes base compound names
+- **`comprehensive_ingredient_extractor.py`**: Advanced ingredient extraction tool
+
+### Legacy Scripts (`src/attic/`)
+- Contains 35+ older versions and experimental scripts used during development
+- Includes previous iterations of hydration fixes, data cleaning, and extraction tools
+- Preserved for reference and potential future use
 
 ## Data Pipeline Architecture
 
@@ -201,16 +213,20 @@ MicroMediaParam/
 ├── requirements.txt                    # Python dependencies  
 ├── CLAUDE.md                          # Development guidelines
 ├── Makefile                           # Build automation
-├── analyze_hydrated_compounds.py      # Core hydration analysis
-├── calculate_molecular_weights.py     # Molecular weight computation
-├── add_chebi_labels.py               # ChEBI label integration
-├── fix_mapping_issues.py             # Quality control fixes
 ├── pipeline_output/
 │   └── kg_mapping/
 │       └── composition_kg_mapping_final.tsv  # Final dataset
-└── src/                              # Core pipeline modules
-    └── chem/
-        └── pubchem/                  # PubChem integration tools
+└── src/                              # Source code modules
+    ├── analysis/                     # Chemical analysis tools
+    ├── attic/                        # Legacy and experimental scripts  
+    ├── chem/                         # Chemical database integration
+    │   ├── iupac/                    # IUPAC chemical data processing
+    │   └── pubchem/                  # PubChem integration tools
+    ├── hydration/                    # Hydration processing tools
+    ├── mapping/                      # Knowledge graph mapping tools
+    ├── quality/                      # Quality control and validation
+    ├── scripts/                      # Main pipeline scripts
+    └── tools/                        # Utility and analysis tools
 ```
 
 ## Citation
