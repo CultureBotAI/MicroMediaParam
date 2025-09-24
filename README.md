@@ -9,6 +9,7 @@ A comprehensive chemical compound knowledge graph mapping pipeline for microbial
 - **Molecular Weight Calculation**: Computes accurate molecular weights for both anhydrous and hydrated forms
 - **Chemical Formula Standardization**: Converts chemical names to standardized formulas
 - **Fuzzy Matching**: Handles chemical naming variations and synonyms
+- **Solution Expansion**: Expands DSMZ solution references (solution:241, etc.) into individual chemical components
 - **Quality Assurance**: Comprehensive validation and error detection
 
 ## Dataset
@@ -46,6 +47,9 @@ python src/mapping/add_chebi_formulas.py
 
 # Fix any mapping inconsistencies
 python src/quality/fix_mapping_issues.py
+
+# Expand DSMZ solution references into individual chemical components
+python src/tools/complete_solution_expansion.py --input composition_kg_mapping_final.tsv --output composition_kg_mapping_expanded.tsv
 ```
 
 ## Core Scripts
@@ -84,6 +88,13 @@ python src/quality/fix_mapping_issues.py
 - **`clean_base_compounds.py`**: Cleans and standardizes base compound names
 - **`comprehensive_ingredient_extractor.py`**: Advanced ingredient extraction tool
 
+### Solution Expansion Tools (`src/tools/`)
+- **`download_dsmz_solutions.py`**: Downloads DSMZ solution PDFs and extracts compositions
+- **`enhanced_solution_parser.py`**: Advanced parser for chemical components from solution PDFs
+- **`expand_solution_mappings.py`**: Expands solution references into constituent chemical mappings
+- **`process_dsmz_solutions.py`**: Complete workflow for DSMZ solution processing
+- **`complete_solution_expansion.py`**: End-to-end solution expansion with analysis
+
 ### Legacy Scripts (`src/attic/`)
 - Contains 35+ older versions and experimental scripts used during development
 - Includes previous iterations of hydration fixes, data cleaning, and extraction tools
@@ -107,6 +118,12 @@ python src/quality/fix_mapping_issues.py
 2. **Formula Standardization**: Converts to standardized chemical formulas
 3. **Hydration State**: Tracks water molecules in hydrated compounds
 4. **Quality Metrics**: Confidence scores and parsing method documentation
+
+### Solution Expansion
+1. **PDF Download**: Downloads DSMZ solution PDFs from MediaDive REST API
+2. **Component Extraction**: Parses chemical components from solution specifications
+3. **Mapping Integration**: Expands solution references into individual chemical entries
+4. **Concentration Scaling**: Adjusts component concentrations based on solution usage
 
 ## Output Data Structure
 
