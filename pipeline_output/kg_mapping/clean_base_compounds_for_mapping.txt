@@ -1,0 +1,424 @@
+(NH4)2SO4*FeSO4*,
+(NH4)2SO4FeSO4
+(neutralized), vitamins and sucrose from sterile stock solutions.
+(using a syringe) 10ml NaHCO3/ 90ml medium and 0.5ml sterile vitamin solution to
+*For brackish organisms, use 15 g of NaCl instead of 30 g
+*Tryptone
++ 0.02 % Yeast extract
+- [ccap_E26_Biotin.md]
+- [ccap_E26_Biotin_ANT.md]
+.K2HPO4
+.MgSO4
+0.01% NPA
+0.01% RPA
+0.01g d‐Biotin
+0.02g CuSO4
+0.05g FeSO4
+0.1 M Tris/HCl buffer pH 7.5
+0.1% Resazurin
+0.1M Tris/HCl at pH 7.5
+0.1M Tris/HCl buffer pH 7.5
+0.1g p‐aminobenzoic acid
+0.2g ZnSO4
+0.3 mM K2HPO4
+0.5% MgSO4 solution
+1 M NaHCO3
+1) 0.5g / litre yeast extract and
+1. EDTA
+1.00 g/l glucose at 28°C until stationary phase is reached
+10% NaHCO3 (medium is turning from yellow to pink).
+10% cysteine
+10% glucose
+1076a. SP4 MEDIUM WITH GLUCOSE
+1087. MANNITOL-YEAST EXTRACT-PEPTONE
+1190: FERROUS SULFATE/YEAST EXTRACT MEDIUM
+1261. ISP 2 MEDIUM WITH 10% NACL
+1425. SSE/HD 1:10 MEDIUM
+1471. PEPTONE BROTH
+1472. MODIFIED TRYPTONE SOYA BROTH
+1480. MODIFIED TRYPTONE SOYA BROTH
+1484. Glycerol-Yeast extract-Peptone Medium
+1489. TSB-GLUCOSE MEDIUM
+1535. MEDIUM D
+1682. Yeast nitrogen base glucose
+170. YEAST EXTRACT - SKIM MILK MEDIUM
+1M MgCl2
+1M Tris-HCl
+2% FeSO4
+2) 0.5g / litre yeast extract and
+2) Preparation of the “f/2” Trace Metal Working Stock Solution
+2. FeSO4
+20 mM MgSO4
+20 mM MgSO4:
+20% Glucose
+20mM MgSO4
+220a. REACTIVATION WITH TRYPTONE SOYA BROTH
+24264, DSM 24313, DSM 24197 increase the NaCl concentration to 100.0 g/L.
+3) Preparation of the Vitamin Working Stock Solution
+3. ZnSO4
+30 mM CaCl2:
+30mM CaCl2
+39. PFENNIG'S MEDIUM I WITH YEAST EXTRACT
+457c. MEDIUM WITH CHLOROACRYLIC ACID
+459. SUCROSE-PEPTONE-MEDIUM
+463a. EDTA-MEDIUM
+473. MEDIUM WITH EDTA AS CARBON SOURCE
+474. MEDIUM WITH POLYHYDROXYBUTYRIC ACID
+48: TRYPTONE THIOGLYCOLATE MEDIUM
+4: Neutral B12 solution
+5 mM CaCl2
+525a: METHANOHALOPHILUS (MG+NaCl) MEDIUM
+545a. DILUTED TRYPTONE SOYA BROTH
+578. TRYPTONE-YEAST EXTRACT MEDIUM
+5g / litre glucose
+790. PEPTONE-YEAST MEDIUM with MgSO4
+8.0 with a sterile anoxic stock solution of Na2CO3
+82. BHI-GLUCOSE MEDIUM
+924a: METHANOFOLLIS MB MEDIUM
+924b: METHANOSARCINA MB MEDIUM
+988. YEAST-PEPTONE-SUCCINATE MEDIUM
+993c. MODIFIED ISP5 MEDIUM WITH SODIUM CHLORIDE
+Acetate or capronate solution
+AlCl3
+Allochromatium
+Alternatively
+Artificial Seawater suppl. with 50 g/I NaCl1)
+BaCl2
+Bacto Proteose Peptone
+Bacto Yeast Extract
+Bacto Yeast extract
+Bacto yeast extract
+Boil medium under CO2 until the resazurin indicator changes from pink to colourless.
+Branched
+CCAP
+CII
+Ca2Cl
+CaC03
+CaCL2
+CaCl
+CaCl2
+CaCl2 *
+CaCl2 1.5%
+CaCl2 solution
+CaCl2 x 2 H20
+CaCl2 x H20
+CaCl2…………………….0.5 g
+CaSO4
+Casein acids hydrolysate
+Casein digest (Casitone, cat. no. 225930) *
+Casein hydrolysate
+Casein hydrolysate acid
+Casein peptone
+Casein peptone, tryptic digest
+Casein peptone, tryptic digested
+Casitone
+CeCl3
+Charcoal for medical application
+Co(NO3)2
+CoCL2
+CoCl2
+CoSO4
+Combine
+Cresol red solution
+CuCl2
+CuSO2
+CuSO4
+CuSO4……………………0.079 g
+CuSo4
+Cysteine and Na2S solutions:
+D-fructose as substrate.
+DSM 104091 may be grown in the presence of 0.5% glucose instead of cellulose.
+DSM 16139 and DSM 16140 have been grown in medium containing 45 g/l NaCl.
+Dithiothreitol, 100 mM solution
+EDTA
+EDTA Na2
+EDTA-Na2
+EDTA-iron
+EDTA.Na2
+EDTA………………………………0.5 mg
+Enzymatic casein hydrolysate
+Enzymatic digest of casein
+Enzymatic hydrolysate of casein
+Fe-NH4-citrate
+Fe-NH4EDTA
+Fe3Cl
+FeCL2
+FeCL3
+FeCl2
+FeCl3
+FeSO2
+FeSO4
+FeSO4 solution
+FeSO4 solution see below
+FeSO4 x 7 H20
+FeSO4(NH4)2
+Fe‐NH4‐citrate
+For Allochromatium phaeobacterium DSM 19781 reduce the amount of NaCl to 10.0 g/l
+Fresh yeast extract
+Fructose 0.480 g
+GYS
+GYSW
+Glucose 0.480 g
+Glucose 10%
+Glucose 3g/l.
+Glucose minerals salts medium
+Glucose or Mannitol
+Growth with thiosulfate
+H3BO2
+HALOACTINOMYCES
+III
+IRD
+Increase
+Increase the NH4Cl to 0.68 g/l
+It is strongly suggested that Bacto peptone (BD 212750) and Bacto yeast extract (BD
+K2HPO4
+K2HPO4 *
+K2HPO4………………….0.75 g
+KCl………………………………....0.5 g
+KH2PO4
+KH2PO4, 1.5 g and K2HPO4, 0.5 g.
+L-cysteine HCl from sterile stock solutions.
+LMG
+LaCl3
+MC (Modified Chang's Serum­Casein­Glucose­Yeast
+METHANOFOLLIS
+METHANOSARCINA
+MODIFIED
+MSC
+Meat peptone
+Mg(SO4)
+Mg-citrate
+MgCL2
+MgCl
+MgCl2
+MgCl2 *
+MgCl2 solution before pouring the plates.
+MgCl2 x 6H20
+MgCl2……………………2.0 g
+MgSO
+MgSO2
+MgSO4
+MgSO4 0.50
+MgSO4 as sterile solutions
+MgSO4 solution
+MgSO4 to 15.0 g)
+MgSO4…………………..3.5 g
+MgSo4
+MnCl2
+MnSO4
+N-Z amine A
+NH4Cl -
+NH4MoO4
+NH4SO4
+NTA
+NZ Case (Wako pure chemicals, Japan)=Peptone from Casein 3.000
+NZ Case (Wako pure chemicals, Japan)=Peptone from Caseine 3.000
+Na Acetate
+Na acetate
+Na-EDTA
+Na-malate or –acetate
+Na-thiosulfate, 5% w/v solution
+Na2 x EDTA
+Na2-EDTA
+Na2B4O7
+Na2CO3 anhydrous
+Na2CO3, and NaHCO3 using anaerobic conditions, under nitrogen. If the medium has been
+Na2CO3, if necessary.
+Na2CO3…………………………...0.02 g
+Na2EDTA
+Na2H2PO4
+Na2HAsO4
+Na2HPO4
+Na2Mo4
+Na2MoO4
+Na2MoO7O4
+Na2MoSO4
+Na2O4W
+Na2S
+Na2S2O3
+Na2S2O3 x 5 H20 and NaHCO3 in serum bottles and seal the serum tubes with butyl
+Na2SO4
+Na2Se3
+Na2SeO3
+Na2SeO4
+Na2SiO3
+Na2WO4
+Na2WoO4
+Na2‐EDTA
+Na2‐EDTA *
+NaCH3COO
+NaCl 100 - 150.00
+NaCl 20-25 %
+NaCl 5%
+NaCl……………………………….25.0 g
+NaH2PO4
+NaHCO3, 5% w/v solution
+NaMoO4
+NaNH4HPO4
+NaS2O3
+NaSiO3
+NaVO3
+NaWO4
+NdCl3
+Ni2SO4
+NiCL2
+NiCl2
+NiSO4
+OTEB is a complex peptone-yeast extract medium containing volatile fatty acids and serum for a
+Or "Ultramarine" Synthetica sea salts*
+Or "Ultramarine" Synthetica sea salts**
+Pancreatic Digest of Casein
+Pancreatic digest of casein
+Peptone bacteriological
+Peptone from Casein
+Peptone from casein
+Peptone from caseine
+Peptone from meat
+Peptone from soy meal
+Peptone from soybean
+Peptone from soybeans
+Peptone from soymeal
+Peptone protease
+Peptone, casein digest
+Primary Stock Solution
+Proteose Peptone
+Proteose Peptone #2
+Proteose Peptone BD
+Proteose Peptone No. 3
+Proteose Peptone n°3
+Proteose peptone
+Proteose peptone No 2
+Proteose peptone No. 3
+Proteose peptone Nr. 3
+Proteose peptone no. 3
+Proteose peptone no.3
+Proteose tryptone
+RbCl
+Reduce the MgSO4 to 1.00 g/l
+Reduce the MgSO4 to 1.5 g/l
+Rehydrate and grow lyophilized cells from the ampoule in liquid tryptone soya broth (see
+Resazurin 0.025%
+Riboflavin solution
+SAF
+SIGMA
+SnCl2
+Sodium carbonate solution
+Solidify
+Sorbit or D-Glucose
+SrCl2
+Substitute
+Substitute 1.0 g/l MgSO4 for the MgCl2
+The original medium description specifies polypeptone, which appears to be no longer
+The vitamin solution, trace element solution, Se/W solution, cysteine, glucose, Na2S and
+Thiamine-HCl
+Thiamine-HCl-
+To medium 514 increase the Bacto peptone concentration to 10 g/l, the Bacto yeast
+Tri-Na citrate
+Tris-HCl buffer, 0.1 M, pH 7.5
+Tris/HCl-buffer 10mM, pH 7.8
+Trypt. Peptone
+Trypticase Peptone
+Trypticase peptone
+Tryptone Peptone
+Tryptone Soy Broth
+Tryptone peptone
+Use medium 480 without yeast extract, sodium acetate and NaHCO3.
+Use medium 607 with modification peptone, yeast extract and glucose in triple
+Use medium 711 with 1g/l yeast extract, without acetate, and with 5 g/l fructose as the
+Use medium 756 with 2 g/l NaNO2, but use 0.15 g/l yeast extract, 0.15 g/l peptone, and
+VOSO4
+VoSO4
+WITH
+WITH CYANURIC ACID
+WITH CYSTEINE
+WITH MODIFIED NACL CONCENTRATION
+WITH NaCl
+WITH PYRROLIC ACID
+Waris-H Reduced + Soil Extract
+We recommend that liquid and solid media be made by autoclaving the Na2CO3
+XCF
+Yeast extract Oxoid
+Yeast extract solution
+Yeast extract, 10% w/v solution
+Yeast extract, dehydrated
+ZnClSO4
+ZnSO4
+ZnSO4…………………….0.222 g
+amount of yeast extract to 1 g/l.
+amount of yeast extract to 2.00 g/l.
+amounts of Na2S, cellulobiose and yeast extract from sterile, anaerobic stock
+amounts of Na2S, vitamin solution, Selenite-tungstate solution and glucose from
+and MgCl2 6-hydrate from sterile stock solutions
+and NaHCO3 in serum bottles and seal the serum tubes with butyl rubber stoppers.
+and NaHCO3 using anaerobic conditions, under nitrogen. If the medium has been boiled
+and glucose from sterile, anaerobic stock solutions
+and increase the amount of NH4Cl to 0.64 g/l.
+and the glucose or N-acetylglucosamine (if used as substrate) from sterile stock solution
+anoxic stock solution of 5% (w/v) Na2CO3, if necessary.
+autoclaving
+autoclaving 1.00 g/l yeast extract and 2.50 g/l Na-L-Lactate from sterile anoxic stock
+beginning
+biotin or 1.0 g/l of yeast extract.
+calcium chloride, glucose, vitamins, cysteine and sulfide from sterile anoxic stock solutions
+chloride, calcium chloride, vitamins, glucose and sulfide from sterile anoxic stock solutions
+chloride, serine, vitamins, cysteine, and sulfide from sterile anoxic stock solutions
+chloride, trace elements, yeast extract, pyruvate, arsenate, vitamins and sulfide from
+citrate
+concentration
+containing
+cultures
+di- or trisodium salt
+dispensing
+elements, yeast extract, formate, pyruvate, thiosulfate, vitamins and sulfide from sterile
+elements, yeast extract, lactate, sulfite, vitamins, and sulfide from sterile anoxic stock
+extract
+extract, vitamins, cysteine and ferric iron hydroxide sludge. Suspend pellet of ferric iron
+filtration
+filtration), trimethylamine, cysteine and sulfide from sterile anoxic stock solutions
+filtration. Increase amount of yeast extract to 2.00 g/l.
+g/l D-glucose from sterile anoxic stock solutions.
+g/l yeast extract.
+g/l yeast extract; anaerobic
+g/l), NaHCO3 solution
+glucose, maltose, cellobiose, starch, cysteine and sulfide from sterile anoxic stock
+hydrogenphosphates, creatinine, vitamins, cysteine and sulfide from sterile anoxic stock
+in one medium, arginine can inhibit the growth of some glucose utilizers (unknown
+increase
+liquid
+magnesium sulfate, calcium chloride, yeast extract and glucose from sterile stock
+maintenance
+medium to 7.6 with a sterile 5% (w/v) Na2CO3 solution.
+medium to 7.8 using a sterile anoxic stock solution of 5% (w/v) Na2CO3.
+methanol
+of yeast extract to 2.00 g/l.
+pancreatic digest of casein
+peptone (BD BBL) as substrates.
+periodically with sterile yeast extract solution
+precipitate
+reduce amount of yeast extract to 0.10 g/l.
+resazurin and cysteine.
+solidified
+solifidied
+solution (see medium 503), 2.50 g/l Na-pyruvate and 0.50 g/l yeast extract from anoxic
+solution of Na2CO3
+sterile stock solutions the CaCl2, MgCl2, KNO3, tryptone, yeast extract, vitamins and
+sterilised stock solution and the NaHCO3, Na2S, Na2S2O3 from sterile
+sterilised under N2), histidine, yeast extract, and Na2S from anaerobic, sterile
+sucrose. The CaCl2, MgCl2, KNO3, tryptone, yeast extract, and sucrose stock solutions
+supplied the information that the strain grows better on a peptone originally available in
+the NaCl.
+the surface of agarized medium 67.
+thiosulfate, yeast extract, Tryptone, Casamino acids and sulfide from sterile anoxic stock
+through
+to 6.8-7.0 with a sterile anoxic stock solution of Na2CO3
+to yellow. For stock cultures, 5 g l-1 CaCO3 (will stay as a precipitate) or 4.8 g l-1 HEPES
+trace elements, glycerol, vitamins, and sulfide from a sterile anoxic stock solution
+under 100% N2 gas atmosphere and carbonate from a sterile anoxic stock solution
+under 80% N2 and 20% CO2 gas atmosphere and yeast extract, vitamins and sulfide from
+under N2), sucrose, yeast extract, and Na2S from anaerobic, sterile stock
+with 50 g/l NaCl
+without glucose
+years. Trypsin or EDTA are never used, as the tick cells do not like them.
+yeast extract as substrates.
+yeast extract to 1.00 g/l.
+yeast extract. When growth has started, feed again same amount of propanol.

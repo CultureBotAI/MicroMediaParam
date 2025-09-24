@@ -1,0 +1,28 @@
+medium_id	original	mapped	value	concentration	unit	mmol_l	optional	source	base_compound	base_formula	hydration_number	hydrate_formula	base_chebi_id	base_molecular_weight	water_molecular_weight	hydrated_molecular_weight	hydration_confidence	hydration_parsing_method	corrected_mmol_l
+1	tryptone	CAS-RN:84843-69-6	10.0		g/L			json	tryptone	tryptone	0	tryptone		100.0	0.0	100.0	high	no_hydration	100.000000
+1	yeast extract	CAS-RN:8013-01-2	5.0		g/L			json	yeast extract	yeastextract	0	yeastextract		100.0	0.0	100.0	high	no_hydration	50.000000
+1	sodium chloride	solution:3145	10.0		g/L			json	sodium chloride	sodiumchloride	0	sodiumchloride		100.0	0.0	100.0	high	no_hydration	100.000000
+5	peptone	CAS-RN:73049-73-7	5.0		g/L			json	peptone	peptone	0	peptone		100.0	0.0	100.0	high	no_hydration	50.000000
+5	beef extract	ingredient:85	3.0		g/L			json	beef extract	beefextract	0	beefextract		100.0	0.0	100.0	high	no_hydration	30.000000
+5	sodium chloride	solution:3145	8.0		g/L		false	json	sodium chloride	sodiumchloride	0	sodiumchloride		100.0	0.0	100.0	high	no_hydration	80.000000
+4	peptone	CAS-RN:73049-73-7	5.0		g/L			json	peptone	peptone	0	peptone		100.0	0.0	100.0	high	no_hydration	50.000000
+4	yeast extract	CAS-RN:8013-01-2	1.0		g/L			json	yeast extract	yeastextract	0	yeastextract		100.0	0.0	100.0	high	no_hydration	10.000000
+4	ferric citrate	CHEBI:31605	0.1		g/L			json	ferric citrate	ferriccitrate	0	ferriccitrate		100.0	0.0	100.0	high	no_hydration	1.000000
+4	sodium chloride	solution:3145	19.45		g/L			json	sodium chloride	sodiumchloride	0	sodiumchloride		100.0	0.0	100.0	high	no_hydration	194.500000
+4	magnesium chloride	CHEBI:86345	5.9		g/L			json	magnesium chloride	magnesiumchloride	0	magnesiumchloride		100.0	0.0	100.0	high	no_hydration	59.000000
+4	magnesium sulfate	CHEBI:32599	3.24		g/L			json	magnesium sulfate	magnesiumsulfate	0	magnesiumsulfate		100.0	0.0	100.0	high	no_hydration	32.400000
+4	calcium chloride	CHEBI:86158	1.8		g/L			json	calcium chloride	calciumchloride	0	calciumchloride		100.0	0.0	100.0	high	no_hydration	18.000000
+4	potassium chloride	CHEBI:32588	0.55		g/L			json	potassium chloride	potassiumchloride	0	potassiumchloride		100.0	0.0	100.0	high	no_hydration	5.500000
+4	sodium bicarbonate	CAS-RN:144-55-8	0.16		g/L			json	sodium bicarbonate	sodiumbicarbonate	0	sodiumbicarbonate		100.0	0.0	100.0	high	no_hydration	1.600000
+3	tryptone	CAS-RN:84843-69-6	17.0		g/L			json	tryptone	tryptone	0	tryptone		100.0	0.0	100.0	high	no_hydration	170.000000
+3	soy peptone	CAS-RN:91079-46-8	3.0		g/L			json	soy peptone	soypeptone	0	soypeptone		100.0	0.0	100.0	high	no_hydration	30.000000
+3	sodium chloride	solution:3145	5.0		g/L			json	sodium chloride	sodiumchloride	0	sodiumchloride		100.0	0.0	100.0	high	no_hydration	50.000000
+3	dipotassium hydrogen phosphate	CHEBI:131527	2.5		g/L			json	dipotassium hydrogen phosphate	dipotassiumhydrogenphosphate	0	dipotassiumhydrogenphosphate		100.0	0.0	100.0	high	no_hydration	25.000000
+3	glucose	CHEBI:42758	2.5		g/L			json	glucose	glucose	0	glucose		180.16	0.0	180.16	high	no_hydration	13.876554
+2	glucose	CHEBI:42758	4.0		g/L			json	glucose	glucose	0	glucose		180.16	0.0	180.16	high	no_hydration	22.202487
+2	sodium phosphate dibasic	CHEBI:37583	6.78		g/L			json	sodium phosphate dibasic	sodiumphosphatedibasic	0	sodiumphosphatedibasic		100.0	0.0	100.0	high	no_hydration	67.800000
+2	potassium phosphate monobasic	CHEBI:63036	3.0		g/L			json	potassium phosphate monobasic	potassiumphosphatemonobasic	0	potassiumphosphatemonobasic		100.0	0.0	100.0	high	no_hydration	30.000000
+2	sodium chloride	solution:3145	0.5		g/L			json	sodium chloride	sodiumchloride	0	sodiumchloride		100.0	0.0	100.0	high	no_hydration	5.000000
+2	ammonium chloride	CHEBI:31206	1.0		g/L			json	ammonium chloride	ammoniumchloride	0	ammoniumchloride		100.0	0.0	100.0	high	no_hydration	10.000000
+2	magnesium sulfate	CHEBI:32599	0.493		g/L			json	magnesium sulfate	magnesiumsulfate	0	magnesiumsulfate		100.0	0.0	100.0	high	no_hydration	4.930000
+2	calcium chloride	CHEBI:86158	0.011		g/L			json	calcium chloride	calciumchloride	0	calciumchloride		100.0	0.0	100.0	high	no_hydration	0.110000

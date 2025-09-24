@@ -1,0 +1,72 @@
+[
+  {
+    "medium_id": "1",
+    "medium_name": "LB Medium (Luria-Bertani)",
+    "description": "Standard rich medium for bacterial culture",
+    "ph": 5.65,
+    "ph_confidence": "low",
+    "salinity_percent": 0.012,
+    "salinity_confidence": "high",
+    "ionic_strength": 0.094444,
+    "total_dissolved_solids": 25.0,
+    "compounds_recognized": 0.0,
+    "compounds_estimated": 66.7,
+    "total_coverage": 66.7
+  },
+  {
+    "medium_id": "5",
+    "medium_name": "Nutrient Broth",
+    "description": "Basic medium for cultivation of non-fastidious organisms",
+    "ph": 5.8,
+    "ph_confidence": "low",
+    "salinity_percent": 0.0125,
+    "salinity_confidence": "high",
+    "ionic_strength": 0.097778,
+    "total_dissolved_solids": 16.0,
+    "compounds_recognized": 0.0,
+    "compounds_estimated": 100.0,
+    "total_coverage": 100.0
+  },
+  {
+    "medium_id": "4",
+    "medium_name": "Marine Broth 2216",
+    "description": "Medium for cultivation of marine bacteria",
+    "ph": 5.54,
+    "ph_confidence": "low",
+    "salinity_percent": 0.0462,
+    "salinity_confidence": "high",
+    "ionic_strength": 0.425998,
+    "total_dissolved_solids": 37.2,
+    "compounds_recognized": 0.0,
+    "compounds_estimated": 100.0,
+    "total_coverage": 100.0
+  },
+  {
+    "medium_id": "3",
+    "medium_name": "TSB (Tryptic Soy Broth)",
+    "description": "General purpose medium for cultivation of bacteria",
+    "ph": 5.57,
+    "ph_confidence": "low",
+    "salinity_percent": 0.0101,
+    "salinity_confidence": "high",
+    "ionic_strength": 0.078409,
+    "total_dissolved_solids": 30.0,
+    "compounds_recognized": 20.0,
+    "compounds_estimated": 60.0,
+    "total_coverage": 80.0
+  },
+  {
+    "medium_id": "2",
+    "medium_name": "M9 Minimal Medium",
+    "description": "Defined minimal medium for E. coli",
+    "ph": 5.25,
+    "ph_confidence": "low",
+    "salinity_percent": 0.0113,
+    "salinity_confidence": "high",
+    "ionic_strength": 0.087372,
+    "total_dissolved_solids": 15.78,
+    "compounds_recognized": 14.3,
+    "compounds_estimated": 85.7,
+    "total_coverage": 100.0
+  }
+]

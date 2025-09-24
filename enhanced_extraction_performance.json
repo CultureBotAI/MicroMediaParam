@@ -1,0 +1,74 @@
+{
+  "evaluation_summary": {
+    "sample_size": 200,
+    "success_rate_percent": 100.0,
+    "avg_ingredients_per_file": 11.6,
+    "avg_instruction_length": 587.1161616161617,
+    "files_with_instructions_percent": 99.0
+  },
+  "quality_distribution": {
+    "medium": 57,
+    "high": 89,
+    "very_low": 25,
+    "low": 29
+  },
+  "source_performance": {
+    "ccap": {
+      "files": 9,
+      "ingredients": 48,
+      "avg_ingredients": 5.333333333333333
+    },
+    "dsmz": {
+      "files": 191,
+      "ingredients": 2272,
+      "avg_ingredients": 11.895287958115183
+    }
+  },
+  "extraction_methods": {
+    "list": 1171,
+    "tabular": 1128,
+    "inline": 21
+  },
+  "sample_results": [
+    {
+      "file": "ccap_MDY_V.md",
+      "medium_name": "Ccap Mdy V",
+      "source": "ccap",
+      "ingredients": 7,
+      "has_instructions": true,
+      "instruction_length": 730
+    },
+    {
+      "file": "dsmz_1313.md",
+      "medium_name": "Solution A:",
+      "source": "dsmz",
+      "ingredients": 22,
+      "has_instructions": true,
+      "instruction_length": 258
+    },
+    {
+      "file": "dsmz_343.md",
+      "medium_name": "343: THERMOTOGA NEAPOLITANA MEDIUM",
+      "source": "dsmz",
+      "ingredients": 33,
+      "has_instructions": true,
+      "instruction_length": 702
+    },
+    {
+      "file": "dsmz_1227.md",
+      "medium_name": "Dsmz 1227",
+      "source": "dsmz",
+      "ingredients": 19,
+      "has_instructions": true,
+      "instruction_length": 400
+    },
+    {
+      "file": "dsmz_1304.md",
+      "medium_name": "1304: SULFURITALEA MEDIUM",
+      "source": "dsmz",
+      "ingredients": 9,
+      "has_instructions": true,
+      "instruction_length": 1744
+    }
+  ]
+}

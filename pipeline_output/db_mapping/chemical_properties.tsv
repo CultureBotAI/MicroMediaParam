@@ -1,0 +1,6 @@
+compound_name	molecular_weight	pka_values	charge_states	ion_charges	solubility_g_per_L	activity_coefficient	description
+citric_acid	100.00	3.13,4.76,6.40	1,0,-1,-2,-3		100.0000	1.00	citric acid
+glucose	180.16		0		909.0000	1.00	glucose
+glycine	100.00	2.34,9.60	1,0,-1,-2		200.0000	1.00	glycine
+potassium_phosphate	100.00	2.15,7.20,12.35	1,0,-1,-2,-3		100.0000	1.00	potassium phosphate
+sodium_chloride	58.44		0	Na+:1,Cl-:-1	360.0000	1.00	sodium chloride

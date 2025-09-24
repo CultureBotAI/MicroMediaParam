@@ -1,0 +1,1052 @@
+{
+  "summary": {
+    "dsmz": {
+      "total": 91,
+      "empty": 0,
+      "valid_compounds": 23,
+      "noise_compounds": 172
+    },
+    "ccap": {
+      "total": 9,
+      "empty": 0,
+      "valid_compounds": 0,
+      "noise_compounds": 158
+    }
+  },
+  "sample_size": 100,
+  "high_quality_files": [],
+  "detailed_results": [
+    {
+      "file": "dsmz_195c_composition.json",
+      "source": "dsmz",
+      "medium_name": "195c: DESULFOBACTER SP.",
+      "total_compounds": 6,
+      "valid_compounds": 0,
+      "noise_compounds": 5,
+      "compounds": [
+        {
+          "name": "least",
+          "concentration": 30.0,
+          "unit": "min",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "and",
+          "concentration": 2.0,
+          "unit": "g/l",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "make up to",
+          "concentration": 1000.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 3.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_1011c_composition.json",
+      "source": "dsmz",
+      "medium_name": "1011c: DESULFOTHERMUS MJ",
+      "total_compounds": 9,
+      "valid_compounds": 3,
+      "noise_compounds": 5,
+      "compounds": [
+        {
+          "name": "yeast extract. upon autoclaving add",
+          "concentration": 3.0,
+          "unit": "g/l",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "for",
+          "concentration": 3.0,
+          "unit": "hours",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "yeast extract and dithionite. upon autoclaving add",
+          "concentration": 10.0,
+          "unit": "g/l",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "first dissolve nitrilotriacetic acid and adjust ph to",
+          "concentration": 6.5,
+          "unit": "with",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "final to ph",
+          "concentration": 7.0,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "add",
+          "concentration": 1.0,
+          "unit": "N",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 3.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_1668_composition.json",
+      "source": "dsmz",
+      "medium_name": "CM",
+      "total_compounds": 4,
+      "valid_compounds": 0,
+      "noise_compounds": 3,
+      "compounds": [
+        {
+          "name": "for",
+          "concentration": 10.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "for",
+          "concentration": 10.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "mix",
+          "concentration": 10.0,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "dissolve",
+          "concentration": 0.1,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_325_composition.json",
+      "source": "dsmz",
+      "medium_name": "325: SYNTROPHOSPORA",
+      "total_compounds": 3,
+      "valid_compounds": 0,
+      "noise_compounds": 3,
+      "compounds": [
+        {
+          "name": "make up to",
+          "concentration": 1000.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_1464_composition.json",
+      "source": "dsmz",
+      "medium_name": "1464. CHITINIVIBRIO",
+      "total_compounds": 1,
+      "valid_compounds": 0,
+      "noise_compounds": 1,
+      "compounds": [
+        {
+          "name": "adjust ph to",
+          "concentration": 10.0,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_819_composition.json",
+      "source": "dsmz",
+      "medium_name": "819: SEDIMINISPIROCHAETA SMARAGDINAE",
+      "total_compounds": 4,
+      "valid_compounds": 1,
+      "noise_compounds": 2,
+      "compounds": [
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "first dissolve nitrilotriacetic acid and adjust ph to",
+          "concentration": 6.5,
+          "unit": "with",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "final to ph",
+          "concentration": 7.0,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_9_composition.json",
+      "source": "dsmz",
+      "medium_name": "Dsmz 9",
+      "total_compounds": 4,
+      "valid_compounds": 1,
+      "noise_compounds": 3,
+      "compounds": [
+        {
+          "name": "autoclave). adjust ph of medium to",
+          "concentration": 7.2,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "for dsm",
+          "concentration": 11116.0,
+          "unit": "reduce",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "calciumchloride dihydrate",
+          "concentration": 0.7,
+          "unit": "g",
+          "is_valid": true,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "incubate for up to",
+          "concentration": 3.0,
+          "unit": "weeks",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_86_composition.json",
+      "source": "dsmz",
+      "medium_name": "86. CASTENHOLZ",
+      "total_compounds": 1,
+      "valid_compounds": 0,
+      "noise_compounds": 1,
+      "compounds": [
+        {
+          "name": "adjust ph to",
+          "concentration": 8.2,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_450_composition.json",
+      "source": "dsmz",
+      "medium_name": "450. SUPPLEMENTED (ARGININE) M9",
+      "total_compounds": 1,
+      "valid_compounds": 0,
+      "noise_compounds": 0,
+      "compounds": [
+        {
+          "name": "to medium",
+          "concentration": 382.0,
+          "unit": "add",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_797_composition.json",
+      "source": "dsmz",
+      "medium_name": "797. MODIFIED CHOPPED MEAT",
+      "total_compounds": 4,
+      "valid_compounds": 0,
+      "noise_compounds": 1,
+      "compounds": [
+        {
+          "name": "naoh",
+          "concentration": 1.0,
+          "unit": "N",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "add sufficient distilled water to restore volume to",
+          "concentration": 1000.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "particles (use",
+          "concentration": 1.0,
+          "unit": "part",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "naoh",
+          "concentration": 1.0,
+          "unit": "N",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_339a_composition.json",
+      "source": "dsmz",
+      "medium_name": "H2O",
+      "total_compounds": 5,
+      "valid_compounds": 0,
+      "noise_compounds": 5,
+      "compounds": [
+        {
+          "name": "and add",
+          "concentration": 0.5,
+          "unit": "ml/l",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "autoclave. after autoclaving supplement medium with",
+          "concentration": 5.0,
+          "unit": "g/l",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "sterile anoxic stock solution sterilized by filtration. adjust ph of medium to",
+          "concentration": 6.8,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "ccap_PC_composition.json",
+      "source": "ccap",
+      "medium_name": "and freeze.",
+      "total_compounds": 17,
+      "valid_compounds": 0,
+      "noise_compounds": 13,
+      "compounds": [
+        {
+          "name": "g",
+          "concentration": 2.0,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 5.0,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 10.0,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 10.0,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "autoclave",
+          "concentration": 15.0,
+          "unit": "psi",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 0.36,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "autoclave",
+          "concentration": 15.0,
+          "unit": "psi",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ml",
+          "concentration": 1.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ml",
+          "concentration": 10.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "using",
+          "concentration": 1.0,
+          "unit": "litre",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "prescott",
+          "concentration": 1.0,
+          "unit": "Volume",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "chapter",
+          "concentration": 5.0,
+          "unit": "Experimental",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "reviewed",
+          "concentration": 17.0,
+          "unit": "th",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "nov",
+          "concentration": 5.0,
+          "unit": "Nov",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "scottish",
+          "concentration": 1.0,
+          "unit": "QA",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "tel",
+          "concentration": 559000.0,
+          "unit": "Fax",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_621_composition.json",
+      "source": "dsmz",
+      "medium_name": "KOH",
+      "total_compounds": 3,
+      "valid_compounds": 0,
+      "noise_compounds": 2,
+      "compounds": [
+        {
+          "name": "sterilize",
+          "concentration": 20.0,
+          "unit": "min",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "medium of",
+          "concentration": 6.0,
+          "unit": "N",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "dissolve nta first by neutralizing with koh, then add other salts. adjust ph to",
+          "concentration": 7.2,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_861_composition.json",
+      "source": "dsmz",
+      "medium_name": "861: DESULFOFRIGUS",
+      "total_compounds": 6,
+      "valid_compounds": 0,
+      "noise_compounds": 5,
+      "compounds": [
+        {
+          "name": "at least bottles of",
+          "concentration": 50.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "make up to",
+          "concentration": 1000.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "add",
+          "concentration": 1.0,
+          "unit": "N",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 3.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_76_composition.json",
+      "source": "dsmz",
+      "medium_name": "76: GOTTSCHALKIA",
+      "total_compounds": 3,
+      "valid_compounds": 0,
+      "noise_compounds": 3,
+      "compounds": [
+        {
+          "name": "make up to",
+          "concentration": 1000.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_597_composition.json",
+      "source": "dsmz",
+      "medium_name": "597: SALINIVIBRIO COSTICOLA SUBSP. VALLISMORTIS",
+      "total_compounds": 3,
+      "valid_compounds": 1,
+      "noise_compounds": 1,
+      "compounds": [
+        {
+          "name": "first dissolve nitrilotriacetic acid and adjust ph to",
+          "concentration": 6.5,
+          "unit": "with",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "final to ph",
+          "concentration": 7.0,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_446_composition.json",
+      "source": "dsmz",
+      "medium_name": "446.  MINERAL",
+      "total_compounds": 1,
+      "valid_compounds": 0,
+      "noise_compounds": 0,
+      "compounds": [
+        {
+          "name": "to medium",
+          "concentration": 442.0,
+          "unit": "add",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "ccap_E26_Biotin_composition.json",
+      "source": "ccap",
+      "medium_name": "E26\u00a0+\u00a0biotin",
+      "total_compounds": 24,
+      "valid_compounds": 0,
+      "noise_compounds": 12,
+      "compounds": [
+        {
+          "name": "this",
+          "concentration": 2.0,
+          "unit": "parts",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "k",
+          "concentration": 2.0,
+          "unit": "HPO",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "mgso",
+          "concentration": 4.7,
+          "unit": "H",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "distilled",
+          "concentration": 500.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ml",
+          "concentration": 50.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 0.1,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 0.01,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "g",
+          "concentration": 0.01,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ng",
+          "concentration": 100.0,
+          "unit": "ng",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "mg",
+          "concentration": 50.0,
+          "unit": "mg",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ng",
+          "concentration": 100.0,
+          "unit": "ng",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "ml",
+          "concentration": 500.0,
+          "unit": "ml",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "alternatively",
+          "concentration": 17.5,
+          "unit": "g",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "waterlife",
+          "concentration": 476.0,
+          "unit": "Bath",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "middlesex",
+          "concentration": 0.0,
+          "unit": "ED",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "oban",
+          "concentration": 1.0,
+          "unit": "QA",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "tel",
+          "concentration": 559000.0,
+          "unit": "Fax",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        },
+        {
+          "name": "invertebrates",
+          "concentration": 1.0,
+          "unit": "cm",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "when",
+          "concentration": 4.0,
+          "unit": "mm",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "distilled",
+          "concentration": 15.0,
+          "unit": "psi",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "supernatant",
+          "concentration": 1.0,
+          "unit": "filter",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "litre",
+          "concentration": 1.0,
+          "unit": "litre",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "oban",
+          "concentration": 1.0,
+          "unit": "QA",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "tel",
+          "concentration": 559000.0,
+          "unit": "Fax",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": false
+        }
+      ]
+    },
+    {
+      "file": "dsmz_1480_composition.json",
+      "source": "dsmz",
+      "medium_name": "Dsmz 1480",
+      "total_compounds": 1,
+      "valid_compounds": 0,
+      "noise_compounds": 0,
+      "compounds": [
+        {
+          "name": "the ph should be",
+          "concentration": 10.5,
+          "unit": "after",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        }
+      ]
+    },
+    {
+      "file": "dsmz_1236_composition.json",
+      "source": "dsmz",
+      "medium_name": "1236: SPOROLITUUS",
+      "total_compounds": 4,
+      "valid_compounds": 1,
+      "noise_compounds": 2,
+      "compounds": [
+        {
+          "name": "page",
+          "concentration": 1.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "first dissolve nitrilotriacetic acid and adjust ph to",
+          "concentration": 6.5,
+          "unit": "with",
+          "is_valid": true,
+          "is_noise": true,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "final to ph",
+          "concentration": 7.0,
+          "unit": "with",
+          "is_valid": false,
+          "is_noise": false,
+          "has_valid_concentration": true
+        },
+        {
+          "name": "page",
+          "concentration": 2.0,
+          "unit": "of",
+          "is_valid": false,
+          "is_noise": true,
+          "has_valid_concentration": true
+        }
+      ]
+    }
+  ]
+}
