@@ -207,18 +207,14 @@ db-mapping chemical-databases: $(CHEMICAL_PROPERTIES)
 	@echo "$(GREEN)✓ DB mapping completed: IUPAC/PubChem downloaded, ingredient → chemical properties$(NC)"
 
 # Download chemical data from IUPAC and PubChem sources and build properties database (maximize ingredients with pKa values)
-$(CHEMICAL_PROPERTIES): $(MEDIA_COMPOSITIONS_DIR)/.done
+$(CHEMICAL_PROPERTIES): $(HIGH_CONFIDENCE_MAPPINGS)
 	@echo "$(BLUE)DB Mapping: Building ingredient → chemical properties database...$(NC)"
 	@echo "$(YELLOW)Goal: Maximize ingredients with pKa and molecular properties$(NC)"
-	@echo "$(YELLOW)Phase 1: DOWNLOADING IUPAC chemical data (test compounds + processing)...$(NC)"
-	$(PYTHON) -m src.chem.iupac.pipeline --download-compounds "glucose,sodium chloride,glycine,citric acid,potassium phosphate" --data-dir $(IUPAC_DATA_DIR) || echo "$(YELLOW)IUPAC download/processing completed with warnings$(NC)"
-	@echo "$(YELLOW)Phase 2: DOWNLOADING PubChem chemical data (5 reference compounds)...$(NC)"
-	$(PYTHON) -m src.chem.pubchem.pipeline --download-compounds "glucose,sodium chloride,glycine,citric acid,potassium phosphate" --data-dir $(PUBCHEM_DATA_DIR) || echo "$(YELLOW)PubChem download/processing completed with warnings$(NC)"
-	@echo "$(YELLOW)Phase 3: Generating unified chemical properties database from downloaded data...$(NC)"
-	@if [ ! -f "$(CHEMICAL_PROPERTIES)" ]; then \
-		echo "Creating initial chemical_properties.tsv from IUPAC data..."; \
-		$(PYTHON) -c "import sys; sys.path.insert(0, 'src'); from chem.iupac.tsv_generator import ChemicalPropertiesTSVGenerator; from pathlib import Path; generator = ChemicalPropertiesTSVGenerator(); processed_file = Path('$(IUPAC_PROCESSED_DATA)'); output_file = Path('$(CHEMICAL_PROPERTIES)'); generator.generate_tsv_from_json(processed_file, output_file, merge_with_existing=True) if processed_file.exists() else print('No IUPAC processed data found')"; \
-	fi
+	@COMPOUND_COUNT=$$(tail -n +2 $(HIGH_CONFIDENCE_MAPPINGS) | cut -f2 | sort -u | wc -l | tr -d ' '); \
+	echo "$(YELLOW)Found $$COMPOUND_COUNT unique compounds from high-confidence mappings$(NC)"
+	@echo "$(YELLOW)Phase 1: DOWNLOADING PubChem chemical data for all compounds...$(NC)"
+	@echo "$(YELLOW)This may take 15-30 minutes depending on network speed and API rate limits$(NC)"
+	$(PYTHON) -m src.chem.pubchem.pipeline --from-mapping-file $(HIGH_CONFIDENCE_MAPPINGS) --data-dir $(PUBCHEM_DATA_DIR) --output-file $(CHEMICAL_PROPERTIES) || echo "$(YELLOW)PubChem download/processing completed with warnings$(NC)"
 	@echo "$(GREEN)✓ DB mapping database ready: $(CHEMICAL_PROPERTIES)$(NC)"
 
 # Stage 4: Initial KG Mapping - Knowledge Graph Mapping (ingredient → ChEBI/KEGG/PubChem IDs)
@@ -247,8 +243,8 @@ $(EXPANDED_MAPPING): $(COMPOSITION_MAPPING) | $(SOLUTION_EXPANSION_DIR)
 	@echo "$(BLUE)Solution Expansion: Expanding DSMZ solution: references...$(NC)"
 	@echo "$(YELLOW)Goal: Convert solution:241 → individual chemical components from DSMZ PDFs$(NC)"
 	cd $(SOLUTION_EXPANSION_DIR) && \
-	$(PYTHON) ../src/tools/complete_solution_expansion.py \
-		--input ../$(COMPOSITION_MAPPING) \
+	$(PYTHON) ../../src/tools/complete_solution_expansion.py \
+		--input ../../$(COMPOSITION_MAPPING) \
 		--output $(notdir $(EXPANDED_MAPPING))
 	mv $(SOLUTION_EXPANSION_DIR)/dsmz_solution_expansion_report.json $(SOLUTION_EXPANSION_REPORT)
 
@@ -265,7 +261,7 @@ normalize-hydration-early: $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_norm
 $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv: $(EXPANDED_MAPPING)
 	@echo "$(BLUE)🔥 EARLY Hydration Normalization: Fixing hydrate inconsistencies BEFORE advanced matching...$(NC)"
 	@echo "$(YELLOW)CRITICAL: This normalizes CaCl2 x 2 H2O & CaCl2 x 6 H2O → same base ChEBI but correct MW$(NC)"
-	$(PYTHON) normalize_hydration_enhanced.py --input-high $(EXPANDED_MAPPING) --output-suffix _hydrate_normalized
+	$(PYTHON) src/hydration/normalize_hydration_enhanced.py --input-high $(EXPANDED_MAPPING) --output-suffix _hydrate_normalized
 
 # Stage 7: EARLY Ingredient Enhancement - Convert ingredient: codes AFTER hydrate normalization
 .PHONY: enhance-ingredients-early
@@ -276,7 +272,7 @@ enhance-ingredients-early: $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_e
 $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_enhanced.tsv: $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv
 	@echo "$(BLUE)🔥 EARLY Ingredient Enhancement: Converting ingredient: codes using normalized compounds...$(NC)"
 	@echo "$(YELLOW)ADVANTAGE: Works with hydrate-corrected base compounds for better ChEBI matching$(NC)"
-	$(PYTHON) enhance_ingredient_matching.py --input-high $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv --output-suffix _ingredient_enhanced
+	$(PYTHON) src/mapping/enhance_ingredient_matching.py --input-high $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv --output-suffix _ingredient_enhanced
 	@mv $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized_ingredient_enhanced.tsv $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_enhanced.tsv
 
 # Stage 8: Enhanced KG Compound Matching - Uses normalized base compounds for better matching
@@ -301,15 +297,15 @@ $(UPDATED_COMPOSITION_MAPPING): $(UNACCOUNTED_MATCHES) $(KG_MAPPING_DIR)/composi
 	@echo "$(BLUE)KG OAK CHEBI Mapping: ingredient → ChEBI with ontology annotations...$(NC)"
 	@echo "$(YELLOW)Goal: Maximize ChEBI coverage using ontology-based matching$(NC)"
 	@echo "$(YELLOW)Extracting ingredients needing CHEBI mapping...$(NC)"
-	$(PYTHON) extract_non_chebi_compounds.py || echo "$(YELLOW)Using existing compound list$(NC)"
+	$(PYTHON) src/analysis/extract_non_chebi_compounds.py || echo "$(YELLOW)Using existing compound list$(NC)"
 	@if [ -f "$(COMPOUNDS_FOR_CHEBI)" ] && [ -s "$(COMPOUNDS_FOR_CHEBI)" ]; then \
 		echo "$(YELLOW)Running OAK CHEBI annotation on $$(wc -l < $(COMPOUNDS_FOR_CHEBI)) ingredients...$(NC)"; \
 		echo "$(YELLOW)This may take 5-10 minutes to build the CHEBI lexical index...$(NC)"; \
 		runoak -i sqlite:obo:chebi annotate --text-file $(COMPOUNDS_FOR_CHEBI) --output-type json --lexical-index-file $(CHEBI_LEXICAL_INDEX) --output $(OAK_CHEBI_ANNOTATIONS) || echo "$(YELLOW)OAK annotation completed with warnings$(NC)"; \
 		echo "$(YELLOW)Applying OAK CHEBI mappings...$(NC)"; \
-		$(PYTHON) apply_oak_chebi_mappings.py --annotations-file $(OAK_CHEBI_ANNOTATIONS) --compounds-file $(COMPOUNDS_FOR_CHEBI) --output-file $(UPDATED_COMPOSITION_MAPPING) || cp $(COMPOSITION_MAPPING) $(UPDATED_COMPOSITION_MAPPING); \
+		$(PYTHON) src/mapping/apply_oak_chebi_mappings.py --annotations-file $(OAK_CHEBI_ANNOTATIONS) --compounds-file $(COMPOUNDS_FOR_CHEBI) --output-file $(UPDATED_COMPOSITION_MAPPING) || cp $(COMPOSITION_MAPPING) $(UPDATED_COMPOSITION_MAPPING); \
 		echo "$(YELLOW)Fixing hydrated ingredient mappings...$(NC)"; \
-		$(PYTHON) fix_hydrated_compound_mappings.py || echo "$(YELLOW)Hydrated compound fixing completed with warnings$(NC)"; \
+		$(PYTHON) src/hydration/fix_hydrated_compound_mappings.py || echo "$(YELLOW)Hydrated compound fixing completed with warnings$(NC)"; \
 	else \
 		echo "$(YELLOW)No ingredients need CHEBI mapping, using original composition mapping$(NC)"; \
 		cp $(COMPOSITION_MAPPING) $(UPDATED_COMPOSITION_MAPPING); \
@@ -324,12 +320,12 @@ kg-merge-mappings merge-mappings: $(UNIFIED_MAPPINGS) $(HIGH_CONFIDENCE_MAPPINGS
 $(UNIFIED_MAPPINGS): $(UPDATED_COMPOSITION_MAPPING) $(UNACCOUNTED_MATCHES)
 	@echo "$(BLUE)KG Merge Mappings: Consolidating ingredient → ChEBI mappings...$(NC)"
 	@echo "$(YELLOW)Goal: Create unified high-quality ChEBI mappings$(NC)"
-	$(PYTHON) $(SCRIPTS_DIR)/merge_compound_mappings.py
+	$(PYTHON) $(SCRIPTS_DIR)/merge_compound_mappings.py --composition-file $(UPDATED_COMPOSITION_MAPPING) --matches-file $(UNACCOUNTED_MATCHES) --output $(UNIFIED_MAPPINGS)
 
 # Filter KG mappings by confidence level (high/low confidence ChEBI mappings)
 $(HIGH_CONFIDENCE_MAPPINGS) $(LOW_CONFIDENCE_MAPPINGS): $(UNIFIED_MAPPINGS)
 	@echo "$(BLUE)Filtering KG mappings by confidence level...$(NC)"
-	$(PYTHON) filter_high_confidence_mappings.py
+	$(PYTHON) src/mapping/filter_high_confidence_mappings.py --input $(UNIFIED_MAPPINGS) --output $(HIGH_CONFIDENCE_MAPPINGS) --low-confidence-output $(LOW_CONFIDENCE_MAPPINGS)
 
 # Stage 10: Property Calculation - Using enhanced mappings with hydration-corrected MW
 .PHONY: compute-properties
@@ -354,7 +350,7 @@ media-summary: $(MEDIA_SUMMARY)
 $(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_MAPPINGS)
 	@echo "$(BLUE)Creating comprehensive media summary with enhanced compound mappings...$(NC)"
 	@echo "$(YELLOW)ADVANTAGE: Summary includes hydrate-normalized + ingredient-enhanced data$(NC)"
-	$(PYTHON) create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_MAPPINGS) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
+	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_MAPPINGS) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
 
 # Chemical Database Management (IUPAC Data Processing)
 
@@ -438,14 +434,14 @@ generator.generate_tsv_from_json(processed_file, output_file, merge_with_existin
 .PHONY: iupac-full-pipeline
 iupac-full-pipeline: install $(IUPAC_DATA_DIR)
 	@echo "$(BLUE)Running complete IUPAC chemical data pipeline...$(NC)"
-	$(PYTHON) update_chemical_properties.py --full-update --data-dir $(IUPAC_DATA_DIR)
+	$(PYTHON) src/attic/update_chemical_properties.py --full-update --data-dir $(IUPAC_DATA_DIR)
 	@echo "$(GREEN)✓ Full IUPAC pipeline completed$(NC)"
 
 # Quick update chemical database from existing mappings
 .PHONY: iupac-update-from-mappings
 iupac-update-from-mappings: install
 	@echo "$(BLUE)Updating chemical database from existing compound mappings...$(NC)"
-	$(PYTHON) update_chemical_properties.py --update-from-mappings --data-dir $(IUPAC_DATA_DIR)
+	$(PYTHON) src/attic/update_chemical_properties.py --update-from-mappings --data-dir $(IUPAC_DATA_DIR)
 	@echo "$(GREEN)✓ Chemical database updated from mappings$(NC)"
 
 # Process compounds from composition_kg_mapping.tsv with robust error handling
@@ -473,14 +469,14 @@ iupac-add-compounds: install
 		echo "$(RED)Error: No compounds specified. Use: make iupac-add-compounds COMPOUNDS='compound1,compound2'$(NC)"; \
 		exit 1; \
 	fi
-	$(PYTHON) update_chemical_properties.py --add-compounds "$(COMPOUNDS)" --data-dir $(IUPAC_DATA_DIR)
+	$(PYTHON) src/attic/update_chemical_properties.py --add-compounds "$(COMPOUNDS)" --data-dir $(IUPAC_DATA_DIR)
 	@echo "$(GREEN)✓ Compounds added to chemical database$(NC)"
 
 # Test IUPAC system with sample compounds
 .PHONY: iupac-test
 iupac-test: install $(IUPAC_DATA_DIR)
 	@echo "$(BLUE)Testing IUPAC chemical data system...$(NC)"
-	$(PYTHON) update_chemical_properties.py --test-mode --data-dir $(IUPAC_DATA_DIR)
+	$(PYTHON) src/attic/update_chemical_properties.py --test-mode --data-dir $(IUPAC_DATA_DIR)
 	@echo "$(GREEN)✓ IUPAC system test completed$(NC)"
 
 # Validate chemical_properties.tsv format
@@ -654,7 +650,7 @@ $(OAK_DATA_DIR):
 .PHONY: extract-non-chebi-compounds
 extract-non-chebi-compounds: $(COMPOSITION_MAPPING)
 	@echo "$(BLUE)Extracting compounds that need CHEBI mapping...$(NC)"
-	$(PYTHON) extract_non_chebi_compounds.py
+	$(PYTHON) src/analysis/extract_non_chebi_compounds.py
 	@echo "$(GREEN)✓ Extracted $$(wc -l < $(COMPOUNDS_FOR_CHEBI)) compounds for CHEBI mapping$(NC)"
 
 # Run OAK CHEBI annotation on filtered compounds
@@ -673,7 +669,7 @@ oak-chebi-annotate: $(COMPOUNDS_FOR_CHEBI) $(OAK_DATA_DIR)
 .PHONY: apply-oak-chebi-mappings
 apply-oak-chebi-mappings: $(OAK_CHEBI_ANNOTATIONS)
 	@echo "$(BLUE)Applying OAK CHEBI mappings to composition mapping...$(NC)"
-	$(PYTHON) apply_oak_chebi_mappings.py \
+	$(PYTHON) src/mapping/apply_oak_chebi_mappings.py \
 		--annotations-file $(OAK_CHEBI_ANNOTATIONS) \
 		--compounds-file $(COMPOUNDS_FOR_CHEBI) \
 		--output-file $(UPDATED_COMPOSITION_MAPPING)
@@ -683,7 +679,7 @@ apply-oak-chebi-mappings: $(OAK_CHEBI_ANNOTATIONS)
 .PHONY: fix-hydrated-mappings
 fix-hydrated-mappings: $(UPDATED_COMPOSITION_MAPPING)
 	@echo "$(BLUE)Fixing hydrated compounds mapped to ingredient codes...$(NC)"
-	$(PYTHON) fix_hydrated_compound_mappings.py
+	$(PYTHON) src/hydration/fix_hydrated_compound_mappings.py
 	@echo "$(GREEN)✓ Hydrated compound mappings fixed$(NC)"
 
 # Complete OAK CHEBI mapping pipeline (alternative standalone version)
@@ -841,7 +837,7 @@ quick: install
 	$(PYTHON) $(SCRIPTS_DIR)/map_compositions_sample.py
 	$(PYTHON) $(SCRIPTS_DIR)/find_unaccounted_compound_matches.py
 	$(PYTHON) $(SCRIPTS_DIR)/merge_compound_mappings.py
-	$(PYTHON) filter_high_confidence_mappings.py
+	$(PYTHON) src/mapping/filter_high_confidence_mappings.py
 	@echo "$(GREEN)✓ Quick pipeline completed$(NC)"
 
 # Pipeline validation - check all expected outputs exist

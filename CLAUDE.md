@@ -69,6 +69,16 @@ python src/scripts/convert_pdfs_to_text.py
 python src/scripts/convert_json_to_markdown.py
 python src/scripts/map_compositions_to_kg.py
 python src/scripts/compute_media_properties.py
+
+# Or use the Makefile for complete workflows
+make all                    # Run complete pipeline
+make data-acquisition       # Step 1: Download media data
+make data-conversion        # Step 2: Convert to structured format
+make db-mapping            # Step 3: Build chemical properties DB
+make kg-mapping-initial    # Step 4: Initial KG mapping
+make solution-expansion    # Step 5: Expand DSMZ solution references
+make compute-properties    # Step 11: Calculate pH/salinity
+make media-summary         # Step 12: Generate summary
 ```
 
 ## Architecture
@@ -89,12 +99,17 @@ The project follows a modular pipeline architecture with discrete stages:
    - Multiple mapping strategies: exact, fuzzy, comprehensive
    - Uses fuzzy string matching for compound name resolution
 
-4. **Property Calculation** (`compute_media_properties.py`)
+4. **Solution Expansion** (`complete_solution_expansion.py`)
+   - Expands DSMZ solution references (e.g., "solution:241") into individual chemical components
+   - Downloads DSMZ solution PDFs and parses chemical compositions
+   - Integrates expanded components back into media mappings
+
+5. **Property Calculation** (`compute_media_properties.py`)
    - Computes pH using Henderson-Hasselbalch equations
    - Calculates salinity and ionic strength using Davies activity coefficients
    - Handles complex chemical equilibria
 
-5. **Analysis & Integration** (`find_unaccounted_compound_matches.py`, `merge_compound_mappings.py`)
+6. **Analysis & Integration** (`find_unaccounted_compound_matches.py`, `merge_compound_mappings.py`)
    - Identifies unmapped compounds and suggests matches
    - Merges mapping results from different sources
 
@@ -104,11 +119,20 @@ The project follows a modular pipeline architecture with discrete stages:
 - **Output**: TSV mapping files, JSON property files, comprehensive logs
 
 ### Key Directories
-- `src/scripts/` - Main pipeline scripts and utilities
+- `src/scripts/` - Main pipeline scripts (16 scripts)
+- `src/analysis/` - Chemical analysis tools (5 scripts)
+- `src/mapping/` - Knowledge graph mapping tools
+- `src/hydration/` - Hydration state processing
+- `src/quality/` - Quality control and validation
+- `src/tools/` - Utility scripts (9 scripts)
+- `src/chem/iupac/` - IUPAC chemical data processing
+- `src/chem/pubchem/` - PubChem integration
+- `src/attic/` - Legacy and experimental scripts (35+ scripts)
 - `media_pdfs/` - Downloaded PDF documentation and JSON data
-- `media_texts/` - Converted markdown from PDFs  
+- `media_texts/` - Converted markdown from PDFs
 - `media_compositions/` - Structured composition tables (1000+ media)
 - `media_properties/` - Computed physical-chemical properties
+- `pipeline_output/` - Organized output by pipeline stage
 
 ### Technology Stack
 - **Async Processing**: `aiohttp`/`aiofiles` for concurrent downloads
@@ -123,7 +147,7 @@ The project follows a modular pipeline architecture with discrete stages:
 - Black formatting (88 character line length)
 - isort for import organization (black profile)
 - Type hints required (`mypy` with `disallow_untyped_defs`)
-- Python 3.9+ required
+- Python 3.10+ required
 
 ### Testing Approach
 - Unit tests for compound matching logic
@@ -137,8 +161,21 @@ The project follows a modular pipeline architecture with discrete stages:
 - Salinity computation uses Davies equation for activity coefficients
 - Missing or ambiguous compounds are logged for manual review
 
+### Hydration State Handling
+- Critical optimization: Early hydration normalization (Stage 6) ensures consistent base compounds
+- Example: "CaCl2 x 2 H2O" and "CaCl2 x 6 H2O" both map to same base ChEBI but maintain correct molecular weights
+- Hydration patterns: `6-hydrate`, `6H2O`, `x H2O`, `·6H2O`
+- Molecular weight calculation includes water molecules: `MW_hydrated = MW_base + (n × 18.015)`
+
+### DSMZ Solution Expansion
+- Solution references like "solution:241" are expanded into individual chemical components
+- Downloads solution PDFs from DSMZ MediaDive REST API
+- Parses compositions using specialized parsers
+- Adjusts concentrations based on solution usage ratios
+- Generates comprehensive expansion reports
+
 ### Performance Considerations
-- Large-scale processing (1000+ media compositions)
+- Large-scale processing (1000+ media compositions, 23,181 chemical entries)
 - Asynchronous downloads to handle network I/O efficiently
 - Chunked file processing for memory management with large JSON files
 - Extensive logging for debugging pipeline issues
@@ -148,3 +185,28 @@ The project follows a modular pipeline architecture with discrete stages:
 - JSON for structured property data
 - Comprehensive logs for each processing stage
 - Markdown tables for human-readable compositions
+
+### Mapping Strategies
+The pipeline uses two complementary mapping approaches:
+
+1. **DB Mapping** (ingredient → pKa, properties)
+   - Downloads IUPAC/PubChem data for chemical properties
+   - Goal: Maximize pKa coverage for pH/salinity calculations
+   - Stored in `chemical_properties.tsv`
+
+2. **KG Mapping** (ingredient → ChEBI/KEGG/PubChem IDs)
+   - Maps ingredients to knowledge graph entities
+   - Goal: Maximize ChEBI coverage for semantic analysis
+   - Multiple strategies: exact matching, fuzzy matching, OAK ontology-based matching
+   - Output: `composition_kg_mapping.tsv` and variants
+
+### Pipeline Optimization Flow
+The Makefile implements an optimized pipeline sequence:
+
+1. Early hydration normalization (Stage 6) - Fixes hydrate inconsistencies BEFORE advanced matching
+2. Early ingredient enhancement (Stage 7) - Converts ingredient codes using normalized compounds
+3. Enhanced compound matching (Stage 8) - Uses normalized base compounds for better ChEBI matches
+4. OAK CHEBI mapping (Stage 9) - Ontology-based annotations with improved compound set
+5. Property calculation (Stage 11) - Uses hydration-corrected molecular weights
+
+This ordering ensures downstream steps work with clean, consistent compound data.

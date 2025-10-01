@@ -335,6 +335,39 @@ Unique KG nodes mapped: {unique_mapped}
         self._save_results()
         
         logger.info("Mapping process completed!")
+    
+    def _normalize_chemical_name(self, name: str) -> Optional[str]:
+        """
+        Normalize chemical names for better matching.
+        Converts various hydrate formats to standard notation.
+        """
+        if not name or not isinstance(name, str):
+            return None
+            
+        # Clean the name - remove extra whitespace
+        normalized = re.sub(r'\s+', ' ', name.strip())
+        
+        # Only apply hydrate normalization - don't convert to lowercase yet
+        # to preserve exact chemical notation
+        
+        # Pattern 1: "x N H2O" format → standard notation
+        hydrate_pattern1 = re.compile(r'(.+?)\s+x\s+(\d+)\s+H2O', re.IGNORECASE)
+        match1 = hydrate_pattern1.search(normalized)
+        if match1:
+            base_compound = match1.group(1).strip()
+            water_count = match1.group(2)
+            normalized = f"{base_compound}·{water_count}H2O"
+        
+        # Pattern 2: "N-hydrate" format → standard notation
+        hydrate_pattern2 = re.compile(r'(.+?)\s+(\d+)-hydrate', re.IGNORECASE)
+        match2 = hydrate_pattern2.search(normalized)
+        if match2:
+            base_compound = match2.group(1).strip()
+            water_count = match2.group(2)
+            normalized = f"{base_compound}·{water_count}H2O"
+        
+        # Convert to lowercase only at the end for matching
+        return normalized.lower().strip()
 
 def main():
     """Main function to run the composition mapping."""

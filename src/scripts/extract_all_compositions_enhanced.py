@@ -260,7 +260,25 @@ class EnhancedCompositionExtractor:
             if parenthetical_composition:
                 composition.extend(parenthetical_composition)
         
-        # 8. Common patterns for chemical composition in scientific texts
+        # 8. Three-column separated layout (DSMZ format)
+        if not composition:
+            three_column = self.parse_three_column_layout(text_content)
+            if three_column:
+                composition.extend(three_column)
+        
+        # 9. Simple list format (CCAP SNA format)
+        if not composition:
+            simple_list = self.parse_simple_list_format(text_content)
+            if simple_list:
+                composition.extend(simple_list)
+        
+        # 10. Enhanced prose format (narrative text)
+        if not composition:
+            prose_format = self.parse_enhanced_prose_format(text_content)
+            if prose_format:
+                composition.extend(prose_format)
+        
+        # 11. Common patterns for chemical composition in scientific texts
         if not composition:
             patterns = [
                 # Pattern 1: Chemical name followed by concentration and unit
@@ -671,6 +689,173 @@ class EnhancedCompositionExtractor:
                     "unit": unit,
                     "extraction_method": "parenthetical_format_parsing"
                 })
+        
+        return composition
+    
+    def parse_three_column_layout(self, text_content: str) -> List[Dict]:
+        """Parse DSMZ three-column format: ingredients | amounts | units."""
+        composition = []
+        lines = [line.strip() for line in text_content.split('\n') if line.strip()]
+        
+        # Identify sections by analyzing line patterns
+        ingredient_lines = []
+        amount_lines = []
+        unit_lines = []
+        
+        # Phase detection - look for transitions in line patterns
+        current_phase = "unknown"
+        
+        for line in lines:
+            # Skip headers and metadata
+            if any(skip in line.lower() for skip in ['medium', '©', 'adjust', 'sterilize', 'autoclave']):
+                continue
+            
+            # Detect ingredients (chemical names, not pure numbers)
+            if self.is_likely_chemical_name(line) and not re.match(r'^[\d\.\s]+$', line):
+                if current_phase != "ingredients":
+                    current_phase = "ingredients"
+                ingredient_lines.append(line)
+            
+            # Detect amounts (pure decimal numbers)
+            elif re.match(r'^[\d\.]+$', line) and len(ingredient_lines) > 0:
+                if current_phase != "amounts":
+                    current_phase = "amounts"
+                amount_lines.append(float(line))
+            
+            # Detect units
+            elif line.lower() in ['g', 'mg', 'ml', 'l', 'mm', 'μl', 'μm'] and len(amount_lines) > 0:
+                if current_phase != "units":
+                    current_phase = "units"
+                unit_lines.append(line.lower())
+        
+        # Match ingredients to amounts and units by position
+        min_len = min(len(ingredient_lines), len(amount_lines))
+        for i in range(min_len):
+            unit = unit_lines[i] if i < len(unit_lines) else 'g'
+            composition.append({
+                "name": ingredient_lines[i],
+                "concentration": amount_lines[i],
+                "unit": unit,
+                "extraction_method": "three_column_layout_parsing"
+            })
+        
+        return composition
+    
+    def parse_simple_list_format(self, text_content: str) -> List[Dict]:
+        """Parse simple CCAP format: ingredients list, 'per litre', amounts list."""
+        composition = []
+        
+        # Clean text by replacing non-breaking spaces with regular spaces
+        text_content = text_content.replace('\xa0', ' ')
+        lines = [line.strip() for line in text_content.split('\n') if line.strip()]
+        
+        # Look for the pattern: ingredients, "per litre", amounts
+        ingredients = []
+        amounts_with_units = []
+        found_per_litre = False
+        collecting_amounts = False
+        
+        for line in lines:
+            if not line:
+                continue
+            
+            # Skip metadata lines
+            if any(skip in line.lower() for skip in ['©', 'adjust', 'sterilize', 'preparation', 'ccap', 'tel:', 'fax:', 'email:', 'web:']):
+                continue
+            
+            # Skip the title line
+            if line.startswith('SNA') and 'Seawater' in line:
+                continue
+            
+            # Skip single character lines (formatting artifacts)
+            if len(line) == 1:
+                continue
+            
+            # Detect "per litre" delimiter
+            if 'per litre' in line.lower() or 'per liter' in line.lower():
+                found_per_litre = True
+                collecting_amounts = True
+                continue
+            
+            # Collect ingredients before "per litre" 
+            if not found_per_litre:
+                # Skip "Medium" header
+                if line.lower() == 'medium':
+                    continue
+                # Accept ingredient-like lines (not just chemical names)
+                if len(line) > 3 and not re.match(r'^\d', line):
+                    ingredients.append(line)
+            
+            # Collect amounts after "per litre"
+            elif collecting_amounts and re.search(r'\d+\.?\d*\s*(g|mg|ml|l)', line):
+                # Extract amount and unit
+                match = re.search(r'(\d+\.?\d*)\s*(g|mg|ml|l)', line)
+                if match:
+                    amount = float(match.group(1))
+                    unit = match.group(2)
+                    amounts_with_units.append((amount, unit))
+            # Stop collecting if we hit preparation instructions
+            elif collecting_amounts and any(prep in line.lower() for prep in ['make up', 'steam', 'autoclave']):
+                break
+        
+        # Match ingredients with amounts
+        min_len = min(len(ingredients), len(amounts_with_units))
+        for i in range(min_len):
+            amount, unit = amounts_with_units[i]
+            composition.append({
+                "name": ingredients[i],
+                "concentration": amount,
+                "unit": unit,
+                "extraction_method": "simple_list_format_parsing"
+            })
+        
+        return composition
+    
+    def parse_enhanced_prose_format(self, text_content: str) -> List[Dict]:
+        """Parse prose format with embedded concentrations."""
+        composition = []
+        
+        # Enhanced patterns for prose-embedded concentrations
+        patterns = [
+            # Pattern 1: "supplemented with X g/l of compound"
+            r'supplemented\s+with\s+([0-9]+(?:\.[0-9]+)?)\s*(g|mg|ml)/l\s+(?:of\s+)?([^,\.;]+?)(?:\s+and|\.|,|$)',
+            # Pattern 2: "contains X g compound per liter"
+            r'contains\s+([0-9]+(?:\.[0-9]+)?)\s*(g|mg|ml)\s+([^,\.;]+?)\s+per\s+(?:liter|litre)',
+            # Pattern 3: "compound X g/L"
+            r'([A-Z][^,\.;]*?)\s+([0-9]+(?:\.[0-9]+)?)\s*(g|mg|ml)/L',
+            # Pattern 4: "X is added at Y mg/l"
+            r'([A-Z][^,\.;]*?)\s+is\s+added\s+at\s+([0-9]+(?:\.[0-9]+)?)\s*(g|mg|ml)/l',
+            # Pattern 5: "Brain heart infusion X g, compound Y mg"
+            r'([A-Za-z][^,\.;]*?)\s+([0-9]+(?:\.[0-9]+)?)\s*(g|mg|ml)(?:\s*,|\s+and|\s*$)',
+        ]
+        
+        for pattern in patterns:
+            matches = re.finditer(pattern, text_content, re.IGNORECASE)
+            for match in matches:
+                if len(match.groups()) >= 3:
+                    if pattern.startswith(r'([A-Z]') and not pattern.startswith(r'supplemented'):
+                        # Patterns where compound comes first
+                        compound = match.group(1).strip()
+                        amount = float(match.group(2))
+                        unit = match.group(3)
+                    else:
+                        # Patterns where amount comes first
+                        amount = float(match.group(1))
+                        unit = match.group(2)
+                        compound = match.group(3).strip()
+                    
+                    # Clean compound name
+                    compound = re.sub(r'\s+', ' ', compound).strip()
+                    compound = compound.rstrip('.,;:')
+                    
+                    # Check if it's a valid chemical name
+                    if self.is_likely_chemical_name(compound) and not any(c['name'] == compound for c in composition):
+                        composition.append({
+                            "name": compound,
+                            "concentration": amount,
+                            "unit": f"{unit}/L",
+                            "extraction_method": "enhanced_prose_parsing"
+                        })
         
         return composition
     

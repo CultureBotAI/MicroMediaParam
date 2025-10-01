@@ -208,6 +208,11 @@ class JCMHTMLParser:
             # Find all composition tables
             tables = soup.find_all("table", {"border": True})
             if not tables:
+                # Try parsing reference-based media without tables
+                reference_data = self.parse_reference_based_medium(soup)
+                if reference_data:
+                    return reference_data
+                
                 self.logger.warning(f"No composition tables found in {html_file_path}")
                 return None
             
@@ -313,6 +318,269 @@ class JCMHTMLParser:
             json.dump(summary, f, indent=2, ensure_ascii=False)
         
         self.logger.info(f"Summary report saved to {summary_file}")
+    
+    def parse_reference_based_medium(self, soup: BeautifulSoup) -> Optional[Dict[str, any]]:
+        """Parse JCM media defined by reference to other media with modifications."""
+        try:
+            # Extract medium information first
+            medium_info = self.extract_medium_info(soup)
+            if not medium_info.get("medium_id"):
+                return None
+            
+            # Look for base medium references
+            base_medium_link = soup.find("a", href=re.compile(r"jcm_grmd\?GRMD="))
+            if not base_medium_link:
+                return None
+            
+            # Extract base medium ID
+            href = base_medium_link.get("href", "")
+            grmd_match = re.search(r"GRMD=(\d+)", href)
+            if not grmd_match:
+                return None
+            
+            base_medium_id = f"jcm_{grmd_match.group(1)}"
+            
+            # Extract modification text (text after the base medium reference)
+            modification_text = self.extract_modification_text(soup, base_medium_link)
+            
+            # Parse chemical modifications from the text
+            modifications = self.parse_chemical_modifications(modification_text)
+            
+            # Parse solution recipes if present
+            solutions = self.parse_solution_recipes(soup)
+            
+            composition = []
+            
+            # Add base medium reference
+            composition.append({
+                "name": f"Base Medium {base_medium_id.replace('jcm_', '')}",
+                "concentration": 1.0,
+                "unit": "reference",
+                "extraction_method": "jcm_reference",
+                "base_medium_id": base_medium_id
+            })
+            
+            # Add modifications
+            composition.extend(modifications)
+            
+            # Add solutions
+            for solution in solutions:
+                composition.extend(solution.get("components", []))
+            
+            media_data = {
+                "medium_id": medium_info["medium_id"],
+                "medium_name": medium_info.get("medium_name", "Unknown JCM Medium"),
+                "source": "jcm",
+                "composition": composition,
+                "preparation_instructions": modification_text,
+                "base_medium": base_medium_id,
+                "composition_type": "reference_based"
+            }
+            
+            self.stats["successful_parses"] += 1
+            self.logger.info(f"Successfully parsed reference-based {medium_info['medium_id']} with {len(composition)} components")
+            
+            return media_data
+            
+        except Exception as e:
+            self.logger.error(f"Error parsing reference-based medium: {e}")
+            return None
+    
+    def extract_modification_text(self, soup: BeautifulSoup, base_link) -> str:
+        """Extract modification text after the base medium reference."""
+        modification_parts = []
+        
+        # Find the paragraph containing the base medium link
+        paragraph = base_link.find_parent(['p', 'div', 'td'])
+        if paragraph:
+            # Get text after the link
+            text = paragraph.get_text()
+            # Find the position of the medium reference and get text after it
+            if "Use Medium No." in text:
+                parts = text.split("Use Medium No.")
+                if len(parts) > 1:
+                    # Take everything after the medium number
+                    after_ref = parts[1]
+                    # Remove the medium number itself (digits at start)
+                    after_ref = re.sub(r'^\s*\d+\s*', '', after_ref)
+                    modification_parts.append(after_ref.strip())
+        
+        # Also look for solution recipes in italic elements
+        italic_elements = soup.find_all("i")
+        for italic in italic_elements:
+            text = italic.get_text()
+            if "solution:" in text.lower():
+                # Get the solution recipe text
+                next_element = italic.next_sibling
+                while next_element:
+                    if hasattr(next_element, 'get_text'):
+                        modification_parts.append(next_element.get_text().strip())
+                        break
+                    elif isinstance(next_element, str):
+                        modification_parts.append(next_element.strip())
+                        break
+                    next_element = next_element.next_sibling
+        
+        return " ".join(modification_parts).strip()
+    
+    def parse_chemical_modifications(self, text: str) -> List[Dict[str, any]]:
+        """Extract chemical modifications from modification text."""
+        modifications = []
+        
+        # Common modification patterns
+        patterns = [
+            # Pattern 1: "with X g/L compound"
+            r'with\s+([\d\.]+)\s*(g|mg|mM|ml)/L\s+([^,\.\(]+?)(?:\s*\([^)]*\))?\s*(?:final|$|\.|,)',
+            # Pattern 2: "supplemented with X g/L compound (final)"
+            r'supplemented\s+with\s+([\d\.]+)\s*(g|mg|mM|ml)/L\s+([^,\.\(]+?)(?:\s*\([^)]*\))?\s*\(final\)',
+            # Pattern 3: "X g/L compound"
+            r'([\d\.]+)\s*(g|mg|mM|ml)/L\s+([A-Z][^,\.\(]+?)(?:\s*\([^)]*\))?(?:\s|$|\.|,)',
+            # Pattern 4: "without compound"
+            r'without\s+([^,\.]+?)(?:\s+and\s+([^,\.]+?))?(?:\s|$|\.|,)',
+        ]
+        
+        for pattern in patterns:
+            matches = re.finditer(pattern, text, re.IGNORECASE)
+            for match in matches:
+                if "without" in pattern:
+                    # Handle removal
+                    compound = match.group(1).strip()
+                    if self.is_likely_chemical_name(compound):
+                        modifications.append({
+                            "name": compound,
+                            "concentration": 0.0,
+                            "unit": "removed",
+                            "extraction_method": "jcm_reference_modification",
+                            "action": "remove"
+                        })
+                    if match.group(2):  # Second compound in "without A and B"
+                        compound2 = match.group(2).strip()
+                        if self.is_likely_chemical_name(compound2):
+                            modifications.append({
+                                "name": compound2,
+                                "concentration": 0.0,
+                                "unit": "removed",
+                                "extraction_method": "jcm_reference_modification",
+                                "action": "remove"
+                            })
+                else:
+                    # Handle addition
+                    concentration = float(match.group(1))
+                    unit = f"{match.group(2)}/L"
+                    compound = match.group(3).strip()
+                    
+                    # Clean up compound name
+                    compound = re.sub(r'\s+', ' ', compound).strip()
+                    
+                    if self.is_likely_chemical_name(compound):
+                        modifications.append({
+                            "name": compound,
+                            "concentration": concentration,
+                            "unit": unit,
+                            "extraction_method": "jcm_reference_modification",
+                            "action": "add"
+                        })
+        
+        return modifications
+    
+    def parse_solution_recipes(self, soup: BeautifulSoup) -> List[Dict[str, any]]:
+        """Parse solution recipes from italic elements."""
+        solutions = []
+        
+        italic_elements = soup.find_all("i")
+        for italic in italic_elements:
+            text = italic.get_text()
+            if "solution:" in text.lower():
+                solution_name = text.replace(":", "").strip()
+                
+                # Get the recipe text after the italic element
+                recipe_text = ""
+                next_element = italic.next_sibling
+                while next_element:
+                    if hasattr(next_element, 'get_text'):
+                        recipe_text += next_element.get_text()
+                        break
+                    elif isinstance(next_element, str):
+                        recipe_text += next_element
+                        break
+                    next_element = next_element.next_sibling
+                
+                # Parse components from recipe text
+                components = self.parse_recipe_components(recipe_text)
+                
+                if components:
+                    solutions.append({
+                        "name": solution_name,
+                        "components": components
+                    })
+        
+        return solutions
+    
+    def parse_recipe_components(self, recipe_text: str) -> List[Dict[str, any]]:
+        """Parse individual components from a solution recipe."""
+        components = []
+        
+        # Pattern for "X mg compound in Y ml solvent"
+        patterns = [
+            r'(\d+(?:\.\d+)?)\s*(mg|g)\s+([^,\.\n]+?)(?:\s+(?:first\s+)?in\s+\d+\s*ml)',
+            r'(\d+(?:\.\d+)?)\s*(mg|g)\s+([^,\.\n]+?)(?:\s|$|\.|,)',
+        ]
+        
+        for pattern in patterns:
+            matches = re.finditer(pattern, recipe_text, re.IGNORECASE)
+            for match in matches:
+                concentration = float(match.group(1))
+                unit = match.group(2)
+                compound = match.group(3).strip()
+                
+                if self.is_likely_chemical_name(compound):
+                    components.append({
+                        "name": compound,
+                        "concentration": concentration,
+                        "unit": unit,
+                        "extraction_method": "jcm_solution_recipe"
+                    })
+        
+        return components
+    
+    def is_likely_chemical_name(self, name: str) -> bool:
+        """Check if a string is likely a chemical compound name."""
+        # Basic heuristics for chemical names
+        name = name.strip().lower()
+        
+        # Must be reasonable length
+        if len(name) < 2 or len(name) > 80:
+            return False
+        
+        # Skip common non-chemical words
+        skip_words = ['medium', 'final', 'adjust', 'without', 'with', 'and', 'or', 'then', 'first']
+        if any(skip in name for skip in skip_words):
+            return False
+        
+        # Accept if it has chemical-like patterns
+        chemical_patterns = [
+            r'[a-z]+cl[0-9]*',  # chlorides
+            r'[a-z]+so[0-9]*',  # sulfates  
+            r'[a-z]+po[0-9]*',  # phosphates
+            r'[a-z]+(oh|o)[0-9]*',  # hydroxides/oxides
+            r'[a-z]+co[0-9]*',  # carbonates
+        ]
+        
+        for pattern in chemical_patterns:
+            if re.search(pattern, name):
+                return True
+        
+        # Accept common biological compounds
+        bio_compounds = ['hemin', 'menadione', 'rumen', 'trypticase', 'peptone', 'yeast', 'extract', 
+                        'agar', 'glucose', 'nacl', 'kcl', 'mgcl', 'cacl', 'mgso', 'k2hpo', 'kh2po']
+        if any(bio in name for bio in bio_compounds):
+            return True
+        
+        # Accept if it starts with capital and has reasonable chemical structure
+        if len(name) > 3 and name[0].isupper():
+            return True
+        
+        return False
 
 
 def main():
