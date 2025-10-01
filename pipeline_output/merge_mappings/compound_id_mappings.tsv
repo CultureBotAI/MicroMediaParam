@@ -1,0 +1,1046 @@
+original	mapped	base_chebi_id	base_chebi_label	base_chebi_formula	base_molecular_weight	match_confidence	mapping_quality
+(1)  Ca(NO3)2.4H2O	CHEBI:86159				100.0		good
+(5)  Sodium metasilicate	CHEBI:60720				100.0		good
+(Agar	CHEBI:2509				100.0		good
+(NH4) citrate	CAS-RN:3458-72-8				100.0		good
+(NH4)2 SO4	CHEBI:62946				100.0		good
+(NH4)2 citrate	CAS-RN:3012-65-5				100.0		good
+(NH4)2MoO4	CHEBI:91249				100.0		good
+(NH4)2Ni(SO4)2	CHEBI:86149				100.0		good
+(NH4)2Ni(SO4)2 x 6 H2O (0.1% w/v)	CHEBI:86149				100.0		good
+(NH4)2Ni(SO4)2·6H2O	CHEBI:86149				100.0		good
+(NH4)2Ni(SO4)2•6H2O	CHEBI:86149				100.0		good
+(NH4)2S4	CHEBI:62946				100.0		good
+(NH4)2SO4	CHEBI:62946				100.0		good
+(NH4)3 citrate	CAS-RN:3458-72-8				100.0		good
+(NH4)6Mo7O24	CAS-RN:12027-67-7				100.0		good
+(NH4)6Mo7O24 x 4 H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)6Mo7O24·4H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)6Mo7O4 x 24 H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)6MoO24·4H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)6MoO7O24 x 4 H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)H2PO4	CAS-RN:7722-76-1				100.0		good
+(NH4)HCO3	CAS-RN:1066-33-7				100.0		good
+(NH4)Mo7O24·4H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)MoO7O24 x 4 H2O	CAS-RN:12054-85-2				100.0		good
+(NH4)NO3	CAS-RN:6484-52-2				100.0		good
+.MgSO4 x 7 H2O	CAS-RN:10034-99-8				100.0		good
+0.2% Thiamine pyrophosphate	CHEBI:9532				100.0		good
+0.5 M Nitrilotriacetic acid, disodium salt	CHEBI:132766				100.0		good
+1 M Sodium acetate	CHEBI:32954				100.0		good
+1 M Sodium butyrate	CHEBI:64103				100.0		good
+1 M Sodium lactate	CHEBI:75228				100.0		good
+1 M Sodium pyruvate*	CHEBI:50144				100.0		good
+1,4-Naphthoquinone	CHEBI:27418				100.0		good
+2-Methyl-butyric acid	CHEBI:37070				100.0		good
+2-Methylbutyric acid	CHEBI:37070				100.0		good
+2-Oxoglutarate	CHEBI:16810				100.0		good
+2Na-EDTA	CHEBI:64734				100.0		good
+3-Indolyl acetic acid	CHEBI:88356				100.0		good
+3-Methyl-butyric acid	CHEBI:28484				100.0		good
+4-Hydroxyphenyl acetic acid	CHEBI:18101				100.0		good
+5% defibrinated sheep blood	ingredient:1717				100.0		good
+ACES	CHEBI:39061				100.0		good
+Absolute ethanol	PubChem:702				100.0		good
+Acetic acid	CHEBI:15366				100.0		good
+Activated carbon	CAS-RN:7440-44-0				100.0		good
+Agar	CHEBI:2509				100.0		good
+Agarose	CHEBI:2511				100.0		good
+AlCl3	CHEBI:30114				100.0		good
+AlCl3 x 6 H2O	CHEBI:30115				100.0		good
+AlCl3.6H2O	CHEBI:30115				100.0		good
+AlCl3·6H2O	CHEBI:30115				100.0		good
+AlK(SO4)2	CHEBI:86463				258.21		good
+AlK(SO4)2 x 12H2O	CHEBI:86465				258.21		good
+AlK(SO4)2·12H2O	CHEBI:86465				100.0		good
+Ammonium Molybdate	CHEBI:91249				100.0		good
+Ammonium Sulfate	CHEBI:62946				100.0		good
+Ammonium acetate	CHEBI:62947				100.0		good
+Ammonium ferric citrate	CHEBI:31604				100.0		good
+Arginine	CHEBI:32696				100.0		good
+Ascorbic acid	CHEBI:22652				100.0		good
+B12	CHEBI:156213				100.0		good
+BaCl2	CHEBI:63317				100.0		good
+BaCl2·2H2O	CHEBI:86153				100.0		good
+Bacto Peptone	CAS-RN:51142-18-8				100.0		good
+Bacto Soytone	ingredient:102				100.0		good
+Bacto Tryptic Soy Broth without Dextrose	medium:1260				100.0		good
+Bacto beef extract	ingredient:670				100.0		good
+Bacto peptone	CAS-RN:51142-18-8				100.0		good
+Bacto-Peptone	CAS-RN:51142-18-8				100.0		good
+Bacto-Tryptone	ingredient:1216				100.0		good
+Bacto-peptone	CAS-RN:51142-18-8				100.0		good
+Bactopeptone	CAS-RN:51142-18-8				100.0		good
+Basal salts solution	ingredient:1732				100.0		good
+Beef Extract	ingredient:85				100.0		good
+Beef extract	ingredient:85				100.0		good
+Betaine	CHEBI:17750				100.0		good
+Betaine Hydrochloride	CAS-RN:590-46-5				100.0		good
+Biotin	CHEBI:15956				100.0		good
+Biotine	CHEBI:15956				100.0		good
+Biotin in	CHEBI:57586				100.0		good
+Bovine serum albumin	CAS-RN:9048-46-8				100.0		good
+Buffers	CHEBI:35225				100.0		good
+Butyric acid	CHEBI:30772				100.0		good
+CAPS buffer	CAS-RN:1135-40-6				100.0		good
+CAPSO	CAS-RN:73463-39-5				100.0		good
+Ca pantotenate	CHEBI:29032				100.0		good
+Ca(NO3)2	CHEBI:77732				100.0		good
+Ca(NO3)2 x 4 H2O	CHEBI:86159				100.0		good
+Ca(NO3)2 x 4 H2O (0.1% w/v)	CHEBI:86159				100.0		good
+Ca(NO3)2x4H2O	CHEBI:86159				100.0		good
+Ca(NO3)2·4H2O	CHEBI:86159				100.0		good
+Ca-Pantothenate	CHEBI:29032				100.0		good
+Ca-pantothenate	CHEBI:29032				100.0		good
+CaCL2 x 2 H2O	CHEBI:86158				100.0		good
+CaCO3	CHEBI:3311				100.0		good
+CaCl 2	CHEBI:3312	CHEBI:3312			110.98		good
+CaCl 2 X 2 H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl 2 x 2 H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2	CHEBI:3312	CHEBI:3312			110.98		good
+CaCl2  x 2 H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x  2 H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 2 H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 2 H2O (0.1% w/v)	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 2 H2O (50 g/l stock solution)	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 2 H2O (5M)	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 2 H2O solution (7%)	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2 x 6 H2O	CHEBI:91243	CHEBI:3312			110.98		good
+CaCl2 x 7 H2O	CAS-RN:10025-84-0	CHEBI:3312			110.98		good
+CaCl2 x2H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl22H2O	CHEBI:86158				100.0		good
+CaCl2x 2H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2x2H2O	CHEBI:86158	CHEBI:3312			110.98		good
+CaCl2x6H2O	CHEBI:91243	CHEBI:3312			110.98		good
+CaCl2·2H2O	CHEBI:86158				100.0		good
+CaSO4 x 2 H2O	CHEBI:32583				100.0		good
+CaSO4.2H2O	CHEBI:32583				100.0		good
+CaSO4·2H2O	CHEBI:32583				100.0		good
+Calcium Chloride	CHEBI:86158				100.0		good
+Calcium D(+)-Pantthenate	CHEBI:1687714				100.0		good
+Calcium chloride dihydrate	CHEBI:86158				100.0		good
+Calcium malate	CAS-RN:16426-50-9				100.0		good
+Calcium pantothenate	CHEBI:31345				100.0		good
+Calcium pantothenate	CHEBI:31345				100.0		good
+Calf serum	ingredient:2162				100.0		good
+Caproic acid	CHEBI:30776				100.0		good
+Capronic acid	CHEBI:30776				100.0		good
+Carboxymethyl cellulose	CHEBI:85146				100.0		good
+Carboxymethyl cellulose, sodium salt	medium:1111				100.0		good
+Casamino Acid	ingredient:101				100.0		good
+Casamino Acids	ingredient:101				100.0		good
+Casamino acid	ingredient:101				100.0		good
+Casamino acids	ingredient:101				100.0		good
+Casamino acids (BD)	ingredient:101				100.0		good
+Casaminoacids	ingredient:101				100.0		good
+Casein	CHEBI:3448				100.0		good
+Casmino Acid	ingredient:101				100.0		good
+Casmino acids	ingredient:101				100.0		good
+Cellobiose	CHEBI:17057				100.0		good
+Cellobiose or Cellulose MN 300	ingredient:1627				100.0		good
+Chalcopyrite	CHEBI:86202				100.0		good
+Charcoal-filtered, natural seawater	ingredient:2142				100.0		good
+Cheese whey	CAS-RN:92129-90-3				100.0		good
+Choline chloride	CHEBI:133341				100.0		good
+Citric acid	CHEBI:53258				100.0		good
+Clarified rumen fluid	ingredient:1648				100.0		good
+Co Carboxylase	CHEBI:18290				100.0		good
+Co(NO3)2	CHEBI:86209				100.0		good
+Co(NO3)2 x 6H2O	CHEBI:86214				100.0		good
+Co(NO3)2.6H2O	CHEBI:86214				100.0		good
+Co(NO3)2·6H2O	CHEBI:86214				100.0		good
+CoCl 2	CHEBI:35696	CHEBI:35696			129.84		good
+CoCl2	CHEBI:35696	CHEBI:35696			129.84		good
+CoCl2 x 2 H2O	CAS-RN:20603-88-7	CHEBI:35696			129.84		good
+CoCl2 x 4 H2O	KEGG:C07755	CHEBI:35696			129.84		good
+CoCl2 x 6 H2O	ingredient:2003	CHEBI:35696			129.84		good
+CoCl2.6H2O	CHEBI:91243	CHEBI:35696			129.84		good
+CoSO4	CHEBI:53470				100.0		good
+CoSO4 x 7 H2O	CAS-RN:10034-99-8				100.0		good
+Cobalamin (B12)	CHEBI:28911				100.0		good
+Cobalamine	CAS-RN:13408-78-1				100.0		good
+Coenzyme A	CHEBI:15346				100.0		good
+Coenzyme M	CHEBI:17905				100.0		good
+Copper Sulfate	CHEBI:23414				100.0		good
+Corn meal agar	medium:J1329				100.0		good
+Corn starch	CAS-RN:9005-25-8				100.0		good
+Corn steep liquor	ingredient:1609				100.0		good
+CrK(SO4)2·12H2O	CAS-RN:7788-99-0				100.0		good
+Creatine	CHEBI:16919				100.0		good
+Crotonic acid	CHEBI:41131				100.0		good
+CuCl	CHEBI:53472				100.0		good
+CuCl 2 x 2 H2O	CHEBI:86318				100.0		good
+CuCl2	CHEBI:49553				100.0		good
+CuCl2 x 2 H2O	CHEBI:86318				100.0		good
+CuCl2 x 5 H2O	CHEBI:91245				100.0		good
+CuCl2*2H2O	CHEBI:86318				100.0		good
+CuCl2-2H2O	CHEBI:86318				100.0		good
+CuCl2·2H2O	CHEBI:86318				100.0		good
+CuSO4	CHEBI:23414	CHEBI:23414			159.61		good
+CuSO4 . 5H2O	CHEBI:31440				100.0		good
+CuSO4 x 5 H2O	CHEBI:31440	CHEBI:23414			159.61		good
+CuSO4 x 6 H2O	CHEBI:91246	CHEBI:23414			159.61		good
+CuSO4*5 H2O	CHEBI:31440				100.0		good
+CuSO4.5H2O	CHEBI:31440	CHEBI:23414			159.61		good
+CuSO4·5H2O	CHEBI:31440				100.0		good
+Cyanocobalamin	CHEBI:17439				100.0		good
+Cyanocobalamin in	CHEBI:17439				100.0		good
+Cyclohexemid	CHEBI:27641				100.0		good
+Cystein-HCL	PubChem:5862				100.0		good
+Cystein-HCl x 2 H2O (5% (w/v))	ingredient:983				100.0		good
+Cysteine HCl	PubChem:5862				100.0		good
+Cysteine-HCL x H2O	ingredient:983				100.0		good
+Cysteine-HCl	PubChem:5862				100.0		good
+Cysteine-HCl x H2O	ingredient:983				100.0		good
+D Calcium Panthothenate	CHEBI:31345				100.0		good
+D(+)-Biotin	CHEBI:15956				100.0		good
+D(+)-Glucose	CHEBI:42758				100.0		good
+D(+)-Trehalose	CHEBI:16551				100.0		good
+D,L-6,8-thioctic acid	CHEBI:43796				100.0		good
+D-Biotin	CHEBI:15956				100.0		good
+D-Calcium pantothenate	CHEBI:31345				100.0		good
+D-Fructose	CHEBI:48095				100.0		good
+D-Galactose	CHEBI:12936				100.0		good
+D-Glucose	CHEBI:42758				100.0		good
+D-Mannitol	CHEBI:16899				100.0		good
+D-Sorbitol	CHEBI:17924				100.0		good
+D-Xylose	CHEBI:65327				100.0		good
+D-glucose	CHEBI:42758				100.0		good
+DL-2-Methyl butyric acid	CHEBI:37070				100.0		good
+DL-Calcium pantothenate	CHEBI:31345				100.0		good
+DL-Dithiothreitol	CHEBI:42106				100.0		good
+DL-Histidine	CHEBI:27570				100.0		good
+DL-Malate	CHEBI:15589				100.0		good
+DL-Malic acid	CHEBI:6650				100.0		good
+DL-Methionine	CHEBI:16811				100.0		good
+DL-Mevalonic acid	CHEBI:25351				100.0		good
+DL-Sodium malate	CHEBI:91260				100.0		good
+DL-Tryptophan	CHEBI:57912				100.0		good
+DL-malic acid	CHEBI:6650				100.0		good
+DL-mevalonic acid	CHEBI:25351				100.0		good
+DL-α-Methyl butyric acid	CHEBI:37070				100.0		good
+Decane	CHEBI:41808				100.0		good
+Defibrinated Blood	ingredient:1177				100.0		good
+Defibrinated Sheep Blood	ingredient:1717				100.0		good
+Deionized water	PubChem:962				100.0		good
+Dextran	CHEBI:52071				100.0		good
+Dextrin	CHEBI:28675				100.0		good
+Dextrose	CHEBI:42758				100.0		good
+Diammonium Citrate	CHEBI:63076				100.0		good
+Diammonium citrate	CHEBI:63076				100.0		good
+Diammonium hydrogen citrate	CHEBI:63076				100.0		good
+Difco Marine Broth 2216	ingredient:1379				100.0		good
+Difco marine broth (Difco 2216)	ingredient:1379				100.0		good
+Difco marine broth (Difco2216)	ingredient:1379				100.0		good
+Dimethyl sulfoxide	CHEBI:28262				100.0		good
+Dipotassium Phosphate	CHEBI:131527				100.0		good
+Disodium Phosphate	CHEBI:34683				100.0		good
+Disodium fumarate	CHEBI:115156				100.0		good
+Disodium oxalate	CHEBI:132764				100.0		good
+Disodium succinate	CHEBI:63675				100.0		good
+Disodium succinate·6H2O	CAS-RN:6106-21-4				100.0		good
+Dung extract	ingredient:725				100.0		good
+D­glucose	CHEBI:42758				100.0		good
+E26 + biotin	medium:C28				100.0		good
+EDTA	CHEBI:64755				100.0		good
+EDTA di sodium salt	CHEBI:63125				100.0		good
+EG:JM	medium:C27				100.0		good
+Ethanol	CHEBI:16236				100.0		good
+Ethylenediamintetraacetic acid (EDTA),	CHEBI:4735				100.0		good
+FAD	CHEBI:16238				100.0		good
+Fastidious Anaerobe Basal Broth (OXOID)	ingredient:1079				100.0		good
+Fe (III)citrate	CHEBI:4991				100.0		good
+Fe(III) citrate	CHEBI:4991				100.0		good
+Fe(III)-EDTA	CHEBI:30729				100.0		good
+Fe(III)NH4-EDTA	CAS-RN:21265-50-9				100.0		good
+Fe(III)·EDTA	CHEBI:30729				100.0		good
+Fe(NH3)citrate	CHEBI:144421				100.0		good
+Fe(NH4)(SO4)2 x 12 H2O	ingredient:1036				100.0		good
+Fe(NH4)2(SO4)2 x 6 H2O	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2 x 6 H2O (0.01% w/v)	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2 x 6 H2O (0.1% w/v)	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2 x 6 H2O (2% v/v)	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2 x 6H2O	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2 x 7 H2O	CAS-RN:7783-85-9				100.0		good
+Fe(NH4)2(SO4)2·6H2O	CAS-RN:7783-85-9				100.0		good
+Fe2(SO4)3 x H2O	CAS-RN:15244-10-7				100.0		good
+Fe2(SO4)3 x X H2O	CAS-RN:15244-10-7				100.0		good
+Fe2(SO4)3 x n H2O	ingredient:1742				100.0	very_high	very_good
+FeCl 2 x 4 H2O	CHEBI:86249				100.0		good
+FeCl2	CHEBI:30812				100.0		good
+FeCl2 x 4 H2O	CHEBI:86249				100.0		good
+FeCl2 x 4 H2O (0.1% w/v in 0.2 N HCl)	CHEBI:86249				100.0		good
+FeCl2 x 4 H2O (0.2% w/v in 0.02 N HCl)	CHEBI:86249				100.0		good
+FeCl2 x 6 H2O	ingredient:2003				100.0		good
+FeCl2·4H2O	CHEBI:86249				100.0		good
+FeCl3	CHEBI:30808	CHEBI:30808			162.2		good
+FeCl3 x 6 H2O	CHEBI:86254	CHEBI:30808			162.2		good
+"FeCl3 x 6 H2O
+NaEDTA"	CHEBI:86254				100.0		good
+FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)	CHEBI:86254	CHEBI:30808			162.2		good
+FeCl3 x 6 H2O (0.5%)	CHEBI:86254	CHEBI:30808			162.2		good
+FeCl3 x 6 H2O (w/v=1%)	CHEBI:86254	CHEBI:30808			162.2		good
+FeCl3 x 6 H2O solution (2%)	CHEBI:86254	CHEBI:30808			162.2		good
+FeCl3*6 H2O	CHEBI:86254				100.0		good
+FeCl3.6H2O	CHEBI:86254	CHEBI:30808			162.2		good
+FeCl3·6H2O	CHEBI:86254				100.0		good
+FePO4	CHEBI:131371				100.0		good
+FeSO4	CHEBI:75832	CHEBI:75832			151.91		good
+FeSO4 x 6H2O	CAS-RN:15244-10-7	CHEBI:75832			151.91		good
+FeSO4 x 7H2O	CAS-RN:15244-10-7	CHEBI:75832			151.91		good
+FeSO4 x7 H2O	CAS-RN:15244-10-7	CHEBI:75832			151.91		good
+FeSO4 x7H2O	CHEBI:75836	CHEBI:75832			151.91		good
+FeSO4.7H2O	CHEBI:75836	CHEBI:75832			151.91		good
+Ferric Ammonium Citrate	CHEBI:31604				100.0		good
+Ferric ammonium citrate	CHEBI:31604				100.0		good
+Ferric citrate	CHEBI:31605				100.0		good
+Ferric citrate monohydrate	ingredient:2378				100.0	very_high	very_good
+Ferric iron citrate	CHEBI:144421				100.0		good
+Ferrihydrite	CAS-RN:39473-89-7				100.0		good
+Fetal Bovine Serum	CAS-RN:9014-81-7				100.0		good
+Fetal bovine serum	CAS-RN:9014-81-7				100.0		good
+Fish meat extract	ingredient:1672				100.0		good
+Fish-Sperm DNA	ingredient:976				100.0		good
+Folic Acid	CHEBI:27470				100.0		good
+Folic acid	CHEBI:27470				100.0		good
+Folic Acid	CHEBI:27470				100.0		good
+Freshwater medium	medium:J474				100.0		good
+Fructose	CHEBI:28645				100.0		good
+Fumaric acid	CHEBI:18012				100.0		good
+G Bacto Peptone	CAS-RN:51142-18-8				100.0		good
+G Glycerol	CHEBI:15978				100.0		good
+G Starch	CHEBI:85248				100.0		good
+G Yeast Extract	CAS-RN:8013-01-2				100.0		good
+Galactose	CHEBI:28260				100.0		good
+Gelatin	CHEBI:5291				100.0		good
+Glacial acetic acid	PubChem:176				100.0		good
+Glucose	CHEBI:42758				100.0		good
+Glutamic acid	CHEBI:18237				100.0		good
+Glutathione	CHEBI:16856				100.0		good
+Glycerol	CHEBI:15978				100.0		good
+"Glycerol
+ml"	CHEBI:134447				100.0		good
+Glycerol monostearate	CHEBI:75456				100.0		good
+Glycine	CHEBI:57305				100.0		good
+Glycylglycine	CHEBI:17201				100.0		good
+H2O	CHEBI:15377				100.0		good
+H2SO4	CHEBI:26836				100.0		good
+H2SeO3	CHEBI:48854				100.0		good
+H2WO4	CHEBI:36272				100.0		good
+H3BO3	CHEBI:33118				100.0		good
+H3BO4	ingredient:1250				100.0		good
+HCl	CHEBI:17883				100.0		good
+HCl.	CHEBI:17883				100.0		good
+HEPES	CHEBI:46756				100.0		good
+Hemicalcium D-(+)- pantothenate	CAS-RN:137-08-6				100.0		good
+Hemin	CHEBI:50385				100.0		good
+Hemin chloride	CHEBI:50385				100.0		good
+Heptadecane	CHEBI:16148				100.0		good
+Hexadecane	CHEBI:45296				100.0		good
+Hipolypepton	ingredient:2060				100.0		good
+Histidine	CHEBI:27570				100.0		good
+Horse blood	ingredient:724				100.0		good
+Indigocarmine	CHEBI:31695				100.0		good
+Inositol	CHEBI:24848				100.0		good
+Iron(III) citrate	CHEBI:144421				100.0		good
+Isobutyric acid	CHEBI:16135				100.0		good
+Isovaleric acid	CHEBI:28484				100.0		good
+Isovitalex	ingredient:977				100.0		good
+K 2HPO4	CHEBI:131527				100.0		good
+K Medium	medium:C42				100.0		good
+K minimum	medium:C43				100.0		good
+K-acetate	CHEBI:47622				100.0		good
+K2CO3	CHEBI:131526				100.0		good
+K2CrO4	CAS-RN:7789-00-6				100.0		good
+K2HPO4	CHEBI:131527				100.0		good
+K2HPO4 x 3 H2O	ingredient:1161				100.0		good
+K2HSO4	ingredient:1895				100.0		good
+K2S4O6	CAS-RN:13932-13-3				100.0		good
+K2SO4	CHEBI:32036				100.0		good
+K2SO4·7H2O	ingredient:1161				100.0		good
+K35 Medium	medium:C42				100.0		good
+KAl(SO4)2 x 12 H2O	CHEBI:86465				100.0		good
+KAl(SO4)2·12H2O	CHEBI:86465				100.0		good
+KBr	CHEBI:32030				100.0		good
+KCL	CHEBI:32588				100.0		good
+KCl	CHEBI:32588				74.55		good
+KF	CHEBI:73605				100.0		good
+KH2HPO4	CHEBI:131527				100.0		good
+KH2PO4 x 7 H2O	ingredient:1161				136.09		good
+KHCO3	CHEBI:81862				100.0		good
+KI	CHEBI:8346				100.0		good
+KNO3	CHEBI:17632				100.0		good
+KOH	CHEBI:32035				100.0		good
+KSCN	CHEBI:30951				100.0		good
+L(+)-Tartaric acid	CHEBI:15671				100.0		good
+L-Alanine	CHEBI:16977				100.0		good
+L-Arginine	CHEBI:16467				100.0		good
+L-Arginine x HCI	CAS-RN:1119-34-2				100.0		good
+L-Arginine x HCl	CAS-RN:1119-34-2				100.0		good
+L-Ascorbic acid	CHEBI:29073				100.0		good
+L-Asparagin	CHEBI:17196				100.0		good
+L-Asparagine	CHEBI:17196				100.0		good
+L-Aspartic acid	CHEBI:17053				100.0		good
+L-Cystein HCl	PubChem:5862				100.0		good
+L-Cystein Hcl	PubChem:5862				100.0		good
+L-Cysteine	CHEBI:17561				100.0		good
+L-Cysteine x HCl	PubChem:5862				100.0		good
+L-Cysteine-HCl	PubChem:5862				100.0		good
+L-Cysteine-HCl x H2O	ingredient:983				100.0		good
+L-Cysteine·HCl·H2O solution*	ingredient:1860				100.0		good
+L-Cysteiniumchloride	CHEBI:91247				100.0		good
+L-Cystein·HCl·H2O	ingredient:983				100.0		good
+L-Cystine	CHEBI:16283				100.0		good
+L-Fucose	CHEBI:18287				100.0		good
+L-Glutamic Acid	CHEBI:16015				100.0		good
+L-Glutamic acid	CHEBI:16015				100.0		good
+L-Glutamine	CHEBI:18050				100.0		good
+L-Glutathione (reduced)	CHEBI:177535				100.0		good
+L-Histidine	CHEBI:15971				100.0		good
+L-Isoleucine	CHEBI:17191				100.0		good
+L-Leucine	CHEBI:15603				100.0		good
+L-Lysine	CHEBI:18019				100.0		good
+L-Lysine HCl	CAS-RN:657-27-2				100.0		good
+L-Methionine	CHEBI:16643				100.0		good
+L-Ornithine HCl	CAS-RN:3184-13-2				100.0		good
+L-Phenylalanine	CHEBI:17295				100.0		good
+L-Proline	CHEBI:17203				100.0		good
+L-Serine	CHEBI:17115				100.0		good
+L-Sodium lactate	CHEBI:867561				100.0		good
+L-Threonine	CHEBI:16857				100.0		good
+L-Tryptophan	CHEBI:16828				100.0		good
+L-Tyrosine	CHEBI:17895				100.0		good
+L-Valine	CHEBI:16414				100.0		good
+L-cysteine HCl	PubChem:5862				100.0		good
+L-cysteine-HCl x H2O	ingredient:983				100.0		good
+LB broth powder	ingredient:1999				100.0		good
+Lab-Lemco beef extract	CAS-RN:91079-38-8				100.0		good
+Lactose	CHEBI:36218				100.0		good
+Leibovitz's L-15 medium	ingredient:1941				100.0		good
+Leptospira Enrichment EMJH	ingredient:992				100.0		good
+Li2B4O7	CAS-RN:12007-60-2				100.0		good
+LiCl	CHEBI:48607				100.0		good
+Lipoic acid	CHEBI:16494				100.0		good
+MEM	CHEBI:43968				100.0		good
+MES	CHEBI:39010				100.0		good
+MES (2-Morpholinoethanesulfonic acid)	CHEBI:39005				100.0		good
+MES (2-[N-Morpholino]ethane sulfonic acid)	CHEBI:39005				100.0		good
+MES [2-(N-morpholino) ethane sulfonic acid]	CHEBI:39005				100.0		good
+MES acids	CAS-RN:4432-31-9				100.0		good
+MErds / MY75S	medium:C54				100.0		good
+MOPS	CHEBI:39074				100.0		good
+MOPS (3-(N-morpholino) propane-sulfonic acid)	CHEBI:44115				100.0		good
+MOPS buffer	CAS-RN:1132-61-2				100.0		good
+Magnesium Sulfate	CHEBI:32599				100.0		good
+Magnesium acetate	CHEBI:62964				100.0		good
+Maize extract	ingredient:575				100.0		good
+Maize meal	ingredient:1985				100.0		good
+Malate	CHEBI:25115				100.0		good
+Malic Acid	CHEBI:6650				100.0		good
+Malt extract	CAS-RN:8002-48-0				100.0		good
+Malt extract broth	ingredient:810				100.0		good
+Malt extract powder	ingredient:1160				100.0		good
+Malted wheat meal	ingredient:1881				100.0		good
+Maltose	CHEBI:18167				100.0		good
+Maltose monohydrate	PubChem:23615261				100.0		good
+Malt extract	CAS-RN:8002-48-0				100.0		good
+Manganese Sulfate	CHEBI:86364				100.0		good
+Mannitol	CHEBI:29864				100.0		good
+Meat Extract	ingredient:2				100.0		good
+Meat extract	ingredient:2				100.0		good
+Melibiose	CHEBI:28053				100.0		good
+Metal solution (see below)	ingredient:1863				100.0		good
+Methanol	CHEBI:17790				100.0		good
+Methanol solution (see below)*	ingredient:1863				100.0		good
+Methylamine	CHEBI:16830				100.0		good
+Methylamine hydrochloride	CHEBI:59337				100.0		good
+Methylamine-HCl	CAS-RN:593-81-7				100.0		good
+Methylene blue	CHEBI:6872				100.0		good
+Mg	CHEBI:73611				100.0		good
+Mg(NO3)2·6H2O	CAS-RN:13446-18-9				100.0		good
+Mg(SO4) x 7 H2O (350 g/l stock solution)	CAS-RN:10034-99-8				100.0		good
+Mg(SO4) x 7H2O	CAS-RN:10034-99-8				100.0		good
+Mg2SO4	CHEBI:32599				100.0		good
+MgCL2 x 6 H2O	KEGG:C07755				100.0		good
+MgCl 2	CHEBI:6636				95.21		good
+MgCl 2 x 6 H2O	KEGG:C07755				95.21		good
+MgCl x 6 H2O	KEGG:C07755				100.0		good
+MgCl x 7 H2O	KEGG:C07755				100.0		good
+MgCl2	CHEBI:6636				95.21		good
+MgCl2  x 6 H2O	CHEBI:86345				95.21		good
+MgCl2  x 7 H2O	KEGG:C07755				95.21		good
+MgCl2  x 76 H2O	KEGG:C07755				95.21		good
+MgCl2 X 6H2O	KEGG:C07755				95.21		good
+MgCl2 x 2 H2O	CAS-RN:20603-88-7				95.21		good
+MgCl2 x 6 H20	KEGG:C07755				100.0		good
+MgCl2 x 6 H2O	KEGG:C07755				95.21		good
+MgCl2 x 6 H2O (200 g/l stock solution)	CHEBI:86345				95.21		good
+MgCl2 x 6H2O	KEGG:C07755				95.21		good
+MgCl2 x 7 H2O	KEGG:C07755				95.21		good
+MgCl2.6H2O	CHEBI:86345				95.21		good
+MgCl2x 6 H2O	KEGG:C07755				95.21		good
+MgCl2x 6H2O	CHEBI:86345				95.21		good
+MgCl2x6H2O	CHEBI:86345				95.21		good
+MgCl2 x 6H2O	KEGG:C07755				95.21		good
+MgCl2·6H2O	CHEBI:86345				100.0		good
+MgSO 4 x 7 H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO x 7 H2O	CAS-RN:10034-99-8				100.0		good
+MgSO2 x 7 H2O	CAS-RN:10034-99-8				100.0		good
+MgSO4	CHEBI:32599	CHEBI:32599			120.37		good
+MgSO4  x 7 H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 6 H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 6H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7 H20	CAS-RN:10034-99-8				100.0		good
+MgSO4 x 7 H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7 H2O (0.1% w/v)	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7 H2O (100 mM)	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7 H2O solution (25%)	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7 H2O to 15.0 g).	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x 7H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4 x7 H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4.7H2O	CHEBI:31795	CHEBI:32599			120.37		good
+MgSO47H2O	CHEBI:31795				100.0		good
+MgSO4x7H2O	CHEBI:31795	CHEBI:32599			120.37		good
+MgSO4 x 7H2O	CAS-RN:10034-99-8	CHEBI:32599			120.37		good
+MgSO4·7H2O	CAS-RN:10034-99-8				100.0		good
+MgSO4·H2O	CAS-RN:10034-99-8				100.0		good
+MgSo4 x 7 H2O	CAS-RN:10034-99-8				100.0		good
+Mineral solution (see Medium No.976	ingredient:1958				100.0		good
+Mineral solution (see Medium No.976)	ingredient:1958				100.0		good
+Mix	CHEBI:133626				100.0		good
+Mm Bicarbonate	CAS-RN:71-52-3				100.0		good
+MnCl	CHEBI:7773015				100.0		good
+MnCl 2 x 4 H2O	CAS-RN:20603-88-7				100.0		good
+MnCl2	CHEBI:7773015				100.0		good
+MnCl2 solution see below	ingredient:1863				100.0		good
+MnCl2 x 2 H2O	CAS-RN:20603-88-7				100.0		good
+MnCl2 x 4 H2O	CAS-RN:20603-88-7				100.0		good
+MnCl2 x 4 H2O (0.1% w/v)	CAS-RN:20603-88-7				100.0		good
+MnCl2 x 4 H2O (0.36 g/l)	CAS-RN:20603-88-7				100.0		good
+MnCl2 x 4H2O	CAS-RN:20603-88-7				100.0		good
+MnCl2·4H2O	CAS-RN:20603-88-7				100.0		good
+MnCl2·6H2O	ingredient:2003				100.0		good
+MnCl4·4H2O	ingredient:1828				100.0		good
+MnSO4	CHEBI:86360	CHEBI:135251			151.0		good
+MnSO4 x 1 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 2 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 2 H2O (0.1% w/v)	CHEBI:86356	CHEBI:135251			151.0		good
+MnSO4 x 2 H2O (1% solution)	CHEBI:86356	CHEBI:135251			151.0		good
+MnSO4 x 4 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 5 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 6 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 7 H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x 7H2O	ingredient:1000	CHEBI:135251			151.0		good
+MnSO4 x H2O	ingredient:1000				100.0	very_high	very_good
+MnSO4 x X H2O	ingredient:1000				100.0		good
+MnSO4.4H2O	CHEBI:86358	CHEBI:135251			151.0		good
+MnSO4·5H2O	CHEBI:131524				100.0		good
+MoO3	CHEBI:30627				100.0		good
+Monopotassium Phosphate	CHEBI:63036				100.0		good
+Monosodium glutamate	CHEBI:64220				100.0		good
+Mueller-Hinton broth	ingredient:748				100.0		good
+N-Acetyl Glucosamine	CHEBI:28009				100.0		good
+N-Acetyl-D-glucosamine	CHEBI:8006				100.0		good
+N-Acetyl-D-glucosamine (Sigma)	CHEBI:28009				100.0		good
+N-Acetylglucosamine	CHEBI:59640				100.0		good
+NA2 EDTA	CHEBI:64734				100.0		good
+NCL/0.01% NPA	medium:C66				100.0		good
+NH4CL	CHEBI:31206				100.0		good
+NH4Cl	CHEBI:31206				53.49		good
+NH4Cl2	CHEBI:31206				100.0		good
+NH4H2PO4	CAS-RN:7722-76-1				100.0		good
+NH4HCO3	CAS-RN:1066-33-7				100.0		good
+NH4NO3	CAS-RN:6484-52-2				100.0		good
+Na NO3	CAS-RN:7631-99-4				100.0		good
+Na Succinate	CHEBI:26806				100.0		good
+Na gluconate	CHEBI:24265				100.0		good
+Na-(DL)-lactate	CAS-RN:72-17-3				100.0		good
+Na-(L)-lactate	CAS-RN:867-56-1				100.0		good
+Na-3-hydroxybutyrate	CHEBI:37054				100.0		good
+Na-Caseinate	CAS-RN:9005-46-3				100.0		good
+Na-DL-lactate	CAS-RN:72-17-3				100.0		good
+Na-EDTA	CHEBI:64734				100.0		good
+Na-L-lactate	CAS-RN:867-56-1				100.0		good
+Na-Thioglycolate	CHEBI:30066				100.0		good
+Na-ampicillin	CHEBI:28971				100.0		good
+Na-ascorbate	CHEBI:38290				100.0		good
+Na-aspartate	PubChem:21806				100.0		good
+Na-butyrate	CHEBI:17968				100.0		good
+Na-caproate	CHEBI:17120				100.0		good
+Na-caseinate	CAS-RN:9005-46-3				100.0		good
+Na-crotonate	CHEBI:35899				100.0		good
+Na-gluconate	CHEBI:18391				100.0		good
+Na-glutamate	CHEBI:29988				100.0		good
+Na-glycerol phosphate	CAS-RN:1334-74-3				100.0		good
+Na-glycerophosphate	CAS-RN:1334-74-3				100.0		good
+Na-lactate	CAS-RN:867-56-1				100.0		good
+Na-meta silicate	CAS-RN:6834-92-0				100.0		good
+Na-meta-silicate	CAS-RN:6834-92-0				100.0		good
+Na-propionate	CHEBI:17272				100.0		good
+Na-succinate	CHEBI:26806				100.0		good
+Na-tartrate	CHEBI:30924				100.0		good
+Na-thioglycolate	CHEBI:30066				100.0		good
+Na2 EDTA	CHEBI:64734				100.0		good
+Na2 α-ketoglutarate	CHEBI:16810				100.0		good
+Na2-9,10-anthraquinone-2,6-disulfonate (TCI A0308)	CAS-RN:853-68-9				100.0		good
+Na2-EDTA	CHEBI:64734				100.0		good
+Na2-tartrate x 2 H2O	CAS-RN:6106-24-7				100.0		good
+Na2-ß-glycerolphosphate	CAS-RN:1334-74-3				100.0		good
+Na2-ß-glycerophosphate	CHEBI:17270				100.0		good
+Na2B4O7	CAS-RN:1330-43-4				100.0		good
+Na2B4O7 x 10 H2O	CAS-RN:1303-96-4				100.0		good
+Na2B4O7 x 10H2O	CAS-RN:1303-96-4				100.0		good
+Na2B4O7·10H2O	CAS-RN:1303-96-4				100.0		good
+Na2CO3	CHEBI:29377				100.0		good
+Na2EDTA	CHEBI:64734				100.0		good
+Na2EDTA.2H2O	CHEBI:64758				100.0		good
+Na2EDTA·2H2O	CHEBI:64758				100.0		good
+Na2H2PO4	CHEBI:34683				100.0		good
+Na2HAsO4 x 7 H2O	CHEBI:91257				100.0		good
+Na2HPO4	CHEBI:34683				141.96		good
+Na2HPO4 x 12 H2O	ingredient:736				141.96		good
+Na2HPO4 x 2 H2O	ingredient:736				141.96		good
+Na2HPO4 x 2H2O	ingredient:736				141.96		good
+Na2HPO4 x2 H2O	ingredient:736				141.96		good
+Na2HPO4·2H2O	ingredient:736				100.0		good
+Na2HPO4·6H2O	ingredient:803				100.0		good
+Na2MoO4	CHEBI:75215				100.0		good
+Na2MoO4 x 2 H2O	CAS-RN:10102-40-6				100.0		good
+Na2MoO4 x 2 H2O (0.1% w/v)	CAS-RN:10102-40-6				100.0		good
+Na2MoO4 x 2H2O	CAS-RN:10102-40-6				100.0		good
+Na2MoO4 x 7 H2O	CHEBI:86473				100.0		good
+Na2MoO4 x H2O	CAS-RN:10102-40-6				100.0		good
+Na2MoO4*2 H2O	CHEBI:75213				100.0		good
+Na2MoO4*2H2O	CHEBI:75213				100.0		good
+Na2MoO4-2H2O	CHEBI:75213				100.0		good
+Na2MoO4.2H2O	CHEBI:75213				100.0		good
+Na2MoO4·2H2O	CAS-RN:10102-40-6				100.0		good
+Na2MoSO4 x 2 H2O	CAS-RN:10102-40-6				100.0		good
+Na2O4W x 2 H2O	ingredient:736				100.0		good
+Na2S	CHEBI:76208				100.0		good
+Na2S x 9 H2O	CHEBI:76209				100.0		good
+Na2S x 9 H2O (3% w/v)	CHEBI:76209				100.0		good
+Na2S x 9 H2O(24% w/v)	CHEBI:76209				100.0		good
+Na2S2O3	ingredient:804				100.0		good
+Na2S2O3 x 5 H20	CAS-RN:10102-17-7				100.0		good
+Na2S2O3 x 5 H2O	CAS-RN:10102-17-7				100.0		good
+Na2S2O3 x 5 H2O (10% solution)	CAS-RN:10102-17-7				100.0		good
+Na2S2O3 x 5 H2O(24 % w/v)	CAS-RN:10102-17-7				100.0		good
+Na2S2O3 x 5H2O	CAS-RN:10102-17-7				100.0		good
+Na2S2O3x5H2O	CHEBI:32150				100.0		good
+Na2S2O3·5H2O	CAS-RN:10102-17-7				100.0		good
+Na2S2O4·2H2O	ingredient:1946				100.0		good
+Na2S2O5	CHEBI:114786				100.0		good
+Na2SO3	CHEBI:86477				100.0		good
+Na2SO3 x 5 H20	CAS-RN:10213-79-3				100.0		good
+Na2SO4	CHEBI:32149	CHEBI:32149			142.04		good
+Na2SO4 x 10 H2O	CAS-RN:10102-23-5	CHEBI:32149			142.04		good
+Na2Se3 x 5 H2O	ingredient:870				100.0		good
+Na2SeO3	CHEBI:48843				100.0		good
+Na2SeO3 5 H2O	ingredient:870				100.0		good
+Na2SeO3 x 5 H2O	ingredient:870				100.0		good
+Na2SeO3 x 5 H2O (0.01% w/v)	ingredient:870				100.0		good
+Na2SeO3·5H2O	ingredient:870				100.0		good
+Na2SeO4	CHEBI:32149				100.0		good
+Na2SeO4 x 10 H2O	CAS-RN:10102-23-5				100.0		good
+Na2SiO3	CHEBI:1344098				100.0		good
+Na2SiO3 x 9 H20	CAS-RN:13517-24-3				100.0		good
+Na2SiO3 x 9 H2O	CAS-RN:13517-24-3				100.0		good
+Na2SiO3.9H2O	CAS-RN:13517-24-3				100.0		good
+Na2SiO3·9H2O	CAS-RN:13517-24-3				100.0		good
+Na2S·9H2O	CHEBI:76209				100.0		good
+Na2WO4	CHEBI:63940				293.82		good
+Na2WO4 x 2 H20	ingredient:736				100.0		good
+Na2WO4 x 2 H2O	ingredient:736				293.82	very_high	very_good
+Na2WO4 x 2 H2O (0.1% w/v)	CHEBI:63939				293.82		good
+Na2WO4 x 2H2O	ingredient:736				293.82		good
+Na2WO4*2H2O	CHEBI:63939				100.0		good
+Na2WO4·2H2O	CHEBI:63939				100.0		good
+Na2citrate x 2 H2O	CAS-RN:6132-04-3				100.0		good
+Na3-Citrate x 2 H2O	CAS-RN:6132-04-3				100.0		good
+Na3-EDTA	CHEBI:64734				100.0		good
+Na3-citrate x 2 H2O	CAS-RN:6132-04-3				100.0		good
+Na3-citrate x 2 H2O (0.6 g/l stock solution)	CAS-RN:6132-04-3				100.0		good
+Na3-citrate x 5 H2O	CAS-RN:6858-44-2				100.0		good
+Na3Citrate x 2 H2O	CAS-RN:6132-04-3				100.0		good
+Na3VO4	CHEBI:35607				100.0		good
+Na3‐citrate x 2H2O	CAS-RN:6132-04-3				100.0		good
+Na3‐citrate x 2H2O	CAS-RN:6132-04-3				100.0		good
+NaBr	CHEBI:63004				100.0		good
+NaCL	CHEBI:26710				100.0		good
+NaCO3	CAS-RN:497-19-8				100.0		good
+NaCl	CHEBI:26710	CHEBI:26710			58.44		good
+NaClO3	CAS-RN:7775-09-9				100.0		good
+NaEDTA	CHEBI:64734				100.0		good
+NaF	CHEBI:28741				100.0		good
+NaH2PO4	CHEBI:37585				100.0		good
+NaH2PO4 x 2 H2O	ingredient:736				100.0		good
+NaH2PO4 x 2H2O	ingredient:736				100.0		good
+NaH2PO4.2H2O	CHEBI:4496				100.0		good
+NaH2PO4·2H2O	ingredient:736				100.0		good
+NaHCO3	CHEBI:32139				100.0		good
+NaHSeO3	CAS-RN:7782-82-3				100.0		good
+NaMoO4 x 2 H2O	CAS-RN:10102-40-6				100.0		good
+NaNH4HPO4 x 4 H2O	CAS-RN:7783-13-3				100.0		good
+NaNO2	CHEBI:78870				100.0		good
+NaNO3	CAS-RN:7631-99-4				100.0		good
+NaOH	CHEBI:32145				100.0		good
+NaS2O3	CAS-RN:7772-98-7				100.0		good
+NaS2O3 x 5 H2O	CAS-RN:10102-17-7				100.0		good
+NaSO4	CHEBI:32149				100.0		good
+NaVO3	CHEBI:75221				100.0		good
+NaWO4·2H2O	CHEBI:63939				100.0		good
+Nacl	CHEBI:26710				100.0		good
+Natetrathionate	CAS-RN:13721-29-4				100.0		good
+Natural seawater	ingredient:2152				100.0		good
+NiCl 2 x 6 H2O	ingredient:2003	CHEBI:34887			129.6		good
+NiCl2	CHEBI:34887	CHEBI:34887			129.6		good
+NiCl2 x 2 H2O	CAS-RN:20603-88-7	CHEBI:34887			129.6		good
+NiCl2 x 2H2O	CAS-RN:20603-88-7	CHEBI:34887			129.6		good
+NiCl2 x 6 H20	PubChem:129831233				100.0		good
+NiCl2 x 6 H2O	ingredient:2003	CHEBI:34887			129.6		good
+NiCl2 x 6 H2O (0.1% w/v)	ingredient:2003	CHEBI:34887			129.6		good
+NiCl2·6H2O	ingredient:2003				100.0		good
+Niacin	CHEBI:15940				100.0		good
+Nicotinamide	CHEBI:17154				100.0		good
+Nicotinate	CHEBI:10716816				100.0		good
+Nicotine amide	PubChem:936				100.0		good
+Nicotinic Acid	CHEBI:15940				100.0		good
+Nicotinic acid	CHEBI:15940				100.0		good
+Nicotinic acid (PP)	CHEBI:15940				100.0		good
+Nicotinic Acid	CHEBI:15940				100.0		good
+Nitrilotriacetate	CHEBI:44557				100.0		good
+Nitrilotriacetate (NTA)	CHEBI:25548				100.0		good
+Nitrilotriacetic Acid	CHEBI:44557				100.0		good
+Nitrilotriacetic acid	CHEBI:44557				100.0		good
+Nitrilotriacetic acid (NTA)	CHEBI:44557				100.0		good
+Nitrilotriacetic acid trisodium salt monohydrate	PubChem:29194				100.0		good
+Nitrilotriacetic acid, trisodium salt	CHEBI:132766				100.0		good
+Nutrient Broth	medium:J663				100.0		good
+Nutrient broth	medium:J663				100.0		good
+Nutrients	CHEBI:33284				100.0		good
+Oat flakes	CAS-RN:84012-26-0				100.0		good
+Olive oil	CAS-RN:8001-25-0				100.0		good
+P-Aminobenzoic acid	CHEBI:30753				100.0		good
+PABA	CHEBI:30753				100.0		good
+PIPES	CHEBI:39033				100.0		good
+PJ/NN	medium:C77				100.0		good
+PPLO Broth	ingredient:953				100.0		good
+PPLO broth	ingredient:953				100.0		good
+PPLO-Broth	ingredient:953				100.0		good
+Pantothenic acid	CHEBI:7916				100.0		good
+Pennassay Broth	ingredient:559				100.0		good
+Peptone	CAS-RN:73049-73-7				100.0		good
+Peptone (Oxoid)	ingredient:2398				100.0		good
+Peptone mixture	ingredient:156				100.0		good
+Phenyl acetic acid	CHEBI:30745				100.0		good
+Phenyl propionic acid	CHEBI:501520				100.0		good
+Phosphate buffer stock solution	ingredient:1900				100.0		good
+Phosphates solution	ingredient:2026				100.0		good
+Phytone peptone	ingredient:125				100.0		good
+Poly hexamethylene carbonate (PHC)*	CAS-RN:61630-98-6				100.0		good
+Polypeptone	ingredient:442				100.0		good
+Potassium Aspartate	CAS-RN:7259-25-8				100.0		good
+Potassium Glutamate	CAS-RN:19473-49-5				100.0		good
+Potassium acetate	CHEBI:32029				100.0		good
+Potato	CAS-RN:93348-51-7				100.0		good
+Propionic acid	CHEBI:30768				100.0		good
+Pullulan	CHEBI:27941				100.0		good
+Putrescine	CHEBI:326268				100.0		good
+Pyridoxal phosphate	CHEBI:18405				100.0		good
+Pyridoxal·HCl	CHEBI:131529				100.0		good
+Pyridoxamine	CHEBI:16410				100.0		good
+Pyridoxamine Dihydrochloride	CHEBI:131532				100.0		good
+Pyridoxamine dihydrochloride	CHEBI:131532				100.0		good
+Pyridoxamine-HCl	CHEBI:131531				100.0		good
+Pyridoxamine·2HCl	CHEBI:131532				100.0		good
+Pyridoxamine·HCl	CHEBI:131531				100.0		good
+Pyridoxine	CHEBI:16709				100.0		good
+Pyridoxine HCl	CHEBI:131531				100.0		good
+Pyridoxine hydrochloride	CHEBI:30961				100.0		good
+Pyridoxine-HCl	CHEBI:131531				100.0		good
+Pyridoxine·HCl	CHEBI:131531				100.0		good
+Pyrocatechol	CHEBI:18135				100.0		good
+Pyruvate	CHEBI:15361				100.0		good
+QF	CHEBI:141430				100.0		good
+Quinic acid	CHEBI:26493				100.0		good
+R2A Broth	medium:J839				100.0		good
+RPL/0.01% RPA	medium:C85				100.0		good
+Raffinose	CHEBI:16634				100.0		good
+Resazurin	CHEBI:8806				100.0		good
+Riboflavin	CHEBI:17015				100.0		good
+Riboflavin solution (see Medium No.462)*	ingredient:1893				100.0		good
+Riboflavine (B2)	CHEBI:17015				100.0		good
+Rice starch	ingredient:2354				100.0		good
+Rye-bran	ingredient:1880				100.0		good
+S77 + vitamins	medium:C102				100.0		good
+S88 + Vitamins	medium:C103				100.0		good
+SL-6 trace element solution (see Medium No.167)	ingredient:1886				100.0		good
+SL10	ingredient:1387				100.0		good
+SOLUTION A	ingredient:485				100.0		good
+Sake	ingredient:1604				100.0		good
+Salt Solution I	ingredient:1143				100.0		good
+Sea Salt	ingredient:423				100.0		good
+Selenite tungstate solution (see Medium No.431)	ingredient:1921				100.0		good
+Selenite-Tungstate Solution:	ingredient:88				100.0		good
+Selenite-Tungstate solution	ingredient:88				100.0		good
+Selenite-Tungstate solution* (see Medium No.431)	ingredient:1921				100.0		good
+Selenite-tungstate solution	ingredient:88				100.0		good
+Selenite-tungstate solution (see Medium No.431)	ingredient:1921				100.0		good
+Selenite-tungstate solution (see Medium No.554)	ingredient:1921				100.0		good
+Selenite-tungstate solution (see Medium No.862)	ingredient:1921				100.0		good
+Selenite-tungstate solution(see Medium No.554)	ingredient:1921				100.0		good
+Selenite-tungstate solution* (see Medium No.431)	ingredient:1921				100.0		good
+Sheep blood	ingredient:2047				100.0		good
+SiO2	CHEBI:30563				100.0		good
+Sigma Sea salts	ingredient:925				100.0		good
+Skim Milk	CAS-RN:999999-99-4				100.0		good
+Skim milk	CAS-RN:999999-99-4				100.0		good
+Small dried sardine	ingredient:1986				100.0		good
+SnCl2·2H2O	CHEBI:78074				100.0		good
+Sodium Acetate	CHEBI:32954				100.0		good
+Sodium Citrate	CHEBI:32142				100.0		good
+Sodium DL-lactate	CHEBI:232798				100.0		good
+Sodium DL-malate	CHEBI:91261				100.0		good
+Sodium L-lactate	CHEBI:232798				100.0		good
+Sodium L-malate	CHEBI:91261				100.0		good
+Sodium Malate And	CHEBI:91261				100.0		good
+Sodium Pyruvate	CHEBI:50144				100.0		good
+Sodium acetate	CHEBI:32954				100.0		good
+Sodium acetate trihydrate	CHEBI:32138				100.0		good
+Sodium acetate·3H2O	CAS-RN:6131-90-4				100.0		good
+Sodium ascorbate	CHEBI:113451				100.0		good
+Sodium benzoate	CHEBI:113455				100.0		good
+Sodium butyrate	CHEBI:64103				100.0		good
+Sodium caproate	CHEBI:114126				100.0		good
+Sodium carbonate	CHEBI:29377				100.0		good
+Sodium citrate	CHEBI:32142				100.0		good
+Sodium dithionite	CHEBI:66870				100.0		good
+Sodium formate	CHEBI:62965				100.0		good
+Sodium fumarate	CHEBI:115156				100.0		good
+Sodium gluconate	CHEBI:84997				100.0		good
+Sodium glutamate	CHEBI:64220				100.0		good
+Sodium glutamate·H2O	CHEBI:64220				100.0		good
+Sodium glycerophosphate	PubChem:14754				100.0		good
+Sodium lactate	CHEBI:75228				100.0		good
+Sodium malate	CHEBI:91261				100.0		good
+Sodium maleate	CHEBI:91263				100.0		good
+Sodium nitrate	CHEBI:63005				100.0		good
+Sodium octanoate	CHEBI:132100				100.0		good
+Sodium palmitate	CAS-RN:408-35-5				100.0		good
+Sodium polygalacturonate	CAS-RN:9049-37-0				100.0		good
+Sodium pyrophosphate	CHEBI:71240				100.0		good
+Sodium pyruvate	CHEBI:50144				100.0		good
+Sodium silicate	CHEBI:60720				100.0		good
+Sodium succinate	CHEBI:63675				100.0		good
+Sodium tartrate	CHEBI:63017				100.0		good
+Sodium thioglycolate	CHEBI:86481				100.0		good
+Sodium β-glycerophosphate	PubChem:14754				100.0		good
+Sodiumcitrate	CHEBI:32142				100.0		good
+Soja peptone	CAS-RN:91079-46-8				100.0		good
+Solution :	ingredient:485				100.0		good
+Solution A	ingredient:485				100.0		good
+Solution A:	ingredient:485				100.0		good
+Sorbitol	CHEBI:30911				100.0		good
+Soy peptone	CAS-RN:91079-46-8				100.0		good
+Soya peptone	CAS-RN:91079-46-8				100.0		good
+Soytone	ingredient:667				100.0		good
+SrCl	CHEBI:36383				100.0		good
+SrCl 2	CHEBI:36383				100.0		good
+SrCl2	CHEBI:36383				100.0		good
+SrCl2 x 6 H2O	CHEBI:36385				100.0		good
+SrCl2 x 6 H2O (0.1% w/v)	CHEBI:36385				100.0		good
+SrCl2.6H2O	CHEBI:36385				100.0		good
+SrCl2·6H2O	CHEBI:36385				100.0		good
+SrSO4	CAS-RN:7759-02-6				100.0		good
+Starch	CHEBI:85248				100.0		good
+Stearic acid	CHEBI:28842				100.0		good
+Succinate	CHEBI:26806				100.0		good
+Succinic acid	CHEBI:15741				100.0		good
+Sucrose	CHEBI:17992				100.0		good
+Sulfur	CHEBI:26833				100.0		good
+Sulfur (powder)	CHEBI:14258				100.0		good
+TAPSO	CAS-RN:90549-86-3				100.0		good
+TES	CHEBI:39035				100.0		good
+TRIS	CHEBI:9754				100.0		good
+Tetrachloroethene	CHEBI:17300				100.0		good
+Tetramethyl ammonium	CAS-RN:51-92-3				100.0		good
+Thiamin HCl	CHEBI:49105				100.0		good
+Thiamin-HCl	CHEBI:49105				100.0		good
+Thiamine	CHEBI:26948				100.0		good
+Thiamine (B1)	CHEBI:18385				100.0		good
+Thiamine Dihydrochloride	CHEBI:49105				100.0		good
+Thiamine HCl	CHEBI:49105				100.0		good
+Thiamine pyrophosphate	CHEBI:9532				100.0		good
+Thiamine solution (see Medium No.403)	ingredient:1856				100.0		good
+Thiamine solution (see Medium No.403)*	ingredient:1856				100.0		good
+Thiamine solution* (see Medium No.403)	ingredient:1856				100.0		good
+Thiamine-HCl	CHEBI:49105				100.0		good
+Thiamine HCl	CHEBI:49105				100.0		good
+Thiamine·HCl	CHEBI:49105				100.0		good
+Thioctic acid	CHEBI:30314				100.0		good
+Thioglycolate	CHEBI:47869				100.0		good
+Toluene	CHEBI:17578				100.0		good
+Trace element solution (see Medium No. 1079])	ingredient:1886				100.0		good
+Trace element solution (see Medium No.1079)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.128)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.167)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.187	ingredient:1886				100.0		good
+Trace element solution (see Medium No.187)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.231)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.243)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.284)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.294)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.301)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.439)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.483)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.741)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.748)	ingredient:1886				100.0		good
+Trace element solution (see Medium No.899)	ingredient:1886				100.0		good
+Trace element solution SL12	ingredient:1812				100.0		good
+Trace element solution SL7 (see Medium No.516)	ingredient:1886				100.0		good
+Trace element solution SL8 (see Medium No.190)	ingredient:1886				100.0		good
+Trace element solution(see Medium No.187)	ingredient:1886				100.0		good
+Trace elements solution (see Medium No.1030)	ingredient:1886				100.0		good
+Trace elements solution (see Medium No.1182)	ingredient:1886				100.0		good
+Trace elements solution (see Medium No.310)	ingredient:1886				100.0		good
+Trace mineral solution (see Medium No.197)	ingredient:1958				100.0		good
+Trace minerals (see Medium No.151	ingredient:1883				100.0		good
+Trace minerals (see Medium No.151)	ingredient:1883				100.0		good
+Trace minerals (see Medium No.197	ingredient:1833				100.0		good
+Trace minerals (see Medium No.243)	ingredient:1833				100.0		good
+Trace minerals (see Medium No.324)	ingredient:1833				100.0		good
+Trace minerals solution (see Medium No.228)	ingredient:1982				100.0		good
+Trace minerals(see Medium No.151)	ingredient:1883				100.0		good
+Trace vitamin (see Medium No.197)	ingredient:1784				100.0		good
+Trace vitamins (See Medium No.197)	ingredient:1784				100.0		good
+Trace vitamins (see Medium No.197)	ingredient:1784				100.0		good
+Trace vitamins (see Medium No.197)*	ingredient:1784				100.0		good
+Trace vitamins solution (see Medium No.284)	ingredient:1982				100.0		good
+Trace vitamins solution (see Medium No.284)*	ingredient:1982				100.0		good
+Trace vitamins solution (see Medium No.682)	ingredient:1982				100.0		good
+Trace vitamins(see Medium No.197)	ingredient:1784				100.0		good
+Trace vitamins* (see Medium No. 197)	ingredient:1784				100.0		good
+Trace vitamins* (see Medium No.197)	ingredient:1784				100.0		good
+Tri-sodium citrate	CHEBI:53258				100.0		good
+Triethanolamine	CHEBI:28621				100.0		good
+Trimethylamine-HCl	CAS-RN:593-81-7				100.0		good
+Trimethylamine·HCl	CAS-RN:593-81-7				100.0		good
+Tris (hydroxymethyl aminomethane)	CHEBI:9754				100.0		good
+Tris HCl	CHEBI:1185531				100.0		good
+Tris [tris(hydroxymethyl)aminomethane]	CHEBI:9754				100.0		good
+Tris base	CHEBI:9754				100.0		good
+Tris buffer 1M	CHEBI:9754				100.0		good
+Tris(hydroxymethyl)aminomethane	CHEBI:9754				100.0		good
+Tris(hydroxymethyl)methylamine	CHEBI:44356				100.0		good
+Tris-HCl	CHEBI:1185531				100.0		good
+Tris-HCl buffer	CAS-RN:1185-53-1				100.0		good
+Trisodium Citrate	CHEBI:53258				100.0		good
+Trisodium Citrate Dihydrate	CHEBI:32142				100.0		good
+Trisodium citrate	CHEBI:53258				100.0		good
+Trisodium citrate dehydrate	CHEBI:32142				100.0		good
+Trisodium citrate x 2 H2O	PubChem:71474				100.0		good
+Trisodium citrate·2H2O	PubChem:71474				100.0		good
+Trisodium citrate·3H2O	CAS-RN:6132-05-4				100.0		good
+Trisodium citrate·H2O	PubChem:71474				100.0		good
+Tris [tris(hydroxymethyl)aminomethane]	CHEBI:9754				100.0		good
+Tris·HCl	CHEBI:1185531				100.0		good
+Tropic Marine salt	ingredient:1530				100.0		good
+Tryptic Digest of beef heart	ingredient:662				100.0		good
+Tryptic digest of beef heart	ingredient:662				100.0		good
+Trypticase	ingredient:74				100.0		good
+Trypticase Soy Broth	ingredient:99				100.0		good
+Trypticase soy broth	ingredient:99				100.0		good
+Tryptone	CAS-RN:84843-69-6				100.0		good
+Tween 20	CHEBI:9784				100.0		good
+Tween 60	CHEBI:53425				100.0		good
+Tween 80	CHEBI:53426				100.0		good
+Uracil	CHEBI:17568				100.0		good
+Urea	CHEBI:16199				100.0		good
+VOSO4 x 2 H2O	ingredient:988				100.0		good
+VOSO4 x 5 H2O	ingredient:988				100.0		good
+VOSO4 x 5 H2O (0.01% w/v)	CHEBI:132758				100.0		good
+VOSO4·xH2O	CHEBI:87020				100.0		good
+Valeric acid	CHEBI:17418				100.0		good
+Vitamin 3	CHEBI:176839				100.0		good
+Vitamin B12	CHEBI:176843				100.0		good
+Vitamin B12 solution* (see Medium No.403)	ingredient:1845				100.0		good
+Vitamin B12solution (Medium No.403)	ingredient:1845				100.0		good
+Vitamin B12solution (see Medium No.403)	ingredient:1845				100.0		good
+Vitamin B12solution (see Medium No.403)*	ingredient:1845				100.0		good
+Vitamin B12solution* (see Medium No.403)	ingredient:1845				100.0		good
+Vitamin solution (see Medium No.197)	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.221)	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.304)	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.403)	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.403)*	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.602)	ingredient:1855				100.0		good
+Vitamin solution (see Medium No.979)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.1157)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.197)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.403)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.556)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.915)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.923)	ingredient:1855				100.0		good
+Vitamin solution* (see Medium No.944)	ingredient:1855				100.0		good
+Vitamin-free casamino acids	CAS-RN:91079-40-2				100.0		good
+VitaminB12	CHEBI:176843				100.0		good
+Vitamin B12  (4)	CHEBI:176843				100.0		good
+Vitamin B12  (8)	CHEBI:176843				100.0		good
+Vitamin B12  (9)	CHEBI:176843				100.0		good
+VoSO4 x 2 H2O	ingredient:988				100.0		good
+Waris-H	medium:C106				100.0		good
+Xylan	CHEBI:37166				100.0		good
+Xylose	CHEBI:18222				100.0		good
+Yeast	CAS-RN:68876-77-7				100.0		good
+Yeast Extract	CAS-RN:8013-01-2				100.0		good
+Yeast Nitrogen Base	ingredient:1507				100.0		good
+Yeast autolysate	CAS-RN:977046-75-5				100.0		good
+Yeast extract	CAS-RN:8013-01-2				100.0		good
+Yeast extrakt	CAS-RN:8013-01-2				100.0		good
+Yeast extract	CAS-RN:8013-01-2				100.0		good
+Zinc Sulfate	CHEBI:35176				100.0		good
+Zn2SO4·7H2O	CHEBI:32312				100.0		good
+ZnCl 2	CHEBI:49976				100.0		good
+ZnCl2	CHEBI:49976				100.0		good
+ZnSO4	CHEBI:35176	CHEBI:62984			161.47		good
+ZnSO4 x 6 H2O	CHEBI:132762	CHEBI:62984			161.47		good
+ZnSO4 x 7 H2O	CHEBI:32312	CHEBI:62984			161.47		good
+ZnSO4*7 H2O	CHEBI:32312				100.0		good
+ZnSO4*7H2O	CHEBI:32312				100.0		good
+ZnSO4-7H2O	CHEBI:32312				100.0		good
+ZnSO4.7H2O	CHEBI:32312	CHEBI:62984			161.47		good
+ZnSO4·7H2O	CHEBI:32312				100.0		good
+agar	CHEBI:2509				100.0		good
+agarose	CHEBI:2511				100.0		good
+ammonium chloride	CHEBI:31206				100.0		good
+beef extract	ingredient:85				100.0		good
+calcium chloride	CHEBI:86158				100.0		good
+d-Biotin	CHEBI:15956				100.0		good
+dipotassium hydrogen phosphate	CHEBI:131527				100.0		good
+ferric citrate	CHEBI:31605				100.0		good
+glucose	CHEBI:42758				180.16		good
+iso-Butyric acid	CHEBI:16135				100.0		good
+iso-Valeric acid	CHEBI:503742				100.0		good
+magnesium chloride	CHEBI:86345				100.0		good
+magnesium sulfate	CHEBI:32599				100.0		good
+mg	CHEBI:73611				100.0		good
+myo-Inositol	CHEBI:17268				100.0		good
+n-Butyric acid	CHEBI:30772				100.0		good
+n-Decane	CHEBI:41808				100.0		good
+n-Valeric acid	CHEBI:17418				100.0		good
+p-Aminobenzoic acid	CHEBI:30753				100.0		good
+peptone	CAS-RN:73049-73-7				100.0		good
+potassium chloride	CHEBI:32588				100.0		good
+potassium phosphate monobasic	CHEBI:63036				100.0		good
+sodium acetate	CHEBI:32954				100.0		good
+sodium bicarbonate	CAS-RN:144-55-8				100.0		good
+sodium malate	CHEBI:91261				100.0		good
+sodium phosphate dibasic	CHEBI:37583				100.0		good
+soy peptone	CAS-RN:91079-46-8				100.0		good
+trans-Cinnamic acid	CHEBI:35697				100.0		good
+tryptone	CAS-RN:84843-69-6				100.0		good
+yeast extract	CAS-RN:8013-01-2				100.0		good
+α-D-Glucose	CHEBI:42758				100.0		good
+α-Lipoic acid	CHEBI:43796				100.0		good
+α-Methylbutyric acid	CHEBI:37070				100.0		good
