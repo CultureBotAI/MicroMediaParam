@@ -62,27 +62,37 @@ class CompositionKGMapper:
         """Normalize chemical name for better matching."""
         if pd.isna(name) or name == "":
             return ""
-        
+
         # Convert to lowercase
         normalized = name.lower().strip()
-        
+
+        # Remove concentration/quantity prefixes at the start
+        # - Percentages: 0.2%, 5%, etc.
+        # - Molarities: 1 M, 0.5 M, etc.
+        # - Weights: 1 g, 100 mg, etc.
+        normalized = re.sub(r'^\d+\.?\d*\s*%\s+', '', normalized)           # "0.2% " or "5% "
+        normalized = re.sub(r'^\d+\.?\d*\s+[mM]\s+', '', normalized)        # "1 M " or "0.5 m "
+        normalized = re.sub(r'^\d+\.?\d*\s*[Gg]\s+', '', normalized)        # "1g " or "100 g "
+        normalized = re.sub(r'^\d+\.?\d*\s*[Mm][Gg]\s+', '', normalized)    # "100mg " or "50 mg "
+        normalized = re.sub(r'^[Gg]\s+', '', normalized)                     # "G " prefix
+
         # Remove common prefixes/suffixes
         normalized = re.sub(r'^(d|l|dl)-', '', normalized)
         normalized = re.sub(r'^(\+|-)\s*', '', normalized)
-        
+
         # Normalize hydration notation
         normalized = re.sub(r'\s*x\s*\d+\s*h2o', '', normalized)
         normalized = re.sub(r'\s*•\s*\d+\s*h2o', '', normalized)
         normalized = re.sub(r'\s*\.\s*\d+\s*h2o', '', normalized)
-        
+
         # Remove parenthetical information (often stereochemistry)
         normalized = re.sub(r'\([^)]*\)', '', normalized)
-        
+
         # Normalize whitespace and punctuation
         normalized = re.sub(r'[,;]', '', normalized)
         normalized = re.sub(r'\s+', ' ', normalized)
         normalized = normalized.strip()
-        
+
         return normalized
     
     def _build_lookup_dicts(self):

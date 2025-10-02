@@ -250,19 +250,29 @@ class CompoundMapper:
     def normalize_compound_name(self, name: str) -> str:
         """
         Normalize compound name by removing variations and hydration states.
-        
+
         Args:
             name: Original compound name
-            
+
         Returns:
             Normalized compound name
         """
         if not name or not isinstance(name, str):
             return ""
-        
+
         # Convert to lowercase and strip whitespace
         normalized = name.lower().strip()
-        
+
+        # Remove concentration/quantity prefixes at the start
+        # - Percentages: 0.2%, 5%, etc.
+        # - Molarities: 1 M, 0.5 M, etc.
+        # - Weights: 1 g, 100 mg, etc.
+        normalized = re.sub(r'^\d+\.?\d*\s*%\s+', '', normalized)           # "0.2% " or "5% "
+        normalized = re.sub(r'^\d+\.?\d*\s+[mM]\s+', '', normalized)        # "1 M " or "0.5 m "
+        normalized = re.sub(r'^\d+\.?\d*\s*[Gg]\s+', '', normalized)        # "1g " or "100 g "
+        normalized = re.sub(r'^\d+\.?\d*\s*[Mm][Gg]\s+', '', normalized)    # "100mg " or "50 mg "
+        normalized = re.sub(r'^[Gg]\s+', '', normalized)                     # "G " prefix
+
         # Remove common prefixes/suffixes
         normalized = re.sub(r'^[dl]-', '', normalized)  # Remove D-/L- stereochemistry
         normalized = re.sub(r'^[+-]-', '', normalized)  # Remove +/- indicators
