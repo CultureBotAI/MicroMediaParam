@@ -66,32 +66,21 @@ class CompositionKGMapper:
         # Convert to lowercase
         normalized = name.lower().strip()
 
-        # Remove concentration/quantity prefixes at the start
-        # - Percentages: 0.2%, 5%, etc.
-        # - Molarities: 1 M, 0.5 M, etc.
-        # - Weights: 1 g, 100 mg, etc.
-        normalized = re.sub(r'^\d+\.?\d*\s*%\s+', '', normalized)           # "0.2% " or "5% "
-        normalized = re.sub(r'^\d+\.?\d*\s+[mM]\s+', '', normalized)        # "1 M " or "0.5 m "
-        normalized = re.sub(r'^\d+\.?\d*\s*[Gg]\s+', '', normalized)        # "1g " or "100 g "
-        normalized = re.sub(r'^\d+\.?\d*\s*[Mm][Gg]\s+', '', normalized)    # "100mg " or "50 mg "
-        normalized = re.sub(r'^[Gg]\s+', '', normalized)                     # "G " prefix
+        # Combined single-pass regex for concentration/quantity prefix removal
+        # Matches: percentages (0.2%), molarities (1 M), weights (100 mg, 1 g), or "G " prefix
+        normalized = re.sub(r'^(?:\d+\.?\d*\s*%\s+|\d+\.?\d*\s+[mM]\s+|\d+\.?\d*\s*[Mm]?[Gg]\s+|[Gg]\s+)', '', normalized)
 
-        # Remove common prefixes/suffixes
-        normalized = re.sub(r'^(d|l|dl)-', '', normalized)
-        normalized = re.sub(r'^(\+|-)\s*', '', normalized)
+        # Combined prefix removal (D-/L-/DL- and +/-)
+        normalized = re.sub(r'^(?:[dl]|dl|\+|-)-?\s*', '', normalized)
 
-        # Normalize hydration notation
-        normalized = re.sub(r'\s*x\s*\d+\s*h2o', '', normalized)
-        normalized = re.sub(r'\s*•\s*\d+\s*h2o', '', normalized)
-        normalized = re.sub(r'\s*\.\s*\d+\s*h2o', '', normalized)
+        # Combined hydration notation removal (x N H2O, •N H2O, .N H2O)
+        normalized = re.sub(r'\s*[x•\.]\s*\d+\s*h2o', '', normalized)
 
         # Remove parenthetical information (often stereochemistry)
         normalized = re.sub(r'\([^)]*\)', '', normalized)
 
-        # Normalize whitespace and punctuation
-        normalized = re.sub(r'[,;]', '', normalized)
-        normalized = re.sub(r'\s+', ' ', normalized)
-        normalized = normalized.strip()
+        # Combined whitespace/punctuation normalization
+        normalized = re.sub(r'[,;\s]+', ' ', normalized).strip()
 
         return normalized
     

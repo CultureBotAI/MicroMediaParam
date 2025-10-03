@@ -263,37 +263,24 @@ class CompoundMapper:
         # Convert to lowercase and strip whitespace
         normalized = name.lower().strip()
 
-        # Remove concentration/quantity prefixes at the start
-        # - Percentages: 0.2%, 5%, etc.
-        # - Molarities: 1 M, 0.5 M, etc.
-        # - Weights: 1 g, 100 mg, etc.
-        normalized = re.sub(r'^\d+\.?\d*\s*%\s+', '', normalized)           # "0.2% " or "5% "
-        normalized = re.sub(r'^\d+\.?\d*\s+[mM]\s+', '', normalized)        # "1 M " or "0.5 m "
-        normalized = re.sub(r'^\d+\.?\d*\s*[Gg]\s+', '', normalized)        # "1g " or "100 g "
-        normalized = re.sub(r'^\d+\.?\d*\s*[Mm][Gg]\s+', '', normalized)    # "100mg " or "50 mg "
-        normalized = re.sub(r'^[Gg]\s+', '', normalized)                     # "G " prefix
+        # Combined single-pass regex for concentration/quantity prefix removal
+        # Matches: percentages (0.2%), molarities (1 M), weights (100 mg, 1 g), or "G " prefix
+        normalized = re.sub(r'^(?:\d+\.?\d*\s*%\s+|\d+\.?\d*\s+[mM]\s+|\d+\.?\d*\s*[Mm]?[Gg]\s+|[Gg]\s+)', '', normalized)
 
-        # Remove common prefixes/suffixes
-        normalized = re.sub(r'^[dl]-', '', normalized)  # Remove D-/L- stereochemistry
-        normalized = re.sub(r'^[+-]-', '', normalized)  # Remove +/- indicators
-        normalized = re.sub(r'\s*\([^)]*grade[^)]*\)', '', normalized)  # Remove grade info
-        normalized = re.sub(r'\s*\([^)]*purity[^)]*\)', '', normalized)  # Remove purity info
-        
-        # Remove hydration states (apply multiple times to catch complex cases)
-        for _ in range(2):  # Apply twice to catch nested patterns
-            for pattern in self.hydration_patterns:
-                normalized = re.sub(pattern, '', normalized, flags=re.IGNORECASE)
-        
-        # Clean up artifacts from hydration removal
-        normalized = re.sub(r'\s*\(\s*\d*\s*\)\s*$', '', normalized)  # Remove empty parentheses
-        normalized = re.sub(r'\s*\+\s*$', '', normalized)             # Remove trailing +
-        normalized = re.sub(r'\s*×\s*$', '', normalized)              # Remove trailing ×
-        normalized = re.sub(r'\s*·\s*n\s*$', '', normalized)          # Remove trailing · n
-        normalized = re.sub(r'\s*x\s*n?\s*$', '', normalized)         # Remove trailing x or x n
-        normalized = re.sub(r'\s*\bmon[oa]?\s*$', '', normalized)     # Remove trailing mono/mona
-        normalized = re.sub(r'\s*\btri?\s*$', '', normalized)         # Remove trailing tri
-        
-        # Clean up extra whitespace
+        # Combined prefix removal (D-/L- and +/-)
+        normalized = re.sub(r'^(?:[dl])-', '', normalized)
+        normalized = re.sub(r'^[+-]-', '', normalized)
+
+        # Combined parenthetical info removal (grade, purity, stereochemistry)
+        normalized = re.sub(r'\s*\([^)]*(?:grade|purity|[^)]*)\)', '', normalized)
+
+        # Remove hydration states (apply once with combined pattern)
+        normalized = re.sub(r'\s*(?:x|×|·|\.|x)\s*\d*\s*h2o', '', normalized, flags=re.IGNORECASE)
+
+        # Combined cleanup of trailing artifacts
+        normalized = re.sub(r'\s*(?:\(\s*\d*\s*\)|\+|×|·\s*n|x\s*n?|\bmon[oa]?|\btri?)\s*$', '', normalized)
+
+        # Clean up extra whitespace (single pass)
         normalized = re.sub(r'\s+', ' ', normalized).strip()
         
         return normalized
