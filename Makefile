@@ -796,12 +796,13 @@ status:
 	@echo ""
 	@echo "$(YELLOW)Mapping Files:$(NC)"
 	@[ -f $(COMPOSITION_MAPPING) ] && echo "✓ Original mappings: $$(tail -n +2 $(COMPOSITION_MAPPING) | wc -l) entries" || echo "✗ Original mappings: Missing"
+	@[ -f $(EXPANDED_MAPPING) ] && echo "✓ Solution-expanded: $$(tail -n +2 $(EXPANDED_MAPPING) | wc -l) entries" || echo "✗ Solution-expanded: Missing"
+	@[ -f $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv ] && echo "✓ Early hydrate normalized: $$(tail -n +2 $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv | wc -l) entries" || echo "✗ Early hydrate normalized: Missing"
+	@[ -f $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_enhanced.tsv ] && echo "✓ Early ingredient enhanced: $$(tail -n +2 $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_enhanced.tsv | wc -l) entries" || echo "✗ Early ingredient enhanced: Missing"
 	@[ -f $(UNACCOUNTED_MATCHES) ] && echo "✓ ChEBI matches: $$(tail -n +2 $(UNACCOUNTED_MATCHES) | wc -l) matches" || echo "✗ ChEBI matches: Missing"
 	@[ -f $(UNIFIED_MAPPINGS) ] && echo "✓ Unified mappings: $$(tail -n +2 $(UNIFIED_MAPPINGS) | wc -l) entries" || echo "✗ Unified mappings: Missing"
-	@[ -f $(HIGH_CONFIDENCE_MAPPINGS) ] && echo "✓ High confidence: $$(tail -n +2 $(HIGH_CONFIDENCE_MAPPINGS) | wc -l) entries" || echo "✗ High confidence: Missing"
-	@[ -f $(LOW_CONFIDENCE_MAPPINGS) ] && echo "✓ Low confidence: $$(tail -n +2 $(LOW_CONFIDENCE_MAPPINGS) | wc -l) entries" || echo "✗ Low confidence: Missing"
-	@[ -f $(HIGH_CONFIDENCE_NORMALIZED) ] && echo "✓ High normalized: $$(tail -n +2 $(HIGH_CONFIDENCE_NORMALIZED) | wc -l) entries" || echo "✗ High normalized: Missing"
-	@[ -f $(LOW_CONFIDENCE_NORMALIZED) ] && echo "✓ Low normalized: $$(tail -n +2 $(LOW_CONFIDENCE_NORMALIZED) | wc -l) entries" || echo "✗ Low normalized: Missing"
+	@[ -f $(HIGH_CONFIDENCE_MAPPINGS) ] && echo "✓ High confidence (final): $$(tail -n +2 $(HIGH_CONFIDENCE_MAPPINGS) | wc -l) entries" || echo "✗ High confidence: Missing"
+	@[ -f $(LOW_CONFIDENCE_MAPPINGS) ] && echo "✓ Low confidence (final): $$(tail -n +2 $(LOW_CONFIDENCE_MAPPINGS) | wc -l) entries" || echo "✗ Low confidence: Missing"
 	@echo ""
 	@echo "$(YELLOW)Analysis Files:$(NC)"
 	@[ -d $(MEDIA_PROPERTIES_DIR) ] && echo "✓ Media properties: $$(ls $(MEDIA_PROPERTIES_DIR)/*.json 2>/dev/null | wc -l) media analyzed" || echo "✗ Media properties: Missing"
@@ -850,10 +851,13 @@ validate:
 	@test -d $(MEDIA_TEXTS_DIR) || (echo "$(RED)✗ Missing: $(MEDIA_TEXTS_DIR)$(NC)" && exit 1)
 	@test -d $(MEDIA_COMPOSITIONS_DIR) || (echo "$(RED)✗ Missing: $(MEDIA_COMPOSITIONS_DIR)$(NC)" && exit 1)
 	@test -f $(COMPOSITION_MAPPING) || (echo "$(RED)✗ Missing: $(COMPOSITION_MAPPING)$(NC)" && exit 1)
+	@test -f $(EXPANDED_MAPPING) || (echo "$(RED)✗ Missing: $(EXPANDED_MAPPING)$(NC)" && exit 1)
+	@test -f $(KG_MAPPING_DIR)/composition_kg_mapping_hydrate_normalized.tsv || (echo "$(RED)✗ Missing: Early hydration normalization$(NC)" && exit 1)
+	@test -f $(KG_MAPPING_DIR)/composition_kg_mapping_ingredient_enhanced.tsv || (echo "$(RED)✗ Missing: Early ingredient enhancement$(NC)" && exit 1)
 	@test -f $(UNACCOUNTED_MATCHES) || (echo "$(RED)✗ Missing: $(UNACCOUNTED_MATCHES)$(NC)" && exit 1)
 	@test -f $(UNIFIED_MAPPINGS) || (echo "$(RED)✗ Missing: $(UNIFIED_MAPPINGS)$(NC)" && exit 1)
-	@test -f $(HIGH_CONFIDENCE_NORMALIZED) || (echo "$(RED)✗ Missing: $(HIGH_CONFIDENCE_NORMALIZED)$(NC)" && exit 1)
-	@test -f $(LOW_CONFIDENCE_NORMALIZED) || (echo "$(RED)✗ Missing: $(LOW_CONFIDENCE_NORMALIZED)$(NC)" && exit 1)
+	@test -f $(HIGH_CONFIDENCE_MAPPINGS) || (echo "$(RED)✗ Missing: $(HIGH_CONFIDENCE_MAPPINGS)$(NC)" && exit 1)
+	@test -f $(LOW_CONFIDENCE_MAPPINGS) || (echo "$(RED)✗ Missing: $(LOW_CONFIDENCE_MAPPINGS)$(NC)" && exit 1)
 	@test -d $(MEDIA_PROPERTIES_DIR) || (echo "$(RED)✗ Missing: $(MEDIA_PROPERTIES_DIR)$(NC)" && exit 1)
 	@test -f $(MEDIA_SUMMARY) || (echo "$(RED)✗ Missing: $(MEDIA_SUMMARY)$(NC)" && exit 1)
 	@echo "$(GREEN)✓ Pipeline validation successful!$(NC)"
