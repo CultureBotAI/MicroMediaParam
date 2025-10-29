@@ -253,6 +253,38 @@ python3 -m src.mapping.unified_mapper \
 
 **See `IMPLEMENTATION_SUMMARY.md` for complete documentation.**
 
+### Mapping Enhancement Deployment (October 28, 2025) ✅
+
+**Successfully deployed** three specialized mapping strategies, achieving **+16% coverage gain** (56% → 72%):
+
+**Deployment Workflow:**
+```bash
+# 1. Upgrade CAS-RN to ChEBI (+94 compounds)
+python3 src/mapping/cas_to_chebi_upgrader.py \
+    --chebi-file chebi_nodes.tsv \
+    --input high_confidence_compound_mappings.tsv \
+    --output high_confidence_compound_mappings_upgraded.tsv
+
+# 2. Apply formula matching for hydrated compounds (+56 compounds)
+python3 src/mapping/apply_formula_matching.py \
+    --chebi-file chebi_nodes.tsv \
+    --input high_confidence_compound_mappings_upgraded.tsv \
+    --output high_confidence_compound_mappings_formula_enhanced.tsv
+
+# 3. Apply microbiology products dictionary (+21 semantic IDs)
+python3 src/mapping/apply_microbio_products.py \
+    --input high_confidence_compound_mappings_formula_enhanced.tsv \
+    --output high_confidence_compound_mappings_final.tsv
+```
+
+**Results:**
+- Total improvement: +171 compounds with semantic IDs
+- ChEBI coverage: 754/1,047 (72%)
+- UBERON (anatomical): 4/1,047
+- Formula matcher: 73.6% success rate (exceeded projections by 150%!)
+
+**See `DEPLOYMENT_REPORT.md` for complete deployment details.**
+
 ### Pipeline Optimization Flow
 The Makefile implements an optimized pipeline sequence:
 
