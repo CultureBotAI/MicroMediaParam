@@ -166,8 +166,7 @@ class CAStoChEBIUpgrader:
 
                 if len(chebi_ids) == 1:
                     # Single ChEBI found - upgrade!
-                    row = row.copy()
-                    row['mapped'] = chebi_ids[0]
+                    df.at[idx, 'mapped'] = chebi_ids[0]
                     stats['upgraded_to_chebi'] += 1
                     upgraded_mappings.append((row['original'], cas_num, chebi_ids[0]))
 
