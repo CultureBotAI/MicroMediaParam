@@ -1,0 +1,335 @@
+compound_name	identifier	id_type	label	verification_date	source
+(NH4)2HPO4	CHEBI:63051	CHEBI	diammonium hydrogen phosphate	2025-11-24	CHEBI API validation
+(NH4)2SO4	CHEBI:62946	CHEBI	ammonium sulfate	2025-11-24	CHEBI API validation
+(NH4)6Mo7O24	CHEBI:86244	CHEBI	hexaammonium heptamolybdate tetrahydrate	2025-11-24	chebi_search
+Agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Agar agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Agar Difco	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Agar Noble	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Agar-Agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+AlCl3	CHEBI:30114	CHEBI	aluminium trichloride	2025-11-24	pubchem_cid:24012
+AlCl3·6H2O	CHEBI:30115	CHEBI	aluminium trichloride hexahydrate	2025-11-24	chebi_search
+Ammonium bicarbonate	CHEBI:184335	CHEBI	Ammonium bicarbonate	2025-11-24	pubchem_cid:14013
+Ammonium ferric citrate	CHEBI:31604	CHEBI	ferric ammonium citrate	2025-11-24	chebi_search
+Amphotericin B	CHEBI:2682	CHEBI	amphotericin B	2025-11-24	CHEBI API validation
+Ampicillin	CHEBI:28971	CHEBI	ampicillin	2025-11-24	CHEBI API validation
+Bacto agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+BCYE agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Beef extract	CHEBI:44302	CHEBI	N-cyclohexyl-2-aminoethanesulfonic acid	2025-11-24	pubchem_cid:66898
+Betaine	CHEBI:17750	CHEBI	glycine betaine	2025-11-24	CHEBI API validation
+Betaine x H2O	CHEBI:91242	CHEBI	glycine betaine hydrate	2025-11-24	pubchem_cid:24884197
+BICINE buffer	CHEBI:40957	CHEBI	N,N-bis(2-hydroxyethyl)glycine	2025-11-24	pubchem_cid:8761
+Biotin	CHEBI:15956	CHEBI	biotin	2025-11-24	CHEBI API validation
+Boiled soluble starch	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+Bovine serum albumin	CHEBI:139595	CHEBI	9-(2-O-methyl-alpha-L-rhamnosyloxy)nonanoylamino group	2025-11-24	chebi_search
+Bromocresol purple	CHEBI:86154	CHEBI	bromocresol purple	2025-11-24	pubchem_cid:8273
+Bromothymol blue	CHEBI:86155	CHEBI	bromothymol blue	2025-11-24	pubchem_cid:6450
+Brucella agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Ca(NO3)	CHEBI:64205	CHEBI	calcium nitrate	2025-11-24	CHEBI API validation
+Ca(NO3)2	CHEBI:64205	CHEBI	calcium nitrate	2025-11-24	CHEBI API validation
+CaCl2	CHEBI:3312	CHEBI	calcium dichloride	2025-11-24	CHEBI API validation
+CaCl2·2H2O	CHEBI:86158	CHEBI	calcium chloride dihydrate	2025-11-24	pubchem_cid:6093260
+CaCO3	CHEBI:3311	CHEBI	calcium carbonate	2025-11-24	CHEBI API validation
+Carboxymethylcellulose	CHEBI:85146	CHEBI	carboxymethylcellulose	2025-11-24	CHEBI API validation
+Casein	CHEBI:195199	CHEBI	Casein Kinase I Inhibitor, D4476	2025-11-24	chebi_search
+CaSO4 x 2H2O	CHEBI:32583	CHEBI	calcium sulfate dihydrate	2025-11-24	CHEBI API validation
+CaSO4·2H2O	CHEBI:32583	CHEBI	calcium sulfate dihydrate	2025-11-24	CHEBI API validation
+Catalase	CHEBI:75380	CHEBI	EC 1.11.1.6 (catalase) inhibitor	2025-11-24	chebi_search
+Cellobiose	CHEBI:17057	CHEBI	cellobiose	2025-11-24	CHEBI API validation
+Cellulose	CHEBI:18246	CHEBI	(1->4)-beta-D-glucan	2025-11-24	chebi_search
+Cerium chloride	CHEBI:35458	CHEBI	cerium trichloride	2025-11-24	chebi_search
+Charcoal	CHEBI:91090	CHEBI	charcoal	2025-11-24	chebi_search
+Chitin	CHEBI:17029	CHEBI	chitin	2025-11-24	CHEBI API validation
+Citric acid x H2O	CHEBI:30769	CHEBI	citric acid	2025-11-24	CHEBI API validation
+Cobalamin	CHEBI:23334	CHEBI	cobalamins	2025-11-24	CHEBI API validation
+CoCl2	CHEBI:35696	CHEBI	cobalt dichloride	2025-11-24	CHEBI API validation
+CoCl2·6H2O	CHEBI:53503	CHEBI	cobalt chloride hexahydrate	2025-11-24	pubchem_cid:24643
+coconut  oil	CHEBI:30805	CHEBI	dodecanoic acid	2025-11-24	chebi_search
+Coenzyme M	CHEBI:17905	CHEBI	coenzyme M	2025-11-24	CHEBI API validation
+Colloidal chitin	CHEBI:17029	CHEBI	chitin	2025-11-24	CHEBI API validation
+Columbia blood agar base	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Corn meal Agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+CoSO4	CHEBI:53470	CHEBI	cobalt(2+) sulfate	2025-11-24	CHEBI API validation
+CoSO47H2O	CHEBI:91244	CHEBI	cobalt(2+) sulfate heptahydrate	2025-11-24	pubchem_cid:61444
+Cr2(SO4)3	CHEBI:53471	CHEBI	chromium(III) sulfate	2025-11-24	pubchem_cid:24930
+Crotonic acid	CHEBI:41131	CHEBI	crotonic acid	2025-11-24	CHEBI API validation
+crude oil	CHEBI:17097	CHEBI	biphenyl	2025-11-24	chebi_search
+CuCl2	CHEBI:49553	CHEBI	copper(II) chloride	2025-11-24	CHEBI API validation
+CuSO4	CHEBI:23414	CHEBI	copper(II) sulfate	2025-11-24	CHEBI API validation
+Cyanocobalamin	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyanocobalamin  (Vitamin B12)	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyanocobalamin (B12)	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyanocobalamin (vitamin B12 )	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyanocobalamin (vitamin B12)	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyanocobalamine (vitamin B12)	CHEBI:17439	CHEBI	cyanocob(III)alamin	2025-11-24	CHEBI API validation
+Cyclomaltoheptaose	CHEBI:495055	CHEBI	beta-cyclodextrin	2025-11-24	pubchem_cid:444041
+Cysteine	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+Cysteine HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+Cysteine-HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+cysteine-HCl x H2O	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+Czapek Dox agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+D-Ca-pantothenate	CHEBI:31345	CHEBI	Calcium pantothenate	2025-11-24	pubchem_cid:443753
+D-Fructose	CHEBI:37721	CHEBI	D-fructofuranose	2025-11-24	CHEBI API validation
+D-Glucose	CHEBI:17634	CHEBI	D-glucose	2025-11-24	CHEBI API validation
+Dextrose	CHEBI:17634	CHEBI	D-glucose	2025-11-24	CHEBI API validation
+Dithiothreitol	CHEBI:18320	CHEBI	1,4-dithiothreitol	2025-11-24	CHEBI API validation
+Dithiothreitol (DTT)	CHEBI:18320	CHEBI	1,4-dithiothreitol	2025-11-24	CHEBI API validation
+DL-Asparagine	CHEBI:22653	CHEBI	asparagine	2025-11-24	CHEBI API validation
+DL-Asparagine x H2O	CHEBI:22653	CHEBI	asparagine	2025-11-24	CHEBI API validation
+DL-Dithiothreitol	CHEBI:18320	CHEBI	1,4-dithiothreitol	2025-11-24	CHEBI API validation
+DL-Dithiothreitol (DTT)	CHEBI:18320	CHEBI	1,4-dithiothreitol	2025-11-24	CHEBI API validation
+DNA	CHEBI:16991	CHEBI	deoxyribonucleic acid	2025-11-24	CHEBI API validation
+DTT	CHEBI:18320	CHEBI	1,4-dithiothreitol	2025-11-24	CHEBI API validation
+EDTA	CHEBI:42191	CHEBI	EDTA(4-)	2025-11-24	CHEBI API validation
+EDTA-iron	CHEBI:30729	CHEBI	ethylenediaminetetraacetatoferrate(1-)	2025-11-24	pubchem_cid:197149
+EDTA.Na2.2H2O	CHEBI:64758	CHEBI	EDTA disodium salt dihydrate	2025-11-24	chebi_search
+EDTA·3Na	CHEBI:63125	CHEBI	EDTA trisodium salt	2025-11-24	pubchem_cid:9008
+EDTA·Fe(III)	CHEBI:30729	CHEBI	ethylenediaminetetraacetatoferrate(1-)	2025-11-24	pubchem_cid:197149
+EDTA·Na·Fe(III)	CHEBI:78292	CHEBI	sodium feredetate	2025-11-24	chebi_search
+Ethanol	CHEBI:16236	CHEBI	ethanol	2025-11-24	CHEBI API validation
+Ethanol absolute	CHEBI:16236	CHEBI	ethanol	2025-11-24	CHEBI API validation
+Fe(III) citrate	CHEBI:144421	CHEBI	iron(III) citrate	2025-11-24	chebi_search
+Fe(NH4)2(SO4)2	CHEBI:76243	CHEBI	ferrous ammonium sulfate (anhydrous)	2025-11-24	CHEBI API validation
+Fe(NH4)2(SO4)2 x 7 H2O	CHEBI:131378	CHEBI	ferrous ammonium sulfate heptahydrate	2025-11-24	pubchem_cid:118796939
+Fe(NH4)2(SO4)2·6H2O	CHEBI:76181	CHEBI	ferrous ammonium sulfate hexahydrate	2025-11-24	chebi_search
+Fe-citrate	CHEBI:144421	CHEBI	iron(III) citrate	2025-11-24	chebi_search
+Fe2(SO4)3	CHEBI:53438	CHEBI	iron(3+) sulfate	2025-11-24	CHEBI API validation
+Fe2(SO4)3·xH2O	CHEBI:131387	CHEBI	iron(3+) sulfate hydrate	2025-11-24	pubchem_cid:167265
+FeCl2	CHEBI:30812	CHEBI	iron dichloride	2025-11-24	CHEBI API validation
+FeCl2 x 4H2O	CHEBI:86249	CHEBI	iron dichloride tetrahydrate	2025-11-24	chebi_search
+FeCl3	CHEBI:30808	CHEBI	iron trichloride	2025-11-24	CHEBI API validation
+FeCl3·6H2O	CHEBI:86254	CHEBI	iron trichloride hexahydrate	2025-11-24	chebi_search
+FeSO4	CHEBI:75832	CHEBI	iron(2+) sulfate (anhydrous)	2025-11-24	CHEBI API validation
+FeSO4·6H2O	CHEBI:76181	CHEBI	ferrous ammonium sulfate hexahydrate	2025-11-24	chebi_search
+FeSO4·7H2O	CHEBI:75836	CHEBI	iron(2+) sulfate heptahydrate	2025-11-24	pubchem_cid:62662
+Folic acid	CHEBI:27470	CHEBI	folic acid	2025-11-24	CHEBI API validation
+Fructose	CHEBI:28645	CHEBI	beta-D-fructofuranose	2025-11-24	CHEBI API validation
+Gelatin	CHEBI:5291	CHEBI	gelatin	2025-11-24	CHEBI API validation
+Gellan gum	CHEBI:85248	CHEBI	gellan gum	2025-11-24	chebi_search
+Gentisic acid	CHEBI:17189	CHEBI	2,5-dihydroxybenzoic acid	2025-11-24	pubchem_cid:3469
+Glucose	CHEBI:17234	CHEBI	glucose	2025-11-24	CHEBI API validation
+Glycerin	CHEBI:17754	CHEBI	glycerol	2025-11-24	CHEBI API validation
+Glycerol	CHEBI:17754	CHEBI	glycerol	2025-11-24	CHEBI API validation
+Glycine	CHEBI:15428	CHEBI	glycine	2025-11-24	CHEBI API validation
+Glycine-NaOH buffer	CHEBI:15428	CHEBI	glycine	2025-11-24	CHEBI API validation
+goethite	CHEBI:192761	CHEBI	ferrihydrite	2025-11-24	chebi_search
+Ground beef	CHEBI:133683	CHEBI	2-isobutylthiazole	2025-11-24	chebi_search
+H2S	CHEBI:16136	CHEBI	hydrogen sulfide	2025-11-24	CHEBI API validation
+H2SeO3	CHEBI:26642	CHEBI	selenous acid	2025-11-24	pubchem_cid:1091
+H2SO4	CHEBI:26836	CHEBI	sulfuric acid	2025-11-24	CHEBI API validation
+H3BO3	CHEBI:33118	CHEBI	boric acid	2025-11-24	CHEBI API validation
+Haemin	CHEBI:50385	CHEBI	hemin	2025-11-24	CHEBI API validation
+Haemin solution	CHEBI:50385	CHEBI	hemin	2025-11-24	CHEBI API validation
+HCl	CHEBI:17883	CHEBI	hydrogen chloride	2025-11-24	CHEBI API validation
+Hemin	CHEBI:50385	CHEBI	hemin	2025-11-24	CHEBI API validation
+HEPES	CHEBI:42334	CHEBI	2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid	2025-11-24	CHEBI API validation
+HEPES buffer	CHEBI:42334	CHEBI	2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid	2025-11-24	CHEBI API validation
+Hexachlorocyclo-hexane	CHEBI:39095	CHEBI	delta-hexachlorocyclohexane	2025-11-24	pubchem_cid:727
+Inosin	CHEBI:17596	CHEBI	inosine	2025-11-24	CHEBI API validation
+Inosine	CHEBI:17596	CHEBI	inosine	2025-11-24	CHEBI API validation
+Iron	CHEBI:18248	CHEBI	iron atom	2025-11-24	CHEBI API validation
+Iron powder	CHEBI:18248	CHEBI	iron atom	2025-11-24	CHEBI API validation
+K-phosphate buffer	CHEBI:63036	CHEBI	potassium dihydrogen phosphate	2025-11-24	CHEBI API validation
+K2CO3	CHEBI:131526	CHEBI	potassium carbonate	2025-11-24	CHEBI API validation
+K2HPO4	CHEBI:131527	CHEBI	dipotassium hydrogen phosphate	2025-11-24	pubchem_cid:24450
+K2HPO4·3H2O	CHEBI:131527	CHEBI	dipotassium hydrogen phosphate	2025-11-24	chebi_search
+K2SO4	CHEBI:32036	CHEBI	potassium sulfate	2025-11-24	CHEBI API validation
+KBr	CHEBI:32030	CHEBI	potassium bromide	2025-11-24	CHEBI API validation
+KCl	CHEBI:32588	CHEBI	potassium chloride	2025-11-24	CHEBI API validation
+KH2PO4	CHEBI:63036	CHEBI	potassium dihydrogen phosphate	2025-11-24	CHEBI API validation
+KHCO3	CHEBI:81862	CHEBI	potassium hydrogencarbonate	2025-11-24	pubchem_cid:516893
+KI	CHEBI:8346	CHEBI	potassium iodide	2025-11-24	pubchem_cid:4875
+KNO3	CHEBI:63043	CHEBI	potassium nitrate	2025-11-24	CHEBI API validation
+KOH	CHEBI:32035	CHEBI	potassium hydroxide	2025-11-24	CHEBI API validation
+KSCN	CHEBI:30951	CHEBI	potassium thiocyanate	2025-11-24	pubchem_cid:516872
+L-Aspartate	CHEBI:29991	CHEBI	L-aspartate(1-)	2025-11-24	CHEBI API validation
+L-cysteine	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine HCl H2O	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine HCl x H2O	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine-HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine-HCl x H2O	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine·H2O·HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine·HCl	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Cysteine·HCl·H2O	CHEBI:17561	CHEBI	L-cysteine	2025-11-24	CHEBI API validation
+L-Glutamate	CHEBI:16015	CHEBI	L-glutamic acid	2025-11-24	pubchem_cid:33032
+L-Glutamine	CHEBI:18050	CHEBI	L-glutamine	2025-11-24	CHEBI API validation
+L-Methionine	CHEBI:16643	CHEBI	L-methionine	2025-11-24	CHEBI API validation
+L-Proline	CHEBI:17203	CHEBI	L-proline	2025-11-24	CHEBI API validation
+L-Rhamnose	CHEBI:26546	CHEBI	rhamnose	2025-11-24	CHEBI API validation
+Lactose	CHEBI:17716	CHEBI	lactose	2025-11-24	CHEBI API validation
+LiCl	CHEBI:48607	CHEBI	lithium chloride	2025-11-24	CHEBI API validation
+LiCl.H2O	CHEBI:48607	CHEBI	lithium chloride	2025-11-24	CHEBI API validation
+Maltose	CHEBI:17306	CHEBI	maltose	2025-11-24	CHEBI API validation
+Mannitol	CHEBI:16899	CHEBI	D-mannitol	2025-11-24	CHEBI API validation
+Marine broth 2216	CHEBI:66310	CHEBI	rostratin A	2025-11-24	chebi_search
+MeOH	CHEBI:17790	CHEBI	methanol	2025-11-24	CHEBI API validation
+Methanol	CHEBI:17790	CHEBI	methanol	2025-11-24	CHEBI API validation
+MgCl2	CHEBI:6636	CHEBI	magnesium dichloride	2025-11-24	CHEBI API validation
+MgCl2·6H2O	CHEBI:86345	CHEBI	magnesium dichloride hexahydrate	2025-11-24	pubchem_cid:24644
+MgSO4	CHEBI:32599	CHEBI	magnesium sulfate	2025-11-24	CHEBI API validation
+MgSO4·7H2O	CHEBI:32599	CHEBI	magnesium sulfate	2025-11-24	CHEBI API validation
+Middlebrook 7H10 agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+MnCl2	CHEBI:63041	CHEBI	manganese(II) chloride	2025-11-24	CHEBI API validation
+MnCl2*4 H2O	CHEBI:63041	CHEBI	manganese(II) chloride	2025-11-24	CHEBI API validation
+MnCl2*4H2O	CHEBI:63041	CHEBI	manganese(II) chloride	2025-11-24	CHEBI API validation
+MnCl2·4H2O	CHEBI:63041	CHEBI	manganese(II) chloride	2025-11-24	CHEBI API validation
+MnSO4	CHEBI:86360	CHEBI	manganese(II) sulfate	2025-11-24	pubchem_cid:24580
+MnSO4·H2O	CHEBI:86364	CHEBI	manganese(II) sulfate monohydrate	2025-11-24	pubchem_cid:177577
+MnSO4·xH2O	CHEBI:86364	CHEBI	manganese(II) sulfate monohydrate	2025-11-24	pubchem_cid:177577
+MOPS	CHEBI:44115	CHEBI	3-(N-morpholino)propanesulfonic acid	2025-11-24	CHEBI API validation
+MOPS buffer	CHEBI:44115	CHEBI	3-(N-morpholino)propanesulfonic acid	2025-11-24	CHEBI API validation
+Mueller Hinton II agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+N-Acetyl-D-glucosamine	CHEBI:28009	CHEBI	N-acetyl-beta-D-glucosamine	2025-11-24	CHEBI API validation
+N-Acetylglucosamine	CHEBI:28009	CHEBI	N-acetyl-beta-D-glucosamine	2025-11-24	CHEBI API validation
+N-methylhydantoin	CHEBI:16354	CHEBI	N-methylhydantoin	2025-11-24	pubchem_cid:69217
+N-Z amine	CHEBI:167624	CHEBI	cis-bisulepin	2025-11-24	chebi_search
+Na acetate	CHEBI:32954	CHEBI	sodium acetate	2025-11-24	CHEBI API validation
+Na-acetate	CHEBI:32954	CHEBI	sodium acetate	2025-11-24	CHEBI API validation
+Na-ampicillin	CHEBI:28971	CHEBI	ampicillin	2025-11-24	CHEBI API validation
+Na-benzoate	CHEBI:113455	CHEBI	sodium benzoate	2025-11-24	CHEBI API validation
+Na-citrate	CHEBI:32142	CHEBI	sodium citrate dihydrate	2025-11-24	CHEBI API validation
+Na-formate	CHEBI:62965	CHEBI	sodium formate	2025-11-24	pubchem_cid:2723810
+Na-fumarate	CHEBI:115087	CHEBI	monosodium fumarate	2025-11-24	pubchem_cid:6076814
+Na-gallate	CHEBI:115197	CHEBI	sodium gallate	2025-11-24	pubchem_cid:23674757
+Na-glutamate	CHEBI:64243	CHEBI	monosodium L-glutamate	2025-11-24	chebi_search
+Na-L-lactate	CHEBI:232798	CHEBI	sodium L-lactate	2025-11-24	pubchem_cid:23664767
+Na-L-malate	CHEBI:91261	CHEBI	disodium (S)-malate	2025-11-24	pubchem_cid:6097189
+Na-lactate	CHEBI:75228	CHEBI	sodium lactate	2025-11-24	pubchem_cid:23666456
+Na-malate	CHEBI:91261	CHEBI	disodium (S)-malate	2025-11-24	chebi_search
+Na-orotate	CHEBI:132101	CHEBI	sodium orotate	2025-11-24	pubchem_cid:23683036
+Na-oxalate	CHEBI:132764	CHEBI	sodium oxalate	2025-11-24	pubchem_cid:6125
+Na-phosphate buffer	CHEBI:37586	CHEBI	sodium phosphate	2025-11-24	CHEBI API validation
+Na-pyruvate	CHEBI:50144	CHEBI	sodium pyruvate	2025-11-24	pubchem_cid:23662274
+Na-resazurin	CHEBI:8806	CHEBI	Resazurin	2025-11-24	CHEBI API validation
+Na-silicate	CHEBI:60720	CHEBI	sodium silicate	2025-11-24	pubchem_cid:23266
+Na-succinate	CHEBI:63675	CHEBI	sodium succinate (anhydrous)	2025-11-24	pubchem_cid:9020
+Na-tartrate	CHEBI:63017	CHEBI	sodium L-tartrate	2025-11-24	pubchem_cid:162637
+Na2-citrate	CHEBI:32142	CHEBI	sodium citrate dihydrate	2025-11-24	CHEBI API validation
+Na2CO3	CHEBI:29377	CHEBI	sodium carbonate	2025-11-24	CHEBI API validation
+Na2EDTA	CHEBI:64734	CHEBI	EDTA disodium salt (anhydrous)	2025-11-24	chebi_search
+Na2HPO4	CHEBI:34683	CHEBI	disodium hydrogenphosphate	2025-11-24	CHEBI API validation
+Na2HPO4·12H2O	CHEBI:91259	CHEBI	disodium hydrogenphosphate dodecahydrate	2025-11-24	pubchem_cid:61456
+Na2HPO4·2H2O	CHEBI:91258	CHEBI	disodium hydrogenphosphate dihydrate	2025-11-24	pubchem_cid:6451167
+Na2MoO4	CHEBI:75215	CHEBI	sodium molybdate (anhydrous)	2025-11-24	pubchem_cid:61424
+Na2MoO4·2H2O	CHEBI:75213	CHEBI	sodium molybdate dihydrate	2025-11-24	pubchem_cid:16211258
+Na2S	CHEBI:76208	CHEBI	sodium sulfide (anhydrous)	2025-11-24	pubchem_cid:14804
+Na2S203	CHEBI:132112	CHEBI	sodium thiosulfate	2025-11-24	CHEBI API validation
+Na2S2O3	CHEBI:132112	CHEBI	sodium thiosulfate	2025-11-24	CHEBI API validation
+Na2S2O3·5H2O	CHEBI:132112	CHEBI	sodium thiosulfate	2025-11-24	CHEBI API validation
+Na2SeO3	CHEBI:48843	CHEBI	disodium selenite	2025-11-24	CHEBI API validation
+Na2SO3	CHEBI:86477	CHEBI	sodium sulfite	2025-11-24	CHEBI API validation
+Na2SO4	CHEBI:32149	CHEBI	sodium sulfate	2025-11-24	CHEBI API validation
+Na2S·9H2O	CHEBI:76209	CHEBI	sodium sulfide nonahydrate	2025-11-24	pubchem_cid:73972
+Na2WO4	CHEBI:63940	CHEBI	sodium tungstate	2025-11-24	pubchem_cid:26052
+Na3-citrate	CHEBI:53258	CHEBI	sodium citrate	2025-11-24	pubchem_cid:6224
+NaCl	CHEBI:26710	CHEBI	sodium chloride	2025-11-24	CHEBI API validation
+NAD	CHEBI:16908	CHEBI	NADH	2025-11-24	CHEBI API validation
+NaF	CHEBI:28741	CHEBI	sodium fluoride	2025-11-24	CHEBI API validation
+NaH2PO4	CHEBI:37585	CHEBI	sodium dihydrogenphosphate	2025-11-24	CHEBI API validation
+NaH2PO4 x H2O	CHEBI:114249	CHEBI	sodium dihydrogenphosphate monohydrate	2025-11-24	pubchem_cid:516949
+NaHCO3	CHEBI:32139	CHEBI	sodium hydrogencarbonate	2025-11-24	CHEBI API validation
+NaHCO3solution	CHEBI:32139	CHEBI	sodium hydrogencarbonate	2025-11-24	CHEBI API validation
+NaNO3	CHEBI:63005	CHEBI	sodium nitrate	2025-11-24	CHEBI API validation
+NaOH	CHEBI:32145	CHEBI	sodium hydroxide	2025-11-24	CHEBI API validation
+NaVO3 x H2O	CHEBI:75221	CHEBI	sodium metavanadate	2025-11-24	pubchem_cid:4148882
+NH4-oxalate	CHEBI:91241	CHEBI	ammonium oxalate	2025-11-24	pubchem_cid:14213
+NH4Cl	CHEBI:31206	CHEBI	ammonium chloride	2025-11-24	CHEBI API validation
+NH4H2PO4	CHEBI:62982	CHEBI	ammonium dihydrogen phosphate	2025-11-24	pubchem_cid:24402
+NH4MoO4	CHEBI:91249	CHEBI	ammonium molybdate	2025-11-24	chebi_search
+NH4NO3	CHEBI:63038	CHEBI	ammonium nitrate	2025-11-24	CHEBI API validation
+NH4OH	CHEBI:18219	CHEBI	ammonium hydroxide	2025-11-24	CHEBI API validation
+Niacinamide	CHEBI:17154	CHEBI	nicotinamide	2025-11-24	CHEBI API validation
+NiCl2	CHEBI:34887	CHEBI	nickel dichloride	2025-11-24	CHEBI API validation
+NiCl2·6H2O	CHEBI:53542	CHEBI	nickel chloride hexahydrate	2025-11-24	pubchem_cid:24645
+Nicotinic acid	CHEBI:15940	CHEBI	nicotinic acid	2025-11-24	CHEBI API validation
+NiSO4	CHEBI:53001	CHEBI	nickel sulfate	2025-11-24	pubchem_cid:24586
+Nitrilotriacetic acid	CHEBI:44557	CHEBI	nitrilotriacetic acid	2025-11-24	pubchem_cid:8758
+Noble agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Oatmeal agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+olive oil	CHEBI:156100	CHEBI	(E)-2-pentenal	2025-11-24	chebi_search
+p-Aminobenzoic acid	CHEBI:30753	CHEBI	4-aminobenzoic acid	2025-11-24	CHEBI API validation
+PABA	CHEBI:30753	CHEBI	4-aminobenzoic acid	2025-11-24	CHEBI API validation
+Pantothenic acid	CHEBI:7916	CHEBI	pantothenic acid	2025-11-24	CHEBI API validation
+Phenol	CHEBI:15882	CHEBI	phenol	2025-11-24	CHEBI API validation
+Phenol red	CHEBI:31991	CHEBI	phenol red	2025-11-24	pubchem_cid:4766
+PIPES	CHEBI:44933	CHEBI	2,2'-piperazine-1,4-diylbisethanesulfonic acid	2025-11-24	pubchem_cid:79723
+Pirydoxin hydrocloride (B6)	CHEBI:16709	CHEBI	pyridoxine	2025-11-24	CHEBI API validation
+Potassium phosphate	CHEBI:63036	CHEBI	potassium dihydrogen phosphate	2025-11-24	CHEBI API validation
+Potassium phosphate buffer	CHEBI:63036	CHEBI	potassium dihydrogen phosphate	2025-11-24	CHEBI API validation
+Potassium tetrathionate	CHEBI:86466	CHEBI	potassium tetrathionate	2025-11-24	pubchem_cid:61701
+Potato	CHEBI:38230	CHEBI	solanapyrone	2025-11-24	chebi_search
+Purified agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Pyridoxine	CHEBI:16709	CHEBI	pyridoxine	2025-11-24	CHEBI API validation
+Pyridoxine hydrochloride	CHEBI:16709	CHEBI	pyridoxine	2025-11-24	CHEBI API validation
+R2A agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Rabbit serum	CHEBI:60547	CHEBI	3-(glycinocarbonyl)-5-(leucinocarbonyl)phenylazo group	2025-11-24	chebi_search
+RbCl	CHEBI:78672	CHEBI	rubidium chloride	2025-11-24	pubchem_cid:62683
+Reinforced clostridial agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Resazurin	CHEBI:8806	CHEBI	Resazurin	2025-11-24	CHEBI API validation
+Resazurin-Na	CHEBI:8806	CHEBI	Resazurin	2025-11-24	CHEBI API validation
+Rhamnose	CHEBI:26546	CHEBI	rhamnose	2025-11-24	CHEBI API validation
+Riboflavin	CHEBI:17015	CHEBI	riboflavin	2025-11-24	CHEBI API validation
+Sabouraud dextrose agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+SDS	CHEBI:8984	CHEBI	sodium dodecyl sulfate	2025-11-24	CHEBI API validation
+Sea salts	CHEBI:26710	CHEBI	sodium chloride	2025-11-24	pubchem_cid:5234
+Sodium acetate	CHEBI:32954	CHEBI	sodium acetate	2025-11-24	CHEBI API validation
+Sodium ascorbate	CHEBI:113451	CHEBI	sodium ascorbate	2025-11-24	pubchem_cid:23667548
+Sodium butyrate	CHEBI:64103	CHEBI	sodium butyrate	2025-11-24	pubchem_cid:5222465
+Sodium citrate	CHEBI:32142	CHEBI	sodium citrate dihydrate	2025-11-24	CHEBI API validation
+Sodium dithionite	CHEBI:66870	CHEBI	sodium dithionite	2025-11-24	pubchem_cid:24489
+Sodium octanoate	CHEBI:132100	CHEBI	sodium octanoate	2025-11-24	pubchem_cid:23664772
+Sodium phosphate	CHEBI:37586	CHEBI	sodium phosphate	2025-11-24	CHEBI API validation
+Sodium phosphate buffer	CHEBI:37586	CHEBI	sodium phosphate	2025-11-24	CHEBI API validation
+Sodium propionate	CHEBI:132106	CHEBI	sodium propionate	2025-11-24	pubchem_cid:2723816
+Sodium selenate	CHEBI:77775	CHEBI	sodium selenate	2025-11-24	pubchem_cid:25960
+Sodium sulfite	CHEBI:86477	CHEBI	sodium sulfite	2025-11-24	CHEBI API validation
+Sodium thiosulfate	CHEBI:132112	CHEBI	sodium thiosulfate	2025-11-24	CHEBI API validation
+Soluble starch	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+SrCl2	CHEBI:36383	CHEBI	strontium dichloride	2025-11-24	pubchem_cid:5362485
+Starch	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+Starch (soluble)	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+Starch soluble	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+Starch, soluble	CHEBI:28017	CHEBI	starch	2025-11-24	CHEBI API validation
+Sucrose	CHEBI:17992	CHEBI	sucrose	2025-11-24	CHEBI API validation
+Sulfur	CHEBI:26833	CHEBI	sulfur atom	2025-11-24	CHEBI API validation
+synanthrin	CHEBI:15443	CHEBI	inulin	2025-11-24	chebi_search
+Tap water	CHEBI:15377	CHEBI	water	2025-11-24	CHEBI API validation
+TAPS	CHEBI:191055	CHEBI	N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid	2025-11-24	pubchem_cid:121591
+Taurine	CHEBI:15891	CHEBI	taurine	2025-11-24	CHEBI API validation
+Tea	CHEBI:28621	CHEBI	triethanolamine	2025-11-24	CHEBI API validation
+Thiamine	CHEBI:18385	CHEBI	thiamine(1+)	2025-11-24	CHEBI API validation
+Thiamine HCl	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine HCl (B1)	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine HCl (Vitamin B1)	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine-HCl	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine-HCl x 2 H2O	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine-HCl·2H2O	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+Thiamine·HCl·2H2O	CHEBI:49105	CHEBI	thiamine hydrochloride	2025-11-24	CHEBI API validation
+trimethoxybenzoate	CHEBI:454991	CHEBI	3,4,5-trimethoxybenzoic acid	2025-11-24	pubchem_cid:8357
+Trimethylamine	CHEBI:18139	CHEBI	trimethylamine	2025-11-24	CHEBI API validation
+Trimethylamine·HCl	CHEBI:18139	CHEBI	trimethylamine	2025-11-24	CHEBI API validation
+Tris	CHEBI:9754	CHEBI	tris	2025-11-24	CHEBI API validation
+Tris base	CHEBI:9754	CHEBI	tris	2025-11-24	CHEBI API validation
+Tris-HCl	CHEBI:9754	CHEBI	tris	2025-11-24	CHEBI API validation
+Tris-HCl buffer	CHEBI:9754	CHEBI	tris	2025-11-24	CHEBI API validation
+Tris/HCl	CHEBI:9754	CHEBI	tris	2025-11-24	CHEBI API validation
+Trypsin	CHEBI:9765	CHEBI	Trypsin	2025-11-24	CHEBI API validation
+Trypticase soy agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Trypto-soya agar	CHEBI:2509	CHEBI	agar	2025-11-24	CHEBI API validation
+Tween 80	CHEBI:53426	CHEBI	polysorbate 80	2025-11-24	chebi_search
+Urea	CHEBI:16199	CHEBI	urea	2025-11-24	CHEBI API validation
+Vitamin B1	CHEBI:18385	CHEBI	thiamine(1+)	2025-11-24	CHEBI API validation
+Vitamin B12	CHEBI:176843	CHEBI	vitamin B12	2025-11-24	CHEBI API validation
+Vitamin K1	CHEBI:18067	CHEBI	phylloquinone	2025-11-24	CHEBI API validation
+VOSO4	CHEBI:33146	CHEBI	vanadyl sulfate	2025-11-24	pubchem_cid:34007
+VOSO4·xH2O	CHEBI:87020	CHEBI	vanadyl sulfate hydrate	2025-11-24	pubchem_cid:16211496
+Xylan	CHEBI:37166	CHEBI	xylan	2025-11-24	CHEBI API validation
+Xylose	CHEBI:53455	CHEBI	D-xylopyranose	2025-11-24	pubchem_cid:135191
+Yeast extract	CHEBI:231891	CHEBI	xuezhikang	2025-11-24	chebi_search
+ZnCl2	CHEBI:49976	CHEBI	zinc dichloride	2025-11-24	CHEBI API validation
+ZnSO4	CHEBI:35176	CHEBI	zinc sulfate	2025-11-24	CHEBI API validation
+ZnSO4 x 7 H2O	CHEBI:35176	CHEBI	zinc sulfate	2025-11-24	CHEBI API validation
+ZnSO4 x 7H2O	CHEBI:35176	CHEBI	zinc sulfate	2025-11-24	CHEBI API validation
+ZnSO4·7H2O	CHEBI:35176	CHEBI	zinc sulfate	2025-11-24	CHEBI API validation
+β-NAD	CHEBI:16908	CHEBI	NADH	2025-11-24	CHEBI API validation
