@@ -125,6 +125,38 @@ help:
 	@echo "  $(YELLOW)oak-chebi-status$(NC)        - Show OAK CHEBI mapping status"
 	@echo "  $(YELLOW)oak-chebi-clean$(NC)         - Clean OAK CHEBI mapping files"
 	@echo ""
+	@echo "$(GREEN)BacDive Metabolites Mapping:$(NC)"
+	@echo "  $(YELLOW)bacdive-metabolites-mapping$(NC)  - Complete pipeline: extract → OAK annotate → apply mappings"
+	@echo "  $(YELLOW)bacdive-metabolites-extract$(NC)  - Extract 154 unique metabolites from 19,129 records"
+	@echo "  $(YELLOW)bacdive-metabolites-status$(NC)   - Show BacDive metabolites mapping status"
+	@echo "  $(YELLOW)bacdive-metabolites-clean$(NC)    - Clean BacDive metabolites files"
+	@echo ""
+	@echo "$(GREEN)Unmapped Compounds Analysis:$(NC)"
+	@echo "  $(YELLOW)unmapped-full-pipeline$(NC)       - Complete pipeline: analyze → map → integrate (+749 mappings)"
+	@echo "  $(YELLOW)unmapped-analysis$(NC)            - Extract clean unmapped compounds from all sources"
+	@echo "  $(YELLOW)unmapped-map$(NC)                 - Map unmapped compounds using curated dictionary (~44% mapped)"
+	@echo "  $(YELLOW)unmapped-integrate$(NC)           - Integrate new mappings back into high-confidence file"
+	@echo "  $(YELLOW)unmapped-status$(NC)              - Show unmapped compounds summary"
+	@echo "  $(YELLOW)unmapped-clean$(NC)               - Clean unmapped analysis files"
+	@echo ""
+	@echo "$(GREEN)Compound Mapping Validation:$(NC)"
+	@echo "  $(YELLOW)validate-compound-mappings$(NC)   - Validate all ChEBI/PubChem IDs against official APIs"
+	@echo "  $(YELLOW)validate-compound-mappings-quick$(NC) - Quick validation with 50 random samples"
+	@echo "  $(YELLOW)remediate-compound-mappings$(NC)  - Fix incorrect ChEBI IDs using PubChem lookup"
+	@echo "  $(YELLOW)merge-verified-mappings$(NC)      - Merge verified and remediated mappings"
+	@echo "  $(YELLOW)validate-full-pipeline$(NC)       - Run complete validation→remediation→merge workflow"
+	@echo "  $(YELLOW)validate-status$(NC)              - Show validation report summary"
+	@echo "  $(YELLOW)validate-clean$(NC)               - Clean validation files"
+	@echo ""
+	@echo "$(GREEN)Deterministic API Mapping (replaces LLM mappings):$(NC)"
+	@echo "  $(YELLOW)api-mapping-full-pipeline$(NC)    - 🔥 Full pipeline: extract → API lookup → validate (30-60 min)"
+	@echo "  $(YELLOW)extract-all-compounds$(NC)        - Extract all compound names from pipeline"
+	@echo "  $(YELLOW)generate-api-mappings$(NC)        - Generate mappings via PubChem/ChEBI APIs"
+	@echo "  $(YELLOW)resume-api-mappings$(NC)          - Resume from checkpoint (for long runs)"
+	@echo "  $(YELLOW)validate-api-mappings$(NC)        - Show API mapping statistics"
+	@echo "  $(YELLOW)api-mapping-status$(NC)           - Show API mapping status"
+	@echo "  $(YELLOW)api-mapping-clean$(NC)            - Clean API mapping files"
+	@echo ""
 	@echo "$(GREEN)IUPAC Pipeline Steps:$(NC)"
 	@echo "  $(YELLOW)iupac-analyze-compounds$(NC) - Analyze existing data for download targets"
 	@echo "  $(YELLOW)iupac-download-data$(NC)     - Download chemical data from IUPAC sources"
@@ -813,6 +845,468 @@ oak-chebi-clean:
 	fi
 	@echo "$(GREEN)✓ OAK CHEBI mapping cleanup completed$(NC)"
 
+# ============================================================================
+# BacDive Metabolites Mapping Pipeline
+# ============================================================================
+# Maps unmapped BacDive metabolites (19,129 records → 154 unique) to ChEBI
+
+# BacDive metabolites files and directories
+BACDIVE_METABOLITES_INPUT := data/unmapped/bacdive_metabolites_without_chebi_ids.tsv
+BACDIVE_METABOLITES_DIR := $(OUTPUT_DIR)/bacdive_metabolites
+BACDIVE_METABOLITES_UNIQUE := $(BACDIVE_METABOLITES_DIR)/bacdive_metabolites_unique.txt
+BACDIVE_METABOLITES_FREQUENCY := $(BACDIVE_METABOLITES_DIR)/bacdive_metabolites_frequency.tsv
+BACDIVE_METABOLITES_OAK := $(BACDIVE_METABOLITES_DIR)/bacdive_metabolites_oak_annotations.json
+BACDIVE_METABOLITES_MAPPED := $(BACDIVE_METABOLITES_DIR)/bacdive_metabolites_chebi_mappings.tsv
+
+# Create BacDive output directory
+$(BACDIVE_METABOLITES_DIR):
+	@mkdir -p $@
+
+# Extract unique BacDive metabolites for mapping
+.PHONY: bacdive-metabolites-extract
+bacdive-metabolites-extract: $(BACDIVE_METABOLITES_UNIQUE)
+	@echo "$(GREEN)✓ BacDive metabolites extraction completed$(NC)"
+
+$(BACDIVE_METABOLITES_UNIQUE): $(BACDIVE_METABOLITES_INPUT) | $(BACDIVE_METABOLITES_DIR)
+	@echo "$(BLUE)Extracting unique BacDive metabolites (19,129 → ~154 unique)...$(NC)"
+	$(PYTHON) src/analysis/extract_bacdive_metabolites.py \
+		--input $(BACDIVE_METABOLITES_INPUT) \
+		--output-dir $(BACDIVE_METABOLITES_DIR)
+
+# Run OAK ChEBI annotation on BacDive metabolites
+.PHONY: bacdive-metabolites-oak-annotate
+bacdive-metabolites-oak-annotate: $(BACDIVE_METABOLITES_OAK)
+	@echo "$(GREEN)✓ BacDive metabolites OAK annotation completed$(NC)"
+
+$(BACDIVE_METABOLITES_OAK): $(BACDIVE_METABOLITES_UNIQUE) | $(BACDIVE_METABOLITES_DIR)
+	@echo "$(BLUE)Running OAK ChEBI annotation on BacDive metabolites...$(NC)"
+	@echo "$(YELLOW)This may take a few minutes to build/use the ChEBI lexical index...$(NC)"
+	runoak -i sqlite:obo:chebi annotate \
+		--text-file $(BACDIVE_METABOLITES_UNIQUE) \
+		--output-type json \
+		--lexical-index-file $(CHEBI_LEXICAL_INDEX) \
+		--output $(BACDIVE_METABOLITES_OAK)
+
+# Apply OAK mappings to create final BacDive metabolites ChEBI mapping
+.PHONY: bacdive-metabolites-apply-mappings
+bacdive-metabolites-apply-mappings: $(BACDIVE_METABOLITES_MAPPED)
+	@echo "$(GREEN)✓ BacDive metabolites ChEBI mappings applied$(NC)"
+
+$(BACDIVE_METABOLITES_MAPPED): $(BACDIVE_METABOLITES_OAK) $(BACDIVE_METABOLITES_FREQUENCY)
+	@echo "$(BLUE)Applying OAK mappings to BacDive metabolites...$(NC)"
+	$(PYTHON) src/mapping/apply_bacdive_oak_mappings.py \
+		--annotations-file $(BACDIVE_METABOLITES_OAK) \
+		--metabolites-file $(BACDIVE_METABOLITES_UNIQUE) \
+		--frequency-file $(BACDIVE_METABOLITES_FREQUENCY) \
+		--output-file $(BACDIVE_METABOLITES_MAPPED)
+
+# Complete BacDive metabolites mapping pipeline
+.PHONY: bacdive-metabolites-mapping
+bacdive-metabolites-mapping: bacdive-metabolites-extract bacdive-metabolites-oak-annotate bacdive-metabolites-apply-mappings
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@echo "$(GREEN)       BacDive Metabolites Mapping Complete!                     $(NC)"
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@echo ""
+	@echo "$(BLUE)Output files:$(NC)"
+	@echo "  📄 Unique metabolites: $(BACDIVE_METABOLITES_UNIQUE)"
+	@echo "  📊 Frequency report: $(BACDIVE_METABOLITES_FREQUENCY)"
+	@echo "  🔬 OAK annotations: $(BACDIVE_METABOLITES_OAK)"
+	@echo "  ✅ ChEBI mappings: $(BACDIVE_METABOLITES_MAPPED)"
+
+# Show BacDive metabolites status
+.PHONY: bacdive-metabolites-status
+bacdive-metabolites-status:
+	@echo "$(BLUE)BacDive Metabolites Mapping Status$(NC)"
+	@echo "==================================="
+	@echo ""
+	@echo "$(YELLOW)Input:$(NC)"
+	@[ -f "$(BACDIVE_METABOLITES_INPUT)" ] && echo "✓ Input file: $$(wc -l < $(BACDIVE_METABOLITES_INPUT)) lines" || echo "✗ Input file: Missing"
+	@echo ""
+	@echo "$(YELLOW)Output Files:$(NC)"
+	@[ -f "$(BACDIVE_METABOLITES_UNIQUE)" ] && echo "✓ Unique metabolites: $$(wc -l < $(BACDIVE_METABOLITES_UNIQUE)) compounds" || echo "✗ Unique metabolites: Not extracted yet"
+	@[ -f "$(BACDIVE_METABOLITES_FREQUENCY)" ] && echo "✓ Frequency report: $$(wc -l < $(BACDIVE_METABOLITES_FREQUENCY)) entries" || echo "✗ Frequency report: Not generated yet"
+	@[ -f "$(BACDIVE_METABOLITES_OAK)" ] && echo "✓ OAK annotations: $$(du -h $(BACDIVE_METABOLITES_OAK) | cut -f1)" || echo "✗ OAK annotations: Not generated yet"
+	@[ -f "$(BACDIVE_METABOLITES_MAPPED)" ] && echo "✓ ChEBI mappings: $$(wc -l < $(BACDIVE_METABOLITES_MAPPED)) entries" || echo "✗ ChEBI mappings: Not generated yet"
+
+# Clean BacDive metabolites files
+.PHONY: bacdive-metabolites-clean
+bacdive-metabolites-clean:
+	@echo "$(BLUE)Cleaning BacDive metabolites files...$(NC)"
+	@rm -rf $(BACDIVE_METABOLITES_DIR)
+	@echo "$(GREEN)✓ BacDive metabolites cleanup completed$(NC)"
+
+# ============================================================================
+# Unmapped Compounds Analysis
+# ============================================================================
+# Extracts clean list of unmapped compounds from all pipeline sources
+
+UNMAPPED_ANALYSIS_DIR := $(OUTPUT_DIR)/unmapped_analysis
+UNMAPPED_COMPOUNDS := $(UNMAPPED_ANALYSIS_DIR)/unmapped_compounds.tsv
+UNMAPPED_SUMMARY := $(UNMAPPED_ANALYSIS_DIR)/unmapped_summary.txt
+
+# Create unmapped analysis directory
+$(UNMAPPED_ANALYSIS_DIR):
+	@mkdir -p $@
+
+# Extract unmapped compounds from all sources
+.PHONY: unmapped-analysis
+unmapped-analysis: $(UNMAPPED_COMPOUNDS)
+	@echo "$(GREEN)✓ Unmapped compounds analysis completed$(NC)"
+
+$(UNMAPPED_COMPOUNDS): $(LOW_CONFIDENCE_MAPPINGS) | $(UNMAPPED_ANALYSIS_DIR)
+	@echo "$(BLUE)Extracting clean unmapped compounds from pipeline...$(NC)"
+	$(PYTHON) src/analysis/extract_unmapped_compounds.py \
+		--low-confidence $(LOW_CONFIDENCE_MAPPINGS) \
+		--bacdive $(BACDIVE_METABOLITES_DIR)/bacdive_metabolites_chebi_mappings_enhanced.tsv \
+		--output-dir $(UNMAPPED_ANALYSIS_DIR)
+
+# Show unmapped compounds status
+.PHONY: unmapped-status
+unmapped-status:
+	@echo "$(BLUE)Unmapped Compounds Analysis Status$(NC)"
+	@echo "===================================="
+	@echo ""
+	@if [ -f "$(UNMAPPED_COMPOUNDS)" ]; then \
+		TOTAL=$$(tail -n +2 $(UNMAPPED_COMPOUNDS) | wc -l | tr -d ' '); \
+		echo "$(GREEN)✓ Input compounds:$(NC) $$TOTAL entries"; \
+	else \
+		echo "$(RED)✗ Not generated yet. Run: make unmapped-analysis$(NC)"; \
+	fi
+	@echo ""
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv" ]; then \
+		MAPPED=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv | wc -l | tr -d ' '); \
+		echo "$(GREEN)✓ Successfully mapped:$(NC) $$MAPPED compounds"; \
+		echo ""; \
+		echo "$(YELLOW)Top 10 new mappings by type:$(NC)"; \
+		tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv | cut -f5 | sort | uniq -c | sort -rn | head -10 | awk '{printf "  %6s  %s\n", $$1, $$2}'; \
+	else \
+		echo "$(YELLOW)⚠ Mappings not generated yet. Run: make unmapped-map$(NC)"; \
+	fi
+	@echo ""
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/still_unmapped.tsv" ]; then \
+		STILL=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/still_unmapped.tsv | wc -l | tr -d ' '); \
+		echo "$(YELLOW)Still unmapped:$(NC) $$STILL compounds (mostly parsing artifacts)"; \
+		echo ""; \
+		echo "$(YELLOW)Top 10 still unmapped by occurrence:$(NC)"; \
+		tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/still_unmapped.tsv | sort -t'	' -k2 -rn | head -10 | awk -F'\t' '{printf "  %6s  %s\n", $$2, $$1}'; \
+	fi
+	@echo ""
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/unmapped_uncertain.tsv" ]; then \
+		UNCERTAIN=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/unmapped_uncertain.tsv | wc -l | tr -d ' '); \
+		echo "$(YELLOW)Uncertain entries:$(NC) $$UNCERTAIN (need review)"; \
+	fi
+
+# Map unmapped compounds using curated dictionary
+.PHONY: unmapped-map
+unmapped-map: $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv
+	@echo "$(GREEN)✓ Unmapped compounds mapping completed$(NC)"
+
+$(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv: $(UNMAPPED_COMPOUNDS)
+	@echo "$(BLUE)Mapping unmapped compounds using curated dictionary (~400 compounds)...$(NC)"
+	$(PYTHON) src/mapping/map_unmapped_compounds.py \
+		--input $(UNMAPPED_COMPOUNDS) \
+		--output $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv" ]; then \
+		MAPPED=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv | wc -l | tr -d ' '); \
+		TOTAL=$$(tail -n +2 $(UNMAPPED_COMPOUNDS) | wc -l | tr -d ' '); \
+		echo "$(GREEN)Mapped $$MAPPED/$$TOTAL compounds ($$((MAPPED*100/TOTAL))%)$(NC)"; \
+	fi
+
+# Integrate new mappings back into high-confidence file
+.PHONY: unmapped-integrate
+unmapped-integrate: $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv
+	@echo "$(BLUE)Integrating new unmapped compound mappings into pipeline...$(NC)"
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv" ] && [ -f "$(HIGH_CONFIDENCE_FINAL)" ]; then \
+		$(PYTHON) src/mapping/integrate_unmapped_mappings.py \
+			--new-mappings $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv \
+			--high-confidence $(HIGH_CONFIDENCE_FINAL) \
+			--low-confidence $(LOW_CONFIDENCE_MAPPINGS) \
+			--output $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_with_unmapped.tsv; \
+		echo "$(GREEN)✓ New mappings integrated$(NC)"; \
+	else \
+		echo "$(YELLOW)Run 'make unmapped-map' and 'make kg-enhance-all' first$(NC)"; \
+	fi
+
+# Complete unmapped compounds pipeline: analyze → map → integrate
+.PHONY: unmapped-full-pipeline
+unmapped-full-pipeline: unmapped-analysis unmapped-map unmapped-integrate
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@echo "$(GREEN)       Unmapped Compounds Pipeline Complete!                     $(NC)"
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@if [ -f "$(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv" ]; then \
+		MAPPED=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/new_mappings.tsv | wc -l | tr -d ' '); \
+		STILL_UNMAPPED=$$(tail -n +2 $(UNMAPPED_ANALYSIS_DIR)/still_unmapped.tsv 2>/dev/null | wc -l | tr -d ' '); \
+		echo ""; \
+		echo "$(BLUE)Results:$(NC)"; \
+		echo "  ✅ New mappings: $$MAPPED compounds"; \
+		echo "  ❓ Still unmapped: $$STILL_UNMAPPED compounds (mostly parsing artifacts)"; \
+	fi
+
+# Clean unmapped analysis files
+.PHONY: unmapped-clean
+unmapped-clean:
+	@echo "$(BLUE)Cleaning unmapped analysis files...$(NC)"
+	@rm -rf $(UNMAPPED_ANALYSIS_DIR)
+	@echo "$(GREEN)✓ Unmapped analysis cleanup completed$(NC)"
+
+# ============================================================================
+# Compound Mapping Validation
+# ============================================================================
+# Validates ChEBI/PubChem IDs against official APIs
+
+VALIDATION_REPORT := $(OUTPUT_DIR)/validation/validation_report.tsv
+VERIFIED_MAPPINGS := data/curated/verified_compound_mappings.tsv
+
+# Create validation output directory
+$(OUTPUT_DIR)/validation:
+	@mkdir -p $@
+
+# Validate all compound mappings against ChEBI/PubChem APIs
+.PHONY: validate-compound-mappings
+validate-compound-mappings: $(VALIDATION_REPORT)
+	@echo "$(GREEN)✓ Compound mapping validation completed$(NC)"
+
+$(VALIDATION_REPORT): | $(OUTPUT_DIR)/validation
+	@echo "$(BLUE)Validating compound mappings against ChEBI/PubChem APIs...$(NC)"
+	@echo "$(YELLOW)This will take 3-5 minutes (rate limited to respect APIs)$(NC)"
+	$(PYTHON) src/quality/validate_chebi_mappings.py \
+		--from-script \
+		--output-report $(VALIDATION_REPORT) \
+		--output-verified $(VERIFIED_MAPPINGS)
+	@echo "$(GREEN)Reports written to:$(NC)"
+	@echo "  📋 Full report: $(VALIDATION_REPORT)"
+	@echo "  ✅ Verified mappings: $(VERIFIED_MAPPINGS)"
+
+# Quick validation with sample
+.PHONY: validate-compound-mappings-quick
+validate-compound-mappings-quick: | $(OUTPUT_DIR)/validation
+	@echo "$(BLUE)Quick validation (50 random samples)...$(NC)"
+	$(PYTHON) src/quality/validate_chebi_mappings.py \
+		--from-script \
+		--sample 50 \
+		--output-report $(OUTPUT_DIR)/validation/validation_report_sample.tsv
+
+# Show validation status
+.PHONY: validate-status
+validate-status:
+	@echo "$(BLUE)Compound Mapping Validation Status$(NC)"
+	@echo "===================================="
+	@if [ -f "$(VALIDATION_REPORT)" ]; then \
+		TOTAL=$$(tail -n +2 $(VALIDATION_REPORT) | wc -l | tr -d ' '); \
+		VALID=$$(grep -c '	VALID	' $(VALIDATION_REPORT) || echo 0); \
+		MISMATCH=$$(grep -c '	MISMATCH	' $(VALIDATION_REPORT) || echo 0); \
+		NOTFOUND=$$(grep -c '	NOT_FOUND	' $(VALIDATION_REPORT) || echo 0); \
+		echo "$(GREEN)✓ Validation report exists$(NC)"; \
+		echo "  Total: $$TOTAL"; \
+		echo "  Valid: $$VALID"; \
+		echo "  Mismatch: $$MISMATCH"; \
+		echo "  Not found: $$NOTFOUND"; \
+	else \
+		echo "$(RED)✗ No validation report. Run: make validate-compound-mappings$(NC)"; \
+	fi
+	@echo ""
+	@if [ -f "$(VERIFIED_MAPPINGS)" ]; then \
+		echo "$(GREEN)✓ Verified mappings: $$(tail -n +2 $(VERIFIED_MAPPINGS) | wc -l | tr -d ' ') entries$(NC)"; \
+	else \
+		echo "$(YELLOW)⚠ No verified mappings file yet$(NC)"; \
+	fi
+
+# Clean validation files
+.PHONY: validate-clean
+validate-clean:
+	@echo "$(BLUE)Cleaning validation files...$(NC)"
+	@rm -rf $(OUTPUT_DIR)/validation
+	@rm -f $(VERIFIED_MAPPINGS)
+	@echo "$(GREEN)✓ Validation cleanup completed$(NC)"
+
+# Remediate incorrect ChEBI mappings by looking up correct IDs from PubChem
+REMEDIATED_MAPPINGS := $(OUTPUT_DIR)/validation/remediated_mappings.tsv
+
+.PHONY: remediate-compound-mappings
+remediate-compound-mappings: $(REMEDIATED_MAPPINGS)
+
+$(REMEDIATED_MAPPINGS): $(VALIDATION_REPORT) | $(OUTPUT_DIR)/validation
+	@echo "$(BLUE)Remediating incorrect ChEBI mappings...$(NC)"
+	$(PYTHON) src/quality/remediate_chebi_mappings.py \
+		--validation-report $(VALIDATION_REPORT) \
+		--output $(REMEDIATED_MAPPINGS)
+	@echo "$(GREEN)✓ Remediation complete$(NC)"
+	@echo "  📋 Results: $(REMEDIATED_MAPPINGS)"
+
+# Merge verified and remediated mappings
+.PHONY: merge-verified-mappings
+merge-verified-mappings: $(VERIFIED_MAPPINGS)
+	@echo "$(BLUE)Merging verified and remediated mappings...$(NC)"
+	$(PYTHON) src/quality/merge_verified_mappings.py \
+		--verified $(VERIFIED_MAPPINGS) \
+		--remediated $(REMEDIATED_MAPPINGS) \
+		--output $(VERIFIED_MAPPINGS)
+	@echo "$(GREEN)✓ Merge complete$(NC)"
+
+# Full compound mapping validation workflow
+.PHONY: validate-full-pipeline
+validate-full-pipeline:
+	@echo "$(BLUE)Running full compound mapping validation pipeline...$(NC)"
+	@echo "Step 1: Validate compound mappings against official APIs"
+	$(MAKE) validate-compound-mappings
+	@echo ""
+	@echo "Step 2: Remediate incorrect mappings using PubChem lookup"
+	$(MAKE) remediate-compound-mappings
+	@echo ""
+	@echo "Step 3: Merge verified and remediated mappings"
+	$(MAKE) merge-verified-mappings
+	@echo ""
+	@echo "$(GREEN)✓ Full validation pipeline complete$(NC)"
+	$(MAKE) validate-status
+
+# ============================================================================
+# Deterministic API-Based Compound Mapping (replaces LLM-generated mappings)
+# ============================================================================
+# These targets generate reproducible compound mappings using only:
+# - ChEBI nodes file (offline matching)
+# - PubChem REST API (name → CID → ChEBI xref)
+# - OLS4 API (direct ChEBI search)
+# - Curated microbiology products dictionary
+
+API_MAPPINGS_DIR := data/curated
+ALL_COMPOUNDS_FILE := $(OUTPUT_DIR)/unmapped_analysis/all_compounds_to_map.txt
+API_GENERATED_MAPPINGS := $(API_MAPPINGS_DIR)/api_generated_mappings.tsv
+
+# Extract all unique compound names from pipeline for mapping
+.PHONY: extract-all-compounds
+extract-all-compounds: | $(OUTPUT_DIR)/unmapped_analysis
+	@echo "$(BLUE)Extracting all unique compound names from pipeline...$(NC)"
+	$(PYTHON) -m src.mapping.extract_all_compound_names \
+		--input-dir $(MEDIA_COMPOSITIONS_DIR) \
+		--kg-mapping $(COMPOSITION_MAPPING) \
+		--unmapped-file $(OUTPUT_DIR)/unmapped_analysis/unmapped_compounds.tsv \
+		--include-old-dict \
+		--output $(ALL_COMPOUNDS_FILE)
+	@echo "$(GREEN)✓ Compound names extracted to $(ALL_COMPOUNDS_FILE)$(NC)"
+
+# Generate compound mappings via deterministic API calls
+# WARNING: This takes 30-60 minutes for full dataset due to API rate limiting
+.PHONY: generate-api-mappings
+generate-api-mappings: $(ALL_COMPOUNDS_FILE) | $(API_MAPPINGS_DIR)
+	@echo "$(BLUE)Generating compound mappings via deterministic APIs...$(NC)"
+	@echo "$(YELLOW)⚠ This may take 30-60 minutes due to API rate limiting$(NC)"
+	$(PYTHON) -m src.mapping.generate_compound_mappings \
+		--compounds-file $(ALL_COMPOUNDS_FILE) \
+		--chebi-nodes $(CHEBI_NODES_FILE) \
+		--output $(API_GENERATED_MAPPINGS) \
+		--checkpoint-interval 100
+	@echo "$(GREEN)✓ API-generated mappings saved to $(API_GENERATED_MAPPINGS)$(NC)"
+
+# Resume mapping generation from checkpoint
+.PHONY: resume-api-mappings
+resume-api-mappings: | $(API_MAPPINGS_DIR)
+	@echo "$(BLUE)Resuming compound mapping generation from latest checkpoint...$(NC)"
+	@CHECKPOINT=$$(ls -t $(API_MAPPINGS_DIR)/api_generated_mappings_checkpoint_*.tsv 2>/dev/null | head -1); \
+	if [ -n "$$CHECKPOINT" ]; then \
+		echo "Found checkpoint: $$CHECKPOINT"; \
+		$(PYTHON) -m src.mapping.generate_compound_mappings \
+			--compounds-file $(ALL_COMPOUNDS_FILE) \
+			--chebi-nodes $(CHEBI_NODES_FILE) \
+			--output $(API_GENERATED_MAPPINGS) \
+			--checkpoint-interval 100 \
+			--resume-from "$$CHECKPOINT"; \
+	else \
+		echo "$(YELLOW)No checkpoint found. Starting fresh...$(NC)"; \
+		$(MAKE) generate-api-mappings; \
+	fi
+
+# Validate API-generated mappings
+.PHONY: validate-api-mappings
+validate-api-mappings: $(API_GENERATED_MAPPINGS)
+	@echo "$(BLUE)Validating API-generated mappings...$(NC)"
+	@if [ -f "$(API_GENERATED_MAPPINGS)" ]; then \
+		TOTAL=$$(tail -n +2 $(API_GENERATED_MAPPINGS) | wc -l | tr -d ' '); \
+		MAPPED=$$(awk -F'\t' 'NR>1 && $$2 != "" {count++} END {print count+0}' $(API_GENERATED_MAPPINGS)); \
+		CHEBI=$$(awk -F'\t' 'NR>1 && $$3 == "CHEBI" {count++} END {print count+0}' $(API_GENERATED_MAPPINGS)); \
+		UBERON=$$(awk -F'\t' 'NR>1 && $$3 == "UBERON" {count++} END {print count+0}' $(API_GENERATED_MAPPINGS)); \
+		INGREDIENT=$$(awk -F'\t' 'NR>1 && $$3 == "ingredient" {count++} END {print count+0}' $(API_GENERATED_MAPPINGS)); \
+		echo ""; \
+		echo "$(GREEN)API-Generated Mappings Summary:$(NC)"; \
+		echo "  Total compounds: $$TOTAL"; \
+		echo "  Mapped:          $$MAPPED"; \
+		echo "  ChEBI:           $$CHEBI"; \
+		echo "  UBERON:          $$UBERON"; \
+		echo "  ingredient:      $$INGREDIENT"; \
+		echo ""; \
+		echo "$(YELLOW)By Strategy:$(NC)"; \
+		awk -F'\t' 'NR>1 && $$2 != "" {strategy[$$5]++} END {for (s in strategy) print "  " s ": " strategy[s]}' $(API_GENERATED_MAPPINGS) | sort -t: -k2 -nr; \
+	else \
+		echo "$(RED)✗ API mappings file not found. Run: make generate-api-mappings$(NC)"; \
+	fi
+
+# Full deterministic API mapping pipeline
+.PHONY: api-mapping-full-pipeline
+api-mapping-full-pipeline:
+	@echo "$(BLUE)════════════════════════════════════════════════════════════════$(NC)"
+	@echo "$(BLUE)    DETERMINISTIC API-BASED COMPOUND MAPPING PIPELINE           $(NC)"
+	@echo "$(BLUE)════════════════════════════════════════════════════════════════$(NC)"
+	@echo ""
+	@echo "This pipeline generates fully reproducible compound mappings using:"
+	@echo "  1. ChEBI nodes file (offline exact/normalized matching)"
+	@echo "  2. PubChem REST API (name → CID → ChEBI cross-reference)"
+	@echo "  3. OLS4 API (direct ChEBI search)"
+	@echo "  4. Curated microbiology products dictionary"
+	@echo ""
+	@echo "$(YELLOW)Step 1: Extract all compound names$(NC)"
+	$(MAKE) extract-all-compounds
+	@echo ""
+	@echo "$(YELLOW)Step 2: Generate mappings via API (30-60 min)$(NC)"
+	$(MAKE) generate-api-mappings
+	@echo ""
+	@echo "$(YELLOW)Step 3: Validate generated mappings$(NC)"
+	$(MAKE) validate-api-mappings
+	@echo ""
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@echo "$(GREEN)    ✓ DETERMINISTIC MAPPING PIPELINE COMPLETE                   $(NC)"
+	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
+	@echo ""
+	@echo "Generated files:"
+	@echo "  $(API_GENERATED_MAPPINGS)"
+	@echo ""
+	@echo "To use these mappings, they will be automatically loaded by:"
+	@echo "  - src/mapping/map_unmapped_compounds.py"
+	@echo "  - src/mapping/matching_strategies.py (CachedAPIMatcher)"
+
+# Show API mapping status
+.PHONY: api-mapping-status
+api-mapping-status:
+	@echo "$(BLUE)API Mapping Status$(NC)"
+	@echo "=================="
+	@echo ""
+	@if [ -f "$(ALL_COMPOUNDS_FILE)" ]; then \
+		echo "✓ Compound list: $$(wc -l < $(ALL_COMPOUNDS_FILE)) compounds"; \
+	else \
+		echo "✗ Compound list: Not extracted (run: make extract-all-compounds)"; \
+	fi
+	@if [ -f "$(API_GENERATED_MAPPINGS)" ]; then \
+		MAPPED=$$(awk -F'\t' 'NR>1 && $$2 != "" {count++} END {print count+0}' $(API_GENERATED_MAPPINGS)); \
+		TOTAL=$$(tail -n +2 $(API_GENERATED_MAPPINGS) | wc -l | tr -d ' '); \
+		echo "✓ API mappings: $$MAPPED/$$TOTAL mapped"; \
+	else \
+		echo "✗ API mappings: Not generated (run: make api-mapping-full-pipeline)"; \
+	fi
+	@CHECKPOINTS=$$(ls $(API_MAPPINGS_DIR)/api_generated_mappings_checkpoint_*.tsv 2>/dev/null | wc -l | tr -d ' '); \
+	if [ "$$CHECKPOINTS" -gt 0 ]; then \
+		echo "  Checkpoints: $$CHECKPOINTS available"; \
+	fi
+
+# Clean API mapping files
+.PHONY: api-mapping-clean
+api-mapping-clean:
+	@echo "$(BLUE)Cleaning API mapping files...$(NC)"
+	rm -f $(ALL_COMPOUNDS_FILE)
+	rm -f $(API_GENERATED_MAPPINGS)
+	rm -f $(API_MAPPINGS_DIR)/api_generated_mappings_checkpoint_*.tsv
+	@echo "$(GREEN)✓ API mapping files cleaned$(NC)"
+
+$(API_MAPPINGS_DIR):
+	mkdir -p $@
+
 # Setup and environment targets
 
 # Install Python dependencies
@@ -959,12 +1453,18 @@ validate:
         data-acquisition data-conversion db-mapping chemical-databases kg-mapping mapping map-compositions-to-kg \
         solution-expansion kg-compound-matching compound-matching kg-oak-chebi-mapping oak-chebi-mapping kg-merge-mappings merge-mappings \
         enhance-ingredients normalize-hydration-early enhance-ingredients-early compute-properties media-summary \
+        kg-enhance-cas-upgrade kg-enhance-formula-matching kg-enhance-microbio-products kg-enhance-all enhance-mappings \
         iupac-analyze-compounds iupac-download-data iupac-process-data iupac-generate-tsv \
         iupac-full-pipeline iupac-update-from-mappings iupac-process-composition-mapping iupac-add-compounds iupac-test \
         iupac-validate-tsv iupac-status iupac-clean iupac-restore-backup \
         pubchem-full-pipeline pubchem-process-composition-mapping pubchem-download-compounds pubchem-test \
         pubchem-status pubchem-clean \
         extract-non-chebi-compounds oak-chebi-annotate apply-oak-chebi-mappings fix-hydrated-mappings oak-chebi-mapping \
-        oak-chebi-test oak-chebi-status oak-chebi-clean \
+        oak-chebi-test oak-chebi-status oak-chebi-clean oak-chebi-mapping-standalone \
+        bacdive-metabolites-mapping bacdive-metabolites-extract bacdive-metabolites-oak-annotate \
+        bacdive-metabolites-apply-mappings bacdive-metabolites-status bacdive-metabolites-clean \
+        unmapped-analysis unmapped-map unmapped-integrate unmapped-full-pipeline unmapped-status unmapped-clean \
         update-chemical-db test-chemical-db \
-        clean clean-all status validate quick
+        extract-all-compounds generate-api-mappings resume-api-mappings validate-api-mappings \
+        api-mapping-full-pipeline api-mapping-status api-mapping-clean \
+        clean clean-all status validate quick create-output-dirs

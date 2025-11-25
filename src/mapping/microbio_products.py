@@ -192,6 +192,82 @@ class MicrobiologyProductMapper:
                 synonyms=["gelatine"],
                 confidence="high"
             ),
+
+            # ============= MILK & DAIRY PRODUCTS =============
+            ProductMapping(
+                product_name="casein",
+                chebi_id="CHEBI:60499",  # casein
+                description="Milk protein, major protein in mammalian milk",
+                synonyms=["milk casein", "sodium caseinate"],
+                confidence="high"
+            ),
+            ProductMapping(
+                product_name="casein hydrolysate",
+                chebi_id="CHEBI:78020",  # casamino acids (acid hydrolysate of casein)
+                description="Hydrolyzed casein, mixture of amino acids and peptides",
+                synonyms=["casein hydrolysate", "hydrolyzed casein"],
+                confidence="medium"
+            ),
+            ProductMapping(
+                product_name="casitone",
+                chebi_id="CHEBI:78018",  # tryptone (pancreatic digest of casein)
+                description="Pancreatic digest of casein",
+                synonyms=["bacto casitone"],
+                confidence="medium",
+                notes="Similar to tryptone - pancreatic casein digest"
+            ),
+            ProductMapping(
+                product_name="milk",
+                chebi_id="UBERON:0001913",  # milk (Uberon)
+                description="Mammalian milk",
+                synonyms=["cow milk", "bovine milk"],
+                confidence="medium",
+                notes="Using Uberon anatomical term"
+            ),
+            ProductMapping(
+                product_name="skimmed milk",
+                chebi_id="UBERON:0001913",  # milk (Uberon)
+                description="Milk with fat removed",
+                synonyms=["skim milk", "non-fat milk"],
+                confidence="medium",
+                notes="Using Uberon milk term"
+            ),
+
+            # ============= EGG PRODUCTS =============
+            ProductMapping(
+                product_name="egg yolk",
+                chebi_id="UBERON:0007378",  # egg yolk (Uberon)
+                description="Yolk portion of egg",
+                synonyms=["egg-yolk"],
+                confidence="medium",
+                notes="Using Uberon anatomical term"
+            ),
+
+            # ============= GUMS & POLYSACCHARIDES =============
+            ProductMapping(
+                product_name="guar gum",
+                chebi_id="CHEBI:27412",  # guar gum / guaran
+                description="Polysaccharide from guar bean",
+                synonyms=["guaran"],
+                confidence="high"
+            ),
+            ProductMapping(
+                product_name="locust bean gum",
+                chebi_id="CHEBI:27412",  # carob bean gum similar to guar
+                description="Polysaccharide from carob seeds",
+                synonyms=["carob bean gum"],
+                confidence="medium",
+                notes="Similar galactomannan to guar gum"
+            ),
+
+            # ============= OILS =============
+            ProductMapping(
+                product_name="olive oil",
+                chebi_id="CHEBI:88839",  # olive oil
+                description="Oil from olives",
+                synonyms=[],
+                confidence="high"
+            ),
         ]
 
         return products
