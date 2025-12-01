@@ -52,6 +52,7 @@ LOW_CONFIDENCE_MAPPINGS := $(MERGE_MAPPINGS_DIR)/low_confidence_compound_mapping
 HIGH_CONFIDENCE_UPGRADED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_upgraded.tsv
 HIGH_CONFIDENCE_FORMULA := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_formula_enhanced.tsv
 HIGH_CONFIDENCE_FINAL := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_final.tsv
+HIGH_CONFIDENCE_ENRICHED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_enriched.tsv
 INGREDIENT_ENHANCED_HIGH := $(INGREDIENT_ENHANCEMENT_DIR)/high_confidence_compound_mappings_ingredient_enhanced.tsv
 INGREDIENT_ENHANCED_LOW := $(INGREDIENT_ENHANCEMENT_DIR)/low_confidence_compound_mappings_ingredient_enhanced.tsv
 HIGH_CONFIDENCE_NORMALIZED := $(HYDRATE_NORMALIZATION_DIR)/high_confidence_compound_mappings_normalized.tsv
@@ -431,14 +432,47 @@ $(HIGH_CONFIDENCE_FINAL): $(HIGH_CONFIDENCE_FORMULA)
 		--input $(HIGH_CONFIDENCE_FORMULA) \
 		--output $(HIGH_CONFIDENCE_FINAL)
 
+# Stage 10.5d: Enrich with ChEBI Labels and Formulas
+.PHONY: kg-enrich-chebi
+kg-enrich-chebi: $(HIGH_CONFIDENCE_ENRICHED)
+	@echo "$(GREEN)✓ ChEBI enrichment completed (labels + formulas)$(NC)"
+
+CHEBI_FORMULAS_FILE := data/curated/chebi_formulas.tsv
+
+$(HIGH_CONFIDENCE_ENRICHED): $(HIGH_CONFIDENCE_FINAL) $(CHEBI_NODES_FILE) $(CHEBI_FORMULAS_FILE)
+	@echo "$(BLUE)Enriching mappings: Adding ChEBI labels and molecular formulas...$(NC)"
+	@echo "$(YELLOW)Goal: Add chebi_label and chebi_formula columns for all CHEBI mappings$(NC)"
+	$(PYTHON) -m src.mapping.enrich_with_chebi_data \
+		--input $(HIGH_CONFIDENCE_FINAL) \
+		--chebi-nodes $(CHEBI_NODES_FILE) \
+		--chebi-formulas $(CHEBI_FORMULAS_FILE) \
+		--output $(HIGH_CONFIDENCE_ENRICHED)
+
+# Stage 10.5e: Create Compound Name Lookup Table
+# Many-to-1 mapping: each unique observed name → ChEBI ID (including hydrate variations)
+COMPOUND_LOOKUP_TABLE := $(MERGE_MAPPINGS_DIR)/compound_name_lookup.tsv
+
+.PHONY: kg-create-lookup-table
+kg-create-lookup-table: $(COMPOUND_LOOKUP_TABLE)
+	@echo "$(GREEN)✓ Compound lookup table created$(NC)"
+
+$(COMPOUND_LOOKUP_TABLE): $(HIGH_CONFIDENCE_ENRICHED) $(CHEBI_FORMULAS_FILE)
+	@echo "$(BLUE)Creating compound name lookup table...$(NC)"
+	@echo "$(YELLOW)Goal: Many-to-1 mapping with each observed name → parent compound$(NC)"
+	@echo "$(YELLOW)All hydrate forms map to same anhydrous parent ChEBI ID$(NC)"
+	$(PYTHON) -m src.mapping.create_compound_lookup_table \
+		--input $(HIGH_CONFIDENCE_ENRICHED) \
+		--chebi-formulas $(CHEBI_FORMULAS_FILE) \
+		--output $(COMPOUND_LOOKUP_TABLE)
+
 # Stage 10.5: Complete Enhancement Pipeline
 .PHONY: kg-enhance-all enhance-mappings
-kg-enhance-all enhance-mappings: $(HIGH_CONFIDENCE_FINAL)
-	@echo "$(GREEN)✓ All mapping enhancements completed$(NC)"
+kg-enhance-all enhance-mappings: $(COMPOUND_LOOKUP_TABLE)
+	@echo "$(GREEN)✓ All mapping enhancements completed (including ChEBI labels/formulas + lookup table)$(NC)"
 	@echo "$(GREEN)Coverage improved from 56% → 72% (+16%)$(NC)"
-	@ENHANCED_CHEBI=$$(awk -F'\t' 'NR>1 && $$3 ~ /^CHEBI:/ {print $$2}' $(HIGH_CONFIDENCE_FINAL) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
-	ENHANCED_UBERON=$$(awk -F'\t' 'NR>1 && $$3 ~ /^UBERON:/ {print $$2}' $(HIGH_CONFIDENCE_FINAL) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
-	TOTAL_UNIQUE=$$(awk -F'\t' 'NR>1 {print $$2}' $(HIGH_CONFIDENCE_FINAL) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
+	@ENHANCED_CHEBI=$$(awk -F'\t' 'NR>1 && $$2 ~ /^CHEBI:/ {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
+	ENHANCED_UBERON=$$(awk -F'\t' 'NR>1 && $$2 ~ /^UBERON:/ {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
+	TOTAL_UNIQUE=$$(awk -F'\t' 'NR>1 {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	echo "$(GREEN)ChEBI: $$ENHANCED_CHEBI unique compounds, UBERON: $$ENHANCED_UBERON, Total: $$TOTAL_UNIQUE$(NC)"
 
 # ============================================================================
@@ -448,13 +482,13 @@ kg-enhance-all enhance-mappings: $(HIGH_CONFIDENCE_FINAL)
 compute-properties: $(MEDIA_PROPERTIES_DIR)/.done
 	@echo "$(GREEN)✓ Media properties calculation completed using enhanced mappings (72% coverage)$(NC)"
 
-# Calculate pH, salinity, ionic strength using enhanced mappings with hydration-corrected MW
-$(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_FINAL) $(CHEMICAL_PROPERTIES)
-	@echo "$(BLUE)Property Calculation: Using enhanced mappings (72% ChEBI coverage)...$(NC)"
-	@echo "$(YELLOW)ADVANTAGE: Uses CAS→ChEBI upgrade + formula matching + microbio products$(NC)"
+# Calculate pH, salinity, ionic strength using enriched mappings with hydration-corrected MW
+$(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_ENRICHED) $(CHEMICAL_PROPERTIES)
+	@echo "$(BLUE)Property Calculation: Using enriched mappings (72% ChEBI coverage + labels/formulas)...$(NC)"
+	@echo "$(YELLOW)ADVANTAGE: Uses CAS→ChEBI upgrade + formula matching + microbio products + ChEBI labels$(NC)"
 	@echo "$(YELLOW)Using ingredient → pKa mappings from $(CHEMICAL_PROPERTIES)$(NC)"
 	@mkdir -p $(MEDIA_PROPERTIES_DIR)
-	$(PYTHON) $(SCRIPTS_DIR)/compute_media_properties.py --input-high $(HIGH_CONFIDENCE_FINAL) --chemical-properties $(CHEMICAL_PROPERTIES) --output-dir $(MEDIA_PROPERTIES_DIR)
+	$(PYTHON) $(SCRIPTS_DIR)/compute_media_properties.py --input-high $(HIGH_CONFIDENCE_ENRICHED) --chemical-properties $(CHEMICAL_PROPERTIES) --output-dir $(MEDIA_PROPERTIES_DIR)
 	@touch $(MEDIA_PROPERTIES_DIR)/.done
 
 # Stage 12: Final Media Summary with Enhanced Mappings
@@ -462,11 +496,11 @@ $(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_FINAL) $(CHEMICAL_PROPERTIES)
 media-summary: $(MEDIA_SUMMARY)
 	@echo "$(GREEN)✓ Enhanced media summary generation completed (72% ChEBI coverage)$(NC)"
 
-# Generate comprehensive media summary using enhanced mappings
-$(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_FINAL)
-	@echo "$(BLUE)Creating comprehensive media summary with enhanced compound mappings...$(NC)"
-	@echo "$(YELLOW)ADVANTAGE: 72% ChEBI coverage with CAS→ChEBI upgrade + formula matching + microbio products$(NC)"
-	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_FINAL) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
+# Generate comprehensive media summary using enriched mappings
+$(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_ENRICHED)
+	@echo "$(BLUE)Creating comprehensive media summary with enriched compound mappings...$(NC)"
+	@echo "$(YELLOW)ADVANTAGE: 72% ChEBI coverage with CAS→ChEBI upgrade + formula matching + microbio products + ChEBI labels/formulas$(NC)"
+	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_ENRICHED) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
 
 # Chemical Database Management (IUPAC Data Processing)
 
