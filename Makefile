@@ -193,7 +193,7 @@ help:
 
 # Complete pipeline
 .PHONY: all
-all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all compute-properties media-summary
+all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all map-unmapped-ingredients merge-additional-mappings compute-properties media-summary
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
 	@echo "$(GREEN)       🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY! 🎉           $(NC)"
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
@@ -209,6 +209,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  ✓ CAS-to-ChEBI upgrade (+9% coverage)"
 	@echo "  ✓ Formula matching for hydrates (+5% coverage)"
 	@echo "  ✓ Microbiology products mapping (+2% coverage)"
+	@echo "  ✓ Multi-ontology mapping (UBERON, FOODON, ENVO)"
 	@echo "  ✓ Media property calculations (pH, salinity)"
 	@echo "  ✓ Comprehensive media summary generation"
 	@echo ""
@@ -474,6 +475,64 @@ kg-enhance-all enhance-mappings: $(COMPOUND_LOOKUP_TABLE)
 	ENHANCED_UBERON=$$(awk -F'\t' 'NR>1 && $$2 ~ /^UBERON:/ {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	TOTAL_UNIQUE=$$(awk -F'\t' 'NR>1 {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	echo "$(GREEN)ChEBI: $$ENHANCED_CHEBI unique compounds, UBERON: $$ENHANCED_UBERON, Total: $$TOTAL_UNIQUE$(NC)"
+
+# ============================================================================
+# Stage 10.6: Map Unmapped Ingredients (OLS + PubChem)
+# Uses multi-ontology search (UBERON, FOODON, ENVO) for biological materials
+# Uses PubChem fallback for chemicals without ChEBI mappings
+# ============================================================================
+
+# kg-microbe unmapped ingredients file
+KG_MICROBE_MAPPINGS := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/mappings
+UNMAPPED_MEDIADIVE_FILE := $(KG_MICROBE_MAPPINGS)/unmapped_mediadive_ingredients.tsv
+
+# Cache files for API results
+CACHE_DIR := data/cache
+OLS_CACHE_FILE := $(CACHE_DIR)/ols_multi_ontology_cache.tsv
+PUBCHEM_CACHE_FILE := $(CACHE_DIR)/pubchem_lookup_cache.tsv
+
+# Output files
+ADDITIONAL_MAPPINGS := $(MERGE_MAPPINGS_DIR)/additional_ingredient_mappings.tsv
+EXTENDED_LOOKUP_TABLE := $(MERGE_MAPPINGS_DIR)/compound_name_lookup_extended.tsv
+
+# Create cache directory
+$(CACHE_DIR):
+	@mkdir -p $(CACHE_DIR)
+
+# Map unmapped ingredients from kg-microbe MediaDive analysis
+.PHONY: map-unmapped-ingredients
+map-unmapped-ingredients: $(ADDITIONAL_MAPPINGS)
+	@echo "$(GREEN)✓ Unmapped ingredients mapping completed$(NC)"
+
+$(ADDITIONAL_MAPPINGS): $(UNMAPPED_MEDIADIVE_FILE) | $(CACHE_DIR)
+	@echo "$(BLUE)Mapping unmapped MediaDive ingredients...$(NC)"
+	@echo "$(YELLOW)Using OLS4 (UBERON, FOODON, ENVO) for biological materials$(NC)"
+	@echo "$(YELLOW)Using PubChem for chemical compounds$(NC)"
+	$(PYTHON) -m src.mapping.map_unmapped_ingredients \
+		--input $(UNMAPPED_MEDIADIVE_FILE) \
+		--output $(ADDITIONAL_MAPPINGS) \
+		--ols-cache $(OLS_CACHE_FILE) \
+		--pubchem-cache $(PUBCHEM_CACHE_FILE)
+
+# Merge additional mappings into compound lookup table
+.PHONY: merge-additional-mappings
+merge-additional-mappings: $(EXTENDED_LOOKUP_TABLE)
+	@echo "$(GREEN)✓ Additional mappings merged into lookup table$(NC)"
+
+$(EXTENDED_LOOKUP_TABLE): $(ADDITIONAL_MAPPINGS) $(COMPOUND_LOOKUP_TABLE)
+	@echo "$(BLUE)Merging additional mappings into compound lookup table...$(NC)"
+	$(PYTHON) -m src.mapping.merge_additional_mappings \
+		--lookup-table $(COMPOUND_LOOKUP_TABLE) \
+		--additional $(ADDITIONAL_MAPPINGS) \
+		--output $(EXTENDED_LOOKUP_TABLE)
+
+# Run full unmapped ingredients mapping pipeline
+.PHONY: extend-mappings
+extend-mappings: merge-additional-mappings
+	@echo "$(GREEN)✓ Extended mappings pipeline completed$(NC)"
+	@EXTENDED_COUNT=$$(wc -l < $(EXTENDED_LOOKUP_TABLE) 2>/dev/null | tr -d ' '); \
+	ORIGINAL_COUNT=$$(wc -l < $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | tr -d ' '); \
+	echo "$(GREEN)Extended lookup table: $$EXTENDED_COUNT entries (was $$ORIGINAL_COUNT)$(NC)"
 
 # ============================================================================
 # Stage 11: Property Calculation - Using enhanced mappings with hydration-corrected MW
