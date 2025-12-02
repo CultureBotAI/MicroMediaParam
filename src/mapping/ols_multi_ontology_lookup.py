@@ -36,6 +36,11 @@ DEFAULT_ONTOLOGIES = ["uberon", "foodon", "envo"]
 # Rate limiting
 REQUEST_DELAY = 0.25  # seconds between requests
 
+# Ontology prefixes to exclude from results (not chemical compounds)
+# GO = Gene Ontology (biological processes/functions)
+# NCBITaxon = Organism taxonomy
+EXCLUDED_PREFIXES = ["GO:", "NCBITaxon:"]
+
 
 def search_ols_single(
     name: str,
@@ -107,24 +112,31 @@ def _search_ols_api(
         if not docs:
             return None
 
-        # Return the best match (first result)
-        best = docs[0]
+        # Find first valid result, skipping excluded ontologies
+        for doc in docs:
+            # Extract ontology ID (OBO format like UBERON:0000178)
+            obo_id = doc.get("obo_id")
+            if not obo_id:
+                # Try to construct from short_form
+                short_form = doc.get("short_form", "")
+                if "_" in short_form:
+                    obo_id = short_form.replace("_", ":")
 
-        # Extract ontology ID (OBO format like UBERON:0000178)
-        obo_id = best.get("obo_id")
-        if not obo_id:
-            # Try to construct from short_form
-            short_form = best.get("short_form", "")
-            if "_" in short_form:
-                obo_id = short_form.replace("_", ":")
+            if not obo_id:
+                continue
 
-        if not obo_id:
-            return None
+            # Skip excluded ontology prefixes (GO, NCBITaxon)
+            if any(obo_id.startswith(prefix) for prefix in EXCLUDED_PREFIXES):
+                logger.debug(f"Skipping excluded ontology result: {obo_id}")
+                continue
 
-        label = best.get("label", "")
-        ontology = best.get("ontology_name", "").lower()
+            label = doc.get("label", "")
+            ontology = doc.get("ontology_name", "").lower()
 
-        return (obo_id, label, ontology)
+            return (obo_id, label, ontology)
+
+        # No valid result found after filtering
+        return None
 
     except requests.RequestException as e:
         logger.warning(f"OLS API error for '{query}': {e}")
