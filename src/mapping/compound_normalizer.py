@@ -303,6 +303,13 @@ class CompoundNameNormalizer:
         '3-n-morpholinopropanesulfonic': 'MOPS',
     }
 
+    # Known incorrect CAS mappings from upstream KG that should be blocked
+    # These are incorrectly labeled in the upstream knowledge graph
+    EXCLUDED_CAS_MAPPINGS = {
+        'CAS-RN:9014-81-7',   # Fetuin - incorrectly labeled as Fetal Bovine Serum
+        'CAS-RN:999999-99-4', # Placeholder/invalid CAS number (Skim milk)
+    }
+
     # Biological products - verified via OLS4 API (2025-12-01)
     # These are commercial/biological products that map to ontology terms
     BIOLOGICAL_PRODUCTS = {
@@ -339,8 +346,9 @@ class CompoundNameNormalizer:
         'Serum': 'UBERON:0001977',
         'serum': 'UBERON:0001977',
         'Blood serum': 'UBERON:0001977',
-        'Fetal bovine serum': 'UBERON:0001977',
-        'FBS': 'UBERON:0001977',
+        'Fetal bovine serum': 'ingredient:1450',  # Complex mixture - use MediaDive ingredient ID
+        'Fetal Bovine Serum': 'ingredient:1450',  # Complex mixture - use MediaDive ingredient ID
+        'FBS': 'ingredient:1450',  # Complex mixture - use MediaDive ingredient ID
         # Organs (UBERON)
         'Liver': 'UBERON:0002107',
         'liver': 'UBERON:0002107',
@@ -1207,3 +1215,13 @@ def normalize_buffer_synonyms(name: str) -> str:
 def lookup_biological_product(name: str) -> Optional[str]:
     """Look up biological product ontology ID (convenience function)."""
     return _normalizer.lookup_biological_product(name)
+
+
+def is_excluded_cas_mapping(mapping_id: str) -> bool:
+    """Check if a mapping ID is in the excluded CAS blocklist (convenience function)."""
+    return mapping_id in CompoundNameNormalizer.EXCLUDED_CAS_MAPPINGS
+
+
+def get_excluded_cas_mappings() -> set:
+    """Get the set of excluded CAS mappings (convenience function)."""
+    return CompoundNameNormalizer.EXCLUDED_CAS_MAPPINGS
