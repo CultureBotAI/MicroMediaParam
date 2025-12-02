@@ -31,6 +31,7 @@ from src.mapping.compound_normalizer import (
     normalize_for_mapping,
     is_solution_or_media,
     extract_buffer_compound,
+    lookup_biological_product,
 )
 
 logging.basicConfig(
@@ -233,7 +234,30 @@ def map_unmapped_ingredients(
     output_rows = []
 
     # Process biological items
+    curated_mapped = 0
     for item_id, original_name, normalized_name in biological_items:
+        # First, check curated biological products dictionary
+        curated_id = lookup_biological_product(original_name) or lookup_biological_product(normalized_name)
+
+        if curated_id:
+            curated_mapped += 1
+            # Parse ontology prefix from ID
+            prefix = curated_id.split(':')[0].lower()
+            stats.by_ontology[prefix] = stats.by_ontology.get(prefix, 0) + 1
+
+            output_rows.append({
+                'original_id': item_id,
+                'original_name': original_name,
+                'normalized_name': normalized_name,
+                'mapped_id': curated_id,
+                'mapped_label': original_name,  # Use original as label
+                'formula': '',
+                'mapping_source': 'curated_biological',
+                'ingredient_type': 'biological'
+            })
+            continue
+
+        # Try OLS search
         ols_result = ols_results.get(normalized_name)
 
         if ols_result:
@@ -279,6 +303,8 @@ def map_unmapped_ingredients(
                     'mapping_source': '',
                     'ingredient_type': 'biological'
                 })
+
+    logger.info(f"Mapped {curated_mapped} biological items via curated dictionary")
 
     # Process chemical items
     for item_id, original_name, normalized_name in chemical_items:

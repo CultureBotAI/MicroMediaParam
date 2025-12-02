@@ -59,9 +59,12 @@ class CompoundNameNormalizer:
     ATOM_TO_NAME = {
         'Na': 'sodium',
         'Na2': 'disodium',
+        'Na3': 'trisodium',
         'K': 'potassium',
         'K2': 'dipotassium',
+        'K3': 'tripotassium',
         'Ca': 'calcium',
+        'Ca3': 'tricalcium',
         'Mg': 'magnesium',
         'Fe': 'iron',
         'Cu': 'copper',
@@ -204,6 +207,61 @@ class CompoundNameNormalizer:
         'NaF': 'sodium fluoride',
         'KBr': 'potassium bromide',
         'NaBr': 'sodium bromide',
+        # Additional ammonium compounds
+        '(NH4)2HPO4': 'diammonium hydrogen phosphate',
+        'NH42HPO4': 'diammonium hydrogen phosphate',
+        '(NH4)2MoO4': 'ammonium molybdate',
+        'NH42MoO4': 'ammonium molybdate',
+        'NH46Mo7O24': 'ammonium heptamolybdate',
+        '(NH4)6Mo7O24': 'ammonium heptamolybdate',
+        'NH4MgPO4': 'ammonium magnesium phosphate',
+        # Alum/sulfate compounds
+        'KAl(SO4)2': 'potassium aluminum sulfate',
+        'KAlSO42': 'potassium aluminum sulfate',
+        'CrK(SO4)2': 'potassium chromium(III) sulfate',
+        'CrKSO42': 'potassium chromium(III) sulfate',
+        # Additional salts
+        'NiSO4': 'nickel(II) sulfate',
+        'VOSO4': 'vanadyl sulfate',
+        'SnCl2': 'tin(II) chloride',
+        'SrCl2': 'strontium chloride',
+        'LiCl': 'lithium chloride',
+        'RbCl': 'rubidium chloride',
+        'CsCl': 'cesium chloride',
+        # Iron compounds with ammonium
+        'FeNH4citrate': 'ammonium iron(III) citrate',
+        'Fe(NH4)citrate': 'ammonium iron(III) citrate',
+        'FeNa-EDTA': 'sodium iron(III) EDTA',
+        'FeNaEDTA': 'sodium iron(III) EDTA',
+        'Na2FeEDTA': 'disodium iron(III) EDTA',
+        # Additional sodium/potassium compounds
+        'Na3citrate': 'trisodium citrate',
+        'Na3-citrate': 'trisodium citrate',
+        'K3citrate': 'tripotassium citrate',
+        'Na2S': 'sodium sulfide',
+        'Na2S2O3': 'sodium thiosulfate',
+        'K2S2O5': 'potassium metabisulfite',
+        'NaHS': 'sodium hydrosulfide',
+        # Selenium compounds
+        'Na2SeO4': 'sodium selenate',
+        'SeO2': 'selenium dioxide',
+        # Tungsten compounds
+        'H2WO4': 'tungstic acid',
+        # Vanadium compounds
+        'NH4VO3': 'ammonium metavanadate',
+        'Na3VO4': 'sodium orthovanadate',
+        # Phosphate compounds
+        'Na3PO4': 'trisodium phosphate',
+        'K3PO4': 'tripotassium phosphate',
+        'Na4P2O7': 'tetrasodium pyrophosphate',
+        # Carbonate compounds
+        'NaHCO3': 'sodium bicarbonate',
+        'KHCO3': 'potassium bicarbonate',
+        'Na2CO3': 'sodium carbonate',
+        # Chloride compounds
+        'NH4Cl': 'ammonium chloride',
+        'CaCl2': 'calcium chloride',
+        'MgCl2': 'magnesium chloride',
     }
 
     # Buffer compounds - map buffer names to their chemical compound names
@@ -223,6 +281,80 @@ class CompoundNameNormalizer:
         'Tricine': 'N-[tris(hydroxymethyl)methyl]glycine',
         'ADA': 'N-(2-acetamido)iminodiacetic acid',
         'BIS-TRIS': 'bis(2-hydroxyethyl)amino-tris(hydroxymethyl)methane',
+        'HOMOPIPES': 'homopiperazine-1,4-bis(2-ethanesulfonic acid)',
+    }
+
+    # Buffer synonym patterns - map alternative IUPAC spellings to buffer abbreviations
+    BUFFER_SYNONYMS = {
+        # MES alternative spellings
+        'morpholinoethanesulfonic': 'MES',
+        'morpholino ethane sulfonic': 'MES',
+        '2-n-morpholinoethanesulfonic': 'MES',
+        'n-morpholinoethanesulfonic': 'MES',
+        # HEPES alternative spellings
+        'hydroxyethyl-1-piperazineethanesulfonic': 'HEPES',
+        'hydroxyethyl-piperazineethanesulfonic': 'HEPES',
+        '4-2-hydroxyethyl-1-piperazineethanesulfonic': 'HEPES',
+        '4-(2-hydroxyethyl)piperazine-1-ethanesulfonic': 'HEPES',
+        # PIPES alternative spellings
+        'piperazine-1,4-bis(2-ethanesulfonic': 'PIPES',
+        # MOPS alternative spellings
+        'morpholinopropanesulfonic': 'MOPS',
+        '3-n-morpholinopropanesulfonic': 'MOPS',
+    }
+
+    # Biological products - verified via OLS4 API (2025-12-01)
+    # These are commercial/biological products that map to ontology terms
+    BIOLOGICAL_PRODUCTS = {
+        # Extracts (FOODON)
+        'Yeast extract': 'FOODON:03315426',
+        'yeast extract': 'FOODON:03315426',
+        'Beef extract': 'FOODON:03302088',
+        'beef extract': 'FOODON:03302088',
+        'Meat extract': 'FOODON:03315424',
+        'meat extract': 'FOODON:03315424',
+        'Malt extract': 'FOODON:03301056',
+        'malt extract': 'FOODON:03301056',
+        'Malt extract powder': 'FOODON:03301056',
+        # Dairy/Protein (FOODON/CHEBI)
+        'Casein': 'FOODON:03420180',
+        'casein': 'FOODON:03420180',
+        'Casein peptone': 'FOODON:03420180',  # maps to casein
+        'Whey': 'FOODON:03420244',
+        'whey': 'FOODON:03420244',
+        'Milk': 'UBERON:0001913',
+        # Gelling/thickening agents (CHEBI)
+        'Agar': 'CHEBI:2509',
+        'agar': 'CHEBI:2509',
+        'Gelatin': 'CHEBI:5291',
+        'gelatin': 'CHEBI:5291',
+        'Starch': 'CHEBI:28017',
+        'starch': 'CHEBI:28017',
+        # Blood products (UBERON)
+        'Blood': 'UBERON:0000178',
+        'blood': 'UBERON:0000178',
+        'Horse blood': 'UBERON:0000178',
+        'Sheep blood': 'UBERON:0000178',
+        'Bovine blood': 'UBERON:0000178',
+        'Serum': 'UBERON:0001977',
+        'serum': 'UBERON:0001977',
+        'Blood serum': 'UBERON:0001977',
+        'Fetal bovine serum': 'UBERON:0001977',
+        'FBS': 'UBERON:0001977',
+        # Organs (UBERON)
+        'Liver': 'UBERON:0002107',
+        'liver': 'UBERON:0002107',
+        'Liver extract': 'UBERON:0002107',
+        'Bile': 'UBERON:0001970',
+        'bile': 'UBERON:0001970',
+        'Ox bile': 'UBERON:0001970',
+        # Nucleic acids (CHEBI)
+        'DNA': 'CHEBI:16991',
+        'dna': 'CHEBI:16991',
+        'Fish-Sperm DNA': 'CHEBI:16991',
+        'Salmon sperm DNA': 'CHEBI:16991',
+        'RNA': 'CHEBI:33697',
+        'rna': 'CHEBI:33697',
     }
 
     def __init__(self):
@@ -488,6 +620,8 @@ class CompoundNameNormalizer:
             "FeIII citrate" → "iron(III) citrate"
             "FeIII-EDTA" → "iron(III)-EDTA"
             "FeIIIPO4 x 4 H2O" → "iron(III) phosphate"
+            "IronIII citrate" → "iron(III) citrate"
+            "IronII chloride" → "iron(II) chloride"
 
         Args:
             name: Compound name with iron oxidation notation
@@ -499,6 +633,10 @@ class CompoundNameNormalizer:
             return name
 
         result = name
+
+        # IronIII → iron(III), IronII → iron(II) (spelled out)
+        result = re.sub(r'\bIronIII\b', 'iron(III)', result, flags=re.IGNORECASE)
+        result = re.sub(r'\bIronII\b', 'iron(II)', result, flags=re.IGNORECASE)
 
         # FeIII → iron(III), FeII → iron(II)
         result = re.sub(r'\bFeIII\b', 'iron(III)', result)
@@ -536,11 +674,16 @@ class CompoundNameNormalizer:
         """
         Convert atom symbol salt notation to proper chemical names.
 
+        Handles both hyphenated and space-separated patterns.
+
         Examples:
             "Na-benzoate" → "sodium benzoate"
             "Na2-EDTA x 2 H2O" → "disodium EDTA"
             "K-acetate" → "potassium acetate"
             "Na-acetate x 3 H2O" → "sodium acetate"
+            "Na acetate" → "sodium acetate"
+            "Na3 citrate" → "trisodium citrate"
+            "Na2 MoO4" → "disodium MoO4"
 
         Args:
             name: Compound name with atom-salt notation
@@ -553,17 +696,31 @@ class CompoundNameNormalizer:
 
         result = name
 
-        # Pattern: Na2- or Na- at the start, followed by compound name
-        for atom, full_name in sorted(self.ATOM_TO_NAME.items(), key=lambda x: -len(x[0])):
-            # Match atom symbol followed by - and compound name
+        # Sort by length (longest first) to match Na3 before Na
+        sorted_atoms = sorted(self.ATOM_TO_NAME.items(), key=lambda x: -len(x[0]))
+
+        # Pattern 1: Hyphenated notation (Na-benzoate, Na2-EDTA)
+        for atom, full_name in sorted_atoms:
             pattern = rf'^{atom}-(\w+)'
             match = re.match(pattern, result)
             if match:
                 compound_part = match.group(1)
-                # Remove hydration suffix if present for cleaner mapping
                 rest_of_name = result[match.end():]
                 result = f'{full_name} {compound_part}{rest_of_name}'
                 break
+
+        # Pattern 2: Space-separated notation (Na acetate, Na3 citrate)
+        # Only apply if no hyphenated pattern was matched
+        if result == name:
+            for atom, full_name in sorted_atoms:
+                # Match atom symbol followed by space and word (compound name)
+                pattern = rf'^{atom}\s+([A-Za-z]\w*)'
+                match = re.match(pattern, result)
+                if match:
+                    compound_part = match.group(1)
+                    rest_of_name = result[match.end():]
+                    result = f'{full_name} {compound_part}{rest_of_name}'
+                    break
 
         # Remove hydration from result for cleaner mapping
         result = re.sub(r'\s*[x×]\s*\d+\s*H2O$', '', result, flags=re.IGNORECASE)
@@ -751,6 +908,111 @@ class CompoundNameNormalizer:
 
         return name
 
+    def normalize_hcl_salt(self, name: str) -> str:
+        """
+        Normalize HCl salt notation to hydrochloride form.
+
+        Examples:
+            "Cystein-HCl x 2 H2O" → "Cysteine hydrochloride"
+            "Thiamine-HCl" → "Thiamine hydrochloride"
+            "L-Cysteine HCl x H2O" → "L-Cysteine hydrochloride"
+            "Vancomycin x HCl" → "Vancomycin hydrochloride"
+
+        Args:
+            name: Compound name with HCl salt notation
+
+        Returns:
+            Compound name with hydrochloride suffix
+        """
+        if not name or not isinstance(name, str):
+            return name
+
+        result = name
+
+        # Pattern: compound-HCl (with optional hydration) → compound hydrochloride
+        result = re.sub(r'-HCl\b\s*(?:[x×]\s*\d*\s*H2O)?', ' hydrochloride', result, flags=re.IGNORECASE)
+
+        # Pattern: compound x HCl → compound hydrochloride
+        result = re.sub(r'\s+x\s+HCl\b', ' hydrochloride', result, flags=re.IGNORECASE)
+
+        # Pattern: compound HCl x H2O (space separated, with hydration) → compound hydrochloride
+        result = re.sub(r'\s+HCl\s*[x×]\s*\d*\s*H2O\b', ' hydrochloride', result, flags=re.IGNORECASE)
+
+        # Pattern: compound HCl (space separated, no hydration) → compound hydrochloride
+        result = re.sub(r'\s+HCl\b', ' hydrochloride', result)
+
+        return result.strip()
+
+    def normalize_buffer_synonyms(self, name: str) -> str:
+        """
+        Normalize buffer compound alternative spellings to standard names.
+
+        Uses BUFFER_SYNONYMS dictionary to detect alternative IUPAC spellings
+        and convert them to standard buffer abbreviations which can then be
+        looked up in BUFFER_COMPOUNDS.
+
+        Examples:
+            "2-N-Morpholinoethanesulfonic acid" → "MES"
+            "4-2-hydroxyethyl-1-piperazineethanesulfonic acid" → "HEPES"
+
+        Args:
+            name: Compound name with potential buffer synonym
+
+        Returns:
+            Standard buffer abbreviation or original name
+        """
+        if not name or not isinstance(name, str):
+            return name
+
+        name_lower = name.lower()
+
+        # Check if any buffer synonym pattern is in the name
+        for synonym, buffer_abbrev in self.BUFFER_SYNONYMS.items():
+            if synonym in name_lower:
+                # Return the full chemical name from BUFFER_COMPOUNDS
+                if buffer_abbrev in self.BUFFER_COMPOUNDS:
+                    return self.BUFFER_COMPOUNDS[buffer_abbrev]
+                return buffer_abbrev
+
+        return name
+
+    def lookup_biological_product(self, name: str) -> Optional[str]:
+        """
+        Look up a biological product in the curated dictionary.
+
+        Returns the ontology ID (FOODON, UBERON, CHEBI) if found.
+
+        Examples:
+            "Yeast extract" → "FOODON:03315426"
+            "Blood" → "UBERON:0000178"
+            "DNA" → "CHEBI:16991"
+
+        Args:
+            name: Ingredient name
+
+        Returns:
+            Ontology ID if found, None otherwise
+        """
+        if not name or not isinstance(name, str):
+            return None
+
+        # Try exact match first
+        if name in self.BIOLOGICAL_PRODUCTS:
+            return self.BIOLOGICAL_PRODUCTS[name]
+
+        # Try case-insensitive match
+        name_lower = name.lower()
+        for product_name, ontology_id in self.BIOLOGICAL_PRODUCTS.items():
+            if product_name.lower() == name_lower:
+                return ontology_id
+
+        # Try partial match for common patterns
+        for product_name, ontology_id in self.BIOLOGICAL_PRODUCTS.items():
+            if product_name.lower() in name_lower:
+                return ontology_id
+
+        return None
+
     def is_solution_or_media(self, name: str) -> bool:
         """
         Check if the name represents a solution or media formulation.
@@ -809,12 +1071,15 @@ class CompoundNameNormalizer:
         5. Normalize Greek letters (α→alpha, ß→beta)
         6. Normalize stereochemistry prefixes (D+→D-, L+→L-)
         7. Remove 'Elemental' prefix
-        8. Normalize iron oxidation notation
-        9. Convert atom-salt notation to proper names
-        10. Extract base from hydrated salts
-        11. Remove named hydrate suffixes
-        12. Remove hydration notation (x N H2O)
-        13. Clean up whitespace
+        8. Normalize iron oxidation notation (IronIII, FeIII)
+        9. Normalize HCl salt notation (-HCl, x HCl)
+        10. Convert atom-salt notation to proper names (Na acetate)
+        11. Normalize buffer synonyms (alternative IUPAC spellings)
+        12. Extract base from hydrated salts
+        13. Remove named hydrate suffixes
+        14. Remove hydration notation (x N H2O)
+        15. Clean up whitespace
+        16. Convert chemical formulas to common names
 
         Args:
             name: Raw compound name from source data
@@ -848,26 +1113,32 @@ class CompoundNameNormalizer:
         # Step 7: Remove 'Elemental' prefix
         result = self.remove_elemental_prefix(result)
 
-        # Step 8: Normalize iron oxidation notation
+        # Step 8: Normalize iron oxidation notation (IronIII→iron(III), FeIII→iron(III))
         result = self.normalize_iron_oxidation(result)
 
-        # Step 9: Convert atom-salt notation to proper names
+        # Step 9: Normalize HCl salt notation (Thiamine-HCl → Thiamine hydrochloride)
+        result = self.normalize_hcl_salt(result)
+
+        # Step 10: Convert atom-salt notation to proper names (Na acetate → sodium acetate)
         result = self.normalize_atom_salt_notation(result)
 
-        # Step 10: Extract base from hydrated salts (L-Cysteine HCl x H2O → L-Cysteine)
+        # Step 11: Normalize buffer synonyms (morpholinoethanesulfonic → MES full name)
+        result = self.normalize_buffer_synonyms(result)
+
+        # Step 12: Extract base from hydrated salts (L-Cysteine HCl x H2O → L-Cysteine)
         result = self.extract_base_from_hydrated_salt(result)
 
-        # Step 11: Remove named hydrate suffixes (monohydrate, dihydrate, etc.)
+        # Step 13: Remove named hydrate suffixes (monohydrate, dihydrate, etc.)
         result = self.remove_named_hydrate_suffix(result)
 
-        # Step 12: Remove hydration notation (x N H2O, x n H2O)
+        # Step 14: Remove hydration notation (x N H2O, x n H2O)
         # Also handles "x n H2O" where n is a variable
         result = re.sub(r'\s*[x×·•\.]\s*[\dn]*\s*H2O$', '', result, flags=re.IGNORECASE)
 
-        # Step 13: Clean up whitespace
+        # Step 15: Clean up whitespace
         result = re.sub(r'\s+', ' ', result).strip()
 
-        # Step 14: Convert chemical formulas to common names (for PubChem lookup)
+        # Step 16: Convert chemical formulas to common names (for PubChem lookup)
         result = self.convert_formula_to_name(result)
 
         return result
@@ -924,3 +1195,15 @@ def is_solution_or_media(name: str) -> bool:
 def convert_formula_to_name(name: str) -> str:
     """Convert chemical formula to common name (convenience function)."""
     return _normalizer.convert_formula_to_name(name)
+
+def normalize_hcl_salt(name: str) -> str:
+    """Normalize HCl salt notation (convenience function)."""
+    return _normalizer.normalize_hcl_salt(name)
+
+def normalize_buffer_synonyms(name: str) -> str:
+    """Normalize buffer compound alternative spellings (convenience function)."""
+    return _normalizer.normalize_buffer_synonyms(name)
+
+def lookup_biological_product(name: str) -> Optional[str]:
+    """Look up biological product ontology ID (convenience function)."""
+    return _normalizer.lookup_biological_product(name)
