@@ -30,6 +30,13 @@ from typing import Dict, List, Optional, Tuple, Set, Union
 from dataclasses import dataclass
 import urllib.parse
 
+# Import centralized compound normalizer for pre-processing
+try:
+    from src.mapping.compound_normalizer import CompoundNameNormalizer
+    NORMALIZER_AVAILABLE = True
+except ImportError:
+    NORMALIZER_AVAILABLE = False
+
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -72,6 +79,15 @@ class EnhancedHydrateNormalizer:
         self.chebi_cache = {}
         self.base_compound_cache = {}
         self.molecular_weight_cache = {}
+
+        # Initialize centralized compound normalizer for pre-processing
+        # Handles: prefix symbols, atom-salt notation, elemental prefix, iron oxidation
+        if NORMALIZER_AVAILABLE:
+            self.name_normalizer = CompoundNameNormalizer()
+            logger.info("Centralized compound normalizer loaded for pre-processing")
+        else:
+            self.name_normalizer = None
+            logger.warning("Compound normalizer not available - using basic normalization only")
         
         # Enhanced hydration patterns
         self.hydration_patterns = [
@@ -108,22 +124,36 @@ class EnhancedHydrateNormalizer:
     def parse_hydrate_compound(self, compound_name: str) -> HydrateInfo:
         """
         Parse a hydrated compound into base compound + hydration information.
-        
+
         Args:
             compound_name: Original compound name (e.g., "CaCl2 x 2 H2O")
-            
+
         Returns:
             HydrateInfo: Structured information about the hydrate
         """
         original = compound_name.strip()
-        
+
+        # Pre-process with centralized normalizer to handle:
+        # - Prefix symbols (--Chloramphenicol → Chloramphenicol)
+        # - Elemental prefix (Elemental sulphur → sulphur)
+        # - Iron oxidation (FeIII citrate → Fe(III) citrate)
+        # Note: We deliberately skip normalize_atom_salt_notation and remove_named_hydrate_suffix
+        # because they strip hydration info which we need to preserve for tracking
+        if self.name_normalizer:
+            # Use only normalizations that preserve hydration notation
+            preprocessed = self.name_normalizer.remove_prefix_symbols(original)
+            preprocessed = self.name_normalizer.remove_elemental_prefix(preprocessed)
+            preprocessed = self.name_normalizer.normalize_iron_oxidation(preprocessed)
+        else:
+            preprocessed = original
+
         # Check if this is a hydrated compound
         hydration_match = None
         hydration_number = 0
         
-        # Try to extract hydration number
+        # Try to extract hydration number (use preprocessed name)
         for pattern, replacement in self.hydration_patterns:
-            match = re.search(pattern, original, re.IGNORECASE)
+            match = re.search(pattern, preprocessed, re.IGNORECASE)
             if match:
                 try:
                     hydration_number = float(match.group(1))
@@ -131,17 +161,17 @@ class EnhancedHydrateNormalizer:
                     break
                 except (ValueError, IndexError):
                     continue
-        
-        # Extract base compound
+
+        # Extract base compound (use preprocessed name)
         if hydration_match:
             # Remove hydration part to get base compound
-            base_compound = re.sub(r'\s*[\.x×]\s*\d*\.?\d*\s*H2O.*$', '', original, flags=re.IGNORECASE)
+            base_compound = re.sub(r'\s*[\.x×]\s*\d*\.?\d*\s*H2O.*$', '', preprocessed, flags=re.IGNORECASE)
             base_compound = re.sub(r'\s*\w*hydrate.*$', '', base_compound, flags=re.IGNORECASE)
             base_compound = base_compound.strip()
             parsing_method = "hydrate_pattern"
         else:
-            # Not a hydrate, use as-is
-            base_compound = original
+            # Not a hydrate, use preprocessed name
+            base_compound = preprocessed
             hydration_number = 0
             parsing_method = "no_hydration"
         

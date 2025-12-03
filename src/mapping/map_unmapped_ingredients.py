@@ -121,6 +121,11 @@ def classify_ingredient(name: str) -> str:
     if not name:
         return 'chemical'
 
+    # Check if it's in the curated biological products dictionary
+    # This catches water variants, peptones, etc. that may not match the regex
+    if lookup_biological_product(name):
+        return 'biological'
+
     if BIOLOGICAL_REGEX.search(name):
         return 'biological'
 

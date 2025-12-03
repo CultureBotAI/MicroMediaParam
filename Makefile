@@ -52,6 +52,7 @@ LOW_CONFIDENCE_MAPPINGS := $(MERGE_MAPPINGS_DIR)/low_confidence_compound_mapping
 HIGH_CONFIDENCE_UPGRADED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_upgraded.tsv
 HIGH_CONFIDENCE_FORMULA := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_formula_enhanced.tsv
 HIGH_CONFIDENCE_FINAL := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_final.tsv
+HIGH_CONFIDENCE_CURATED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_curated_upgraded.tsv
 HIGH_CONFIDENCE_ENRICHED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_enriched.tsv
 INGREDIENT_ENHANCED_HIGH := $(INGREDIENT_ENHANCEMENT_DIR)/high_confidence_compound_mappings_ingredient_enhanced.tsv
 INGREDIENT_ENHANCED_LOW := $(INGREDIENT_ENHANCEMENT_DIR)/low_confidence_compound_mappings_ingredient_enhanced.tsv
@@ -193,7 +194,7 @@ help:
 
 # Complete pipeline
 .PHONY: all
-all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all map-unmapped-ingredients merge-additional-mappings compute-properties media-summary
+all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings compute-properties media-summary
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
 	@echo "$(GREEN)       🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY! 🎉           $(NC)"
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
@@ -433,6 +434,19 @@ $(HIGH_CONFIDENCE_FINAL): $(HIGH_CONFIDENCE_FORMULA)
 		--input $(HIGH_CONFIDENCE_FORMULA) \
 		--output $(HIGH_CONFIDENCE_FINAL)
 
+# Stage 10.5c2: Apply Curated Dictionary Upgrades
+# Upgrades ingredient: IDs to proper ontology IDs using curated BIOLOGICAL_PRODUCTS dictionary
+.PHONY: kg-enhance-curated-upgrades
+kg-enhance-curated-upgrades: $(HIGH_CONFIDENCE_CURATED)
+	@echo "$(GREEN)✓ Curated dictionary upgrades completed$(NC)"
+
+$(HIGH_CONFIDENCE_CURATED): $(HIGH_CONFIDENCE_FINAL)
+	@echo "$(BLUE)Enhancing mappings: Applying curated dictionary upgrades...$(NC)"
+	@echo "$(YELLOW)Goal: Upgrade ingredient: IDs to ChEBI/FOODON/UBERON using curated dictionary$(NC)"
+	$(PYTHON) -m src.mapping.apply_curated_upgrades \
+		--input $(HIGH_CONFIDENCE_FINAL) \
+		--output $(HIGH_CONFIDENCE_CURATED)
+
 # Stage 10.5d: Enrich with ChEBI Labels and Formulas
 .PHONY: kg-enrich-chebi
 kg-enrich-chebi: $(HIGH_CONFIDENCE_ENRICHED)
@@ -440,11 +454,11 @@ kg-enrich-chebi: $(HIGH_CONFIDENCE_ENRICHED)
 
 CHEBI_FORMULAS_FILE := data/curated/chebi_formulas.tsv
 
-$(HIGH_CONFIDENCE_ENRICHED): $(HIGH_CONFIDENCE_FINAL) $(CHEBI_NODES_FILE) $(CHEBI_FORMULAS_FILE)
+$(HIGH_CONFIDENCE_ENRICHED): $(HIGH_CONFIDENCE_CURATED) $(CHEBI_NODES_FILE) $(CHEBI_FORMULAS_FILE)
 	@echo "$(BLUE)Enriching mappings: Adding ChEBI labels and molecular formulas...$(NC)"
 	@echo "$(YELLOW)Goal: Add chebi_label and chebi_formula columns for all CHEBI mappings$(NC)"
 	$(PYTHON) -m src.mapping.enrich_with_chebi_data \
-		--input $(HIGH_CONFIDENCE_FINAL) \
+		--input $(HIGH_CONFIDENCE_CURATED) \
 		--chebi-nodes $(CHEBI_NODES_FILE) \
 		--chebi-formulas $(CHEBI_FORMULAS_FILE) \
 		--output $(HIGH_CONFIDENCE_ENRICHED)
@@ -475,6 +489,26 @@ kg-enhance-all enhance-mappings: $(COMPOUND_LOOKUP_TABLE)
 	ENHANCED_UBERON=$$(awk -F'\t' 'NR>1 && $$2 ~ /^UBERON:/ {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	TOTAL_UNIQUE=$$(awk -F'\t' 'NR>1 {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	echo "$(GREEN)ChEBI: $$ENHANCED_CHEBI unique compounds, UBERON: $$ENHANCED_UBERON, Total: $$TOTAL_UNIQUE$(NC)"
+
+# ============================================================================
+# Stage 10.5.5: Extract Upstream Ingredient Nodes
+# Extracts mediadive.ingredient nodes from KG-Microbe's transformed nodes.tsv
+# ============================================================================
+
+# Upstream KG-Microbe mediadive nodes file
+UPSTREAM_NODES := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/mediadive/nodes.tsv
+UPSTREAM_INGREDIENTS := $(MERGE_MAPPINGS_DIR)/upstream_mediadive_ingredients.tsv
+
+# Extract mediadive.ingredient nodes from upstream KG
+.PHONY: extract-upstream-ingredients
+extract-upstream-ingredients: $(UPSTREAM_INGREDIENTS)
+	@echo "$(GREEN)✓ Upstream ingredient extraction completed$(NC)"
+
+$(UPSTREAM_INGREDIENTS): $(UPSTREAM_NODES) | create-output-dirs
+	@echo "$(BLUE)Extracting mediadive.ingredient nodes from upstream KG...$(NC)"
+	@echo "$(YELLOW)Source: $(UPSTREAM_NODES)$(NC)"
+	@grep "^mediadive.ingredient:" $(UPSTREAM_NODES) | cut -f1,3 > $(UPSTREAM_INGREDIENTS)
+	@echo "$(GREEN)Extracted $$(wc -l < $(UPSTREAM_INGREDIENTS) | tr -d ' ') ingredient nodes$(NC)"
 
 # ============================================================================
 # Stage 10.6: Map Unmapped Ingredients (OLS + PubChem)

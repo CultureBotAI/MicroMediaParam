@@ -23,6 +23,13 @@ from typing import Dict, List, Optional, Tuple, Set
 from fuzzywuzzy import fuzz, process
 import urllib.parse
 
+# Import centralized compound normalizer for pre-processing
+try:
+    from src.mapping.compound_normalizer import CompoundNameNormalizer
+    NORMALIZER_AVAILABLE = True
+except ImportError:
+    NORMALIZER_AVAILABLE = False
+
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -47,9 +54,17 @@ class IngredientChEBIMatcher:
         self.high_confidence_file = high_confidence_file
         self.low_confidence_file = low_confidence_file
         self.output_suffix = output_suffix
-        
+
         # Cache for ChEBI API results
         self.chebi_cache = {}
+
+        # Initialize centralized compound normalizer
+        if NORMALIZER_AVAILABLE:
+            self.name_normalizer = CompoundNameNormalizer()
+            logger.info("Centralized compound normalizer loaded")
+        else:
+            self.name_normalizer = None
+            logger.warning("Compound normalizer not available")
         
         # Chemical compound patterns to identify matchable ingredients
         self.chemical_patterns = [
@@ -112,8 +127,19 @@ class IngredientChEBIMatcher:
         """Normalize compound name for ChEBI matching."""
         # Remove common prefixes/suffixes
         normalized = compound_name.strip()
-        
-        # Handle hydration notation variations
+
+        # First apply centralized normalization for:
+        # - Prefix symbols (--Chloramphenicol → Chloramphenicol)
+        # - Atom-salt notation (Na-benzoate → sodium benzoate)
+        # - Elemental prefix (Elemental sulphur → sulphur)
+        # - Iron oxidation (FeIII citrate → Fe(III) citrate)
+        if self.name_normalizer:
+            normalized = self.name_normalizer.remove_prefix_symbols(normalized)
+            normalized = self.name_normalizer.normalize_atom_salt_notation(normalized)
+            normalized = self.name_normalizer.remove_elemental_prefix(normalized)
+            normalized = self.name_normalizer.normalize_iron_oxidation(normalized)
+
+        # Handle hydration notation variations (keep for ChEBI matching consistency)
         hydration_patterns = [
             (r'\s*x\s*(\d+)\s*H2O', r'.\1H2O'),  # x 2 H2O -> .2H2O
             (r'\.(\d+)\s*H2O', r'.\1H2O'),       # .2 H2O -> .2H2O
@@ -126,10 +152,10 @@ class IngredientChEBIMatcher:
             (r'\s*heptahydrate', '.7H2O'),        # heptahydrate -> .7H2O
             (r'\s*n\s*H2O', ''),                  # n H2O -> remove (variable hydration)
         ]
-        
+
         for pattern, replacement in hydration_patterns:
             normalized = re.sub(pattern, replacement, normalized, flags=re.IGNORECASE)
-            
+
         return normalized.strip()
         
     def query_chebi_api(self, compound_name: str) -> Optional[Dict]:

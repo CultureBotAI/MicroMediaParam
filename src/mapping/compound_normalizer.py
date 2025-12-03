@@ -363,6 +363,81 @@ class CompoundNameNormalizer:
         'Salmon sperm DNA': 'CHEBI:16991',
         'RNA': 'CHEBI:33697',
         'rna': 'CHEBI:33697',
+        # Water variants (all map to CHEBI:15377 - water)
+        'Water': 'CHEBI:15377',
+        'water': 'CHEBI:15377',
+        'Distilled water': 'CHEBI:15377',
+        'distilled water': 'CHEBI:15377',
+        'Double distilled water': 'CHEBI:15377',
+        'double distilled water': 'CHEBI:15377',
+        'Demineralized water': 'CHEBI:15377',
+        'demineralized water': 'CHEBI:15377',
+        'Deionized water': 'CHEBI:15377',
+        'deionized water': 'CHEBI:15377',
+        'Tap water': 'CHEBI:15377',
+        'tap water': 'CHEBI:15377',
+        'Sterile water': 'CHEBI:15377',
+        'sterile water': 'CHEBI:15377',
+        # Peptone variants (FOODON for undefined protein digests)
+        'Tryptone': 'FOODON:03310375',
+        'tryptone': 'FOODON:03310375',
+        'Bacto Tryptone': 'FOODON:03310375',
+        'Trypticase peptone': 'FOODON:03310375',
+        'Tryptone peptone': 'FOODON:03310375',
+        'Peptone': 'FOODON:03302071',
+        'peptone': 'FOODON:03302071',
+        'Peptone Oxoid': 'FOODON:03302071',
+        'Proteose peptone': 'FOODON:03302071',
+        'Proteose peptone no. 3': 'FOODON:03302071',
+        'Universal peptone': 'FOODON:03302071',
+        'Meat peptone': 'FOODON:03302071',
+        'Phytone peptone': 'FOODON:03302071',  # Plant-based peptone
+        'Soy peptone': 'FOODON:03302071',
+        'soy peptone': 'FOODON:03302071',
+        'Neopeptone': 'FOODON:03302071',
+        # Commercial bacterial growth media (FOODON or ingredient IDs)
+        'Trypticase soy broth': 'FOODON:03302071',  # TSB - soy based
+        'Nutrient broth': 'FOODON:03302071',
+        'Brain heart infusion': 'FOODON:03302088',  # Brain/heart derived
+        'BHI': 'FOODON:03302088',
+        # Enzymes (CHEBI)
+        'Catalase': 'CHEBI:75078',
+        'catalase': 'CHEBI:75078',
+        # Corn-derived products (FOODON)
+        'Corn steep liquor': 'FOODON:03309991',
+        'corn steep liquor': 'FOODON:03309991',
+        'Corn steep powder': 'FOODON:03309991',
+        'Corn meal': 'FOODON:03311737',
+        'corn meal': 'FOODON:03311737',
+        # Other biological extracts
+        'Soil extract': 'ENVO:00001998',  # soil material
+        'soil extract': 'ENVO:00001998',
+        'Bovine albumin': 'CHEBI:3136',  # BSA
+        'bovine albumin': 'CHEBI:3136',
+        'BSA': 'CHEBI:3136',
+        'Bovine serum albumin': 'CHEBI:3136',
+        # Additional peptone variants
+        'Peptone (Oxoid)': 'FOODON:03302071',
+        'Polypeptone': 'FOODON:03302071',
+        'polypeptone': 'FOODON:03302071',
+        'Casitone': 'FOODON:03302071',
+        'casitone': 'FOODON:03302071',
+        # Hydrated compounds (high-frequency unmapped)
+        'MnSO4 x H2O': 'CHEBI:63041',  # manganese(II) sulfate monohydrate
+        'MnSO4 x 7 H2O': 'CHEBI:63041',  # manganese sulfate
+        'MnSO4 x 4 H2O': 'CHEBI:63041',
+        'MnSO4 x 5 H2O': 'CHEBI:63041',
+        'Cysteine-HCl x H2O': 'CHEBI:17561',  # L-cysteine
+        'Cysteine HCl x H2O': 'CHEBI:17561',
+        'L-Cysteine-HCl x H2O': 'CHEBI:17561',
+        'L-Cysteine HCl x H2O': 'CHEBI:17561',
+        'Ferric citrate monohydrate': 'CHEBI:31605',  # iron(III) citrate
+        'ferric citrate monohydrate': 'CHEBI:31605',
+        # Rumen fluid
+        'Clarified rumen fluid': 'UBERON:0001970',  # digestive gland secretion
+        'clarified rumen fluid': 'UBERON:0001970',
+        'Rumen fluid': 'UBERON:0001970',
+        'rumen fluid': 'UBERON:0001970',
     }
 
     def __init__(self):
@@ -485,6 +560,21 @@ class CompoundNameNormalizer:
                 water_count = int(match.group(2))
                 return (base_compound, water_count)
 
+        # Try variable hydration pattern (x n H2O where n is unknown)
+        variable_patterns = [
+            r'(.+?)\s*[x×]\s*n\s*H2O',      # "Fe2(SO4)3 x n H2O"
+            r'(.+?)\s*[x×]\s*H2O',           # "compound x H2O" (no number)
+            r'(.+?)\s*[•·]\s*H2O',           # "compound · H2O"
+            r'(.+?)\s+hydrate$',             # "compound hydrate"
+        ]
+
+        for pattern in variable_patterns:
+            match = re.search(pattern, name, re.IGNORECASE)
+            if match:
+                base_compound = match.group(1).strip()
+                # Return None for water_count to indicate unknown/variable hydration
+                return (base_compound, None)
+
         # No hydration found
         return (name, None)
 
@@ -510,7 +600,9 @@ class CompoundNameNormalizer:
 
         # Remove hydration notation for formula detection
         cleaned = re.sub(r'\s*[x•\.×·]\s*\d+\s*H2O', '', name, flags=re.IGNORECASE)
+        cleaned = re.sub(r'\s*[x•\.×·]\s*n?\s*H2O', '', name, flags=re.IGNORECASE)  # Handle x n H2O
         cleaned = re.sub(r'\s+\d+-hydrate\b', '', cleaned, flags=re.IGNORECASE)
+        cleaned = re.sub(r'\s+hydrate$', '', cleaned, flags=re.IGNORECASE)  # Handle "hydrate" suffix
         cleaned = cleaned.strip()
 
         # Pattern for chemical formulas:
