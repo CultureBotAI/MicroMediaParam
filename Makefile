@@ -54,6 +54,12 @@ HIGH_CONFIDENCE_FORMULA := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappin
 HIGH_CONFIDENCE_FINAL := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_final.tsv
 HIGH_CONFIDENCE_CURATED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_curated_upgraded.tsv
 HIGH_CONFIDENCE_ENRICHED := $(MERGE_MAPPINGS_DIR)/high_confidence_compound_mappings_enriched.tsv
+
+# Final output files (clean names)
+COMPOUND_MAPPINGS := $(MERGE_MAPPINGS_DIR)/compound_mappings.tsv
+COMPOUND_MAPPINGS_LOW := $(MERGE_MAPPINGS_DIR)/compound_mappings_low_confidence.tsv
+UNMAPPED_COMPOUNDS := $(MERGE_MAPPINGS_DIR)/unmapped_compounds.tsv
+
 INGREDIENT_ENHANCED_HIGH := $(INGREDIENT_ENHANCEMENT_DIR)/high_confidence_compound_mappings_ingredient_enhanced.tsv
 INGREDIENT_ENHANCED_LOW := $(INGREDIENT_ENHANCEMENT_DIR)/low_confidence_compound_mappings_ingredient_enhanced.tsv
 HIGH_CONFIDENCE_NORMALIZED := $(HYDRATE_NORMALIZATION_DIR)/high_confidence_compound_mappings_normalized.tsv
@@ -489,6 +495,38 @@ kg-enhance-all enhance-mappings: $(COMPOUND_LOOKUP_TABLE)
 	ENHANCED_UBERON=$$(awk -F'\t' 'NR>1 && $$2 ~ /^UBERON:/ {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	TOTAL_UNIQUE=$$(awk -F'\t' 'NR>1 {print $$1}' $(COMPOUND_LOOKUP_TABLE) 2>/dev/null | sort -u | wc -l | tr -d ' '); \
 	echo "$(GREEN)ChEBI: $$ENHANCED_CHEBI unique compounds, UBERON: $$ENHANCED_UBERON, Total: $$TOTAL_UNIQUE$(NC)"
+
+# Stage 10.6: Finalize Mapping Files
+# Creates clean final output files with simplified names and extracts unmapped compounds
+.PHONY: finalize-mappings
+finalize-mappings: $(COMPOUND_MAPPINGS) $(UNMAPPED_COMPOUNDS)
+	@echo "$(GREEN)✓ Final mapping files created$(NC)"
+
+$(COMPOUND_MAPPINGS): $(HIGH_CONFIDENCE_ENRICHED)
+	@echo "$(BLUE)Creating final compound_mappings.tsv...$(NC)"
+	@cp $(HIGH_CONFIDENCE_ENRICHED) $(COMPOUND_MAPPINGS)
+	@cp $(LOW_CONFIDENCE_MAPPINGS) $(COMPOUND_MAPPINGS_LOW)
+	@echo "$(GREEN)✓ Created $(COMPOUND_MAPPINGS)$(NC)"
+	@echo "$(GREEN)✓ Created $(COMPOUND_MAPPINGS_LOW)$(NC)"
+
+$(UNMAPPED_COMPOUNDS): $(COMPOUND_MAPPINGS)
+	@echo "$(BLUE)Extracting unmapped compounds...$(NC)"
+	@head -1 $(COMPOUND_MAPPINGS) > $(UNMAPPED_COMPOUNDS)
+	@awk -F'\t' 'NR>1 && $$3 ~ /^ingredient:/' $(COMPOUND_MAPPINGS) >> $(UNMAPPED_COMPOUNDS)
+	@UNMAPPED=$$(tail -n +2 $(UNMAPPED_COMPOUNDS) | wc -l | tr -d ' '); \
+	echo "$(YELLOW)Unmapped compounds: $$UNMAPPED$(NC)"
+	@echo "$(GREEN)✓ Created $(UNMAPPED_COMPOUNDS)$(NC)"
+
+# Move intermediate files to attic after finalization
+.PHONY: cleanup-intermediates
+cleanup-intermediates: finalize-mappings
+	@echo "$(BLUE)Moving intermediate files to attic...$(NC)"
+	@mkdir -p $(MERGE_MAPPINGS_DIR)/attic
+	@for f in $(HIGH_CONFIDENCE_MAPPINGS) $(HIGH_CONFIDENCE_UPGRADED) $(HIGH_CONFIDENCE_FORMULA) \
+		$(HIGH_CONFIDENCE_FINAL) $(HIGH_CONFIDENCE_CURATED) $(HIGH_CONFIDENCE_ENRICHED); do \
+		[ -f "$$f" ] && mv "$$f" $(MERGE_MAPPINGS_DIR)/attic/ 2>/dev/null || true; \
+	done
+	@echo "$(GREEN)✓ Intermediate files moved to attic$(NC)"
 
 # ============================================================================
 # Stage 10.5.5: Extract Upstream Ingredient Nodes
