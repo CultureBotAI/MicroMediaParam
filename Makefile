@@ -148,13 +148,15 @@ help:
 	@echo "  $(YELLOW)unmapped-clean$(NC)               - Clean unmapped analysis files"
 	@echo ""
 	@echo "$(GREEN)Compound Mapping Validation:$(NC)"
-	@echo "  $(YELLOW)validate-compound-mappings$(NC)   - Validate all ChEBI/PubChem IDs against official APIs"
+	@echo "  $(YELLOW)validate-semantic$(NC)             - Validate mappings for semantic correctness (blocklists, units)"
+	@echo "  $(YELLOW)semantic-validation-summary$(NC)   - Show semantic validation summary"
+	@echo "  $(YELLOW)validate-compound-mappings$(NC)    - Validate ChEBI/PubChem IDs against official APIs"
 	@echo "  $(YELLOW)validate-compound-mappings-quick$(NC) - Quick validation with 50 random samples"
-	@echo "  $(YELLOW)remediate-compound-mappings$(NC)  - Fix incorrect ChEBI IDs using PubChem lookup"
-	@echo "  $(YELLOW)merge-verified-mappings$(NC)      - Merge verified and remediated mappings"
-	@echo "  $(YELLOW)validate-full-pipeline$(NC)       - Run complete validation→remediation→merge workflow"
-	@echo "  $(YELLOW)validate-status$(NC)              - Show validation report summary"
-	@echo "  $(YELLOW)validate-clean$(NC)               - Clean validation files"
+	@echo "  $(YELLOW)remediate-compound-mappings$(NC)   - Fix incorrect ChEBI IDs using PubChem lookup"
+	@echo "  $(YELLOW)merge-verified-mappings$(NC)       - Merge verified and remediated mappings"
+	@echo "  $(YELLOW)validate-full-pipeline$(NC)        - Run complete validation→remediation→merge workflow"
+	@echo "  $(YELLOW)validate-status$(NC)               - Show validation report summary"
+	@echo "  $(YELLOW)validate-clean$(NC)                - Clean validation files"
 	@echo ""
 	@echo "$(GREEN)Deterministic API Mapping (replaces LLM mappings):$(NC)"
 	@echo "  $(YELLOW)api-mapping-full-pipeline$(NC)    - 🔥 Full pipeline: extract → API lookup → validate (30-60 min)"
@@ -516,6 +518,99 @@ $(UNMAPPED_COMPOUNDS): $(COMPOUND_MAPPINGS)
 	@UNMAPPED=$$(tail -n +2 $(UNMAPPED_COMPOUNDS) | wc -l | tr -d ' '); \
 	echo "$(YELLOW)Unmapped compounds: $$UNMAPPED$(NC)"
 	@echo "$(GREEN)✓ Created $(UNMAPPED_COMPOUNDS)$(NC)"
+
+# ============================================================================
+# Stage 10.6: Semantic Validation
+# Validates mappings for semantic correctness (blocklisted ChEBI IDs,
+# unit parsing errors, phosphate confusion, label mismatches)
+# ============================================================================
+
+VALIDATION_QUALITY_DIR := $(OUTPUT_DIR)/quality
+SEMANTIC_VALIDATION_REPORT := $(VALIDATION_QUALITY_DIR)/mapping_validation_report.tsv
+
+.PHONY: validate-semantic
+validate-semantic: $(SEMANTIC_VALIDATION_REPORT)
+	@echo "$(GREEN)✓ Semantic validation completed$(NC)"
+
+$(SEMANTIC_VALIDATION_REPORT): $(COMPOUND_MAPPINGS) | create-output-dirs
+	@mkdir -p $(VALIDATION_QUALITY_DIR)
+	@echo "$(BLUE)Running semantic validation of compound mappings...$(NC)"
+	$(PYTHON) -m src.quality.validate_mappings \
+		--input $(COMPOUND_MAPPINGS) \
+		--output $(SEMANTIC_VALIDATION_REPORT)
+	@echo ""
+	@echo "$(YELLOW)Critical issues to fix:$(NC)"
+	@if [ -f $(SEMANTIC_VALIDATION_REPORT) ]; then \
+		CRITICAL=$$(grep -c "critical" $(SEMANTIC_VALIDATION_REPORT) 2>/dev/null || echo "0"); \
+		WARNINGS=$$(grep -c "warning" $(SEMANTIC_VALIDATION_REPORT) 2>/dev/null || echo "0"); \
+		echo "  Critical: $$CRITICAL"; \
+		echo "  Warnings: $$WARNINGS"; \
+	fi
+	@echo "$(GREEN)Report: $(SEMANTIC_VALIDATION_REPORT)$(NC)"
+
+.PHONY: semantic-validation-summary
+semantic-validation-summary:
+	@echo "$(CYAN)=== Semantic Validation Summary ===$(NC)"
+	@if [ -f $(SEMANTIC_VALIDATION_REPORT) ]; then \
+		echo ""; \
+		echo "$(YELLOW)Issues by type:$(NC)"; \
+		cut -f5 $(SEMANTIC_VALIDATION_REPORT) | tail -n +2 | sort | uniq -c | sort -rn; \
+		echo ""; \
+		echo "$(YELLOW)Unique compounds with critical issues:$(NC)"; \
+		grep "critical" $(SEMANTIC_VALIDATION_REPORT) | cut -f2 | sort -u | head -10; \
+	else \
+		echo "$(RED)No validation report found. Run: make validate-semantic$(NC)"; \
+	fi
+
+# Stage 10.7: Apply validation filter, CAS upgrade, and PubChem lookup to create strict mapping file
+# All final mappings go into compound_mappings_strict.tsv
+COMPOUND_MAPPINGS_STRICT_FILTERED := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict_filtered.tsv
+COMPOUND_MAPPINGS_STRICT_CAS := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict_cas_upgraded.tsv
+COMPOUND_MAPPINGS_STRICT := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict.tsv
+PUBCHEM_CACHE := data/cache/pubchem_name_cache.tsv
+
+.PHONY: apply-validation-filter
+apply-validation-filter: $(COMPOUND_MAPPINGS_STRICT)
+	@echo "$(GREEN)✓ Strict mappings complete (validation + CAS upgrade + PubChem)$(NC)"
+
+# Step 1: Filter out bad mappings
+$(COMPOUND_MAPPINGS_STRICT_FILTERED): $(COMPOUND_MAPPINGS) $(SEMANTIC_VALIDATION_REPORT)
+	@echo "$(BLUE)Step 1: Filtering out bad mappings...$(NC)"
+	$(PYTHON) -m src.quality.apply_validation_filter \
+		--mappings $(COMPOUND_MAPPINGS) \
+		--validation $(SEMANTIC_VALIDATION_REPORT) \
+		--output $(COMPOUND_MAPPINGS_STRICT_FILTERED)
+
+# Step 2: Upgrade remaining CAS-RN to ChEBI where possible
+$(COMPOUND_MAPPINGS_STRICT_CAS): $(COMPOUND_MAPPINGS_STRICT_FILTERED)
+	@echo "$(BLUE)Step 2: Upgrading CAS-RN → ChEBI...$(NC)"
+	$(PYTHON) src/mapping/cas_to_chebi_upgrader.py \
+		--chebi-file $(CHEBI_NODES_FILE) \
+		--input $(COMPOUND_MAPPINGS_STRICT_FILTERED) \
+		--output $(COMPOUND_MAPPINGS_STRICT_CAS)
+
+# Step 3: PubChem lookup for remaining unmapped compounds (final step → compound_mappings_strict.tsv)
+$(COMPOUND_MAPPINGS_STRICT): $(COMPOUND_MAPPINGS_STRICT_CAS)
+	@echo "$(BLUE)Step 3: Looking up remaining compounds in PubChem...$(NC)"
+	@echo "$(YELLOW)This may take a while for uncached compounds$(NC)"
+	$(PYTHON) -m src.mapping.pubchem_lookup \
+		--input $(COMPOUND_MAPPINGS_STRICT_CAS) \
+		--output $(COMPOUND_MAPPINGS_STRICT) \
+		--cache $(PUBCHEM_CACHE)
+	@echo ""
+	@echo "$(YELLOW)Final strict mapping summary:$(NC)"
+	@CHEBI=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT) | grep -c "^CHEBI:" || echo "0"); \
+	PUBCHEM=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT) | grep -c "^PubChem:" || echo "0"); \
+	CAS=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT) | grep -c "^CAS-RN:" || echo "0"); \
+	INGRED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT) | grep -c "^ingredient:" || echo "0"); \
+	echo "  ChEBI:      $$CHEBI"; \
+	echo "  PubChem:    $$PUBCHEM"; \
+	echo "  CAS-RN:     $$CAS"; \
+	echo "  ingredient: $$INGRED"
+
+# Keep pubchem-lookup as alias for backwards compatibility
+.PHONY: pubchem-lookup
+pubchem-lookup: apply-validation-filter
 
 # Move intermediate files to attic after finalization
 .PHONY: cleanup-intermediates

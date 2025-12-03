@@ -96,20 +96,23 @@ class MicrobiologyProductMapper:
             ),
 
             # ============= MEAT/ANIMAL EXTRACTS =============
+            # Note: CHEBI:132852 is lespedezol D1 (flavonoid), NOT meat extract!
+            # There is no proper ChEBI ID for meat/beef extract as it's a complex mixture
             ProductMapping(
                 product_name="beef extract",
-                chebi_id="CHEBI:132852",  # meat extract (if exists, else create ingredient: code)
+                chebi_id="ingredient:beef_extract",  # No ChEBI - complex mixture
                 description="Aqueous extract of beef tissue",
-                synonyms=["meat extract", "bacto beef extract"],
-                confidence="medium",
-                notes="Complex mixture of proteins, peptides, amino acids, vitamins"
+                synonyms=["bacto beef extract"],
+                confidence="low",
+                notes="Complex mixture - no specific ChEBI available"
             ),
             ProductMapping(
                 product_name="meat extract",
-                chebi_id="CHEBI:132852",  # meat extract
+                chebi_id="ingredient:meat_extract",  # No ChEBI - complex mixture
                 description="Aqueous extract of meat tissue",
-                synonyms=["beef extract", "fleisch extrakt"],
-                confidence="medium"
+                synonyms=["fleisch extrakt"],
+                confidence="low",
+                notes="Complex mixture - no specific ChEBI available"
             ),
 
             # ============= MALT PRODUCTS =============

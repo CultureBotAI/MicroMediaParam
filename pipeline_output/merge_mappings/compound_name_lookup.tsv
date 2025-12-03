@@ -2,8 +2,8 @@ original_name	mapped_id	chebi_label	chebi_formula
 (1)  Ca(NO3)2.4H2O	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3
 (5)  Sodium metasilicate	CHEBI:60720	sodium silicate	2Na.O3Si
 (Agar	CHEBI:2509	agar	
-(NH4) citrate	CHEBI:63037	triammonium citrate	C6H5O7.3H4N
-(NH4)2 citrate	CHEBI:63076	diammonium citrate	C6H6O7.2H4N
+(NH4) citrate	CAS-RN:3458-72-8		
+(NH4)2 citrate	CAS-RN:3012-65-5		
 (NH4)2 SO4	CHEBI:62946	ammonium sulfate	2H4N.O4S
 (NH4)2MoO4	CHEBI:91249	ammonium molybdate	2H4N.MoO4
 (NH4)2Ni(SO4)2	CHEBI:86149	ammonium nickel sulfate hexahydrate	6H2O.2H4N.Ni.2O4S
@@ -12,19 +12,21 @@ original_name	mapped_id	chebi_label	chebi_formula
 (NH4)2Ni(SO4)2•6H2O	CHEBI:86149	ammonium nickel sulfate hexahydrate	6H2O.2H4N.Ni.2O4S
 (NH4)2S4	CHEBI:62946	ammonium sulfate	2H4N.O4S
 (NH4)2SO4	CHEBI:62946	ammonium sulfate	2H4N.O4S
-(NH4)3 citrate	CHEBI:63037	triammonium citrate	C6H5O7.3H4N
+(NH4)3 citrate	CAS-RN:3458-72-8		
 (NH4)6Mo7O24	CAS-RN:12027-67-7		
 (NH4)6Mo7O24 x 4 H2O	CAS-RN:12054-85-2		
 (NH4)6Mo7O24·4H2O	CAS-RN:12054-85-2		
 (NH4)6Mo7O4 x 24 H2O	CAS-RN:12054-85-2		
 (NH4)6MoO24·4H2O	CAS-RN:12054-85-2		
 (NH4)6MoO7O24 x 4 H2O	CAS-RN:12054-85-2		
-(NH4)H2PO4	CHEBI:62982	ammonium dihydrogen phosphate	H2O4P.H4N
-(NH4)HCO3	CHEBI:184335	Ammonium bicarbonate	CHO3.H4N
+(NH4)H2PO4	CAS-RN:7722-76-1		
+(NH4)HCO3	CAS-RN:1066-33-7		
 (NH4)Mo7O24·4H2O	CAS-RN:12054-85-2		
 (NH4)MoO7O24 x 4 H2O	CAS-RN:12054-85-2		
-(NH4)NO3	CHEBI:63038	ammonium nitrate	H4N.NO3
-.MgSO4 x 7 H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+(NH4)NO3	CAS-RN:6484-52-2		
+--Chloramphenicol	PUBCHEM.COMPOUND:5959.0		
+--Quinic acid	PUBCHEM.COMPOUND:6508.0		
+.MgSO4 x 7 H2O	CAS-RN:10034-99-8		
 0.2% Thiamine pyrophosphate	CHEBI:9532	thiamine(1+) diphosphate	C12H19N4O7P2S
 0.5 M Nitrilotriacetic acid, disodium salt	CHEBI:132766	sodium nitrilotriacetate	C6H6NO6.3Na
 1 M Sodium acetate	CHEBI:32954	sodium acetate	C2H3O2.Na
@@ -44,10 +46,11 @@ Absolute ethanol	PubChem:702
 ACES	CHEBI:39061	ACES	
 Acetic acid	CHEBI:15366	acetic acid	C2H4O2
 Activated carbon	CAS-RN:7440-44-0		
-Agar	CHEBI:2509	agar	
 agar	CHEBI:2509	agar	
+Agar	CHEBI:2509	agar	
 agarose	CHEBI:2511	agarose	(C12H18O9)n.C12H20O10
 Agarose	CHEBI:2511	agarose	(C12H18O9)n.C12H20O10
+Al2SO43 x 18 H2O	PUBCHEM.COMPOUND:24850		
 AlCl3	CHEBI:30114	aluminium trichloride	AlCl3
 AlCl3 x 6 H2O	CHEBI:30115	aluminium trichloride hexahydrate	AlCl3.6H2O
 AlCl3.6H2O	CHEBI:30115	aluminium trichloride hexahydrate	AlCl3.6H2O
@@ -55,6 +58,8 @@ AlCl3·6H2O	CHEBI:30115	aluminium trichloride hexahydrate	AlCl3.6H2O
 AlK(SO4)2	CHEBI:86463	potassium aluminium sulfate	Al.K.2O4S
 AlK(SO4)2 x 12H2O	CHEBI:86465	potassium aluminium sulfate dodecahydrate	Al.12H2O.K.2O4S
 AlK(SO4)2·12H2O	CHEBI:86465	potassium aluminium sulfate dodecahydrate	Al.12H2O.K.2O4S
+AlKSO42	PUBCHEM.COMPOUND:24856		
+AlKSO42 x 12 H2O	PUBCHEM.COMPOUND:24856		
 Ammonium acetate	CHEBI:62947	ammonium acetate	C2H3O2.H4N
 ammonium chloride	CHEBI:31206	ammonium chloride	Cl.H4N
 Ammonium ferric citrate	CHEBI:31604	ferric ammonium citrate	
@@ -64,6 +69,7 @@ Arginine	CHEBI:32696	argininium(1+)	C6H15N4O2
 Ascorbic acid	CHEBI:22652	ascorbic acid	
 B12	CHEBI:156213	(4-{[(3,5-dimethylisoxazol-4-yl)methyl]amino}quinazolin-2-yl)methanol	C15H16N4O2
 BaCl2	CHEBI:63317	barium chloride	Ba.2Cl
+BaCl2 x 2 H2O	CHEBI:63317	barium chloride	Ba.2Cl
 BaCl2·2H2O	CHEBI:86153	barium chloride dihydrate	Ba.2Cl.2H2O
 Bacto beef extract	CHEBI:132852	lespedezol D1	C16H14O5
 Bacto Peptone	CAS-RN:51142-18-8		
@@ -80,6 +86,7 @@ beef extract	CHEBI:132852	lespedezol D1	C16H14O5
 Beef Extract	CHEBI:132852	lespedezol D1	C16H14O5
 Betaine	CHEBI:17750	glycine betaine	C5H11NO2
 Betaine Hydrochloride	CAS-RN:590-46-5		
+Betaine x H2O	PUBCHEM.COMPOUND:247.0		
 Biotin	CHEBI:15956	biotin	C10H16N2O3S
 Biotine	CHEBI:15956	biotin	C10H16N2O3S
 Biotin in	CHEBI:57586	biotinate	C10H15N2O3S
@@ -92,6 +99,7 @@ Ca(NO3)2 x 4 H2O	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3
 Ca(NO3)2 x 4 H2O (0.1% w/v)	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3
 Ca(NO3)2x4H2O	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3
 Ca(NO3)2·4H2O	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3
+Ca-folinate	PUBCHEM.COMPOUND:135430945.0		
 Ca-pantothenate	CHEBI:29032	(R)-pantothenate	C9H16NO5
 Ca-Pantothenate	CHEBI:29032	(R)-pantothenate	C9H16NO5
 CaCl 2	CHEBI:3312	calcium dichloride	Ca.2Cl
@@ -100,14 +108,15 @@ CaCl 2 x 2 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2  x 2 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x  2 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
-CaCL2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 CaCl2 x 2 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
+CaCL2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 CaCl2 x 2 H2O (0.1% w/v)	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x 2 H2O (50 g/l stock solution)	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x 2 H2O (5M)	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x 2 H2O solution (7%)	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x 6 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2 x 7 H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
+CaCl2 x H2O	PUBCHEM.COMPOUND:5284359		
 CaCl2 x2H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl22H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 CaCl2x 2H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
@@ -115,22 +124,25 @@ CaCl2x2H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2x6H2O	CHEBI:3312	calcium dichloride	Ca.2Cl
 CaCl2·2H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 CaCO3	CHEBI:3311	calcium carbonate	CO3.Ca
-calcium chloride	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 Calcium Chloride	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
+calcium chloride	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 Calcium chloride dihydrate	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O
 Calcium D(+)-Pantthenate	CHEBI:1687714		
 Calcium malate	CAS-RN:16426-50-9		
 Calcium pantothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
 Calcium pantothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
 Calf serum	UBERON:0001977		
+CaNO32	PUBCHEM.COMPOUND:24963		
+CaNO32 x 4 H2O	PUBCHEM.COMPOUND:24963		
+CaNO32 x 6 H2O	PUBCHEM.COMPOUND:24963		
 Caproic acid	CHEBI:30776	hexanoic acid	C6H12O2
 Capronic acid	CHEBI:30776	hexanoic acid	C6H12O2
-CAPS buffer	CHEBI:191088	Cyclohexylaminopropanesulfonic acid	C9H19NO3S
-CAPSO	CHEBI:183882	3-(cyclohexylamino)-2-hydroxy-1-propanesulfonic acid	C9H19NO4S
+CAPS buffer	CAS-RN:1135-40-6		
+CAPSO	CAS-RN:73463-39-5		
 Carboxymethyl cellulose	CHEBI:85146	carboxymethylcellulose	
 Carboxymethyl cellulose, sodium salt	medium:1111		
-Casamino acid	CHEBI:78020	heptacosanoate	C27H53O2
 Casamino Acid	CHEBI:78020	heptacosanoate	C27H53O2
+Casamino acid	CHEBI:78020	heptacosanoate	C27H53O2
 Casamino acids	CHEBI:78020	heptacosanoate	C27H53O2
 Casamino Acids	CHEBI:78020	heptacosanoate	C27H53O2
 Casamino acids (BD)	ingredient:101		
@@ -139,15 +151,20 @@ Casein	CHEBI:3448
 Casmino Acid	CHEBI:78020	heptacosanoate	C27H53O2
 Casmino acids	CHEBI:78020	heptacosanoate	C27H53O2
 CaSO4 x 2 H2O	CHEBI:32583	calcium sulfate dihydrate	Ca.2H2O.O4S
+CaSO4 x 7 H2O	CHEBI:31346	calcium sulfate	Ca.O4S
 CaSO4.2H2O	CHEBI:32583	calcium sulfate dihydrate	Ca.2H2O.O4S
 CaSO4·2H2O	CHEBI:32583	calcium sulfate dihydrate	Ca.2H2O.O4S
+CdNO32 x 4 H2O	PUBCHEM.COMPOUND:25154.0		
+CeCl3 x 7 H2O	CHEBI:35458	cerium trichloride	CeCl3
 Cellobiose	CHEBI:17057	cellobiose	C12H22O11
 Cellobiose or Cellulose MN 300	ingredient:1627		
+CeNO33 x 6 H2O	PUBCHEM.COMPOUND:24948		
 Chalcopyrite	CHEBI:86202	chalcopyrite	Cu.Fe.2S
 Charcoal-filtered, natural seawater	ingredient:2142		
 Cheese whey	CAS-RN:92129-90-3		
 Choline chloride	CHEBI:133341	choline chloride	C5H14NO.Cl
 Citric acid	CHEBI:53258	sodium citrate	C6H5O7.3Na
+Citric acid x H2O	PUBCHEM.COMPOUND:311.0		
 Clarified rumen fluid	ingredient:rumen_fluid		
 Co Carboxylase	CHEBI:18290	thiamine(1+) diphosphate chloride	C12H19N4O7P2S.Cl
 Co(NO3)2	CHEBI:86209	cobalt dinitrate	Co.2NO3
@@ -155,7 +172,7 @@ Co(NO3)2 x 6H2O	CHEBI:86214	cobalt dinitrate hexahydrate	Co.6H2O.2NO3
 Co(NO3)2.6H2O	CHEBI:86214	cobalt dinitrate hexahydrate	Co.6H2O.2NO3
 Co(NO3)2·6H2O	CHEBI:86214	cobalt dinitrate hexahydrate	Co.6H2O.2NO3
 Cobalamin (B12)	CHEBI:28911	cob(III)alamin	C62H88CoN13O14P
-Cobalamine	CHEBI:28911	cob(III)alamin	C62H88CoN13O14P
+Cobalamine	CAS-RN:13408-78-1		
 CoCl 2	CHEBI:35696	cobalt dichloride	2Cl.Co
 CoCl2	CHEBI:35696	cobalt dichloride	2Cl.Co
 CoCl2 x 2 H2O	CHEBI:35696	cobalt dichloride	2Cl.Co
@@ -164,27 +181,37 @@ CoCl2 x 6 H2O	CHEBI:35696	cobalt dichloride	2Cl.Co
 CoCl2.6H2O	CHEBI:35696	cobalt dichloride	2Cl.Co
 Coenzyme A	CHEBI:15346	coenzyme A	C21H36N7O16P3S
 Coenzyme M	CHEBI:17905	coenzyme M	C2H6O3S2
+CoNO32	PUBCHEM.COMPOUND:25000		
+CoNO32 x 6 H2O	PUBCHEM.COMPOUND:25000		
 Copper Sulfate	CHEBI:23414	copper(II) sulfate	Cu.O4S
 Corn meal agar	medium:J1329		
-Corn starch	CHEBI:28017	starch	
+Corn starch	CAS-RN:9005-25-8		
 Corn steep liquor	ingredient:corn_steep_liquor		
 CoSO4	CHEBI:53470	cobalt(2+) sulfate	Co.O4S
-CoSO4 x 7 H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+CoSO4 x 7 H2O	CHEBI:53470	cobalt(2+) sulfate	Co.O4S
 Creatine	CHEBI:16919	creatine	C4H9N3O2
 CrK(SO4)2·12H2O	CAS-RN:7788-99-0		
+CrKSO42 x 12 H2O	PUBCHEM.COMPOUND:61489		
+CrNO33 x 7 H2O	PUBCHEM.COMPOUND:24598		
 Crotonic acid	CHEBI:41131	crotonic acid	C4H6O2
 CuCl	CHEBI:53472	copper(I) chloride	ClCu
 CuCl 2 x 2 H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O
 CuCl2	CHEBI:49553	copper(II) chloride	Cl2Cu
 CuCl2 x 2 H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O
 CuCl2 x 5 H2O	CHEBI:91245	copper(II) chloride pentahydrate	Cl2Cu.5H2O
+CuCl2 x 6 H2O	CHEBI:49553	copper(II) chloride	Cl2Cu
+CuCl2 x H2O	PUBCHEM.COMPOUND:24014		
 CuCl2*2H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O
 CuCl2-2H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O
 CuCl2·2H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O
+CuNO32 x 3 H2O	PUBCHEM.COMPOUND:18616		
 CuSO4	CHEBI:23414	copper(II) sulfate	Cu.O4S
 CuSO4 . 5H2O	CHEBI:31440	copper(II) sulfate pentahydrate	Cu.5H2O.O4S
+CuSO4 x 2 H2O	CHEBI:23414	copper(II) sulfate	Cu.O4S
+CuSO4 x 4 H2O	CHEBI:23414	copper(II) sulfate	Cu.O4S
 CuSO4 x 5 H2O	CHEBI:23414	copper(II) sulfate	Cu.O4S
 CuSO4 x 6 H2O	CHEBI:23414	copper(II) sulfate	Cu.O4S
+CuSO4 x H2O	PUBCHEM.COMPOUND:24462		
 CuSO4*5 H2O	CHEBI:31440	copper(II) sulfate pentahydrate	Cu.5H2O.O4S
 CuSO4.5H2O	CHEBI:23414	copper(II) sulfate	Cu.O4S
 CuSO4·5H2O	CHEBI:31440	copper(II) sulfate pentahydrate	Cu.5H2O.O4S
@@ -201,14 +228,17 @@ D Calcium Panthothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
 D(+)-Biotin	CHEBI:15956	biotin	C10H16N2O3S
 D(+)-Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
 D(+)-Trehalose	CHEBI:16551	alpha,alpha-trehalose	C12H22O11
+D+-Glucose	PUBCHEM.COMPOUND:5793.0		
+D+-Trehalose	PUBCHEM.COMPOUND:7427.0		
 D,L-6,8-thioctic acid	CHEBI:43796	(S)-lipoic acid	C8H14O2S2
+D-+-biotin	PUBCHEM.COMPOUND:171548.0		
 D-Biotin	CHEBI:15956	biotin	C10H16N2O3S
 d-Biotin	CHEBI:15956	biotin	C10H16N2O3S
 D-Calcium pantothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
 D-Fructose	CHEBI:48095	keto-D-fructose	C6H12O6
 D-Galactose	CHEBI:12936	D-galactose	C6H12O6
-D-glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
 D-Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
+D-glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
 D-Mannitol	CHEBI:16899	D-mannitol	C6H14O6
 D-Sorbitol	CHEBI:17924	D-glucitol	C6H14O6
 D-Xylose	CHEBI:65327	D-xylose	C5H10O5
@@ -232,8 +262,10 @@ Disodium fumarate	CHEBI:115156	disodium fumarate	C4H2O4.2Na
 Disodium oxalate	CHEBI:132764	sodium oxalate	C2O4.2Na
 Disodium Phosphate	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Disodium succinate	CHEBI:63675	sodium succinate (anhydrous)	C4H4O4.2Na
-Disodium succinate·6H2O	CHEBI:63686	sodium succinate hexahydrate	C4H4O4.6H2O.2Na
+Disodium succinate x 6 H2O	CHEBI:63675	sodium succinate (anhydrous)	C4H4O4.2Na
+Disodium succinate·6H2O	CHEBI:63675	sodium succinate (anhydrous)	C4H4O4.2Na
 DL-2-Methyl butyric acid	CHEBI:37070	2-methylbutyric acid	C5H10O2
+DL-Asparagine x H2O	PUBCHEM.COMPOUND:236.0		
 DL-Calcium pantothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
 DL-Dithiothreitol	CHEBI:42106	L-1,4-dithiothreitol	C4H10O2S2
 DL-Histidine	CHEBI:27570	histidine	C6H9N3O2
@@ -241,8 +273,8 @@ DL-Malate	CHEBI:15589	(S)-malate(2-)	C4H4O5
 DL-Malic acid	CHEBI:6650	malic acid	C4H6O5
 DL-malic acid	CHEBI:6650	malic acid	C4H6O5
 DL-Methionine	CHEBI:16811	methionine	C5H11NO2S
-DL-mevalonic acid	CHEBI:25351	mevalonic acid	C6H12O4
 DL-Mevalonic acid	CHEBI:25351	mevalonic acid	C6H12O4
+DL-mevalonic acid	CHEBI:25351	mevalonic acid	C6H12O4
 DL-Sodium malate	CHEBI:91260	disodium malate	
 DL-Tryptophan	CHEBI:57912	L-tryptophan zwitterion	C11H12N2O2
 DL-α-Methyl butyric acid	CHEBI:37070	2-methylbutyric acid	C5H10O2
@@ -252,35 +284,42 @@ E26 + biotin	medium:C28
 EDTA	CHEBI:64755	EDTA(2-)	C10H14N2O8
 EDTA di sodium salt	CHEBI:63125	EDTA trisodium salt	C10H13N2O8.3Na
 EG:JM	medium:C27		
+Elemental sulphur	PUBCHEM.COMPOUND:5362487.0		
 Ethanol	CHEBI:16236	ethanol	C2H6O
 Ethylenediamintetraacetic acid (EDTA),	CHEBI:4735	ethylenediaminetetraacetic acid	C10H16N2O8
 FAD	CHEBI:16238	FAD	C27H33N9O15P2
 Fastidious Anaerobe Basal Broth (OXOID)	ingredient:1079		
 Fe (III)citrate	CHEBI:4991	iron(III) dicitrate(3-)	C12H10FeO14
+Fe SO4 x 7 H2O	PUBCHEM.COMPOUND:24393		
 Fe(III) citrate	CHEBI:4991	iron(III) dicitrate(3-)	C12H10FeO14
 Fe(III)-EDTA	CHEBI:30729	ethylenediaminetetraacetatoferrate(1-)	C10H12N2O8.Fe
 Fe(III)NH4-EDTA	CAS-RN:21265-50-9		
 Fe(III)·EDTA	CHEBI:30729	ethylenediaminetetraacetatoferrate(1-)	C10H12N2O8.Fe
 Fe(NH3)citrate	CHEBI:144421	iron(III) citrate	C6H5FeO7
 Fe(NH4)(SO4)2 x 12 H2O	CHEBI:85503	Fe(CO)2(CN)	C3FeNO2
-Fe(NH4)2(SO4)2 x 6 H2O	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2 x 6 H2O (0.01% w/v)	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2 x 6 H2O (0.1% w/v)	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2 x 6 H2O (2% v/v)	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2 x 6H2O	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2 x 7 H2O	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
-Fe(NH4)2(SO4)2·6H2O	CHEBI:76181	ferrous ammonium sulfate hexahydrate	Fe.6H2O.2H4N.2O4S
+Fe(NH4)2(SO4)2 x 6 H2O	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2 x 6 H2O (0.01% w/v)	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2 x 6 H2O (0.1% w/v)	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2 x 6 H2O (2% v/v)	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2 x 6H2O	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2 x 7 H2O	CAS-RN:7783-85-9		
+Fe(NH4)2(SO4)2·6H2O	CAS-RN:7783-85-9		
 Fe2(SO4)3 x H2O	CAS-RN:15244-10-7		
 Fe2(SO4)3 x n H2O	ingredient:1742		
 Fe2(SO4)3 x X H2O	CAS-RN:15244-10-7		
+Fe2SO43	PUBCHEM.COMPOUND:24826		
+Fe2SO43 x H2O	PUBCHEM.COMPOUND:24826		
+Fe2SO43 x n H2O	PUBCHEM.COMPOUND:24826		
 FeCl 2 x 4 H2O	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O
 FeCl2	CHEBI:30812	iron dichloride	Cl2Fe
 FeCl2 x 4 H2O	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O
 FeCl2 x 4 H2O (0.1% w/v in 0.2 N HCl)	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O
 FeCl2 x 4 H2O (0.2% w/v in 0.02 N HCl)	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O
 FeCl2 x 6 H2O	CHEBI:30812	iron dichloride	Cl2Fe
+FeCl2 x 7 H2O	CHEBI:30812	iron dichloride	Cl2Fe
 FeCl2·4H2O	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O
 FeCl3	CHEBI:30808	iron trichloride	Cl3Fe
+FeCl3 x 4 H2O	CHEBI:30808	iron trichloride	Cl3Fe
 FeCl3 x 6 H2O	CHEBI:30808	iron trichloride	Cl3Fe
 "FeCl3 x 6 H2O
 NaEDTA"	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O
@@ -291,22 +330,31 @@ FeCl3 x 6 H2O solution (2%)	CHEBI:30808	iron trichloride	Cl3Fe
 FeCl3*6 H2O	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O
 FeCl3.6H2O	CHEBI:30808	iron trichloride	Cl3Fe
 FeCl3·6H2O	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O
+FeIII citrate	PUBCHEM.COMPOUND:61300.0		
+FeIII-EDTA	PUBCHEM.COMPOUND:197149.0		
+FeIIIPO4 x 4 H2O	PUBCHEM.COMPOUND:24861.0		
+FeNH42SO42	PUBCHEM.COMPOUND:24863		
+FeNH42SO42 x 12 H2O	PUBCHEM.COMPOUND:24863		
+FeNH42SO42 x 6 H2O	PUBCHEM.COMPOUND:24863		
+FeNH42SO42 x 7 H2O	PUBCHEM.COMPOUND:24863		
 FePO4	CHEBI:131371	iron(3+) phosphate	Fe.O4P
-Ferric ammonium citrate	CHEBI:31604	ferric ammonium citrate	
 Ferric Ammonium Citrate	CHEBI:31604	ferric ammonium citrate	
-Ferric citrate	CHEBI:31605	Ferric citrate (59 Fe)	C6H5O7
+Ferric ammonium citrate	CHEBI:31604	ferric ammonium citrate	
 ferric citrate	CHEBI:31605	Ferric citrate (59 Fe)	C6H5O7
+Ferric citrate	CHEBI:31605	Ferric citrate (59 Fe)	C6H5O7
 Ferric citrate monohydrate	ingredient:2378		
 Ferric iron citrate	CHEBI:144421	iron(III) citrate	C6H5FeO7
-Ferrihydrite	CHEBI:192761	ferrihydrite	
+Ferrihydrite	CAS-RN:39473-89-7		
 FeSO4	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
+FeSO4 x 5 H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
+FeSO4 x 6 H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
 FeSO4 x 6H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
+FeSO4 x 7 H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
 FeSO4 x 7H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
+FeSO4 x H2O	PUBCHEM.COMPOUND:24393		
 FeSO4 x7 H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
 FeSO4 x7H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
 FeSO4.7H2O	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S
-Fetal Bovine Serum	CAS-RN:9014-81-7		
-Fetal bovine serum	CAS-RN:9014-81-7		
 Fish meat extract	ingredient:1672		
 Fish-Sperm DNA	ingredient:976		
 Folic acid	CHEBI:27470	folic acid	C19H19N7O6
@@ -322,8 +370,8 @@ G Yeast Extract	CAS-RN:8013-01-2
 Galactose	CHEBI:28260	galactose	C6H12O6
 Gelatin	CHEBI:5291	gelatin	
 Glacial acetic acid	PubChem:176		
-Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
 glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
+Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
 Glutamic acid	CHEBI:18237	glutamic acid	C5H9NO4
 Glutathione	CHEBI:16856	glutathione	C10H17N3O6S
 Glycerol	CHEBI:15978	sn-glycerol 3-phosphate	C3H9O6P
@@ -340,10 +388,11 @@ H3BO3	CHEBI:33118	boric acid	H3BO3
 H3BO4	ingredient:1250		
 HCl	CHEBI:17883	hydrogen chloride	HCl
 HCl.	CHEBI:17883	hydrogen chloride	HCl
-Hemicalcium D-(+)- pantothenate	CHEBI:31345	Calcium pantothenate	2C9H16NO5.Ca
+Hemicalcium D-(+)- pantothenate	CAS-RN:137-08-6		
 Hemin	CHEBI:50385	hemin	C34H32ClFeN4O4
 Hemin chloride	CHEBI:50385	hemin	C34H32ClFeN4O4
 HEPES	CHEBI:46756	HEPES	
+HEPES buffer	PUBCHEM.COMPOUND:23831.0		
 Heptadecane	CHEBI:16148	heptadecane	C17H36
 Hexadecane	CHEBI:45296	hexadecane	C16H34
 Hipolypepton	ingredient:2060		
@@ -362,21 +411,23 @@ K Medium	medium:C42
 K minimum	medium:C43		
 K-acetate	CHEBI:47622	acetate ester	C2H3O2R
 K2CO3	CHEBI:131526	potassium carbonate	CO3.2K
-K2CrO4	CHEBI:75249	potassium chromate	CrO4.2K
+K2CrO4	CAS-RN:7789-00-6		
 K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K
 K2HPO4 x 3 H2O	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K
 K2HSO4	ingredient:1895		
-K2S4O6	CHEBI:86466	potassium tetrathionate	2K.O6S4
+K2S4O6	CAS-RN:13932-13-3		
 K2SO4	CHEBI:32036	potassium sulfate	2K.O4S
+K2SO4 x 7 H2O	CHEBI:32036	potassium sulfate	2K.O4S
 K2SO4·7H2O	CHEBI:32036	potassium sulfate	2K.O4S
 K35 Medium	medium:C42		
 KAl(SO4)2 x 12 H2O	CHEBI:86465	potassium aluminium sulfate dodecahydrate	Al.12H2O.K.2O4S
 KAl(SO4)2·12H2O	CHEBI:86465	potassium aluminium sulfate dodecahydrate	Al.12H2O.K.2O4S
 KBr	CHEBI:32030	potassium bromide	Br.K
-KCl	CHEBI:32588	potassium chloride	Cl.K
 KCL	CHEBI:32588	potassium chloride	Cl.K
+KCl	CHEBI:32588	potassium chloride	Cl.K
 KF	CHEBI:73605	Lys-Phe	C15H23N3O3
 KH2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K
+KH2PO4 x 2 H2O	PUBCHEM.COMPOUND:516951		
 KH2PO4 x 7 H2O	ingredient:1161		
 KHCO3	CHEBI:81862	potassium hydrogencarbonate	CHO3.K
 KI	CHEBI:8346	potassium iodide	I.K
@@ -384,18 +435,20 @@ KNO3	CHEBI:17632	nitrate	NO3
 KOH	CHEBI:32035	potassium hydroxide	HO.K
 KSCN	CHEBI:30951	potassium thiocyanate	CNS.K
 L(+)-Tartaric acid	CHEBI:15671	L-tartaric acid	C4H6O6
+L+-Tartaric acid	PUBCHEM.COMPOUND:444305.0		
 L-Alanine	CHEBI:16977	L-alanine	C3H7NO2
 L-Arginine	CHEBI:16467	L-arginine	C6H14N4O2
-L-Arginine x HCI	CHEBI:31235	Arginine hydrochloride	C6H14N4O2.HCl
-L-Arginine x HCl	CHEBI:31235	Arginine hydrochloride	C6H14N4O2.HCl
+L-Arginine x HCI	CAS-RN:1119-34-2		
+L-Arginine x HCl	CAS-RN:1119-34-2		
 L-Ascorbic acid	CHEBI:29073	L-ascorbic acid	C6H8O6
 L-Asparagin	CHEBI:17196	L-asparagine	C4H8N2O3
 L-Asparagine	CHEBI:17196	L-asparagine	C4H8N2O3
 L-Aspartic acid	CHEBI:17053	L-aspartic acid	C4H7NO4
-L-Cystein Hcl	PubChem:5862		
 L-Cystein HCl	PubChem:5862		
+L-Cystein Hcl	PubChem:5862		
 L-Cysteine	CHEBI:17561	L-cysteine	C3H7NO2S
 L-cysteine HCl	PubChem:5862		
+L-Cysteine HCl x H2O	PUBCHEM.COMPOUND:5862.0		
 L-Cysteine x HCl	PubChem:5862		
 L-Cysteine-HCl	PubChem:5862		
 L-Cysteine-HCl x H2O	ingredient:983		
@@ -413,7 +466,7 @@ L-Histidine	CHEBI:15971	L-histidine	C6H9N3O2
 L-Isoleucine	CHEBI:17191	L-isoleucine	C6H13NO2
 L-Leucine	CHEBI:15603	L-leucine	C6H13NO2
 L-Lysine	CHEBI:18019	L-lysine	C6H14N2O2
-L-Lysine HCl	CHEBI:53633	L-lysine hydrochloride	C6H14N2O2.HCl
+L-Lysine HCl	CAS-RN:657-27-2		
 L-Methionine	CHEBI:16643	L-methionine	C5H11NO2S
 L-Ornithine HCl	CAS-RN:3184-13-2		
 L-Phenylalanine	CHEBI:17295	L-phenylalanine	C9H11NO2
@@ -424,8 +477,11 @@ L-Threonine	CHEBI:16857	L-threonine	C4H9NO3
 L-Tryptophan	CHEBI:16828	L-tryptophan	C11H12N2O2
 L-Tyrosine	CHEBI:17895	L-tyrosine	C9H11NO3
 L-Valine	CHEBI:16414	L-valine	C5H11NO2
+L-α-Phosphatidylcholine	PUBCHEM.COMPOUND:122218.0		
 Lab-Lemco beef extract	CAS-RN:91079-38-8		
+LaCl3 x 7 H2O	CHEBI:231515	lanthanum trichloride	Cl3La
 Lactose	CHEBI:36218	beta-lactose	C12H22O11
+LaNO33 x 6 H2O	PUBCHEM.COMPOUND:24918		
 LB broth powder	ingredient:1999		
 Leibovitz's L-15 medium	ingredient:1941		
 Leptospira Enrichment EMJH	ingredient:992		
@@ -434,8 +490,8 @@ LiCl	CHEBI:48607	lithium chloride	Cl.Li
 Lipoic acid	CHEBI:16494	lipoic acid	C8H14O2S2
 Magnesium acetate	CHEBI:62964	magnesium acetate	2C2H3O2.Mg
 magnesium chloride	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
-Magnesium Sulfate	CHEBI:32599	magnesium sulfate	Mg.O4S
 magnesium sulfate	CHEBI:32599	magnesium sulfate	Mg.O4S
+Magnesium Sulfate	CHEBI:32599	magnesium sulfate	Mg.O4S
 Maize extract	ingredient:575		
 Maize meal	ingredient:1985		
 Malate	CHEBI:25115	malate	
@@ -446,6 +502,7 @@ Malt extract powder	ingredient:malt_extract
 Malted wheat meal	ingredient:1881		
 Maltose	CHEBI:18167	alpha-maltose	C12H22O11
 Maltose monohydrate	PubChem:23615261		
+Maltose x H2O	PUBCHEM.COMPOUND:439186.0		
 Malt extract	CAS-RN:8002-48-0		
 Manganese Sulfate	CHEBI:86364	manganese(II) sulfate monohydrate	H2O.Mn.O4S
 Mannitol	CHEBI:29864	mannitol	C6H14O6
@@ -458,19 +515,21 @@ MES	CHEBI:39010	MES
 MES (2-[N-Morpholino]ethane sulfonic acid)	CHEBI:39005	2-(N-morpholino)ethanesulfonic acid	C6H13NO4S
 MES (2-Morpholinoethanesulfonic acid)	CHEBI:39005	2-(N-morpholino)ethanesulfonic acid	C6H13NO4S
 MES [2-(N-morpholino) ethane sulfonic acid]	CHEBI:39005	2-(N-morpholino)ethanesulfonic acid	C6H13NO4S
-MES acids	CHEBI:39005	2-(N-morpholino)ethanesulfonic acid	C6H13NO4S
+MES acids	CAS-RN:4432-31-9		
+MES buffer	PUBCHEM.COMPOUND:78165.0		
 Metal solution (see below)	ingredient:1863		
 Methanol	CHEBI:17790	methanol	CH4O
 Methanol solution (see below)*	ingredient:1863		
 Methylamine	CHEBI:16830	methylamine	CH5N
 Methylamine hydrochloride	CHEBI:59337	methylamine hydrochloride	CH6N.Cl
-Methylamine-HCl	CHEBI:64700	trimethylamine hydrochloride	C3H9N.HCl
+Methylamine-HCl	CAS-RN:593-81-7		
 Methylene blue	CHEBI:6872	methylene blue	C16H18N3S.Cl
-Mg	CHEBI:73611	Met-Gly	C7H14N2O3S
 mg	CHEBI:73611	Met-Gly	C7H14N2O3S
+Mg	CHEBI:73611	Met-Gly	C7H14N2O3S
 Mg(NO3)2·6H2O	CHEBI:6637	magnesium dihydroxide	2HO.Mg
-Mg(SO4) x 7 H2O (350 g/l stock solution)	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
-Mg(SO4) x 7H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+Mg(SO4) x 7 H2O (350 g/l stock solution)	CHEBI:87258	monoacylglycerol 18:3	C21H36O4
+Mg(SO4) x 7H2O	CHEBI:87258	monoacylglycerol 18:3	C21H36O4
+Mg-citrate	PUBCHEM.COMPOUND:6099959.0		
 Mg2SO4	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgCl 2	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl 2 x 6 H2O	KEGG:C07755		
@@ -481,45 +540,49 @@ MgCl2  x 6 H2O	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
 MgCl2  x 7 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2  x 76 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2 x 2 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
+MgCl2 x 4 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2 x 6 H20	KEGG:C07755		
-MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCL2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
+MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2 x 6 H2O (200 g/l stock solution)	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
-MgCl2 x 6H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2 X 6H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
+MgCl2 x 6H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2 x 7 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
+MgCl2 x H2O	PUBCHEM.COMPOUND:5360315		
 MgCl2.6H2O	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
 MgCl2x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2x 6H2O	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
 MgCl2x6H2O	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
 MgCl2 x 6H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg
 MgCl2·6H2O	CHEBI:86345	magnesium dichloride hexahydrate	2Cl.6H2O.Mg
+MgNO32 x 6 H2O	PUBCHEM.COMPOUND:25212		
 MgSO 4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
-MgSO x 7 H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
-MgSO2 x 7 H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+MgSO x 7 H2O	CAS-RN:10034-99-8		
+MgSO2 x 7 H2O	CAS-RN:10034-99-8		
 MgSO4	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4  x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 6 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 6H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
-MgSO4 x 7 H20	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
-MgSo4 x 7 H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+MgSO4 x 7 H20	CAS-RN:10034-99-8		
+MgSo4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7 H2O (0.1% w/v)	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7 H2O (100 mM)	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7 H2O solution (25%)	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7 H2O to 15.0 g).	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
+MgSO4 x H2O	PUBCHEM.COMPOUND:24083		
 MgSO4 x7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4.7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO47H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
 MgSO4x7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
 MgSO4 x 7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
-MgSO4·7H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
-MgSO4·H2O	CHEBI:31795	magnesium sulfate heptahydrate	7H2O.Mg.O4S
+MgSO4·7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S
+MgSO4·H2O	CAS-RN:10034-99-8		
 Mineral solution (see Medium No.976	ingredient:1958		
 Mineral solution (see Medium No.976)	ingredient:1958		
 Mix	CHEBI:133626	mesoporphyrin IX	C34H38N4O4
-Mm Bicarbonate	CHEBI:17544	hydrogencarbonate	CHO3
+Mm Bicarbonate	CAS-RN:71-52-3		
 MnCl	CHEBI:7773015		
 MnCl 2 x 4 H2O	CAS-RN:20603-88-7		
 MnCl2	CHEBI:7773015		
@@ -543,6 +606,7 @@ MnSO4 x 6 H2O	CHEBI:135251	glycyclamide	C14H20N2O3S
 MnSO4 x 7 H2O	CHEBI:135251	glycyclamide	C14H20N2O3S
 MnSO4 x 7H2O	CHEBI:135251	glycyclamide	C14H20N2O3S
 MnSO4 x H2O	ingredient:1000		
+MnSO4 x n H2O	PUBCHEM.COMPOUND:24580		
 MnSO4 x X H2O	ingredient:1000		
 MnSO4.4H2O	CHEBI:135251	glycyclamide	C14H20N2O3S
 MnSO4·5H2O	CHEBI:131524	manganese(II) sulfate pentahydrate	5H2O.Mn.O4S
@@ -551,7 +615,7 @@ Monosodium glutamate	CHEBI:64220	monosodium glutamate	C5H8NO4.Na
 MoO3	CHEBI:30627	molybdenum trioxide	MoO3
 MOPS	CHEBI:39074	MOPS	
 MOPS (3-(N-morpholino) propane-sulfonic acid)	CHEBI:44115	3-(N-morpholino)propanesulfonic acid	C7H15NO4S
-MOPS buffer	CHEBI:44115	3-(N-morpholino)propanesulfonic acid	C7H15NO4S
+MOPS buffer	CAS-RN:1132-61-2		
 Mueller-Hinton broth	ingredient:748		
 myo-Inositol	CHEBI:17268	myo-inositol	C6H12O6
 N-Acetyl Glucosamine	CHEBI:28009	N-acetyl-beta-D-glucosamine	C8H15NO6
@@ -562,47 +626,74 @@ n-Butyric acid	CHEBI:30772	butyric acid	C4H8O2
 n-Decane	CHEBI:41808	decane	C10H22
 n-Valeric acid	CHEBI:17418	valeric acid	C5H10O2
 Na gluconate	CHEBI:24265	gluconate	C6H11O7
-Na NO3	CHEBI:63005	sodium nitrate	NO3.Na
+Na NO3	CAS-RN:7631-99-4		
 Na Succinate	CHEBI:26806	succinate	
-Na-(DL)-lactate	CHEBI:75228	sodium lactate	C3H5O3.Na
-Na-(L)-lactate	CHEBI:232798	sodium L-lactate	C3H5O3.Na
+Na-(DL)-lactate	CAS-RN:72-17-3		
+Na-(L)-lactate	CAS-RN:867-56-1		
 Na-3-hydroxybutyrate	CHEBI:37054	3-hydroxybutyrate	C4H7O3
+Na-acetate	PUBCHEM.COMPOUND:517045.0		
+Na-acetate x 3 H2O	PUBCHEM.COMPOUND:517045.0		
 Na-ampicillin	CHEBI:28971	ampicillin	C16H19N3O4S
 Na-ascorbate	CHEBI:38290	L-ascorbate	C6H7O6
 Na-aspartate	PubChem:21806		
+Na-benzoate	PUBCHEM.COMPOUND:517055.0		
 Na-butyrate	CHEBI:17968	butyrate	C4H7O2
 Na-caproate	CHEBI:17120	hexanoate	C6H11O2
 Na-Caseinate	CAS-RN:9005-46-3		
 Na-caseinate	CAS-RN:9005-46-3		
 Na-crotonate	CHEBI:35899	crotonate	C4H5O2
-Na-DL-lactate	CHEBI:75228	sodium lactate	C3H5O3.Na
+Na-DL-lactate	CAS-RN:72-17-3		
+Na-DL-malate	PUBCHEM.COMPOUND:8736.0		
 Na-EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
+Na-EDTA x 2 H2O	PUBCHEM.COMPOUND:6144.0		
+Na-formate	PUBCHEM.COMPOUND:2723810.0		
+Na-formiate	PUBCHEM.COMPOUND:2723810.0		
+Na-fumarate	PUBCHEM.COMPOUND:6076814.0		
+Na-gallate	PUBCHEM.COMPOUND:23674757.0		
 Na-gluconate	CHEBI:18391	D-gluconate	C6H11O7
 Na-glutamate	CHEBI:29988	L-glutamate(2-)	C5H7NO4
 Na-glycerol phosphate	CAS-RN:1334-74-3		
 Na-glycerophosphate	CAS-RN:1334-74-3		
-Na-L-lactate	CHEBI:232798	sodium L-lactate	C3H5O3.Na
-Na-lactate	CHEBI:232798	sodium L-lactate	C3H5O3.Na
+Na-L-lactate	CAS-RN:867-56-1		
+Na-L-malate	PUBCHEM.COMPOUND:6097189.0		
+Na-lactate	CAS-RN:867-56-1		
+Na-laurate	PUBCHEM.COMPOUND:2735067.0		
+Na-malate	PUBCHEM.COMPOUND:8736.0		
 Na-meta silicate	CAS-RN:6834-92-0		
 Na-meta-silicate	CAS-RN:6834-92-0		
+Na-orotate	PUBCHEM.COMPOUND:23683036.0		
+Na-oxalate	PUBCHEM.COMPOUND:6125.0		
 Na-propionate	CHEBI:17272	propionate	C3H5O2
+Na-pyruvate	PUBCHEM.COMPOUND:23662274.0		
+Na-silicate	PUBCHEM.COMPOUND:23266.0		
+Na-stearate	PUBCHEM.COMPOUND:2724691.0		
 Na-succinate	CHEBI:26806	succinate	
 Na-tartrate	CHEBI:30924	L-tartrate(2-)	C4H4O6
 Na-thioglycolate	CHEBI:30066	thioglycolate(1-)	C2H3O2S
 Na-Thioglycolate	CHEBI:30066	thioglycolate(1-)	C2H3O2S
+Na-thiosulfate	PUBCHEM.COMPOUND:24477.0		
+Na-tungstate x 2 H2O	PUBCHEM.COMPOUND:26052.0		
+Na-vanillate	PUBCHEM.COMPOUND:23675709.0		
 Na2 EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
 NA2 EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
 Na2 α-ketoglutarate	CHEBI:16810	2-oxoglutarate(2-)	C5H4O5
+Na2-9,10-anthraquinone-2,6-disulfonate	PUBCHEM.COMPOUND:70070.0		
 Na2-9,10-anthraquinone-2,6-disulfonate (TCI A0308)	CAS-RN:853-68-9		
+Na2-citrate	PUBCHEM.COMPOUND:8950.0		
+Na2-DL-malate	PUBCHEM.COMPOUND:8736.0		
 Na2-EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
+Na2-EDTA x 2 H2O	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
+Na2-fumarate	PUBCHEM.COMPOUND:6364607.0		
+Na2-glutamate	PUBCHEM.COMPOUND:167560.0		
 Na2-tartrate x 2 H2O	CAS-RN:6106-24-7		
 Na2-ß-glycerolphosphate	CAS-RN:1334-74-3		
 Na2-ß-glycerophosphate	CHEBI:17270	glycerol 2-phosphate	C3H9O6P
-Na2B4O7	CHEBI:38892	disodium tetraborate	H4B4O9.2Na
+Na2-ß-glycerophosphate x 5 H2O	PUBCHEM.COMPOUND:6101544.0		
+Na2B4O7	CAS-RN:1330-43-4		
 Na2B4O7 x 10 H2O	CAS-RN:1303-96-4		
 Na2B4O7 x 10H2O	CAS-RN:1303-96-4		
 Na2B4O7·10H2O	CAS-RN:1303-96-4		
-Na2citrate x 2 H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
+Na2citrate x 2 H2O	CAS-RN:6132-04-3		
 Na2CO3	CHEBI:29377	sodium carbonate	CO3.2Na
 Na2EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
 Na2EDTA.2H2O	CHEBI:64758	EDTA disodium salt dihydrate	C10H14N2O8.2H2O.2Na
@@ -613,34 +704,40 @@ Na2HPO4	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2HPO4 x 12 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2HPO4 x 2 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2HPO4 x 2H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
+Na2HPO4 x 3 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
+Na2HPO4 x 6 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
+Na2HPO4 x 7 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
+Na2HPO4 x H2O	PUBCHEM.COMPOUND:24203		
 Na2HPO4 x2 H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2HPO4·2H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2HPO4·6H2O	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na
 Na2MoO4	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na
-Na2MoO4 x 2 H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
-Na2MoO4 x 2 H2O (0.1% w/v)	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
-Na2MoO4 x 2H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
+Na2MoO4 x 2 H2O	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na
+Na2MoO4 x 2 H2O (0.1% w/v)	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na
+Na2MoO4 x 2H2O	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na
 Na2MoO4 x 7 H2O	CHEBI:86473	sodium molybdate heptahydrate	7H2O.MoO4.2Na
-Na2MoO4 x H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
+Na2MoO4 x H2O	CAS-RN:10102-40-6		
 Na2MoO4*2 H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
 Na2MoO4*2H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
 Na2MoO4-2H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
 Na2MoO4.2H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
-Na2MoO4·2H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
-Na2MoSO4 x 2 H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
+Na2MoO4·2H2O	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na
+Na2MoSO4 x 2 H2O	CAS-RN:10102-40-6		
 Na2O4W x 2 H2O	ingredient:736		
 Na2S	CHEBI:76208	sodium sulfide (anhydrous)	2Na.S
 Na2S x 9 H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S
 Na2S x 9 H2O (3% w/v)	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S
 Na2S x 9 H2O(24% w/v)	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S
+Na2S x H2O	PUBCHEM.COMPOUND:14804.0		
 Na2S2O3	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
-Na2S2O3 x 5 H20	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
+Na2S2O3 x 5 H20	CAS-RN:10102-17-7		
 Na2S2O3 x 5 H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
 Na2S2O3 x 5 H2O (10% solution)	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
 Na2S2O3 x 5 H2O(24 % w/v)	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
 Na2S2O3 x 5H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
 Na2S2O3x5H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
 Na2S2O3·5H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
+Na2S2O4 x 2 H2O	PUBCHEM.COMPOUND:24489.0		
 Na2S2O4·2H2O	ingredient:1946		
 Na2S2O5	CHEBI:114786	sodium disulfite	2Na.O5S2
 Na2Se3 x 5 H2O	ingredient:870		
@@ -652,12 +749,13 @@ Na2SeO3·5H2O	CHEBI:48843	disodium selenite	2Na.O3Se
 Na2SeO4	CHEBI:32149	sodium sulfate	2Na.O4S
 Na2SeO4 x 10 H2O	CAS-RN:10102-23-5		
 Na2SiO3	CHEBI:1344098		
-Na2SiO3 x 9 H20	CHEBI:132108	sodium silicate nonahydrate	9H2O.2Na.O3Si
-Na2SiO3 x 9 H2O	CHEBI:132108	sodium silicate nonahydrate	9H2O.2Na.O3Si
-Na2SiO3.9H2O	CHEBI:132108	sodium silicate nonahydrate	9H2O.2Na.O3Si
-Na2SiO3·9H2O	CHEBI:132108	sodium silicate nonahydrate	9H2O.2Na.O3Si
+Na2SiO3 x 9 H20	CAS-RN:13517-24-3		
+Na2SiO3 x 9 H2O	CAS-RN:13517-24-3		
+Na2SiO3.9H2O	CAS-RN:13517-24-3		
+Na2SiO3·9H2O	CAS-RN:13517-24-3		
 Na2SO3	CHEBI:86477	sodium sulfite	2Na.O3S
 Na2SO3 x 5 H20	CAS-RN:10213-79-3		
+Na2SO3 x 5 H2O	CHEBI:86477	sodium sulfite	2Na.O3S
 Na2SO4	CHEBI:32149	sodium sulfate	2Na.O4S
 Na2SO4 x 10 H2O	CHEBI:32149	sodium sulfate	2Na.O4S
 Na2S·9H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S
@@ -666,67 +764,81 @@ Na2WO4 x 2 H20	ingredient:736
 Na2WO4 x 2 H2O	CHEBI:63940	sodium tungstate	2Na.O4W
 Na2WO4 x 2 H2O (0.1% w/v)	CHEBI:63939	sodium tungstate dihydrate	2H2O.2Na.O4W
 Na2WO4 x 2H2O	CHEBI:63940	sodium tungstate	2Na.O4W
+Na2WO4 x 6 H2O	CHEBI:63940	sodium tungstate	2Na.O4W
 Na2WO4*2H2O	CHEBI:63939	sodium tungstate dihydrate	2H2O.2Na.O4W
 Na2WO4·2H2O	CHEBI:63939	sodium tungstate dihydrate	2H2O.2Na.O4W
-Na3-citrate x 2 H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
-Na3-Citrate x 2 H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
-Na3-citrate x 2 H2O (0.6 g/l stock solution)	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
+Na3-citrate x 2 H2O	CAS-RN:6132-04-3		
+Na3-Citrate x 2 H2O	CAS-RN:6132-04-3		
+Na3-citrate x 2 H2O (0.6 g/l stock solution)	CAS-RN:6132-04-3		
 Na3-citrate x 5 H2O	CAS-RN:6858-44-2		
 Na3-EDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
-Na3Citrate x 2 H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
+Na3Citrate x 2 H2O	CAS-RN:6132-04-3		
 Na3VO4	CHEBI:35607	trisodium vanadate	3Na.O4V
-Na3‐citrate x 2H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
-Na3‐citrate x 2H2O	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
+Na3‐citrate x 2H2O	CAS-RN:6132-04-3		
+Na3‐citrate x 2H2O	CAS-RN:6132-04-3		
 NaBr	CHEBI:63004	sodium bromide	Br.Na
-NaCL	CHEBI:26710	sodium chloride	Cl.Na
 NaCl	CHEBI:26710	sodium chloride	Cl.Na
 Nacl	CHEBI:26710	sodium chloride	Cl.Na
-NaClO3	CHEBI:65242	sodium chlorate	ClO3.Na
-NaCO3	CHEBI:29377	sodium carbonate	CO3.2Na
+NaCL	CHEBI:26710	sodium chloride	Cl.Na
+NaClO3	CAS-RN:7775-09-9		
+NaCO3	CAS-RN:497-19-8		
 NaEDTA	CHEBI:64734	EDTA disodium salt (anhydrous)	C10H14N2O8.2Na
 NaF	CHEBI:28741	sodium fluoride	F.Na
 NaH2PO4	CHEBI:37585	sodium dihydrogenphosphate	H2O4P.Na
 NaH2PO4 x 2 H2O	CHEBI:37585	sodium dihydrogenphosphate	H2O4P.Na
 NaH2PO4 x 2H2O	CHEBI:37585	sodium dihydrogenphosphate	H2O4P.Na
+NaH2PO4 x H2O	PUBCHEM.COMPOUND:23672064		
 NaH2PO4.2H2O	CHEBI:4496	calcium hydrogenphosphate dihydrate	Ca.2H2O.HO4P
 NaH2PO4·2H2O	CHEBI:37585	sodium dihydrogenphosphate	H2O4P.Na
 NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na
 NaHSeO3	CAS-RN:7782-82-3		
-NaMoO4 x 2 H2O	CHEBI:75213	sodium molybdate dihydrate	2H2O.MoO4.2Na
+NaMoO4 x 2 H2O	CAS-RN:10102-40-6		
 NaNH4HPO4 x 4 H2O	CAS-RN:7783-13-3		
 NaNO2	CHEBI:78870	sodium nitrite	NO2.Na
-NaNO3	CHEBI:63005	sodium nitrate	NO3.Na
+NaNO3	CAS-RN:7631-99-4		
 NaOH	CHEBI:32145	sodium hydroxide	HO.Na
-NaS2O3	CHEBI:132112	sodium thiosulfate	2Na.O3S2
-NaS2O3 x 5 H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2
+NaS2O3	CAS-RN:7772-98-7		
+NaS2O3 x 5 H2O	CAS-RN:10102-17-7		
 NaSO4	CHEBI:32149	sodium sulfate	2Na.O4S
 Natetrathionate	CAS-RN:13721-29-4		
 Natural seawater	ingredient:2152		
 NaVO3	CHEBI:75221	sodium metavanadate	Na.O3V
+NaVO3 x H2O	PUBCHEM.COMPOUND:4148882.0		
+NaVO3 x n H2O	PUBCHEM.COMPOUND:4148882.0		
 NaWO4·2H2O	CHEBI:63939	sodium tungstate dihydrate	2H2O.2Na.O4W
 NCL/0.01% NPA	medium:C66		
+NdCl3 x 6 H2O	PUBCHEM.COMPOUND:66204.0		
+NH4-oxalate	PUBCHEM.COMPOUND:14213.0		
+NH42CO3	PUBCHEM.COMPOUND:517111		
+NH42HPO4	PUBCHEM.COMPOUND:24540		
+NH42MoO4	PUBCHEM.COMPOUND:61578.0		
+NH42SO4	PUBCHEM.COMPOUND:6097028		
 NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N
 NH4CL	CHEBI:31206	ammonium chloride	Cl.H4N
 NH4Cl2	CHEBI:31206	ammonium chloride	Cl.H4N
-NH4H2PO4	CHEBI:62982	ammonium dihydrogen phosphate	H2O4P.H4N
-NH4HCO3	CHEBI:184335	Ammonium bicarbonate	CHO3.H4N
-NH4NO3	CHEBI:63038	ammonium nitrate	H4N.NO3
+NH4H2PO4	CAS-RN:7722-76-1		
+NH4HCO3	CAS-RN:1066-33-7		
+NH4NO3	CAS-RN:6484-52-2		
 Niacin	CHEBI:15940	nicotinic acid	C6H5NO2
 NiCl 2 x 6 H2O	CHEBI:34887	nickel dichloride	Cl2Ni
 NiCl2	CHEBI:34887	nickel dichloride	Cl2Ni
 NiCl2 x 2 H2O	CHEBI:34887	nickel dichloride	Cl2Ni
 NiCl2 x 2H2O	CHEBI:34887	nickel dichloride	Cl2Ni
+NiCl2 x 5 H2O	CHEBI:34887	nickel dichloride	Cl2Ni
 NiCl2 x 6 H20	PubChem:129831233		
 NiCl2 x 6 H2O	CHEBI:34887	nickel dichloride	Cl2Ni
 NiCl2 x 6 H2O (0.1% w/v)	CHEBI:34887	nickel dichloride	Cl2Ni
+NiCl2 x H2O	PUBCHEM.COMPOUND:24385		
 NiCl2·6H2O	CHEBI:34887	nickel dichloride	Cl2Ni
 Nicotinamide	CHEBI:17154	nicotinamide	C6H6N2O
 Nicotinate	CHEBI:10716816		
 Nicotine amide	PubChem:936		
-Nicotinic acid	CHEBI:15940	nicotinic acid	C6H5NO2
 Nicotinic Acid	CHEBI:15940	nicotinic acid	C6H5NO2
+Nicotinic acid	CHEBI:15940	nicotinic acid	C6H5NO2
 Nicotinic acid (PP)	CHEBI:15940	nicotinic acid	C6H5NO2
 Nicotinic Acid	CHEBI:15940	nicotinic acid	C6H5NO2
+NiSO4 x 6 H2O	CHEBI:53001	nickel sulfate	Ni.O4S
+NiSO4 x 7 H2O	CHEBI:53001	nickel sulfate	Ni.O4S
 Nitrilotriacetate	CHEBI:44557	nitrilotriacetic acid	C6H9NO6
 Nitrilotriacetate (NTA)	CHEBI:25548	nitrilotriacetate(3-)	C6H6NO6
 Nitrilotriacetic Acid	CHEBI:44557	nitrilotriacetic acid	C6H9NO6
@@ -734,8 +846,8 @@ Nitrilotriacetic acid	CHEBI:44557	nitrilotriacetic acid	C6H9NO6
 Nitrilotriacetic acid (NTA)	CHEBI:44557	nitrilotriacetic acid	C6H9NO6
 Nitrilotriacetic acid trisodium salt monohydrate	PubChem:29194		
 Nitrilotriacetic acid, trisodium salt	CHEBI:132766	sodium nitrilotriacetate	C6H6NO6.3Na
-Nutrient Broth	medium:J663		
 Nutrient broth	medium:J663		
+Nutrient Broth	medium:J663		
 Nutrients	CHEBI:33284	nutrient	
 Oat flakes	CAS-RN:84012-26-0		
 Olive oil	CAS-RN:8001-25-0		
@@ -754,6 +866,7 @@ Phosphate buffer stock solution	ingredient:1900
 Phosphates solution	ingredient:2026		
 Phytone peptone	ingredient:125		
 PIPES	CHEBI:39033	PIPES	
+PIPES buffer	PUBCHEM.COMPOUND:79723.0		
 PJ/NN	medium:C77		
 Poly hexamethylene carbonate (PHC)*	CAS-RN:61630-98-6		
 Polypeptone	ingredient:442		
@@ -766,14 +879,15 @@ Potato	CAS-RN:93348-51-7
 PPLO Broth	ingredient:pplo_broth		
 PPLO broth	ingredient:pplo_broth		
 PPLO-Broth	ingredient:pplo_broth		
+PrCl3 x H2O	PUBCHEM.COMPOUND:66317.0		
 Propionic acid	CHEBI:30768	propionic acid	C3H6O2
 Pullulan	CHEBI:27941	pullulan	(C37H62O30)n
 Putrescine	CHEBI:326268	1,4-butanediammonium	C4H14N2
 Pyridoxal phosphate	CHEBI:18405	pyridoxal 5'-phosphate	C8H10NO6P
 Pyridoxal·HCl	CHEBI:131529	pyridoxal hydrochloride	C8H9NO3.HCl
 Pyridoxamine	CHEBI:16410	pyridoxamine	C8H12N2O2
-Pyridoxamine Dihydrochloride	CHEBI:131532	pyridoxamine dihydrochloride	C8H12N2O2.2HCl
 Pyridoxamine dihydrochloride	CHEBI:131532	pyridoxamine dihydrochloride	C8H12N2O2.2HCl
+Pyridoxamine Dihydrochloride	CHEBI:131532	pyridoxamine dihydrochloride	C8H12N2O2.2HCl
 Pyridoxamine-HCl	CHEBI:131531	pyridoxamine hydrochloride	C8H12N2O2.HCl
 Pyridoxamine·2HCl	CHEBI:131532	pyridoxamine dihydrochloride	C8H12N2O2.2HCl
 Pyridoxamine·HCl	CHEBI:131531	pyridoxamine hydrochloride	C8H12N2O2.HCl
@@ -801,32 +915,32 @@ Sake	ingredient:1604
 Salt Solution I	ingredient:1143		
 Sea Salt	ingredient:423		
 Selenite tungstate solution (see Medium No.431)	ingredient:1921		
-Selenite-tungstate solution	ingredient:88		
 Selenite-Tungstate solution	ingredient:88		
+Selenite-tungstate solution	ingredient:88		
 Selenite-tungstate solution (see Medium No.431)	ingredient:1921		
 Selenite-tungstate solution (see Medium No.554)	ingredient:1921		
 Selenite-tungstate solution (see Medium No.862)	ingredient:1921		
 Selenite-tungstate solution(see Medium No.554)	ingredient:1921		
-Selenite-tungstate solution* (see Medium No.431)	ingredient:1921		
 Selenite-Tungstate solution* (see Medium No.431)	ingredient:1921		
+Selenite-tungstate solution* (see Medium No.431)	ingredient:1921		
 Selenite-Tungstate Solution:	ingredient:88		
 Sheep blood	ingredient:2047		
 Sigma Sea salts	ingredient:925		
 SiO2	CHEBI:30563	silicon dioxide	O2Si
-Skim milk	CAS-RN:999999-99-4		
-Skim Milk	CAS-RN:999999-99-4		
 SL-6 trace element solution (see Medium No.167)	ingredient:1886		
 SL10	ingredient:1387		
 Small dried sardine	ingredient:1986		
+SnCl2 x 2 H2O	CHEBI:78067	tin(II) chloride (anhydrous)	2Cl.Sn
 SnCl2·2H2O	CHEBI:78074	tin(II) chloride dihydrate	2Cl.2H2O.Sn
+sodium acetate	CHEBI:32954	sodium acetate	C2H3O2.Na
 Sodium Acetate	CHEBI:32954	sodium acetate	C2H3O2.Na
 Sodium acetate	CHEBI:32954	sodium acetate	C2H3O2.Na
-sodium acetate	CHEBI:32954	sodium acetate	C2H3O2.Na
 Sodium acetate trihydrate	CHEBI:32138	sodium acetate trihydrate	C2H3O2.3H2O.Na
-Sodium acetate·3H2O	CHEBI:32138	sodium acetate trihydrate	C2H3O2.3H2O.Na
+Sodium acetate x 3 H2O	CHEBI:32954	sodium acetate	C2H3O2.Na
+Sodium acetate·3H2O	CHEBI:32954	sodium acetate	C2H3O2.Na
 Sodium ascorbate	CHEBI:113451	sodium ascorbate	C6H7O6.Na
 Sodium benzoate	CHEBI:113455	sodium benzoate	C7H5O2.Na
-sodium bicarbonate	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na
+sodium bicarbonate	CAS-RN:144-55-8		
 Sodium butyrate	CHEBI:64103	sodium butyrate	C4H7O2.Na
 Sodium caproate	CHEBI:114126	sodium hexanoate	C6H11O2.Na
 Sodium carbonate	CHEBI:29377	sodium carbonate	CO3.2Na
@@ -844,13 +958,13 @@ Sodium glycerophosphate	PubChem:14754
 Sodium L-lactate	CHEBI:232798	sodium L-lactate	C3H5O3.Na
 Sodium L-malate	CHEBI:91261	disodium (S)-malate	C4H4O5.2Na
 Sodium lactate	CHEBI:75228	sodium lactate	C3H5O3.Na
-sodium malate	CHEBI:91261	disodium (S)-malate	C4H4O5.2Na
 Sodium malate	CHEBI:91261	disodium (S)-malate	C4H4O5.2Na
+sodium malate	CHEBI:91261	disodium (S)-malate	C4H4O5.2Na
 Sodium Malate And	CHEBI:91261	disodium (S)-malate	C4H4O5.2Na
 Sodium maleate	CHEBI:91263	disodium maleate	C4H2O4.2Na
 Sodium nitrate	CHEBI:63005	sodium nitrate	NO3.Na
 Sodium octanoate	CHEBI:132100	sodium octanoate	C8H15O2.Na
-Sodium palmitate	CHEBI:234557	sodium palmitate	C16H31O2.Na
+Sodium palmitate	CAS-RN:408-35-5		
 sodium phosphate dibasic	CHEBI:37583	trisodium phosphate	3Na.O4P
 Sodium polygalacturonate	CAS-RN:9049-37-0		
 Sodium pyrophosphate	CHEBI:71240	sodium diphosphate	4Na.O7P2
@@ -868,8 +982,8 @@ Solution A	ingredient:485
 SOLUTION A	ingredient:485		
 Solution A:	ingredient:485		
 Sorbitol	CHEBI:30911	glucitol	C6H14O6
-Soy peptone	CAS-RN:91079-46-8		
 soy peptone	CAS-RN:91079-46-8		
+Soy peptone	CAS-RN:91079-46-8		
 Soya peptone	CAS-RN:91079-46-8		
 Soytone	CHEBI:8150		
 SrCl	CHEBI:36383	strontium dichloride	2Cl.Sr
@@ -887,10 +1001,11 @@ Succinic acid	CHEBI:15741	succinic acid	C4H6O4
 Sucrose	CHEBI:17992	sucrose	C12H22O11
 Sulfur	CHEBI:26833	sulfur atom	S
 Sulfur (powder)	CHEBI:14258		
+Syringic  acid	PUBCHEM.COMPOUND:10742.0		
 TAPSO	CAS-RN:90549-86-3		
 TES	CHEBI:39035	TES	
 Tetrachloroethene	CHEBI:17300	tetrachloroethene	C2Cl4
-Tetramethyl ammonium	CHEBI:46020	tetramethylammonium	C4H12N
+Tetramethyl ammonium	CAS-RN:51-92-3		
 Thiamin HCl	CHEBI:49105	thiamine hydrochloride	C12H17N4OS.Cl.HCl
 Thiamin-HCl	CHEBI:49105	thiamine hydrochloride	C12H17N4OS.Cl.HCl
 Thiamine	CHEBI:26948	vitamin B1	
@@ -939,8 +1054,8 @@ Trace minerals (see Medium No.324)	ingredient:1833
 Trace minerals solution (see Medium No.228)	ingredient:1982		
 Trace minerals(see Medium No.151)	ingredient:1883		
 Trace vitamin (see Medium No.197)	ingredient:1784		
-Trace vitamins (see Medium No.197)	ingredient:1784		
 Trace vitamins (See Medium No.197)	ingredient:1784		
+Trace vitamins (see Medium No.197)	ingredient:1784		
 Trace vitamins (see Medium No.197)*	ingredient:1784		
 Trace vitamins solution (see Medium No.284)	ingredient:1982		
 Trace vitamins solution (see Medium No.284)*	ingredient:1982		
@@ -951,8 +1066,8 @@ Trace vitamins* (see Medium No.197)	ingredient:1784
 trans-Cinnamic acid	CHEBI:35697	trans-cinnamic acid	C9H8O2
 Tri-sodium citrate	CHEBI:53258	sodium citrate	C6H5O7.3Na
 Triethanolamine	CHEBI:28621	triethanolamine	C6H15NO3
-Trimethylamine-HCl	CHEBI:64700	trimethylamine hydrochloride	C3H9N.HCl
-Trimethylamine·HCl	CHEBI:64700	trimethylamine hydrochloride	C3H9N.HCl
+Trimethylamine-HCl	CAS-RN:593-81-7		
+Trimethylamine·HCl	CAS-RN:593-81-7		
 TRIS	CHEBI:9754	tris	C4H11NO3
 Tris (hydroxymethyl aminomethane)	CHEBI:9754	tris	C4H11NO3
 Tris [tris(hydroxymethyl)aminomethane]	CHEBI:9754	tris	C4H11NO3
@@ -963,24 +1078,26 @@ Tris(hydroxymethyl)aminomethane	CHEBI:9754	tris	C4H11NO3
 Tris(hydroxymethyl)methylamine	CHEBI:44356	N-tris(hydroxymethyl)methyl-2-aminoethanesulfonic acid	C6H15NO6S
 Tris-HCl	CHEBI:1185531		
 Tris-HCl buffer	CAS-RN:1185-53-1		
-Trisodium Citrate	CHEBI:53258	sodium citrate	C6H5O7.3Na
 Trisodium citrate	CHEBI:53258	sodium citrate	C6H5O7.3Na
+Trisodium Citrate	CHEBI:53258	sodium citrate	C6H5O7.3Na
 Trisodium citrate dehydrate	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
 Trisodium Citrate Dihydrate	CHEBI:32142	sodium citrate dihydrate	C6H5O7.2H2O.3Na
 Trisodium citrate x 2 H2O	CHEBI:53258	sodium citrate	C6H5O7.3Na
+Trisodium citrate x 3 H2O	CHEBI:53258	sodium citrate	C6H5O7.3Na
+Trisodium citrate x H2O	PUBCHEM.COMPOUND:6224.0		
 Trisodium citrate·2H2O	CHEBI:53258	sodium citrate	C6H5O7.3Na
 Trisodium citrate·3H2O	CHEBI:53258	sodium citrate	C6H5O7.3Na
 Trisodium citrate·H2O	PubChem:71474		
 Tris [tris(hydroxymethyl)aminomethane]	CHEBI:9754	tris	C4H11NO3
 Tris·HCl	CHEBI:1185531		
 Tropic Marine salt	ingredient:1530		
-Tryptic digest of beef heart	ingredient:662		
 Tryptic Digest of beef heart	ingredient:662		
+Tryptic digest of beef heart	ingredient:662		
 Trypticase	CHEBI:78018	dodecylphosphocholine	C17H38NO4P
-Trypticase soy broth	ingredient:99		
 Trypticase Soy Broth	ingredient:99		
-Tryptone	CAS-RN:84843-69-6		
+Trypticase soy broth	ingredient:99		
 tryptone	CAS-RN:84843-69-6		
+Tryptone	CAS-RN:84843-69-6		
 Tween 20	CHEBI:9784		
 Tween 60	CHEBI:53425	polysorbate 60	(C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H46O6
 Tween 80	CHEBI:53426	polysorbate 80	(C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H44O6
@@ -1013,18 +1130,20 @@ VitaminB12	CHEBI:176843	vitamin B12
 Vitamin B12  (4)	CHEBI:176843	vitamin B12	
 Vitamin B12  (8)	CHEBI:176843	vitamin B12	
 Vitamin B12  (9)	CHEBI:176843	vitamin B12	
-VOSO4 x 2 H2O	CHEBI:87014	vanadyl sulfate hexahydrate	6H2O.O4S.OV
 VoSO4 x 2 H2O	CHEBI:87014	vanadyl sulfate hexahydrate	6H2O.O4S.OV
+VOSO4 x 2 H2O	CHEBI:87014	vanadyl sulfate hexahydrate	6H2O.O4S.OV
 VOSO4 x 5 H2O	CHEBI:87014	vanadyl sulfate hexahydrate	6H2O.O4S.OV
 VOSO4 x 5 H2O (0.01% w/v)	CHEBI:132758	vanadyl sulfate pentahydrate	5H2O.O4S.OV
+VOSO4 x H2O	PUBCHEM.COMPOUND:34007.0		
+VOSO4 x n H2O	PUBCHEM.COMPOUND:34007.0		
 VOSO4·xH2O	CHEBI:87020	vanadyl sulfate hydrate	(H2O)n.O5SV
 Waris-H	medium:C106		
 Xylan	CHEBI:37166	xylan	
 Xylose	CHEBI:18222	xylose	C5H10O5
 Yeast	CAS-RN:68876-77-7		
 Yeast autolysate	CAS-RN:977046-75-5		
-yeast extract	CAS-RN:8013-01-2		
 Yeast extract	CAS-RN:8013-01-2		
+yeast extract	CAS-RN:8013-01-2		
 Yeast Extract	CAS-RN:8013-01-2		
 Yeast extrakt	CAS-RN:8013-01-2		
 Yeast Nitrogen Base	ingredient:1507		
@@ -1033,6 +1152,7 @@ Zinc Sulfate	CHEBI:35176	zinc sulfate	O4S.Zn
 Zn2SO4·7H2O	CHEBI:32312	zinc sulfate heptahydrate	7H2O.O4S.Zn
 ZnCl 2	CHEBI:49976	zinc dichloride	2Cl.Zn
 ZnCl2	CHEBI:49976	zinc dichloride	2Cl.Zn
+ZnCl2 x 6 H2O	CHEBI:49976	zinc dichloride	2Cl.Zn
 ZnSO4	CHEBI:35176	zinc sulfate	O4S.Zn
 ZnSO4 x 6 H2O	CHEBI:62984	zinc acetate	2C2H3O2.Zn
 ZnSO4 x 7 H2O	CHEBI:62984	zinc acetate	2C2H3O2.Zn
@@ -1041,6 +1161,9 @@ ZnSO4*7H2O	CHEBI:32312	zinc sulfate heptahydrate	7H2O.O4S.Zn
 ZnSO4-7H2O	CHEBI:32312	zinc sulfate heptahydrate	7H2O.O4S.Zn
 ZnSO4.7H2O	CHEBI:62984	zinc acetate	2C2H3O2.Zn
 ZnSO4·7H2O	CHEBI:32312	zinc sulfate heptahydrate	7H2O.O4S.Zn
+ß-NAD	PUBCHEM.COMPOUND:5892.0		
+ß-nicotinamide adenine dinucleotide	PUBCHEM.COMPOUND:5892.0		
 α-D-Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6
+α-D-Glucose monohydrate	PUBCHEM.COMPOUND:79025.0		
 α-Lipoic acid	CHEBI:43796	(S)-lipoic acid	C8H14O2S2
 α-Methylbutyric acid	CHEBI:37070	2-methylbutyric acid	C5H10O2

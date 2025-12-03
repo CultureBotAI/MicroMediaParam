@@ -110,8 +110,9 @@ class CAStoChEBIUpgrader:
         # Check 'xref' column (if exists)
         xref = row.get('xref', '')
         if pd.notna(xref) and isinstance(xref, str):
-            # Match CAS:NNNN-NN-N or CAS-RN:NNNN-NN-N pattern
-            matches = re.findall(r'CAS(?:-RN)?:(\d{2,7}-\d{2}-\d)', xref)
+            # Match cas:NNNN-NN-N or CAS:NNNN-NN-N or CAS-RN:NNNN-NN-N pattern
+            # ChEBI uses lowercase 'cas:' in xref column
+            matches = re.findall(r'[Cc][Aa][Ss](?:-[Rr][Nn])?:(\d{2,7}-\d{2}-\d)', xref)
             cas_numbers.extend(matches)
 
         # Check synonyms (might contain CAS numbers)
