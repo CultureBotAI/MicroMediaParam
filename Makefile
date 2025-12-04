@@ -631,6 +631,8 @@ cleanup-intermediates: finalize-mappings
 # Upstream KG-Microbe mediadive nodes file
 UPSTREAM_NODES := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/mediadive/nodes.tsv
 UPSTREAM_INGREDIENTS := $(MERGE_MAPPINGS_DIR)/upstream_mediadive_ingredients.tsv
+UPSTREAM_INGREDIENTS_ENHANCED := $(MERGE_MAPPINGS_DIR)/upstream_ingredients_formula_enhanced.tsv
+UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED := $(MERGE_MAPPINGS_DIR)/upstream_ingredients_hydrate_enhanced.tsv
 
 # Extract mediadive.ingredient nodes from upstream KG
 .PHONY: extract-upstream-ingredients
@@ -644,6 +646,144 @@ $(UPSTREAM_INGREDIENTS): $(UPSTREAM_NODES) | create-output-dirs
 	@echo "$(GREEN)Extracted $$(wc -l < $(UPSTREAM_INGREDIENTS) | tr -d ' ') ingredient nodes$(NC)"
 
 # ============================================================================
+# Stage 10.5c: Enhance Upstream Ingredients (PubChem/OLS + ChEBI Formula)
+# 1. Run PubChem/OLS multi-ontology lookup for biological + chemical materials
+# 2. Run ChEBI formula matching on remaining unmapped (especially hydrates)
+# ============================================================================
+
+# Cache files for API results (used by multiple stages)
+CACHE_DIR := data/cache
+OLS_CACHE_FILE := $(CACHE_DIR)/ols_multi_ontology_cache.tsv
+PUBCHEM_CACHE_FILE := $(CACHE_DIR)/pubchem_lookup_cache.tsv
+
+# Create cache directory
+$(CACHE_DIR):
+	@mkdir -p $(CACHE_DIR)
+
+# Intermediate file: after PubChem/OLS lookup
+UPSTREAM_PUBCHEM_MAPPED := $(MERGE_MAPPINGS_DIR)/upstream_ingredients_pubchem_mapped.tsv
+
+# Stage 10.5c.1: PubChem/OLS lookup on upstream ingredients
+.PHONY: map-upstream-ingredients
+map-upstream-ingredients: $(UPSTREAM_PUBCHEM_MAPPED)
+	@echo "$(GREEN)✓ Upstream ingredient PubChem/OLS mapping completed$(NC)"
+
+$(UPSTREAM_PUBCHEM_MAPPED): $(UPSTREAM_INGREDIENTS) | $(CACHE_DIR)
+	@echo "$(BLUE)Mapping upstream ingredients with PubChem + OLS...$(NC)"
+	$(PYTHON) -m src.mapping.map_unmapped_ingredients \
+		--input $(UPSTREAM_INGREDIENTS) \
+		--output $(UPSTREAM_PUBCHEM_MAPPED) \
+		--ols-cache $(OLS_CACHE_FILE) \
+		--pubchem-cache $(PUBCHEM_CACHE_FILE)
+
+# Stage 10.5c.2: ChEBI formula matching on remaining unmapped
+.PHONY: enhance-upstream-ingredients
+enhance-upstream-ingredients: $(UPSTREAM_INGREDIENTS_ENHANCED)
+	@echo "$(GREEN)✓ Upstream ingredient ChEBI enhancement completed$(NC)"
+
+$(UPSTREAM_INGREDIENTS_ENHANCED): $(UPSTREAM_PUBCHEM_MAPPED) $(CHEBI_NODES_FILE)
+	@echo "$(BLUE)Enhancing upstream ingredients with ChEBI formula/name matching...$(NC)"
+	@echo "$(YELLOW)Using ChEBI: $(CHEBI_NODES_FILE)$(NC)"
+	@# Convert map_unmapped_ingredients output to apply_formula_matching input format
+	@# Input: original_id,original_name,normalized_name,mapped_id,mapped_label,formula,mapping_source,ingredient_type
+	@# Output: id,original,mapped
+	@awk -F'\t' 'NR==1 {print "id\toriginal\tmapped"} NR>1 && $$2!="" {print $$1"\t"$$2"\t"$$4}' $(UPSTREAM_PUBCHEM_MAPPED) > $(MERGE_MAPPINGS_DIR)/upstream_ingredients_for_chebi.tsv
+	$(PYTHON) src/mapping/apply_formula_matching.py \
+		--chebi-file $(CHEBI_NODES_FILE) \
+		--input $(MERGE_MAPPINGS_DIR)/upstream_ingredients_for_chebi.tsv \
+		--output $(UPSTREAM_INGREDIENTS_ENHANCED)
+	@TOTAL=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | wc -l | tr -d ' '); \
+	PUBCHEM=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | cut -f3 | grep -ic "PUBCHEM" || echo 0); \
+	CHEBI=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | cut -f3 | grep -c "CHEBI" || echo 0); \
+	FOODON=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | cut -f3 | grep -c "FOODON" || echo 0); \
+	UBERON=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | cut -f3 | grep -c "UBERON" || echo 0); \
+	ENVO=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_ENHANCED) | cut -f3 | grep -c "ENVO" || echo 0); \
+	MAPPED=$$((PUBCHEM + CHEBI + FOODON + UBERON + ENVO)); \
+	echo "$(GREEN)Mapped: $$MAPPED/$$TOTAL (PubChem=$$PUBCHEM ChEBI=$$CHEBI FOODON=$$FOODON UBERON=$$UBERON ENVO=$$ENVO)$(NC)"
+
+# Stage 10.5c.3: Enhanced hydrate mapping
+# Strips hydrate suffixes (x N H2O, pentahydrate, etc.) and maps base compounds
+.PHONY: enhance-hydrates
+enhance-hydrates: $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED)
+	@echo "$(GREEN)✓ Enhanced hydrate mapping completed$(NC)"
+
+$(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED): $(UPSTREAM_INGREDIENTS_ENHANCED) $(CHEBI_NODES_FILE)
+	@echo "$(BLUE)Enhancing hydrate compound mappings...$(NC)"
+	@echo "$(YELLOW)Stripping hydrate suffixes and looking up base compounds$(NC)"
+	$(PYTHON) -m src.mapping.enhanced_hydrate_mapper \
+		--input $(UPSTREAM_INGREDIENTS_ENHANCED) \
+		--output $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) \
+		--chebi-file $(CHEBI_NODES_FILE) \
+		--pubchem-cache $(PUBCHEM_CACHE_FILE)
+	@TOTAL=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) | wc -l | tr -d ' '); \
+	CHEBI=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) | cut -f3 | grep -c "CHEBI" || echo 0); \
+	PUBCHEM=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) | cut -f3 | grep -ic "PUBCHEM" || echo 0); \
+	UNMAPPED=$$(tail -n +2 $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) | cut -f3 | grep -c "^$$" || echo 0); \
+	echo "$(GREEN)After hydrate enhancement: ChEBI=$$CHEBI PubChem=$$PUBCHEM Unmapped=$$UNMAPPED$(NC)"
+
+# Stage 10.5c.4: Apply upstream mappings to strict file
+# Uses hydrate-enhanced upstream mappings to improve strict file coverage
+COMPOUND_MAPPINGS_STRICT_UPSTREAM := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict_upstream_enhanced.tsv
+
+.PHONY: apply-upstream-to-strict
+apply-upstream-to-strict: $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
+	@echo "$(GREEN)✓ Upstream mappings applied to strict file$(NC)"
+
+$(COMPOUND_MAPPINGS_STRICT_UPSTREAM): $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) $(COMPOUND_MAPPINGS_STRICT)
+	@echo "$(BLUE)Applying upstream hydrate-enhanced mappings to strict file...$(NC)"
+	$(PYTHON) -m src.mapping.apply_upstream_mappings \
+		--upstream $(UPSTREAM_INGREDIENTS_HYDRATE_ENHANCED) \
+		--strict $(COMPOUND_MAPPINGS_STRICT) \
+		--output $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
+	@CHEBI=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_UPSTREAM) | grep -c "^CHEBI:" || echo "0"); \
+	PUBCHEM=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_UPSTREAM) | grep -ic "PubChem" || echo "0"); \
+	TOTAL=$$(tail -n +2 $(COMPOUND_MAPPINGS_STRICT_UPSTREAM) | wc -l | tr -d ' '); \
+	MAPPED=$$((CHEBI + PUBCHEM)); \
+	echo "$(GREEN)Final strict coverage: $$MAPPED/$$TOTAL (ChEBI=$$CHEBI PubChem=$$PUBCHEM)$(NC)"
+
+# Stage 10.5c.5: Finalize strict mappings
+# Creates the canonical final strict mapping file with all enhancements applied
+COMPOUND_MAPPINGS_STRICT_FINAL := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict_final.tsv
+
+.PHONY: finalize-strict
+finalize-strict: $(COMPOUND_MAPPINGS_STRICT_FINAL)
+	@echo "$(GREEN)✓ Final strict mappings created$(NC)"
+
+$(COMPOUND_MAPPINGS_STRICT_FINAL): $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
+	@echo "$(BLUE)Creating final strict mapping file...$(NC)"
+	@cp $(COMPOUND_MAPPINGS_STRICT_UPSTREAM) $(COMPOUND_MAPPINGS_STRICT_FINAL)
+	@echo ""
+	@echo "$(YELLOW)════════════════════════════════════════════════════════════$(NC)"
+	@echo "$(YELLOW)           FINAL STRICT MAPPING SUMMARY$(NC)"
+	@echo "$(YELLOW)════════════════════════════════════════════════════════════$(NC)"
+	@TOTAL=$$(tail -n +2 $(COMPOUND_MAPPINGS_STRICT_FINAL) | wc -l | tr -d ' '); \
+	CHEBI=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^CHEBI:" || echo "0"); \
+	PUBCHEM=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -ic "PubChem" || echo "0"); \
+	FOODON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^FOODON:" || echo "0"); \
+	UBERON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^UBERON:" || echo "0"); \
+	ENVO=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^ENVO:" || echo "0"); \
+	CAS=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^CAS-RN:" || echo "0"); \
+	INGRED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^ingredient:" || echo "0"); \
+	UNMAPPED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^$$" || echo "0"); \
+	SEMANTIC=$$((CHEBI + PUBCHEM + FOODON + UBERON + ENVO)); \
+	echo "  Total entries:    $$TOTAL"; \
+	echo ""; \
+	echo "  Semantic IDs:     $$SEMANTIC ($$(echo "scale=1; $$SEMANTIC * 100 / $$TOTAL" | bc)%)"; \
+	echo "    ChEBI:          $$CHEBI"; \
+	echo "    PubChem:        $$PUBCHEM"; \
+	echo "    FOODON:         $$FOODON"; \
+	echo "    UBERON:         $$UBERON"; \
+	echo "    ENVO:           $$ENVO"; \
+	echo ""; \
+	echo "  Other:"; \
+	echo "    CAS-RN:         $$CAS"; \
+	echo "    ingredient:     $$INGRED"; \
+	echo "    Unmapped:       $$UNMAPPED"; \
+	echo "$(YELLOW)════════════════════════════════════════════════════════════$(NC)"
+	@echo ""
+	@echo "$(GREEN)Output: $(COMPOUND_MAPPINGS_STRICT_FINAL)$(NC)"
+
+# ============================================================================
 # Stage 10.6: Map Unmapped Ingredients (OLS + PubChem)
 # Uses multi-ontology search (UBERON, FOODON, ENVO) for biological materials
 # Uses PubChem fallback for chemicals without ChEBI mappings
@@ -653,18 +793,9 @@ $(UPSTREAM_INGREDIENTS): $(UPSTREAM_NODES) | create-output-dirs
 KG_MICROBE_MAPPINGS := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/mappings
 UNMAPPED_MEDIADIVE_FILE := $(KG_MICROBE_MAPPINGS)/unmapped_mediadive_ingredients.tsv
 
-# Cache files for API results
-CACHE_DIR := data/cache
-OLS_CACHE_FILE := $(CACHE_DIR)/ols_multi_ontology_cache.tsv
-PUBCHEM_CACHE_FILE := $(CACHE_DIR)/pubchem_lookup_cache.tsv
-
-# Output files
+# Output files (CACHE_DIR, OLS_CACHE_FILE, PUBCHEM_CACHE_FILE defined in Stage 10.5c)
 ADDITIONAL_MAPPINGS := $(MERGE_MAPPINGS_DIR)/additional_ingredient_mappings.tsv
 EXTENDED_LOOKUP_TABLE := $(MERGE_MAPPINGS_DIR)/compound_name_lookup_extended.tsv
-
-# Create cache directory
-$(CACHE_DIR):
-	@mkdir -p $(CACHE_DIR)
 
 # Map unmapped ingredients from kg-microbe MediaDive analysis
 .PHONY: map-unmapped-ingredients

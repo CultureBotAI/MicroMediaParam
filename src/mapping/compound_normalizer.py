@@ -262,6 +262,53 @@ class CompoundNameNormalizer:
         'NH4Cl': 'ammonium chloride',
         'CaCl2': 'calcium chloride',
         'MgCl2': 'magnesium chloride',
+        # Silicate compounds
+        'NaSiO3': 'sodium silicate',
+        'Na2SiO3': 'sodium silicate',
+        'Na4SiO4': 'sodium orthosilicate',
+        # Lanthanide/rare earth compounds
+        'LaCl3': 'lanthanum(III) chloride',
+        'CeCl3': 'cerium(III) chloride',
+        'NdCl3': 'neodymium(III) chloride',
+        'PrCl3': 'praseodymium(III) chloride',
+        'LaNO33': 'lanthanum(III) nitrate',
+        'La(NO3)3': 'lanthanum(III) nitrate',
+        'CeNO33': 'cerium(III) nitrate',
+        'Ce(NO3)3': 'cerium(III) nitrate',
+        # Cadmium compounds
+        'CdNO32': 'cadmium nitrate',
+        'Cd(NO3)2': 'cadmium nitrate',
+        # Additional sodium compounds
+        'NaVO3': 'sodium metavanadate',
+        'Na2WO4': 'sodium tungstate',
+        'Na2MoO4': 'sodium molybdate',
+        # Ammonium nickel sulfate
+        'NH42NiSO42': 'ammonium nickel sulfate',
+        '(NH4)2Ni(SO4)2': 'ammonium nickel sulfate',
+        # Ammonium molybdate variants
+        'NH46Mo7O24': 'hexaammonium heptamolybdate',
+        '(NH4)6Mo7O24': 'hexaammonium heptamolybdate',
+        # Iron ammonium sulfate variants
+        'FeNH42SO42': 'ammonium iron(II) sulfate',
+        'Fe(NH4)2(SO4)2': 'ammonium iron(II) sulfate',
+        # Typos and variants in hydrate formulas
+        'Na2Mo4': 'sodium molybdate',  # Missing O - Na2MoO4
+        'Na2MoO7': 'sodium molybdate',  # Typo
+        'Na2MoO7O4': 'sodium molybdate',  # Typo
+        'Na2 MoO4': 'sodium molybdate',  # Space in formula
+        'Na2Se3': 'sodium selenite',  # Should be Na2SeO3
+        'Na2WO2': 'sodium tungstate',  # Should be Na2WO4
+        'MnCl4': 'manganese(II) chloride',  # Mn is usually +2, not +4
+        'FeSO43': 'iron(III) sulfate',  # Typo for Fe2(SO4)3
+        'Cr2SO43': 'chromium(III) sulfate',  # Typo for Cr2(SO4)3
+        'Cr2(SO4)3': 'chromium(III) sulfate',
+        # Cysteine/Cystein variants
+        'Cystein': 'cysteine',
+        'Cystein-HCl': 'cysteine hydrochloride',
+        # Beta-glycerol phosphate variants
+        'Na2 beta-glycerol PO4': 'disodium beta-glycerophosphate',
+        'Na2-ß-glycerophosphate': 'disodium beta-glycerophosphate',
+        'Na2-beta-glycerophosphate': 'disodium beta-glycerophosphate',
     }
 
     # Buffer compounds - map buffer names to their chemical compound names
