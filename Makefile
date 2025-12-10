@@ -783,6 +783,47 @@ $(COMPOUND_MAPPINGS_STRICT_FINAL): $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
 	@echo ""
 	@echo "$(GREEN)Output: $(COMPOUND_MAPPINGS_STRICT_FINAL)$(NC)"
 
+# Stage 10.5c.6: Validate ontology mappings
+# Uses OAK or local ChEBI nodes to verify IDs exist in ontologies
+ONTOLOGY_VALIDATION_REPORT := $(MERGE_MAPPINGS_DIR)/ontology_validation_report.tsv
+
+.PHONY: validate-ontology-mappings
+validate-ontology-mappings: $(ONTOLOGY_VALIDATION_REPORT)
+	@echo "$(GREEN)✓ Ontology mapping validation completed$(NC)"
+
+$(ONTOLOGY_VALIDATION_REPORT): $(COMPOUND_MAPPINGS_STRICT_FINAL) $(CHEBI_NODES_FILE)
+	@echo "$(BLUE)Validating ontology mappings...$(NC)"
+	@echo "$(YELLOW)Checking ChEBI, UBERON, FOODON, ENVO IDs against ontologies$(NC)"
+	$(PYTHON) -m src.quality.validate_ontology_mappings \
+		--input $(COMPOUND_MAPPINGS_STRICT_FINAL) \
+		--output $(ONTOLOGY_VALIDATION_REPORT) \
+		--chebi-nodes $(CHEBI_NODES_FILE) || true
+	@if [ -f $(ONTOLOGY_VALIDATION_REPORT) ]; then \
+		TOTAL=$$(tail -n +2 $(ONTOLOGY_VALIDATION_REPORT) | wc -l | tr -d ' '); \
+		VALID=$$(grep -c "valid" $(ONTOLOGY_VALIDATION_REPORT) || echo 0); \
+		INVALID=$$(grep -c "invalid" $(ONTOLOGY_VALIDATION_REPORT) || echo 0); \
+		echo ""; \
+		echo "$(YELLOW)Validation Summary:$(NC)"; \
+		echo "  Total IDs:  $$TOTAL"; \
+		echo "  Valid:      $$VALID"; \
+		echo "  Invalid:    $$INVALID"; \
+		if [ "$$INVALID" -gt 0 ]; then \
+			echo "$(RED)⚠ Found $$INVALID invalid ontology IDs$(NC)"; \
+		else \
+			echo "$(GREEN)✓ All ontology IDs are valid$(NC)"; \
+		fi; \
+	fi
+
+# Validate using OAK (slower but authoritative)
+.PHONY: validate-ontology-mappings-oak
+validate-ontology-mappings-oak: $(COMPOUND_MAPPINGS_STRICT_FINAL)
+	@echo "$(BLUE)Validating ontology mappings using OAK (this may take a while)...$(NC)"
+	$(PYTHON) -m src.quality.validate_ontology_mappings \
+		--input $(COMPOUND_MAPPINGS_STRICT_FINAL) \
+		--output $(ONTOLOGY_VALIDATION_REPORT) \
+		--use-oak \
+		--batch-size 50
+
 # ============================================================================
 # Stage 10.6: Map Unmapped Ingredients (OLS + PubChem)
 # Uses multi-ontology search (UBERON, FOODON, ENVO) for biological materials
