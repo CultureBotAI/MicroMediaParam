@@ -52,7 +52,22 @@ class CompositionKGMapper:
             df = pd.read_csv(self.kg_nodes_file, sep='\t', low_memory=False)
             # Filter for chemical entities
             chemical_df = df[df['category'].str.contains('ChemicalEntity|ChemicalSubstance', na=False)]
-            logger.info(f"Loaded {len(chemical_df)} chemical entities from {len(df)} total nodes")
+            initial_count = len(chemical_df)
+
+            # Filter out fake ChEBI IDs from MediaDive ingest
+            # These have CHEBI: prefix but no IRI (empty iri column) and only "Graph" as source
+            # Real ChEBI entries have an IRI like http://purl.obolibrary.org/obo/CHEBI_xxxxx
+            fake_chebi_mask = (
+                chemical_df['id'].str.startswith('CHEBI:', na=False) &
+                (chemical_df['iri'].isna() | (chemical_df['iri'] == '')) &
+                (chemical_df['provided_by'] == 'Graph')
+            )
+            fake_count = fake_chebi_mask.sum()
+            if fake_count > 0:
+                logger.warning(f"Filtering out {fake_count} fake ChEBI IDs from MediaDive ingest")
+                chemical_df = chemical_df[~fake_chebi_mask]
+
+            logger.info(f"Loaded {len(chemical_df)} chemical entities from {initial_count} (filtered {fake_count} fake ChEBI IDs)")
             return chemical_df
         except Exception as e:
             logger.error(f"Error loading KG nodes: {e}")
