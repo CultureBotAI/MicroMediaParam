@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 """
 Download DSMZ solution PDFs and extract their chemical compositions.
+
+DETERMINISM NOTES:
+- Uses local file caching (checks if files exist before downloading)
+- Set CACHE_ONLY_MODE=1 environment variable to prevent new downloads
+- In cache-only mode, only processes existing cached PDFs
+- This ensures reproducible results across pipeline runs
+
+Usage:
+    # Normal mode (downloads if needed)
+    python -m src.tools.download_dsmz_solutions
+
+    # Deterministic mode (no network calls)
+    CACHE_ONLY_MODE=1 python -m src.tools.download_dsmz_solutions
 """
 
 import asyncio
@@ -8,6 +21,7 @@ import aiohttp
 import aiofiles
 import json
 import logging
+import os
 import re
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -15,6 +29,9 @@ import markitdown
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# DETERMINISM CONTROL: Set to prevent network downloads
+CACHE_ONLY_MODE = os.environ.get('CACHE_ONLY_MODE', '0') == '1'
 
 class DSMZSolutionDownloader:
     def __init__(self):
@@ -29,15 +46,23 @@ class DSMZSolutionDownloader:
             dir_path.mkdir(exist_ok=True)
     
     async def download_solution_pdf(self, session: aiohttp.ClientSession, solution_id: str) -> Optional[Path]:
-        """Download a single solution PDF from DSMZ."""
-        
+        """
+        Download a single solution PDF from DSMZ.
+
+        DETERMINISM: In CACHE_ONLY_MODE, returns None if PDF not cached.
+        """
         pdf_url = f"{self.base_url}/{solution_id}/pdf"
         pdf_path = self.pdf_dir / f"solution_{solution_id}.pdf"
-        
+
         if pdf_path.exists():
             logger.info(f"Solution {solution_id}: PDF already exists")
             return pdf_path
-        
+
+        # In cache-only mode, skip network downloads
+        if CACHE_ONLY_MODE:
+            logger.debug(f"CACHE_ONLY_MODE: Skipping download for solution {solution_id}")
+            return None
+
         try:
             logger.info(f"Downloading solution {solution_id} PDF...")
             async with session.get(pdf_url) as response:
@@ -50,7 +75,7 @@ class DSMZSolutionDownloader:
                 else:
                     logger.warning(f"✗ Solution {solution_id}: HTTP {response.status}")
                     return None
-                    
+
         except Exception as e:
             logger.error(f"✗ Solution {solution_id}: {e}")
             return None
@@ -187,7 +212,10 @@ class DSMZSolutionDownloader:
     
     async def download_all_solutions(self, solution_ids: List[str]) -> Dict[str, Dict]:
         """Download and process all solution PDFs."""
-        
+
+        if CACHE_ONLY_MODE:
+            logger.info("CACHE_ONLY_MODE: Only processing cached PDFs (no network downloads)")
+
         results = {}
         
         async with aiohttp.ClientSession() as session:

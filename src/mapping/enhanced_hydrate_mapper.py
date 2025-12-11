@@ -13,6 +13,11 @@ Handles patterns like:
 - "MgSO4 heptahydrate" → MgSO4
 - "L-Cysteine HCl x H2O" → L-Cysteine HCl
 
+DETERMINISM NOTES:
+- Uses pinned ChEBI version from src/config/data_versions.py
+- Validates ChEBI file MD5 checksum on load (optional)
+- All lookups are from local files only (no API calls)
+
 Usage:
     python -m src.mapping.enhanced_hydrate_mapper \
         --input upstream_ingredients.tsv \
@@ -22,6 +27,7 @@ Usage:
 """
 
 import argparse
+import hashlib
 import logging
 import re
 from pathlib import Path
@@ -34,6 +40,17 @@ from .compound_normalizer import (
     normalize_hcl_salt,
     normalize_for_mapping,
 )
+
+# Import pinned data versions for validation
+try:
+    from ..config.data_versions import (
+        CHEBI_NODES_FILE,
+        CHEBI_NODES_MD5,
+        CHEBI_VERSION,
+    )
+    HAS_VERSION_CONFIG = True
+except ImportError:
+    HAS_VERSION_CONFIG = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -119,20 +136,60 @@ def extract_hydrate_enhanced(name: str) -> Tuple[str, Optional[int], str]:
 class EnhancedHydrateMapper:
     """Maps hydrated compounds by looking up base compound."""
 
-    def __init__(self, chebi_file: str, pubchem_cache: Optional[str] = None):
+    def __init__(self, chebi_file: str, pubchem_cache: Optional[str] = None,
+                 validate_checksum: bool = False):
         """
         Initialize mapper with ChEBI data and optional PubChem cache.
 
         Args:
             chebi_file: Path to ChEBI nodes TSV
             pubchem_cache: Optional path to PubChem name cache TSV
+            validate_checksum: If True, validate ChEBI file against pinned MD5
         """
+        self.chebi_file = chebi_file
+        self.validate_checksum = validate_checksum
         self.chebi_lookup = self._load_chebi(chebi_file)
         self.pubchem_cache = self._load_pubchem_cache(pubchem_cache) if pubchem_cache else {}
+
+    def _validate_chebi_version(self, chebi_file: str):
+        """
+        Validate ChEBI file against pinned version.
+
+        DETERMINISM: Ensures consistent results by warning if ChEBI
+        version differs from the pinned version used for development.
+        """
+        if not HAS_VERSION_CONFIG:
+            logger.debug("Version config not available - skipping validation")
+            return
+
+        chebi_path = Path(chebi_file)
+
+        # Check if it's the expected file
+        if chebi_path.resolve() == CHEBI_NODES_FILE.resolve():
+            logger.info(f"Using pinned ChEBI v{CHEBI_VERSION}")
+
+            if self.validate_checksum:
+                # Compute MD5 checksum
+                actual_md5 = hashlib.md5(chebi_path.read_bytes()).hexdigest()
+                if actual_md5 != CHEBI_NODES_MD5:
+                    logger.warning(
+                        f"ChEBI file checksum mismatch!\n"
+                        f"  Expected: {CHEBI_NODES_MD5}\n"
+                        f"  Actual:   {actual_md5}\n"
+                        f"  Results may differ from pinned version."
+                    )
+                else:
+                    logger.info("ChEBI checksum validated ✓")
+        else:
+            logger.info(f"Using custom ChEBI file: {chebi_file}")
+            logger.info(f"(Pinned version: {CHEBI_NODES_FILE})")
 
     def _load_chebi(self, chebi_file: str) -> Dict[str, str]:
         """Load ChEBI name → ID lookup."""
         logger.info(f"Loading ChEBI from {chebi_file}")
+
+        # Validate version if configured
+        self._validate_chebi_version(chebi_file)
 
         df = pd.read_csv(chebi_file, sep='\t', low_memory=False)
         chebi_df = df[df['id'].str.startswith('CHEBI:', na=False)]

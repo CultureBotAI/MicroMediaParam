@@ -1,4 +1,19 @@
 #!/usr/bin/env python3
+"""
+Download media PDFs and composition JSON from MediaDive/DSMZ.
+
+DETERMINISM NOTES:
+- Uses local file caching: files are skipped if they already exist
+- Downloaded files are cached in media_pdfs/ directory
+- For deterministic pipeline runs, ensure media_pdfs/ is populated
+- No CACHE_ONLY_MODE needed since existing files are always used
+- Pipeline outputs are reproducible given the same cached input files
+
+The caching behavior is implemented at:
+- PDF downloads: lines ~239-243 (skips if file exists)
+- JSON downloads: lines ~139-141 (skips if file exists)
+- Page processing: lines ~301-307 (skips if PDF exists)
+"""
 
 import asyncio
 import aiohttp

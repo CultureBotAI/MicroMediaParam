@@ -8,6 +8,11 @@ upgrade less semantic CAS-RN IDs to more useful ChEBI IDs.
 
 Expected improvement: ~120 compounds (63% success rate)
 
+DETERMINISM NOTES:
+- Uses pinned ChEBI version from src/config/data_versions.py
+- Validates ChEBI file MD5 checksum on load (optional)
+- All lookups are from local files only (no API calls)
+
 Strategy:
 1. Load existing compound mappings
 2. Identify compounds mapped to CAS-RN
@@ -16,6 +21,7 @@ Strategy:
 5. Generate upgrade report
 """
 
+import hashlib
 import pandas as pd
 import re
 import logging
@@ -25,6 +31,17 @@ from collections import defaultdict
 
 logger = logging.getLogger(__name__)
 
+# Import pinned data versions for validation
+try:
+    from ..config.data_versions import (
+        CHEBI_NODES_FILE,
+        CHEBI_NODES_MD5,
+        CHEBI_VERSION,
+    )
+    HAS_VERSION_CONFIG = True
+except ImportError:
+    HAS_VERSION_CONFIG = False
+
 
 class CAStoChEBIUpgrader:
     """
@@ -33,25 +50,66 @@ class CAStoChEBIUpgrader:
     Many compounds are initially mapped to CAS-RN IDs because those
     are widely available. However, ChEBI IDs are preferred for
     knowledge graph integration as they provide richer semantic information.
+
+    DETERMINISM: Uses pinned ChEBI version and validates checksums.
     """
 
-    def __init__(self, chebi_nodes_file: str):
+    def __init__(self, chebi_nodes_file: str, validate_checksum: bool = False):
         """
         Initialize the upgrader.
 
         Args:
             chebi_nodes_file: Path to ChEBI nodes TSV file
+            validate_checksum: If True, validate ChEBI file against pinned MD5
         """
         self.chebi_nodes_file = chebi_nodes_file
+        self.validate_checksum = validate_checksum
         self.chebi_data = None
         self.cas_to_chebi = {}
 
         self._load_chebi_data()
         self._build_cas_lookup()
 
+    def _validate_chebi_version(self):
+        """
+        Validate ChEBI file against pinned version.
+
+        DETERMINISM: Ensures consistent results by warning if ChEBI
+        version differs from the pinned version used for development.
+        """
+        if not HAS_VERSION_CONFIG:
+            logger.debug("Version config not available - skipping validation")
+            return
+
+        chebi_path = Path(self.chebi_nodes_file)
+
+        # Check if it's the expected file
+        if chebi_path.resolve() == CHEBI_NODES_FILE.resolve():
+            logger.info(f"Using pinned ChEBI v{CHEBI_VERSION}")
+
+            if self.validate_checksum:
+                # Compute MD5 checksum
+                actual_md5 = hashlib.md5(chebi_path.read_bytes()).hexdigest()
+                if actual_md5 != CHEBI_NODES_MD5:
+                    logger.warning(
+                        f"ChEBI file checksum mismatch!\n"
+                        f"  Expected: {CHEBI_NODES_MD5}\n"
+                        f"  Actual:   {actual_md5}\n"
+                        f"  Results may differ from pinned version."
+                    )
+                else:
+                    logger.info("ChEBI checksum validated ✓")
+        else:
+            logger.info(f"Using custom ChEBI file: {self.chebi_nodes_file}")
+            if HAS_VERSION_CONFIG:
+                logger.info(f"(Pinned version: {CHEBI_NODES_FILE})")
+
     def _load_chebi_data(self):
         """Load ChEBI nodes database."""
         logger.info(f"Loading ChEBI data from {self.chebi_nodes_file}")
+
+        # Validate version if configured
+        self._validate_chebi_version()
 
         try:
             df = pd.read_csv(self.chebi_nodes_file, sep='\t', low_memory=False)

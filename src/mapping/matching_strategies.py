@@ -171,7 +171,16 @@ class NormalizedMatcher(MatchingStrategy):
 
 
 class FuzzyMatcher(MatchingStrategy):
-    """Fuzzy string matching strategy using fuzzywuzzy."""
+    """
+    Fuzzy string matching strategy using fuzzywuzzy.
+
+    DETERMINISM NOTES:
+    - When multiple names have identical scores, tie-breaking uses:
+      1. Alphabetically first name (for reproducibility)
+      2. Alphabetically first ID (for consistent results)
+    - Python 3.7+ guarantees dict insertion order, but we explicitly
+      sort to handle score ties deterministically.
+    """
 
     def __init__(self, kg_data: pd.DataFrame, similarity_threshold: int = 85):
         """
@@ -218,7 +227,12 @@ class FuzzyMatcher(MatchingStrategy):
                    f"threshold={self.similarity_threshold}")
 
     def match(self, compound_name: str) -> Optional[str]:
-        """Match using fuzzy string similarity."""
+        """
+        Match using fuzzy string similarity.
+
+        DETERMINISM: When multiple names have identical scores, uses
+        alphabetical sorting of (name, id) for consistent tie-breaking.
+        """
         if not compound_name or not isinstance(compound_name, str):
             return None
 
@@ -229,8 +243,9 @@ class FuzzyMatcher(MatchingStrategy):
         original_name = compound_name.lower().strip()
         normalized_name = self.normalizer.normalize(compound_name)
 
-        best_match_id = None
-        best_score = 0
+        # Collect all matches above threshold with their scores
+        # Format: (score, kg_name, kg_id) - enables deterministic sorting
+        matches = []
 
         # Search through all names
         for kg_name, kg_id in self.all_names.items():
@@ -241,12 +256,20 @@ class FuzzyMatcher(MatchingStrategy):
 
             max_score = max(score1, score2)
 
-            if max_score > best_score and max_score >= self.similarity_threshold:
-                best_score = max_score
-                best_match_id = kg_id
+            if max_score >= self.similarity_threshold:
+                matches.append((max_score, kg_name, kg_id))
 
-        if best_match_id and best_score >= 90:  # Only log high-confidence fuzzy matches
-            logger.debug(f"Fuzzy matched '{compound_name}' with score {best_score}")
+        if not matches:
+            return None
+
+        # DETERMINISM: Sort by score (descending), then name (ascending), then id (ascending)
+        # This ensures consistent results when scores are tied
+        matches.sort(key=lambda x: (-x[0], x[1], x[2]))
+
+        best_score, best_name, best_match_id = matches[0]
+
+        if best_score >= 90:  # Only log high-confidence fuzzy matches
+            logger.debug(f"Fuzzy matched '{compound_name}' to '{best_name}' with score {best_score}")
 
         return best_match_id
 
