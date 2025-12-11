@@ -1,0 +1,14 @@
+# MicroMediaParam Data Manifest
+# This file tracks external data dependencies for reproducible mappings
+# Generated: 2024-12-10
+#
+# To verify data integrity: md5 <filepath> and compare with md5_checksum
+# All mappings produced by this pipeline are deterministic given these exact data files
+
+file_name	file_path	md5_checksum	version	date	source	description
+chebi.owl	/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/raw/chebi.owl	b7cfd4df772f4acd785e178abe4bf4c8	246	2025-11-20	https://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi.owl	ChEBI ontology OWL format
+chebi.json	/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/raw/chebi.json	9bcbe207c2245e208e6cdfec21c9d681	246	2025-11-20	Derived from chebi.owl	ChEBI ontology JSON format
+chebi_nodes.tsv	/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv	5a4ded6d84737f877135d802a51f8959	246	2025-12-04	KG-Microbe transform	ChEBI nodes for mapping lookups
+ols_multi_ontology_cache.tsv	data/cache/ols_multi_ontology_cache.tsv	ac19c134748e341c60b2a92fbf7bf9af	1.0	2025-12-03	EBI OLS4 API	Cached OLS lookups for UBERON/FOODON/ENVO
+pubchem_lookup_cache.tsv	data/cache/pubchem_lookup_cache.tsv	8b7c519341f6084a5dd712672bb33c01	1.0	2025-12-03	PubChem REST API	Cached PubChem compound lookups
+pubchem_name_cache.tsv	data/cache/pubchem_name_cache.tsv	19f303e392467f56405680e3b51f351e	1.0	2025-12-09	PubChem REST API	Cached PubChem name lookups

@@ -5,15 +5,22 @@ Multi-ontology lookup via EBI OLS4 API.
 Searches UBERON, FOODON, and ENVO ontologies for biological materials
 that don't have ChEBI mappings (extracts, peptones, blood products, etc.).
 
+For DETERMINISTIC PIPELINE RUNS:
+- Use --cache-only flag to prevent any live API calls
+- All lookups will use cached data only (returns None if not cached)
+- This ensures reproducible results across runs
+
 Usage:
     python -m src.mapping.ols_multi_ontology_lookup \
         --input unmapped_ingredients.tsv \
         --output ols_mappings.tsv \
-        --cache data/cache/ols_multi_ontology_cache.tsv
+        --cache data/cache/ols_multi_ontology_cache.tsv \
+        --cache-only  # For deterministic runs
 """
 
 import argparse
 import logging
+import os
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -40,6 +47,9 @@ REQUEST_DELAY = 0.25  # seconds between requests
 # GO = Gene Ontology (biological processes/functions)
 # NCBITaxon = Organism taxonomy
 EXCLUDED_PREFIXES = ["GO:", "NCBITaxon:"]
+
+# DETERMINISM CONTROL: Set via --cache-only flag or environment variable
+CACHE_ONLY_MODE = os.environ.get('CACHE_ONLY_MODE', '0') == '1'
 
 
 def search_ols_single(
@@ -215,7 +225,8 @@ def save_cache(
 def batch_search_ols(
     names: List[str],
     ontologies: List[str] = None,
-    cache_file: Optional[Path] = None
+    cache_file: Optional[Path] = None,
+    cache_only: bool = False
 ) -> Dict[str, Optional[Tuple[str, str, str]]]:
     """
     Batch search OLS for multiple terms with caching.
@@ -224,12 +235,19 @@ def batch_search_ols(
         names: List of terms to search
         ontologies: Ontologies to search
         cache_file: Optional path to cache file
+        cache_only: If True, only use cached results (no API calls)
 
     Returns:
         Dict mapping name -> (ontology_id, label, source) or None
     """
     if ontologies is None:
         ontologies = DEFAULT_ONTOLOGIES
+
+    # Use global CACHE_ONLY_MODE if not explicitly set
+    use_cache_only = cache_only or CACHE_ONLY_MODE
+
+    if use_cache_only:
+        logger.info("CACHE_ONLY_MODE: No live API calls will be made")
 
     # Load existing cache
     cache = {}
@@ -238,6 +256,7 @@ def batch_search_ols(
 
     results = {}
     new_lookups = 0
+    skipped_uncached = 0
 
     for i, name in enumerate(names):
         # Clean the name
@@ -251,7 +270,13 @@ def batch_search_ols(
             results[name] = cache[name_clean]
             continue
 
-        # Make API call
+        # In cache-only mode, skip uncached entries
+        if use_cache_only:
+            results[name] = None
+            skipped_uncached += 1
+            continue
+
+        # Make API call (non-deterministic)
         result = search_ols_single(name_clean, ontologies)
         results[name] = result
         cache[name_clean] = result
@@ -264,7 +289,10 @@ def batch_search_ols(
         # Rate limiting
         time.sleep(REQUEST_DELAY)
 
-    logger.info(f"Completed {new_lookups} new API lookups")
+    if use_cache_only and skipped_uncached > 0:
+        logger.info(f"CACHE_ONLY_MODE: Skipped {skipped_uncached} uncached entries")
+    if new_lookups > 0:
+        logger.info(f"Completed {new_lookups} new API lookups")
 
     # Save updated cache
     if cache_file and new_lookups > 0:
@@ -307,8 +335,16 @@ def main():
         default=None,
         help="Column name containing ingredient names (auto-detected if not specified)"
     )
+    parser.add_argument(
+        "--cache-only",
+        action="store_true",
+        help="Only use cached results, no live API calls (for deterministic runs)"
+    )
 
     args = parser.parse_args()
+
+    # Set cache-only mode
+    cache_only = args.cache_only or CACHE_ONLY_MODE
 
     ontologies = [o.strip() for o in args.ontologies.split(",")]
     logger.info(f"Searching ontologies: {ontologies}")
@@ -336,7 +372,7 @@ def main():
     logger.info(f"Found {len(names)} unique names to search")
 
     # Batch search
-    results = batch_search_ols(names, ontologies, args.cache)
+    results = batch_search_ols(names, ontologies, args.cache, cache_only=cache_only)
 
     # Build output
     output_rows = []

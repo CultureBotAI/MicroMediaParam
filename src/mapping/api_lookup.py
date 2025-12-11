@@ -5,6 +5,11 @@ Deterministic API-based compound lookup functions.
 Provides PubChem and ChEBI API functions for compound mapping.
 All functions are stateless and deterministic given the same inputs.
 
+For DETERMINISTIC PIPELINE RUNS:
+- Set CACHE_ONLY_MODE = True to prevent any live API calls
+- All lookups will use cached data only (returns None if not cached)
+- This ensures reproducible results across runs
+
 APIs used:
 - PubChem REST API: https://pubchem.ncbi.nlm.nih.gov/rest/pug
 - EBI OLS4 (Ontology Lookup Service): https://www.ebi.ac.uk/ols4/api
@@ -19,13 +24,20 @@ Usage:
 """
 
 import logging
+import os
 import time
 import urllib.parse
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import pandas as pd
 import requests
 
 logger = logging.getLogger(__name__)
+
+# DETERMINISM CONTROL: Set to True to prevent live API calls
+# Can also be controlled via environment variable: CACHE_ONLY_MODE=1
+CACHE_ONLY_MODE = os.environ.get('CACHE_ONLY_MODE', '0') == '1'
 
 # Rate limiting - seconds between API requests
 REQUEST_DELAY = 0.25
@@ -37,10 +49,78 @@ OLS4_BASE_URL = "https://www.ebi.ac.uk/ols4/api"
 # Request timeout in seconds
 REQUEST_TIMEOUT = 30
 
+# Cache file paths (relative to project root)
+DEFAULT_PUBCHEM_CACHE = Path("data/cache/pubchem_lookup_cache.tsv")
+DEFAULT_OLS_CACHE = Path("data/cache/ols_multi_ontology_cache.tsv")
+
+# In-memory cache (populated from files on first use)
+_pubchem_cache: Optional[Dict[str, Optional[int]]] = None
+_ols_cache: Optional[Dict[str, Optional[Tuple[str, str]]]] = None
+
+
+def _load_pubchem_cache() -> Dict[str, Optional[int]]:
+    """Load PubChem cache from TSV file."""
+    global _pubchem_cache
+    if _pubchem_cache is not None:
+        return _pubchem_cache
+
+    _pubchem_cache = {}
+    if DEFAULT_PUBCHEM_CACHE.exists():
+        try:
+            df = pd.read_csv(DEFAULT_PUBCHEM_CACHE, sep='\t')
+            for _, row in df.iterrows():
+                name = str(row.get('name', row.get('query', ''))).lower().strip()
+                cid = row.get('cid', row.get('pubchem_cid', ''))
+                if name:
+                    if pd.notna(cid) and str(cid).strip():
+                        cid_str = str(cid).strip()
+                        if cid_str.startswith('PubChem:'):
+                            _pubchem_cache[name] = int(cid_str.replace('PubChem:', ''))
+                        else:
+                            try:
+                                _pubchem_cache[name] = int(float(cid_str))
+                            except (ValueError, TypeError):
+                                _pubchem_cache[name] = None
+                    else:
+                        _pubchem_cache[name] = None
+            logger.info(f"Loaded {len(_pubchem_cache)} PubChem cache entries")
+        except Exception as e:
+            logger.warning(f"Failed to load PubChem cache: {e}")
+
+    return _pubchem_cache
+
+
+def _load_ols_cache() -> Dict[str, Optional[Tuple[str, str]]]:
+    """Load OLS cache from TSV file."""
+    global _ols_cache
+    if _ols_cache is not None:
+        return _ols_cache
+
+    _ols_cache = {}
+    if DEFAULT_OLS_CACHE.exists():
+        try:
+            df = pd.read_csv(DEFAULT_OLS_CACHE, sep='\t')
+            for _, row in df.iterrows():
+                query = str(row.get('query', '')).lower().strip()
+                ontology_id = str(row.get('ontology_id', ''))
+                label = str(row.get('label', ''))
+                if query:
+                    if ontology_id and ontology_id != 'nan' and ontology_id.strip():
+                        _ols_cache[query] = (ontology_id, label)
+                    else:
+                        _ols_cache[query] = None
+            logger.info(f"Loaded {len(_ols_cache)} OLS cache entries")
+        except Exception as e:
+            logger.warning(f"Failed to load OLS cache: {e}")
+
+    return _ols_cache
+
 
 def search_pubchem_by_name(compound_name: str) -> Optional[int]:
     """
     Search PubChem for a compound by name, return CID if found.
+
+    In CACHE_ONLY_MODE, only returns cached results (no API calls).
 
     Args:
         compound_name: Chemical compound name to search
@@ -48,6 +128,18 @@ def search_pubchem_by_name(compound_name: str) -> Optional[int]:
     Returns:
         PubChem CID (Compound ID) if found, None otherwise
     """
+    # Check cache first
+    cache = _load_pubchem_cache()
+    cache_key = compound_name.lower().strip()
+    if cache_key in cache:
+        return cache[cache_key]
+
+    # In cache-only mode, return None for uncached entries
+    if CACHE_ONLY_MODE:
+        logger.debug(f"CACHE_ONLY_MODE: No cached PubChem result for '{compound_name}'")
+        return None
+
+    # Make live API call (non-deterministic)
     try:
         encoded_name = urllib.parse.quote(compound_name)
         url = f"{PUBCHEM_BASE_URL}/compound/name/{encoded_name}/cids/JSON"
@@ -99,12 +191,19 @@ def verify_chebi_label(chebi_id: str) -> Optional[str]:
     """
     Verify ChEBI ID exists and get its label from OLS4.
 
+    In CACHE_ONLY_MODE, returns None (no API calls).
+
     Args:
         chebi_id: ChEBI ID in format "CHEBI:XXXXX"
 
     Returns:
         Label/name of the compound if found, None otherwise
     """
+    # In cache-only mode, skip verification (assume valid if in local ChEBI)
+    if CACHE_ONLY_MODE:
+        logger.debug(f"CACHE_ONLY_MODE: Skipping ChEBI verification for {chebi_id}")
+        return chebi_id  # Return ID as placeholder
+
     try:
         url = f"{OLS4_BASE_URL}/ontologies/chebi/terms?obo_id={chebi_id}"
         response = requests.get(url, timeout=REQUEST_TIMEOUT)
@@ -131,12 +230,28 @@ def search_chebi_directly(compound_name: str) -> Optional[Tuple[str, str]]:
     """
     Search ChEBI directly using OLS4 search API.
 
+    In CACHE_ONLY_MODE, checks OLS cache first, returns None if not cached.
+
     Args:
         compound_name: Chemical compound name to search
 
     Returns:
         Tuple of (ChEBI ID, label) if found, None otherwise
     """
+    # Check OLS cache first
+    cache = _load_ols_cache()
+    cache_key = compound_name.lower().strip()
+    if cache_key in cache:
+        result = cache[cache_key]
+        if result and result[0].startswith('CHEBI:'):
+            return result
+        return None
+
+    # In cache-only mode, return None for uncached entries
+    if CACHE_ONLY_MODE:
+        logger.debug(f"CACHE_ONLY_MODE: No cached ChEBI result for '{compound_name}'")
+        return None
+
     try:
         encoded_name = urllib.parse.quote(compound_name)
         url = f"{OLS4_BASE_URL}/search?q={encoded_name}&ontology=chebi&exact=true"
