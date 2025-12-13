@@ -783,6 +783,23 @@ $(COMPOUND_MAPPINGS_STRICT_FINAL): $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
 	@echo ""
 	@echo "$(GREEN)Output: $(COMPOUND_MAPPINGS_STRICT_FINAL)$(NC)"
 
+# Stage 10.5c.5.5: Create hydrate-specific mappings
+# Generates variant with specific hydrated ChEBI IDs (e.g., CHEBI:86158 for CaCl2·2H2O)
+# The base file maps all hydrates to anhydrous ChEBI IDs (degenerate mapping)
+COMPOUND_MAPPINGS_STRICT_HYDRATE := $(MERGE_MAPPINGS_DIR)/compound_mappings_strict_final_hydrate.tsv
+
+.PHONY: create-hydrate-mappings
+create-hydrate-mappings: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)
+	@echo "$(GREEN)✓ Hydrate-specific mappings created$(NC)"
+
+$(COMPOUND_MAPPINGS_STRICT_HYDRATE): $(COMPOUND_MAPPINGS_STRICT_FINAL) $(CHEBI_FORMULAS_FILE)
+	@echo "$(BLUE)Creating hydrate-specific mapping file...$(NC)"
+	$(PYTHON) -m src.mapping.create_hydrate_mappings \
+		--input $(COMPOUND_MAPPINGS_STRICT_FINAL) \
+		--chebi-formulas $(CHEBI_FORMULAS_FILE) \
+		--output $(COMPOUND_MAPPINGS_STRICT_HYDRATE)
+	@echo "$(GREEN)Output: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)$(NC)"
+
 # Stage 10.5c.6: Validate ontology mappings
 # Uses OAK or local ChEBI nodes to verify IDs exist in ontologies
 ONTOLOGY_VALIDATION_REPORT := $(MERGE_MAPPINGS_DIR)/ontology_validation_report.tsv
