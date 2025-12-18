@@ -1,0 +1,2969 @@
+metadata:
+  version: 1.1.0
+  created: '2024-12-17'
+  description: Chemical compositions of complex biological media ingredients
+  sources:
+  - id: PMC9998214
+    title: 'Yeast Extract: Characteristics, Production, Applications and Future Perspectives'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9998214/
+    year: 2023
+  - id: ITW_A1552
+    title: ITW Reagents Yeast Extract A1552 Technical Sheet
+    url: https://www.itwreagents.com/download_file/product_infos/A1552/en/A1552_en.pdf
+  - id: ThermoFisher_Peptones
+    title: Technical guide to peptones, supplements, and feeds
+    url: https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+  - id: USBio_Tryptone
+    title: USBio Tryptone T8750 Product Specification
+    url: https://www.usbio.net/media/T8750
+  - id: Wikipedia_Tryptone
+    title: Tryptone - Wikipedia
+    url: https://en.wikipedia.org/wiki/Tryptone
+  - id: Wikipedia_Casamino
+    title: Casamino acid - Wikipedia
+    url: https://en.wikipedia.org/wiki/Casamino_acid
+  - id: USBio_Soytone
+    title: USBio Soytone S5367 Product Specification
+    url: https://www.usbio.net/media/S5367/Soytone-Papaic-Digest-of-Soybean-Meal-Peptone-S-NonGMO-AnimalFree
+  - id: BioMedGrid_Malt
+    title: Malt Extract as a Healthy Substitute for Refined Sugar
+    url: https://biomedgrid.com/fulltext/volume4/malt-extract-as-a-healthy-substitute-for-refined-sugar.000758.php
+  last_updated: '2024-12-17'
+  total_ingredients: 67
+  includes_additions: true
+  merged_date: '2025-12-18'
+  merged_files:
+  - mediadive_solutions_additions.yaml
+  - biological_fluids_additions.yaml
+  - commercial_media_additions.yaml
+  - dsmz_solutions_additions.yaml
+  - bacdive_metabolites_additions.yaml
+ingredients:
+  yeast_extract:
+    names:
+    - yeast extract
+    - Yeast extract
+    - YEAST EXTRACT
+    - yeast ext
+    - YE
+    cas_number: 8013-01-2
+    description: Water-soluble extract from autolyzed Saccharomyces cerevisiae
+    source_references:
+    - PMC9998214
+    - ITW_A1552
+    general_composition:
+      total_protein_g_per_100g: 66.8
+      total_nitrogen_g_per_100g: 10.7
+      amino_nitrogen_g_per_100g: 5.2
+      total_carbohydrates_g_per_100g: 4.0
+      nucleotides_g_per_100g: 10.0
+      ash_g_per_100g: 12.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 8.8
+        g_per_100g_range:
+        - 3.7
+        - 26.6
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 5.1
+        g_per_100g_range:
+        - 1.68
+        - 12.4
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 9.9
+        g_per_100g_range:
+        - 1.37
+        - 11.6
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.9
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 16.3
+        g_per_100g_range:
+        - 0.5
+        - 17.5
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 4.8
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 2.1
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 5.5
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 7.5
+        g_per_100g_range:
+        - 3.03
+        - 9.0
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 8.0
+        g_per_100g_range:
+        - 1.66
+        - 9.0
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 1.4
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 3.7
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 4.0
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 4.6
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 4.3
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 1.2
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 2.4
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 5.7
+        g_per_100g_range:
+        - 0.6
+        - 9.1
+    vitamins:
+      thiamine:
+        chebi_id: CHEBI:18385
+        common_name: Vitamin B1
+        mg_per_100g: 10.0
+        mg_per_100g_range:
+        - 0.0
+        - 20.0
+      riboflavin:
+        chebi_id: CHEBI:17015
+        common_name: Vitamin B2
+        mg_per_100g: 10.0
+      niacin:
+        chebi_id: CHEBI:15940
+        common_name: Vitamin B3
+        mg_per_100g: 100.0
+        mg_per_100g_range:
+        - 90.0
+        - 110.0
+      pantothenic_acid:
+        chebi_id: CHEBI:7916
+        common_name: Vitamin B5
+        mg_per_100g: 16.0
+        mg_per_100g_range:
+        - 12.0
+        - 20.0
+      pyridoxine:
+        chebi_id: CHEBI:16709
+        common_name: Vitamin B6
+        mg_per_100g: 7.0
+        mg_per_100g_range:
+        - 6.0
+        - 8.0
+      biotin:
+        chebi_id: CHEBI:15956
+        common_name: Vitamin B7
+        mg_per_100g: 0.12
+        mg_per_100g_range:
+        - 0.099
+        - 0.139
+      folic_acid:
+        chebi_id: CHEBI:27470
+        common_name: Vitamin B9
+        mg_per_100g: 4.0
+      inositol:
+        chebi_id: CHEBI:17268
+        mg_per_100g: 350.0
+    minerals:
+      potassium:
+        chebi_id: CHEBI:26216
+        mg_per_100g: 3000.0
+        mg_per_100g_range:
+        - 1.0
+        - 10000.0
+      phosphorus:
+        chebi_id: CHEBI:28659
+        mg_per_100g: 1500.0
+        mg_per_100g_range:
+        - 0.5
+        - 3364.1
+      magnesium:
+        chebi_id: CHEBI:25107
+        mg_per_100g: 200.0
+        mg_per_100g_range:
+        - 1.2
+        - 711.8
+      calcium:
+        chebi_id: CHEBI:22984
+        mg_per_100g: 100.0
+      sodium:
+        chebi_id: CHEBI:26708
+        mg_per_100g: 300.0
+      iron:
+        chebi_id: CHEBI:18248
+        mg_per_100g: 5.0
+      zinc:
+        chebi_id: CHEBI:27363
+        mg_per_100g: 10.0
+        mg_per_100g_range:
+        - 4.6
+        - 22.6
+      manganese:
+        chebi_id: CHEBI:18291
+        mg_per_100g: 1.0
+      copper:
+        chebi_id: CHEBI:28694
+        mg_per_100g: 0.5
+  tryptone:
+    names:
+    - tryptone
+    - Tryptone
+    - TRYPTONE
+    - bacto tryptone
+    - Bacto Tryptone
+    - bacto-tryptone
+    - pancreatic digest of casein
+    cas_number: 91079-40-2
+    description: Pancreatic digest of casein, rich in tryptophan
+    source_references:
+    - Wikipedia_Tryptone
+    - USBio_Tryptone
+    - ThermoFisher_Peptones
+    general_composition:
+      total_nitrogen_g_per_100g: 12.5
+      amino_nitrogen_g_per_100g: 3.5
+      sodium_chloride_g_per_100g: 1.5
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 2.8
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 3.2
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 6.7
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.3
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 18.0
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 1.8
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 2.4
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 4.7
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 7.7
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 7.0
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 2.5
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 4.1
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 9.1
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 5.1
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 3.9
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 1.0
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 1.3
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 6.0
+  peptone:
+    names:
+    - peptone
+    - Peptone
+    - PEPTONE
+    - bacto peptone
+    - Bacto Peptone
+    - bacteriological peptone
+    cas_number: 73049-73-7
+    description: Enzymatic digest of protein, typically from meat or casein
+    source_references:
+    - ThermoFisher_Peptones
+    general_composition:
+      total_nitrogen_g_per_100g: 14.0
+      amino_nitrogen_g_per_100g: 4.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 3.5
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 4.0
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 5.5
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.5
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 12.0
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 8.0
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 1.5
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 2.5
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 4.5
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 5.0
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 1.5
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 2.5
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 6.0
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 3.0
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 2.5
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 0.5
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 1.0
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 3.5
+    nucleotides:
+      guanosine:
+        chebi_id: CHEBI:16750
+        g_per_100g: 0.5
+        note: From residual nucleotides in protein digest
+      adenosine:
+        chebi_id: CHEBI:16335
+        g_per_100g: 0.3
+      uridine:
+        chebi_id: CHEBI:16704
+        g_per_100g: 0.2
+    minerals:
+      sodium:
+        chebi_id: CHEBI:26708
+        mg_per_100g: 1500.0
+        note: From NaCl in digestion process
+      chloride:
+        chebi_id: CHEBI:17996
+        mg_per_100g: 2000.0
+      phosphorus:
+        chebi_id: CHEBI:28659
+        mg_per_100g: 800.0
+  casamino_acids:
+    names:
+    - casamino acids
+    - Casamino acids
+    - CASAMINO ACIDS
+    - casein acid hydrolysate
+    - Casein acid hydrolysate
+    - casein hydrolysate
+    - CAA
+    cas_number: 65072-00-6
+    description: Acid hydrolysate of casein - tryptophan largely destroyed
+    source_references:
+    - Wikipedia_Casamino
+    general_composition:
+      total_nitrogen_g_per_100g: 8.5
+      amino_nitrogen_g_per_100g: 5.5
+      sodium_chloride_g_per_100g: 20.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 2.8
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 3.6
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 6.3
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.3
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 21.1
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 2.2
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 2.7
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 5.6
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 8.4
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 7.5
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 2.7
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 4.6
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 9.9
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 5.6
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 4.2
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 0.1
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 6.1
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 5.0
+  soy_peptone:
+    names:
+    - soy peptone
+    - Soy peptone
+    - SOY PEPTONE
+    - soytone
+    - Soytone
+    - papaic digest of soybean meal
+    - soybean peptone
+    cas_number: 91079-46-8
+    description: Papain digest of soybean meal
+    source_references:
+    - USBio_Soytone
+    general_composition:
+      total_nitrogen_g_per_100g: 8.0
+      amino_nitrogen_g_per_100g: 2.5
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 3.18
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 3.05
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 9.0
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.79
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 11.83
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 2.47
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 1.23
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 2.55
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 3.9
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 3.85
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 0.86
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 2.4
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 2.54
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 2.69
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 2.61
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 0.68
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 1.38
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 2.94
+  beef_extract:
+    names:
+    - beef extract
+    - Beef extract
+    - BEEF EXTRACT
+    - meat extract
+    - Meat extract
+    - Lab-Lemco
+    cas_number: 68990-07-6
+    description: Water-soluble extract from beef containing amino acids, peptides,
+      nucleotides
+    source_references:
+    - ThermoFisher_Peptones
+    general_composition:
+      total_nitrogen_g_per_100g: 10.0
+      total_protein_g_per_100g: 55.0
+      creatine_g_per_100g: 5.0
+      creatinine_g_per_100g: 2.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 4.0
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 3.5
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 5.0
+      L-cysteine:
+        chebi_id: CHEBI:17561
+        g_per_100g: 0.5
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 8.0
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 3.0
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 2.0
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 3.0
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 5.0
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 5.5
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 1.5
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 2.5
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 3.0
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 2.5
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 2.5
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 0.8
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 2.0
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 3.5
+    nucleotides:
+      inosine_monophosphate:
+        chebi_id: CHEBI:17202
+        common_name: IMP
+        mg_per_100g: 500.0
+      guanosine_monophosphate:
+        chebi_id: CHEBI:17345
+        common_name: GMP
+        mg_per_100g: 100.0
+      adenosine_monophosphate:
+        chebi_id: CHEBI:16027
+        common_name: AMP
+        mg_per_100g: 50.0
+      cytidine_monophosphate:
+        chebi_id: CHEBI:17361
+        common_name: CMP
+        mg_per_100g: 30.0
+      uridine_monophosphate:
+        chebi_id: CHEBI:16695
+        common_name: UMP
+        mg_per_100g: 20.0
+    other_compounds:
+      creatine:
+        chebi_id: CHEBI:16919
+        g_per_100g: 5.0
+      creatinine:
+        chebi_id: CHEBI:16737
+        g_per_100g: 2.0
+      carnosine:
+        chebi_id: CHEBI:15727
+        mg_per_100g: 200.0
+  malt_extract:
+    names:
+    - malt extract
+    - Malt extract
+    - MALT EXTRACT
+    cas_number: 8002-48-0
+    description: Extract from malted barley, rich in maltose and other sugars
+    source_references:
+    - BioMedGrid_Malt
+    general_composition:
+      total_carbohydrates_g_per_100g: 90.0
+      total_protein_g_per_100g: 6.0
+      ash_g_per_100g: 2.0
+    sugars:
+      maltose:
+        chebi_id: CHEBI:17306
+        g_per_100g: 50.0
+      glucose:
+        chebi_id: CHEBI:17234
+        g_per_100g: 8.0
+      maltotriose:
+        chebi_id: CHEBI:27384
+        g_per_100g: 12.0
+      sucrose:
+        chebi_id: CHEBI:17992
+        g_per_100g: 3.0
+      fructose:
+        chebi_id: CHEBI:28757
+        g_per_100g: 2.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 0.3
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 0.3
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 0.4
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 1.0
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 0.2
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 0.4
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 0.2
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 0.6
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 0.3
+    vitamins:
+      thiamine:
+        chebi_id: CHEBI:18385
+        common_name: Vitamin B1
+        mg_per_100g: 0.2
+      riboflavin:
+        chebi_id: CHEBI:17015
+        common_name: Vitamin B2
+        mg_per_100g: 0.5
+      niacin:
+        chebi_id: CHEBI:15940
+        common_name: Vitamin B3
+        mg_per_100g: 5.0
+      pantothenic_acid:
+        chebi_id: CHEBI:7916
+        common_name: Vitamin B5
+        mg_per_100g: 1.0
+      pyridoxine:
+        chebi_id: CHEBI:16709
+        common_name: Vitamin B6
+        mg_per_100g: 0.5
+      biotin:
+        chebi_id: CHEBI:15956
+        common_name: Vitamin B7
+        mg_per_100g: 0.01
+    minerals:
+      potassium:
+        chebi_id: CHEBI:26216
+        mg_per_100g: 400.0
+      magnesium:
+        chebi_id: CHEBI:25107
+        mg_per_100g: 50.0
+      calcium:
+        chebi_id: CHEBI:22984
+        mg_per_100g: 20.0
+      iron:
+        chebi_id: CHEBI:18248
+        mg_per_100g: 1.0
+      zinc:
+        chebi_id: CHEBI:27363
+        mg_per_100g: 0.5
+      manganese:
+        chebi_id: CHEBI:18291
+        mg_per_100g: 0.3
+      copper:
+        chebi_id: CHEBI:28694
+        mg_per_100g: 0.1
+  brain_heart_infusion:
+    names:
+    - brain heart infusion
+    - Brain heart infusion
+    - BHI
+    - brain-heart infusion
+    description: Infusion from calf brain and beef heart with peptone
+    source_references:
+    - ThermoFisher_Peptones
+    general_composition:
+      total_nitrogen_g_per_100g: 10.0
+      glucose_g_per_100g: 5.4
+    sub_ingredients:
+      calf_brain_infusion:
+        g_per_100g: 33.8
+      beef_heart_infusion:
+        g_per_100g: 13.5
+      proteose_peptone:
+        g_per_100g: 27.0
+      glucose:
+        chebi_id: CHEBI:17234
+        g_per_100g: 5.4
+      sodium_chloride:
+        chebi_id: CHEBI:26710
+        g_per_100g: 13.5
+      disodium_phosphate:
+        chebi_id: CHEBI:34683
+        g_per_100g: 6.8
+  proteose_peptone:
+    names:
+    - proteose peptone
+    - Proteose peptone
+    - proteose peptone no. 3
+    - Proteose Peptone No. 3
+    cas_number: 91079-38-8
+    description: High molecular weight peptone mixture
+    source_references:
+    - ThermoFisher_Peptones
+    general_composition:
+      total_nitrogen_g_per_100g: 13.0
+      amino_nitrogen_g_per_100g: 2.5
+      carbohydrates_g_per_100g: 15.0
+    amino_acids:
+      L-alanine:
+        chebi_id: CHEBI:16977
+        g_per_100g: 3.0
+      L-arginine:
+        chebi_id: CHEBI:16467
+        g_per_100g: 3.5
+      L-aspartic_acid:
+        chebi_id: CHEBI:17053
+        g_per_100g: 5.0
+      L-glutamic_acid:
+        chebi_id: CHEBI:16015
+        g_per_100g: 15.0
+      glycine:
+        chebi_id: CHEBI:15428
+        g_per_100g: 5.0
+      L-histidine:
+        chebi_id: CHEBI:15971
+        g_per_100g: 1.5
+      L-isoleucine:
+        chebi_id: CHEBI:17191
+        g_per_100g: 2.5
+      L-leucine:
+        chebi_id: CHEBI:15603
+        g_per_100g: 6.0
+      L-lysine:
+        chebi_id: CHEBI:18019
+        g_per_100g: 4.5
+      L-methionine:
+        chebi_id: CHEBI:16643
+        g_per_100g: 1.0
+      L-phenylalanine:
+        chebi_id: CHEBI:17295
+        g_per_100g: 2.5
+      L-proline:
+        chebi_id: CHEBI:17203
+        g_per_100g: 8.0
+      L-serine:
+        chebi_id: CHEBI:17115
+        g_per_100g: 3.5
+      L-threonine:
+        chebi_id: CHEBI:16857
+        g_per_100g: 2.5
+      L-tryptophan:
+        chebi_id: CHEBI:16828
+        g_per_100g: 0.5
+      L-tyrosine:
+        chebi_id: CHEBI:17895
+        g_per_100g: 1.5
+      L-valine:
+        chebi_id: CHEBI:16414
+        g_per_100g: 4.0
+  nutrient_broth:
+    names:
+    - nutrient broth
+    - Nutrient broth
+    - NUTRIENT BROTH
+    description: Simple medium - beef extract and peptone
+    source_references:
+    - HiMedia_Nutrient_Broth
+    sub_ingredients:
+      beef_extract:
+        g_per_100g: 37.5
+      peptone:
+        g_per_100g: 62.5
+  lb_broth:
+    names:
+    - LB broth
+    - Lysogeny broth
+    - Luria broth
+    - Luria-Bertani broth
+    description: Standard E. coli growth medium
+    source_references:
+    - BD_Difco_LB_Broth
+    sub_ingredients:
+      tryptone:
+        g_per_100g: 40.0
+      yeast_extract:
+        g_per_100g: 20.0
+      sodium_chloride:
+        chebi_id: CHEBI:26710
+        g_per_100g: 40.0
+  maltose_hydrate:
+    names:
+    - maltose hydrate
+    - Maltose hydrate
+    - Maltose 10
+    - Maltose 10 (TN)
+    - Maltose hydrate (JP17)
+    description: Chemical compound from BacDive metabolite utilization data
+    source_references:
+    - PubChem_API
+    cas_number: 6363-53-7
+    molecular_properties:
+      molecular_formula: C12H24O12
+      molecular_weight: 360.31
+      iupac_name: (2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3S,4R,5R)-4,5,6-trihydroxy-2-(hydroxymethyl)oxan-3-yl]oxyoxane-3,4,5-triol;hydrate
+    pubchem_cid: '23724983'
+    compound_type: simple_chemical
+  potassium_5_ketogluconate:
+    names:
+    - Potassium 5-ketogluconate
+    - 5-Keto-D-gluconic acid potassium salt
+    - 626-178-5
+    - 5447-60-9
+    - 91446-96-7
+    description: Chemical compound from BacDive metabolite utilization data
+    source_references:
+    - PubChem_API
+    cas_number: 5447-60-9
+    molecular_properties:
+      molecular_formula: C6H9KO7
+      molecular_weight: 232.23
+      iupac_name: potassium (2R,3S,4S)-2,3,4,6-tetrahydroxy-5-oxohexanoate
+    pubchem_cid: '23702137'
+    compound_type: simple_chemical
+  l_alanine_4_nitroanilide:
+    names:
+    - L-alanine 4-nitroanilide
+    - 1668-13-9
+    - Alanine-4-nitroanilide
+    - Ala-4-nitroanilide
+    - Alanine-p-nitroanilide
+    description: Chemical compound from BacDive metabolite utilization data
+    source_references:
+    - PubChem_API
+    cas_number: 1668-13-9
+    molecular_properties:
+      molecular_formula: C9H11N3O3
+      molecular_weight: 209.2
+      iupac_name: (2S)-2-amino-N-(4-nitrophenyl)propanamide
+    pubchem_cid: '150936'
+    compound_type: simple_chemical
+  2_oxogluconate:
+    names:
+    - 2-oxogluconate
+    - 2-Keto-D-gluconic acid
+    - 669-90-9
+    - D-arabino-2-Hexulosonic acid
+    - 2-dehydro-D-gluconic acid
+    description: Chemical compound from BacDive metabolite utilization data
+    source_references:
+    - PubChem_API
+    cas_number: 669-90-9
+    chebi_id: CHEBI:27469
+    molecular_properties:
+      molecular_formula: C6H10O7
+      molecular_weight: 194.14
+      iupac_name: (3S,4R,5R)-3,4,5,6-tetrahydroxy-2-oxohexanoic acid
+    pubchem_cid: '3035456'
+    compound_type: simple_chemical
+  selenite_and_tungstate_solution:
+    names:
+    - Selenite and tungstate solution
+    - Selenite and tungstate
+    description: 'DSMZ trace element/vitamin solution (ID: 2636)'
+    source_references:
+    - DSMZ_MediaDive
+    dsmz_solution_id: 2636
+    compound_type: solution_mixture
+    trace_elements:
+      sodium selenite pentahydrate:
+        chebi_id: CHEBI:64734
+        mg_per_100ml: 0.3
+        original_compound_name: Na2SeO3 x 5 H2O
+      sodium tungstate dihydrate:
+        chebi_id: CHEBI:75790
+        mg_per_100ml: 0.4
+        original_compound_name: Na2WO4 x 2 H2O
+    other_compounds:
+      sodium hydroxide:
+        chebi_id: CHEBI:32145
+        mg_per_100ml: 50.0
+        original_compound_name: NaOH
+    preparation_note: 'Standard preparation: dissolve components in 1000 ml distilled
+      water'
+    typical_usage: Added at 1-10 ml per liter of growth medium
+  selenite_tungstate_solution:
+    names:
+    - Selenite-tungstate solution
+    - Selenite-tungstate
+    description: 'DSMZ trace element/vitamin solution (ID: 1915)'
+    source_references:
+    - DSMZ_MediaDive
+    dsmz_solution_id: 1915
+    compound_type: solution_mixture
+    trace_elements:
+      sodium selenite pentahydrate:
+        chebi_id: CHEBI:64734
+        mg_per_100ml: 0.6
+        original_compound_name: Na2SeO3 x 5 H2O
+      sodium tungstate dihydrate:
+        chebi_id: CHEBI:75790
+        mg_per_100ml: 0.8
+        original_compound_name: Na2WO4 x 2 H2O
+    other_compounds:
+      sodium hydroxide:
+        chebi_id: CHEBI:32145
+        mg_per_100ml: 20.0
+        original_compound_name: NaOH
+    preparation_note: 'Standard preparation: dissolve components in 1000 ml distilled
+      water'
+    typical_usage: Added at 1-10 ml per liter of growth medium
+  sl_6_trace_element_solution:
+    names:
+    - SL-6 trace element solution
+    - SL-6 trace element
+    description: 'DSMZ trace element/vitamin solution (ID: 3822)'
+    source_references:
+    - DSMZ_MediaDive
+    dsmz_solution_id: 3822
+    compound_type: solution_mixture
+    trace_elements:
+      zinc sulfate heptahydrate:
+        chebi_id: CHEBI:27363
+        mg_per_100ml: 10.0
+        original_compound_name: ZnSO4 x 7 H2O
+      manganese chloride tetrahydrate:
+        chebi_id: CHEBI:34342
+        mg_per_100ml: 3.0
+        original_compound_name: MnCl2 x 4 H2O
+      cobalt chloride hexahydrate:
+        chebi_id: CHEBI:35701
+        mg_per_100ml: 20.0
+        original_compound_name: CoCl2 x 6 H2O
+      copper chloride dihydrate:
+        chebi_id: CHEBI:49553
+        mg_per_100ml: 1.0
+        original_compound_name: CuCl2 x 2 H2O
+      nickel chloride hexahydrate:
+        chebi_id: CHEBI:34887
+        mg_per_100ml: 2.0
+        original_compound_name: NiCl2 x 6 H2O
+      sodium molybdate dihydrate:
+        chebi_id: CHEBI:75211
+        mg_per_100ml: 3.0
+        original_compound_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      H3BO3:
+        mg_per_100ml: 30.0
+        original_compound_name: H3BO3
+    preparation_note: 'Standard preparation: dissolve components in 1000 ml distilled
+      water'
+    typical_usage: Added at 1-10 ml per liter of growth medium
+  wolfes_mineral_solution:
+    names:
+    - Wolfe's mineral solution
+    - Wolfe's mineral
+    description: 'DSMZ trace element/vitamin solution (ID: 3952)'
+    source_references:
+    - DSMZ_MediaDive
+    dsmz_solution_id: 3952
+    compound_type: solution_mixture
+    trace_elements:
+      nickel chloride hexahydrate:
+        chebi_id: CHEBI:34887
+        mg_per_100ml: 2.0
+        original_compound_name: NiCl2 x 6 H2O
+      sodium selenite:
+        chebi_id: CHEBI:64734
+        mg_per_100ml: 0.1
+        original_compound_name: Na2SeO3
+      sodium tungstate dihydrate:
+        chebi_id: CHEBI:75790
+        mg_per_100ml: 1.0
+        original_compound_name: Na2WO4 x 2 H2O
+    preparation_note: 'Standard preparation: dissolve components in 1000 ml distilled
+      water'
+    typical_usage: Added at 1-10 ml per liter of growth medium
+  selenite_tungstate_molybdate_solution:
+    names:
+    - Selenite-tungstate-molybdate solution
+    - Selenite-tungstate-molybdate
+    description: 'DSMZ trace element/vitamin solution (ID: 1946)'
+    source_references:
+    - DSMZ_MediaDive
+    dsmz_solution_id: 1946
+    compound_type: solution_mixture
+    trace_elements:
+      sodium selenite pentahydrate:
+        chebi_id: CHEBI:64734
+        mg_per_100ml: 0.3
+        original_compound_name: Na2SeO3 x 5 H2O
+      sodium tungstate dihydrate:
+        chebi_id: CHEBI:75790
+        mg_per_100ml: 0.3
+        original_compound_name: Na2WO4 x 2 H2O
+      sodium molybdate dihydrate:
+        chebi_id: CHEBI:75211
+        mg_per_100ml: 0.3
+        original_compound_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      sodium hydroxide:
+        chebi_id: CHEBI:32145
+        mg_per_100ml: 50.0
+        original_compound_name: NaOH
+    preparation_note: 'Standard preparation: dissolve components in 1000 ml distilled
+      water'
+    typical_usage: Added at 1-10 ml per liter of growth medium
+  pplo_broth:
+    names:
+    - PPLO broth
+    - PPLO Broth
+    - Mycoplasma broth
+    - Difco PPLO Broth
+    description: Pleuropneumonia-like organism broth for mycoplasma cultivation (BD
+      Difco 255420)
+    source_references:
+    - BD_Difco_PPLO_Broth
+    - BD_Difco_Manual
+    bd_catalog_number: '255420'
+    compound_type: complex_mixture
+    general_composition:
+      total_formula_g_per_liter: 21.0
+      description: Contains beef heart infusion and peptone to supply nutrients for
+        mycoplasmas
+    sub_ingredients:
+      beef_heart_infusion_solids:
+        g_per_100g: 28.6
+        description: From 50g beef heart infusion
+        note: Complex biological extract
+      peptone:
+        g_per_100g: 47.6
+        description: Generic enzymatic protein digest
+      sodium_chloride:
+        chebi_id: CHEBI:26710
+        g_per_100g: 23.8
+    preparation_note: 'Typical formula per liter: Beef heart infusion from 50g (6.0g
+      solids), Peptone (10.0g), Sodium chloride (5.0g)'
+    typical_usage: Base medium for mycoplasma cultivation, supplemented with serum
+      and other enrichments
+    references:
+    - url: https://www.bd.com/en-us/products-and-solutions/products/product-page.255420
+      title: BD DIFCO PPLO Broth 500g - 255420
+    - url: https://www.fishersci.com/shop/products/bd-difco-dehydrated-culture-media-mycoplasma-broth-pplo-broth-without-crystal-violet/DF0554171
+      title: BD Difco Mycoplasma Broth (PPLO Broth without Crystal Violet)
+  pplo_broth_bbl:
+    names:
+    - BBL Mycoplasma Broth Base
+    - PPLO Broth Base
+    - BBL PPLO Broth Base
+    description: BBL Mycoplasma Broth Base (PPLO Broth Base) for mycoplasma isolation
+      (BD 211458)
+    source_references:
+    - BD_BBL_Mycoplasma_Broth
+    bd_catalog_number: '211458'
+    compound_type: complex_mixture
+    general_composition:
+      total_formula_g_per_liter: 20.0
+    sub_ingredients:
+      beef_heart_infusion_solids:
+        g_per_100g: 10.0
+        description: Beef heart infusion solids
+      pancreatic_digest_of_casein:
+        g_per_100g: 35.0
+        description: Also known as tryptone
+      beef_extract:
+        g_per_100g: 15.0
+      yeast_extract:
+        g_per_100g: 15.0
+      sodium_chloride:
+        chebi_id: CHEBI:26710
+        g_per_100g: 25.0
+    preparation_note: 'Typical formula per liter: Beef heart infusion solids (2.0g),
+      Pancreatic digest of casein (7.0g), Beef extract (3.0g), Yeast extract (3.0g),
+      Sodium chloride (5.0g)'
+    typical_usage: Base medium for mycoplasma isolation when supplemented with nutritive
+      enrichments
+  isovitalex:
+    names:
+    - IsoVitaleX
+    - Isovitalex
+    - IsoVitaleX Enrichment
+    - BBL IsoVitaleX Enrichment
+    description: Chemically defined supplement for cultivation of fastidious microorganisms
+      (BD BBL 211876)
+    source_references:
+    - BD_BBL_Isovitalex
+    - BD_Product_Insert_211876
+    bd_catalog_number: '211876'
+    compound_type: defined_supplement
+    general_composition:
+      description: Provides V factor (NAD), vitamins, amino acids, coenzymes, dextrose,
+        ferric ion for fastidious organisms
+    vitamins:
+      vitamin_b12:
+        chebi_id: CHEBI:176843
+        common_name: Cobalamin
+        g_per_100g: 0.0068
+        note: Essential for Haemophilus species
+      thiamine_pyrophosphate:
+        chebi_id: CHEBI:9532
+        common_name: Thiamine diphosphate
+        g_per_100g: 0.068
+      thiamine_hydrochloride:
+        chebi_id: CHEBI:49105
+        common_name: Vitamin B1 hydrochloride
+        g_per_100g: 0.0021
+      nicotinamide_adenine_dinucleotide:
+        chebi_id: CHEBI:16908
+        common_name: NAD, V factor
+        g_per_100g: 0.171
+        note: V factor for Haemophilus
+      p_aminobenzoic_acid:
+        chebi_id: CHEBI:17836
+        common_name: PABA
+        g_per_100g: 0.0089
+        note: Typical BD formulation concentration
+    amino_acids:
+      l_glutamine:
+        chebi_id: CHEBI:18050
+        g_per_100g: 6.84
+      l_cysteine_hydrochloride:
+        chebi_id: CHEBI:17561
+        g_per_100g: 17.7
+        note: Reducing agent and sulfur source
+      l_cystine:
+        chebi_id: CHEBI:17376
+        g_per_100g: 0.75
+    nucleotides:
+      adenine:
+        chebi_id: CHEBI:16708
+        g_per_100g: 0.68
+      guanine_hydrochloride:
+        chebi_id: CHEBI:5563
+        g_per_100g: 0.021
+    other_compounds:
+      glucose:
+        chebi_id: CHEBI:17234
+        common_name: Dextrose
+        g_per_100g: 68.4
+        note: Primary carbon source
+      ferric_nitrate:
+        chebi_id: CHEBI:75832
+        g_per_100g: 0.014
+        note: Iron source for growth
+    preparation_note: Supplied lyophilized, reconstitute with 10 mL sterile distilled
+      water per vial. Total reconstituted weight approximately 146g per liter basis.
+    typical_usage: Added to agar or broth media at 1-3% v/v for cultivation of Neisseria,
+      Haemophilus, and other fastidious organisms
+    confidence: high
+    references:
+    - url: https://www.bd.com/en-us/products-and-solutions/products/product-page.211876
+      title: BD BBL IsoVitaleX Enrichment - 211876
+    - url: https://www.fishersci.com/shop/products/bd-bbl-isovitalex-enrichment-2/p-4888886
+      title: BD BBL IsoVitaleX Enrichment 10 mL
+    - url: https://hardydiagnostics.com/211876
+      title: IsoVitaleX Enrichment product insert
+  defibrinated_sheep_blood:
+    names:
+    - defibrinated sheep blood
+    - sheep blood
+    - 5% sheep blood
+    - defibrinated blood
+    description: Defibrinated blood from sheep, rich in hemoglobin and growth factors
+    source_references:
+    - Proteomics_Blood_Composition
+    - ATCC_Blood_Agar_Technical
+    uberon_id: UBERON:0000178
+    compound_type: biological_fluid
+    confidence: low
+    major_components:
+      hemoglobin:
+        chebi_id: CHEBI:35143
+        g_per_100ml: 15.0
+        range_g_per_100ml:
+        - 12.0
+        - 18.0
+        note: Varies by animal, health status
+      albumin:
+        chebi_id: CHEBI:16541
+        g_per_100ml: 3.5
+        range_g_per_100ml:
+        - 3.0
+        - 4.5
+      glucose:
+        chebi_id: CHEBI:17234
+        g_per_100ml: 0.08
+        note: Blood glucose level
+    general_composition:
+      total_protein_g_per_100ml: 7.0
+      hematocrit_percent: 30
+      note: Defibrination removes fibrinogen
+    typical_usage: Added to agar media at 5-10% v/v for cultivation of fastidious
+      organisms (Streptococcus, Haemophilus)
+    biological_variability: High - composition varies by species, individual animal,
+      and processing method
+    preparation_note: Defibrinated by mechanical stirring with glass beads. Stored
+      at 4°C, used within expiration date.
+  blood_serum:
+    names:
+    - blood serum
+    - serum
+    - fetal bovine serum
+    - calf serum
+    - horse serum
+    description: Cell-free, clotted blood fraction rich in proteins and growth factors
+    source_references:
+    - Proteomics_Serum_Composition
+    uberon_id: UBERON:0001977
+    compound_type: biological_fluid
+    confidence: low
+    major_components:
+      albumin:
+        chebi_id: CHEBI:16541
+        g_per_100ml: 3.5
+        range_g_per_100ml:
+        - 3.0
+        - 5.0
+      immunoglobulins:
+        note: IgG, IgA, IgM - amounts vary by species
+        g_per_100ml: 1.5
+      glucose:
+        chebi_id: CHEBI:17234
+        g_per_100ml: 0.1
+      cholesterol:
+        chebi_id: CHEBI:16113
+        mg_per_100ml: 200.0
+    general_composition:
+      total_protein_g_per_100ml: 6.5
+      note: Lacks clotting factors (fibrinogen, etc.)
+    typical_usage: Added to broth or agar at 5-20% v/v for cultivation of mycoplasmas,
+      fastidious bacteria
+    biological_variability: Very high - species-specific, lot-specific variation
+    preparation_note: Obtained from clotted blood, centrifuged. Heat-inactivated at
+      56°C for 30 min to inactivate complement.
+  skim_milk:
+    names:
+    - skim milk
+    - skimmed milk
+    - non-fat milk
+    - milk
+    description: Defatted bovine milk, primarily casein and lactose
+    source_references:
+    - USDA_Milk_Composition
+    uberon_id: UBERON:0001913
+    compound_type: biological_fluid
+    confidence: medium-low
+    major_components:
+      casein:
+        chebi_id: CHEBI:60499
+        g_per_100ml: 3.3
+        note: Primary milk protein
+      lactose:
+        chebi_id: CHEBI:17716
+        g_per_100ml: 5.0
+        note: Milk sugar
+      calcium:
+        chebi_id: CHEBI:22984
+        mg_per_100ml: 120.0
+    general_composition:
+      total_protein_g_per_100ml: 3.4
+      total_carbohydrate_g_per_100ml: 5.0
+      fat_g_per_100ml: 0.1
+      note: Skim milk has fat removed
+    typical_usage: Used in milk agar for protease detection, as nutrient source at
+      10-20% v/v
+    biological_variability: Medium - varies by animal diet, season, breed
+    preparation_note: Pasteurized and skimmed. May be sterilized by autoclaving or
+      filtration.
+  rumen_fluid:
+    names:
+    - rumen fluid
+    - rumen liquor
+    - clarified rumen fluid
+    description: Anaerobic digestive fluid from bovine rumen, rich in volatile fatty
+      acids and microbiota
+    source_references:
+    - Hungate_Anaerobic_Techniques
+    - Bryant_Rumen_Microbiology
+    compound_type: biological_fluid
+    confidence: low
+    major_components:
+      acetic_acid:
+        chebi_id: CHEBI:15366
+        mmol_per_100ml: 6.0
+        range_mmol_per_100ml:
+        - 4.0
+        - 8.0
+        note: Primary volatile fatty acid
+      propionic_acid:
+        chebi_id: CHEBI:30768
+        mmol_per_100ml: 2.0
+        range_mmol_per_100ml:
+        - 1.0
+        - 3.0
+      butyric_acid:
+        chebi_id: CHEBI:30772
+        mmol_per_100ml: 1.0
+        range_mmol_per_100ml:
+        - 0.5
+        - 1.5
+    general_composition:
+      pH: 6.5
+      pH_range:
+      - 6.0
+      - 7.0
+      volatile_fatty_acids_total_mmol_per_100ml: 9.0
+      note: Contains live rumen microbiota and undigested feed particles
+    typical_usage: Clarified rumen fluid added at 10-40% v/v for cultivation of rumen
+      bacteria and strict anaerobes
+    biological_variability: Very high - depends on animal diet, time since feeding,
+      health status
+    preparation_note: Collected from freshly slaughtered cattle or via rumen fistula.
+      Strained through cheesecloth, clarified by centrifugation, stored anaerobically
+      at -20°C.
+    references:
+    - title: The Hungate Technique for Cultivation of Anaerobic Bacteria
+      author: Hungate, R.E.
+      year: 1969
+      note: Classical methodology for rumen fluid collection and use
+  egg_yolk_emulsion:
+    names:
+    - egg yolk
+    - egg yolk emulsion
+    - sterile egg yolk emulsion
+    description: Emulsion of chicken egg yolk for lecithinase and lipase detection
+    source_references:
+    - BD_Egg_Yolk_Emulsion
+    uberon_id: UBERON:0007378
+    compound_type: biological_emulsion
+    confidence: medium-low
+    major_components:
+      lecithin:
+        chebi_id: CHEBI:16196
+        common_name: Phosphatidylcholine
+        g_per_100g: 3.0
+        note: Substrate for lecithinase
+      cholesterol:
+        chebi_id: CHEBI:16113
+        g_per_100g: 1.5
+      triglycerides:
+        note: Substrates for lipase
+        g_per_100g: 60.0
+    general_composition:
+      total_lipids_g_per_100g: 65.0
+      total_protein_g_per_100g: 16.0
+      note: Natural emulsion stabilized by proteins
+    typical_usage: Added to agar at 5-20% v/v for detection of lecithinase (Clostridium
+      perfringens) or lipase activity
+    biological_variability: Medium - varies by hen diet and age
+    preparation_note: Separated from egg white, emulsified in saline (20-50% v/v),
+      sterilized by filtration
+  trace_element_solution_sl_4:
+    common_name: Trace element solution SL-4
+    mediadive_solution_id: 4059
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 22
+    synonyms:
+    - solution:4059
+    - SL 4
+    - SL-4
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.02
+        original_name: FeSO4 x 7 H2O
+    other_compounds:
+      edta:
+        g_per_100ml: 0.05
+        original_name: EDTA
+      ? ''
+      : g_per_100ml: 10.0
+        original_name: ''
+    names:
+    - Trace element solution SL-4
+    - solution:4059
+    - SL 4
+    - SL-4
+    description: 'DSMZ MediaDive solution 4059. containing 3 chemical components.
+      used in 22 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_sl_6:
+    common_name: Trace element solution SL-6
+    mediadive_solution_id: 25
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 56
+    synonyms:
+    - solution:25
+    - SL 6
+    - SL-6
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      znso4:
+        g_per_100ml: 0.01
+        original_name: ZnSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.003
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.03
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.02
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.001
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.003
+        original_name: Na2MoO4 x 2 H2O
+    names:
+    - Trace element solution SL-6
+    - solution:25
+    - SL 6
+    - SL-6
+    description: 'DSMZ MediaDive solution 25. containing 7 chemical components. used
+      in 56 media formulations. Standard volume: 1000 mL.'
+  vitamin_b12_solution:
+    common_name: Vitamin B12 solution
+    mediadive_solution_id: 6105
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 12
+    synonyms:
+    - solution:6105
+    note: 'Standard volume: 100 mL'
+    vitamins:
+      cyanocobalamine:
+        g_per_100ml: 0.1
+        attribute: Vitamin B12
+        original_name: Cyanocobalamine
+    names:
+    - Vitamin B12 solution
+    - solution:6105
+    description: 'DSMZ MediaDive solution 6105. containing 1 chemical components.
+      used in 12 media formulations. Standard volume: 100 mL.'
+  trace_element_solution_sl_12_b:
+    common_name: Trace element solution SL-12 B
+    mediadive_solution_id: 33
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:33
+    - SL 12
+    - SL-12
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.11000000000000001
+        original_name: FeSO4 x 7 H2O
+      cocl2:
+        g_per_100ml: 0.019
+        original_name: CoCl2 x 6 H2O
+      mncl2:
+        g_per_100ml: 0.005
+        original_name: MnCl2 x 2 H2O
+      zncl2:
+        g_per_100ml: 0.004200000000000001
+        original_name: ZnCl2
+      nicl2:
+        g_per_100ml: 0.0024000000000000002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.0018
+        original_name: Na2MoO4 x 2 H2O
+      h3bo3:
+        g_per_100ml: 0.03
+        original_name: H3BO3
+      cucl2:
+        g_per_100ml: 0.0002
+        original_name: CuCl2 x 2 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 0.3
+        original_name: Na2-EDTA
+    names:
+    - Trace element solution SL-12 B
+    - solution:33
+    - SL 12
+    - SL-12
+    description: 'DSMZ MediaDive solution 33. containing 9 chemical components. used
+      in 5 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_sl_10:
+    common_name: Trace element solution SL-10
+    mediadive_solution_id: 4178
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 21
+    synonyms:
+    - solution:4178
+    - SL 10
+    - SL-10
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      fecl2:
+        g_per_100ml: 0.15
+        original_name: FeCl2 x 4 H2O
+      zncl2:
+        g_per_100ml: 0.007000000000000001
+        original_name: ZnCl2
+      mncl2:
+        g_per_100ml: 0.01
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.0006000000000000001
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.019
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.0002
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.0024000000000000002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.0036
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      hcl:
+        g_per_100ml: 0.25
+        attribute: 25%, 7.7 M
+        original_name: HCl
+    names:
+    - Trace element solution SL-10
+    - solution:4178
+    - SL 10
+    - SL-10
+    description: 'DSMZ MediaDive solution 4178. containing 9 chemical components.
+      used in 21 media formulations. Standard volume: 1000 mL.'
+  seven_vitamins_solution:
+    common_name: Seven vitamins solution
+    mediadive_solution_id: 1038
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 78
+    synonyms:
+    - solution:1038
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      vitamin_b12:
+        g_per_100ml: 0.01
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.008
+        original_name: p-Aminobenzoic acid
+      d_biotin:
+        g_per_100ml: 0.002
+        original_name: D-(+)-biotin
+      nicotinic_acid:
+        g_per_100ml: 0.02
+        original_name: Nicotinic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.03
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.02
+        original_name: Thiamine-HCl x 2 H2O
+    other_compounds:
+      calcium_pantothenate:
+        g_per_100ml: 0.01
+        original_name: Calcium pantothenate
+    names:
+    - Seven vitamins solution
+    - solution:1038
+    description: 'DSMZ MediaDive solution 1038. containing 7 chemical components.
+      used in 78 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_vishniac_santer_1957:
+    common_name: Trace element solution (Vishniac & Santer, 1957)
+    mediadive_solution_id: 114
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:114
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      znso4:
+        g_per_100ml: 2.2
+        original_name: ZnSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.506
+        original_name: MnCl2 x 4 H2O
+      feso4:
+        g_per_100ml: 0.5
+        original_name: FeSO4 x 7 H2O
+      cuso4:
+        g_per_100ml: 0.157
+        original_name: CuSO4 x 5 H2O
+      cocl2:
+        g_per_100ml: 0.161
+        original_name: CoCl2 x 6 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 5.0
+        original_name: Na2-EDTA
+      cacl2:
+        g_per_100ml: 0.554
+        original_name: CaCl2 x 2 H2O
+      nh46mo7o24:
+        g_per_100ml: 0.11000000000000001
+        original_name: (NH4)6Mo7O24 x 4 H2O
+    names:
+    - Trace element solution (Vishniac & Santer, 1957)
+    - solution:114
+    description: 'DSMZ MediaDive solution 114. containing 8 chemical components. used
+      in 5 media formulations. Standard volume: 1000 mL.'
+  vitamin_k1_solution:
+    common_name: Vitamin K1 solution
+    mediadive_solution_id: 125
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 13
+    synonyms:
+    - solution:125
+    note: 'Standard volume: 20 mL'
+    vitamins:
+      vitamin_k1:
+        g_per_100ml: 0.5
+        original_name: Vitamin K1
+    other_compounds:
+      ethanol:
+        g_per_100ml: 95.0
+        attribute: 95 %
+        original_name: Ethanol
+    names:
+    - Vitamin K1 solution
+    - solution:125
+    description: 'DSMZ MediaDive solution 125. containing 2 chemical components. used
+      in 13 media formulations. Standard volume: 20 mL.'
+  vitamin_k3_solution:
+    common_name: Vitamin K3 solution
+    mediadive_solution_id: 5540
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 8
+    synonyms:
+    - solution:5540
+    note: 'Standard volume: 100 mL'
+    vitamins:
+      vitamin_k3:
+        g_per_100ml: 0.005
+        original_name: Vitamin K3
+    other_compounds:
+      ethanol:
+        g_per_100ml: 0.95
+        attribute: 95%
+        original_name: Ethanol
+    names:
+    - Vitamin K3 solution
+    - solution:5540
+    description: 'DSMZ MediaDive solution 5540. containing 2 chemical components.
+      used in 8 media formulations. Standard volume: 100 mL.'
+  vitamin_solution:
+    common_name: Vitamin solution
+    mediadive_solution_id: 4372
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:4372
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      vitamin_b12:
+        g_per_100ml: 0.005
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.005
+        original_name: p-Aminobenzoic acid
+      biotin:
+        g_per_100ml: 0.001
+        original_name: Biotin
+      nicotinic_acid:
+        g_per_100ml: 0.01
+        original_name: Nicotinic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.025
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.005
+        original_name: Thiamine HCl
+    other_compounds:
+      dl_calcium_pantothenate:
+        g_per_100ml: 0.0025
+        original_name: DL-Calcium pantothenate
+    names:
+    - Vitamin solution
+    - solution:4372
+    description: 'DSMZ MediaDive solution 4372. containing 7 chemical components.
+      used in 5 media formulations. Standard volume: 1000 mL.'
+  wolins_vitamin_solution_10x:
+    common_name: Wolin's vitamin solution (10x)
+    mediadive_solution_id: 5980
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 308
+    synonyms:
+    - solution:5980
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.002
+        original_name: Biotin
+      folic_acid:
+        g_per_100ml: 0.002
+        original_name: Folic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.01
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.005
+        original_name: Thiamine HCl
+      riboflavin:
+        g_per_100ml: 0.005
+        original_name: Riboflavin
+      nicotinic_acid:
+        g_per_100ml: 0.005
+        original_name: Nicotinic acid
+      vitamin_b12:
+        g_per_100ml: 0.0001
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.005
+        original_name: p-Aminobenzoic acid
+    other_compounds:
+      calcium_d_pantothenate:
+        g_per_100ml: 0.005
+        original_name: Calcium D-(+)-pantothenate
+      dl_alpha_lipoic_acid:
+        g_per_100ml: 0.005
+        original_name: (DL)-alpha-Lipoic acid
+    names:
+    - Wolin's vitamin solution (10x)
+    - solution:5980
+    description: 'DSMZ MediaDive solution 5980. containing 10 chemical components.
+      used in 308 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution:
+    common_name: Trace element solution
+    mediadive_solution_id: 5146
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 14
+    synonyms:
+    - solution:5146
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.2
+        original_name: FeSO4 x 7 H2O
+      znso4:
+        g_per_100ml: 0.01
+        original_name: ZnSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.003
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.03
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.02
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.001
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.003
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      edta:
+        g_per_100ml: 0.5
+        original_name: EDTA
+    names:
+    - Trace element solution
+    - solution:5146
+    description: 'DSMZ MediaDive solution 5146. containing 9 chemical components.
+      used in 14 media formulations. Standard volume: 1000 mL.'
+  allens_trace_element_solution:
+    common_name: Allen's trace element solution
+    mediadive_solution_id: 155
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 15
+    synonyms:
+    - solution:155
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      mncl2:
+        g_per_100ml: 0.018
+        original_name: MnCl2 x 4 H2O
+      znso4:
+        g_per_100ml: 0.0021999999999999997
+        original_name: ZnSO4 x 7 H2O
+      cucl2:
+        g_per_100ml: 0.0005
+        original_name: CuCl2 x 2 H2O
+      na2moo4:
+        g_per_100ml: 0.00030000000000000003
+        original_name: Na2MoO4 x 2 H2O
+      coso4:
+        g_per_100ml: 0.0001
+        original_name: CoSO4 x 7 H2O
+    other_compounds:
+      na2b4o7:
+        g_per_100ml: 0.045
+        original_name: Na2B4O7 x 10 H2O
+      voso4:
+        g_per_100ml: 0.00030000000000000003
+        original_name: VOSO4 x 2 H2O
+    names:
+    - Allen's trace element solution
+    - solution:155
+    description: 'DSMZ MediaDive solution 155. containing 7 chemical components. used
+      in 15 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_sl_11:
+    common_name: Trace element solution SL-11
+    mediadive_solution_id: 1474
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 23
+    synonyms:
+    - solution:1474
+    - SL 11
+    - SL-11
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      fecl2:
+        g_per_100ml: 0.15
+        original_name: FeCl2 x 4 H2O
+      zncl2:
+        g_per_100ml: 0.007000000000000001
+        original_name: ZnCl2
+      mncl2:
+        g_per_100ml: 0.01
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.0006000000000000001
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.019
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.0002
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.0024000000000000002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.0036
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 0.52
+        original_name: Na2-EDTA x 2 H2O
+    names:
+    - Trace element solution SL-11
+    - solution:1474
+    - SL 11
+    - SL-11
+    description: 'DSMZ MediaDive solution 1474. containing 9 chemical components.
+      used in 23 media formulations. Standard volume: 1000 mL.'
+  modified_wolins_mineral_solution:
+    common_name: Modified Wolin's mineral solution
+    mediadive_solution_id: 241
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 169
+    synonyms:
+    - solution:241
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      mnso4_x_h2o:
+        g_per_100ml: 0.05
+        original_name: MnSO4 x H2O
+      feso4:
+        g_per_100ml: 0.01
+        original_name: FeSO4 x 7 H2O
+      coso4:
+        g_per_100ml: 0.018
+        original_name: CoSO4 x 7 H2O
+      znso4:
+        g_per_100ml: 0.018
+        original_name: ZnSO4 x 7 H2O
+      cuso4:
+        g_per_100ml: 0.001
+        original_name: CuSO4 x 5 H2O
+      h3bo3:
+        g_per_100ml: 0.001
+        original_name: H3BO3
+      na2moo4:
+        g_per_100ml: 0.001
+        original_name: Na2MoO4 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.003
+        original_name: NiCl2 x 6 H2O
+      na2seo3:
+        g_per_100ml: 2.9999999999999997e-05
+        original_name: Na2SeO3 x 5 H2O
+      na2wo4:
+        g_per_100ml: 4.0e-05
+        original_name: Na2WO4 x 2 H2O
+    other_compounds:
+      nitrilotriacetic_acid:
+        g_per_100ml: 0.15
+        original_name: Nitrilotriacetic acid
+      mgso4:
+        g_per_100ml: 0.3
+        original_name: MgSO4 x 7 H2O
+      nacl:
+        g_per_100ml: 0.1
+        original_name: NaCl
+      cacl2:
+        g_per_100ml: 0.01
+        original_name: CaCl2 x 2 H2O
+      alkso42:
+        g_per_100ml: 0.002
+        original_name: AlK(SO4)2 x 12 H2O
+    names:
+    - Modified Wolin's mineral solution
+    - solution:241
+    description: 'DSMZ MediaDive solution 241. containing 15 chemical components.
+      used in 169 media formulations. Standard volume: 1000 mL.'
+  wolins_vitamin_solution:
+    common_name: Wolin's vitamin solution
+    mediadive_solution_id: 242
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 55
+    synonyms:
+    - solution:242
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.0002
+        original_name: Biotin
+      folic_acid:
+        g_per_100ml: 0.0002
+        original_name: Folic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.001
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.0005
+        original_name: Thiamine HCl
+      riboflavin:
+        g_per_100ml: 0.0005
+        original_name: Riboflavin
+      nicotinic_acid:
+        g_per_100ml: 0.0005
+        original_name: Nicotinic acid
+      vitamin_b12:
+        g_per_100ml: 1.0e-05
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.0005
+        original_name: p-Aminobenzoic acid
+    other_compounds:
+      calcium_d_pantothenate:
+        g_per_100ml: 0.0005
+        original_name: Calcium D-(+)-pantothenate
+      dl_alpha_lipoic_acid:
+        g_per_100ml: 0.0005
+        original_name: (DL)-alpha-Lipoic acid
+    names:
+    - Wolin's vitamin solution
+    - solution:242
+    description: 'DSMZ MediaDive solution 242. containing 10 chemical components.
+      used in 55 media formulations. Standard volume: 1000 mL.'
+  mineral_solution_1:
+    common_name: Mineral solution 1
+    mediadive_solution_id: 432
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:432
+    note: 'Standard volume: 1000 mL'
+    other_compounds:
+      k2hpo4:
+        g_per_100ml: 0.6
+        original_name: K2HPO4
+    names:
+    - Mineral solution 1
+    - solution:432
+    description: 'DSMZ MediaDive solution 432. containing 1 chemical components. used
+      in 5 media formulations. Standard volume: 1000 mL.'
+  mineral_solution:
+    common_name: 'Mineral solution '
+    mediadive_solution_id: 5001
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 6
+    synonyms:
+    - solution:5001
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.11000000000000001
+        original_name: FeSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.00984
+        original_name: MnCl2 x 4 H2O
+      znso4:
+        g_per_100ml: 0.0028799999999999997
+        original_name: ZnSO4 x 7 H2O
+      cocl2:
+        g_per_100ml: 0.00238
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.00172
+        original_name: CuCl2 x 2 H2O
+      na2moo4:
+        g_per_100ml: 0.00242
+        original_name: Na2MoO4 x 2 H2O
+      h3bo3:
+        g_per_100ml: 0.0031
+        original_name: H3BO3
+    other_compounds:
+      edta:
+        g_per_100ml: 0.37
+        original_name: EDTA
+    names:
+    - 'Mineral solution '
+    - solution:5001
+    description: 'DSMZ MediaDive solution 5001. containing 8 chemical components.
+      used in 6 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_sla:
+    common_name: Trace element solution (SLA)
+    mediadive_solution_id: 690
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:690
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      fecl2:
+        g_per_100ml: 0.18
+        original_name: FeCl2 x 4 H2O
+      cocl2:
+        g_per_100ml: 0.025
+        original_name: CoCl2 x 6 H2O
+      nicl2:
+        g_per_100ml: 0.001
+        original_name: NiCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.001
+        original_name: CuCl2 x 2 H2O
+      mncl2:
+        g_per_100ml: 0.007000000000000001
+        original_name: MnCl2 x 4 H2O
+      zncl2:
+        g_per_100ml: 0.01
+        original_name: ZnCl2
+      h3bo3:
+        g_per_100ml: 0.05
+        original_name: H3BO3
+      na2moo4:
+        g_per_100ml: 0.003
+        original_name: Na2MoO4 x 2 H2O
+      na2seo3:
+        g_per_100ml: 0.001
+        original_name: Na2SeO3 x 5 H2O
+    names:
+    - Trace element solution (SLA)
+    - solution:690
+    description: 'DSMZ MediaDive solution 690. containing 9 chemical components. used
+      in 5 media formulations. Standard volume: 1000 mL.'
+  wolfes_mineral_elixir:
+    common_name: Wolfe's mineral elixir
+    mediadive_solution_id: 4221
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 9
+    synonyms:
+    - solution:4221
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      mnso4_x_n_h2o:
+        g_per_100ml: 0.5
+        original_name: MnSO4 x n H2O
+      feso4:
+        g_per_100ml: 0.1
+        original_name: FeSO4 x 7 H2O
+      cocl2:
+        g_per_100ml: 0.18
+        original_name: CoCl2 x 6 H2O
+      znso4:
+        g_per_100ml: 0.18
+        original_name: ZnSO4 x 7 H2O
+      cuso4:
+        g_per_100ml: 0.01
+        original_name: CuSO4 x 5 H2O
+      h3bo3:
+        g_per_100ml: 0.01
+        original_name: H3BO3
+      na2moo4:
+        g_per_100ml: 0.01
+        original_name: Na2MoO4 x 2 H2O
+      na2wo4:
+        g_per_100ml: 0.01
+        original_name: Na2WO4 x 2 H2O
+      na2seo4:
+        g_per_100ml: 0.01
+        original_name: Na2SeO4
+    other_compounds:
+      mgso4:
+        g_per_100ml: 3.0
+        original_name: MgSO4 x 7 H2O
+      nacl:
+        g_per_100ml: 1.0
+        original_name: NaCl
+      cacl2:
+        g_per_100ml: 0.1
+        original_name: CaCl2 x 2 H2O
+      alkso42:
+        g_per_100ml: 0.018
+        original_name: AlK(SO4)2 x 12 H2O
+      nh42niso42:
+        g_per_100ml: 0.27999999999999997
+        original_name: (NH4)2Ni(SO4)2 x 6 H2O
+    names:
+    - Wolfe's mineral elixir
+    - solution:4221
+    description: 'DSMZ MediaDive solution 4221. containing 14 chemical components.
+      used in 9 media formulations. Standard volume: 1000 mL.'
+  modified_wolins_mineral_solution_ii:
+    common_name: Modified Wolin's mineral solution II
+    mediadive_solution_id: 5902
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 24
+    synonyms:
+    - solution:5902
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      mnso4_x_h2o:
+        g_per_100ml: 0.05
+        original_name: MnSO4 x H2O
+      feso4:
+        g_per_100ml: 0.01
+        original_name: FeSO4 x 7 H2O
+      coso4:
+        g_per_100ml: 0.018
+        original_name: CoSO4 x 7 H2O
+      znso4:
+        g_per_100ml: 0.018
+        original_name: ZnSO4 x 7 H2O
+      cuso4:
+        g_per_100ml: 0.001
+        original_name: CuSO4 x 5 H2O
+      h3bo3:
+        g_per_100ml: 0.001
+        original_name: H3BO3
+      na2moo4:
+        g_per_100ml: 0.001
+        original_name: Na2MoO4 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.0025
+        original_name: NiCl2 x 6 H2O
+      na2seo3:
+        g_per_100ml: 2.9999999999999997e-05
+        original_name: Na2SeO3 x 5 H2O
+    other_compounds:
+      nitrilotriacetic_acid:
+        g_per_100ml: 0.15
+        original_name: Nitrilotriacetic acid
+      mgso4:
+        g_per_100ml: 0.3
+        original_name: MgSO4 x 7 H2O
+      nacl:
+        g_per_100ml: 0.1
+        original_name: NaCl
+      cacl2:
+        g_per_100ml: 0.01
+        original_name: CaCl2 x 2 H2O
+      alkso42:
+        g_per_100ml: 0.002
+        original_name: AlK(SO4)2 x 12 H2O
+    names:
+    - Modified Wolin's mineral solution II
+    - solution:5902
+    description: 'DSMZ MediaDive solution 5902. containing 14 chemical components.
+      used in 24 media formulations. Standard volume: 1000 mL.'
+  trace_salt_solution:
+    common_name: Trace salt solution
+    mediadive_solution_id: 1209
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 7
+    synonyms:
+    - solution:1209
+    note: 'Standard volume: 100 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.1
+        original_name: FeSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.1
+        original_name: MnCl2 x 4 H2O
+      znso4:
+        g_per_100ml: 0.1
+        original_name: ZnSO4 x 7 H2O
+    names:
+    - Trace salt solution
+    - solution:1209
+    description: 'DSMZ MediaDive solution 1209. containing 3 chemical components.
+      used in 7 media formulations. Standard volume: 100 mL.'
+  vitamin_solution_double_conc:
+    common_name: Vitamin solution (double conc.)
+    mediadive_solution_id: 3224
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:3224
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.0004
+        original_name: Biotin
+      folic_acid:
+        g_per_100ml: 0.0004
+        original_name: Folic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.002
+        original_name: Pyridoxine hydrochloride
+      riboflavine:
+        g_per_100ml: 0.001
+        original_name: Riboflavine
+      thiamine_hcl:
+        g_per_100ml: 0.001
+        original_name: Thiamine-HCl x 2 H2O
+      vitamin_b12:
+        g_per_100ml: 2.0e-05
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.001
+        original_name: p-Aminobenzoic acid
+    other_compounds:
+      nicotinamide:
+        g_per_100ml: 0.001
+        original_name: Nicotinamide
+      d_calcium_pantothenate:
+        g_per_100ml: 0.001
+        original_name: D-Calcium pantothenate
+      double_distilled_water:
+        g_per_100ml: 100.0
+        original_name: Double distilled water
+    names:
+    - Vitamin solution (double conc.)
+    - solution:3224
+    description: 'DSMZ MediaDive solution 3224. containing 10 chemical components.
+      used in 5 media formulations. Standard volume: 1000 mL.'
+  trace_elements_solution_pfennig_1965:
+    common_name: Trace elements solution (Pfennig, 1965)
+    mediadive_solution_id: 2762
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 28
+    synonyms:
+    - solution:2762
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.22000000000000003
+        original_name: FeSO4 x 7 H2O
+      znso4:
+        g_per_100ml: 0.01
+        original_name: ZnSO4 x 7 H2O
+      mncl2:
+        g_per_100ml: 0.003
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.003
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.02
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.003
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.003
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.003
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      edta:
+        g_per_100ml: 0.5
+        original_name: EDTA
+    names:
+    - Trace elements solution (Pfennig, 1965)
+    - solution:2762
+    description: 'DSMZ MediaDive solution 2762. containing 9 chemical components.
+      used in 28 media formulations. Standard volume: 1000 mL.'
+  vitamine_mixture:
+    common_name: Vitamine mixture
+    mediadive_solution_id: 5757
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:5757
+    note: 'Standard volume: 400 mL'
+    other_compounds:
+      ? ''
+      : g_per_100ml: 25.0
+        original_name: ''
+    names:
+    - Vitamine mixture
+    - solution:5757
+    description: 'DSMZ MediaDive solution 5757. containing 1 chemical components.
+      used in 5 media formulations. Standard volume: 400 mL.'
+  basic_vitamin_solution:
+    common_name: Basic vitamin solution
+    mediadive_solution_id: 5759
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:5759
+    note: 'Standard volume: 100 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.002
+        original_name: Biotin
+      paba:
+        g_per_100ml: 0.005
+        attribute: p-aminobenzoic acid
+        original_name: PABA
+      nicotinic_acid:
+        g_per_100ml: 0.005
+        original_name: Nicotinic acid
+      pyridoxine:
+        g_per_100ml: 0.01
+        original_name: Pyridoxine
+    other_compounds:
+      naoh:
+        g_per_100ml: 100.0
+        attribute: 0.1N
+        original_name: NaOH
+    names:
+    - Basic vitamin solution
+    - solution:5759
+    description: 'DSMZ MediaDive solution 5759. containing 5 chemical components.
+      used in 5 media formulations. Standard volume: 100 mL.'
+  mineral_salts_solution:
+    common_name: Mineral salts solution
+    mediadive_solution_id: 3221
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:3221
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      feso4:
+        g_per_100ml: 0.0099
+        original_name: FeSO4 x 7 H2O
+    other_compounds:
+      nitrilotriacetic_acid:
+        g_per_100ml: 1.0
+        attribute: NTA
+        original_name: Nitrilotriacetic acid
+      mgso4:
+        g_per_100ml: 2.9699999999999998
+        original_name: MgSO4 x 7 H2O
+      cacl2:
+        g_per_100ml: 0.33399999999999996
+        original_name: CaCl2 x 2 H2O
+      na2moo7o4:
+        g_per_100ml: 0.0012670000000000001
+        original_name: Na2MoO7O4 x 2 H2O
+      ? ''
+      : g_per_100ml: 5.0
+        original_name: ''
+    names:
+    - Mineral salts solution
+    - solution:3221
+    description: 'DSMZ MediaDive solution 3221. containing 6 chemical components.
+      used in 5 media formulations. Standard volume: 1000 mL.'
+  trace_metal_mix:
+    common_name: Trace metal mix
+    mediadive_solution_id: 5734
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 7
+    synonyms:
+    - solution:5734
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      h3bo3:
+        g_per_100ml: 0.29
+        original_name: H3BO3
+      mncl2:
+        g_per_100ml: 0.181
+        original_name: MnCl2 x 4 H2O
+      znso4:
+        g_per_100ml: 0.022
+        original_name: ZnSO4 x 7 H2O
+      na2moo4:
+        g_per_100ml: 0.039
+        original_name: Na2MoO4 x 2 H2O
+      cuso4:
+        g_per_100ml: 1.0
+        attribute: 8.0 g/l stock solution
+        original_name: CuSO4 x 5 H2O
+    other_compounds:
+      cono32:
+        g_per_100ml: 1.0
+        attribute: 5.0 g/l stock solution
+        original_name: Co(NO3)2 x 6 H2O
+    names:
+    - Trace metal mix
+    - solution:5734
+    description: 'DSMZ MediaDive solution 5734. containing 6 chemical components.
+      used in 7 media formulations. Standard volume: 1000 mL.'
+  trace_minerals:
+    common_name: Trace minerals
+    mediadive_solution_id: 3804
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 98
+    synonyms:
+    - solution:3804
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      mnso4_x_n_h2o:
+        g_per_100ml: 0.05
+        original_name: MnSO4 x n H2O
+      feso4:
+        g_per_100ml: 0.01
+        original_name: FeSO4 x 7 H2O
+      coso4:
+        g_per_100ml: 0.01
+        original_name: CoSO4 x 7 H2O
+      znso4:
+        g_per_100ml: 0.01
+        original_name: ZnSO4 x 7 H2O
+      cuso4:
+        g_per_100ml: 0.001
+        original_name: CuSO4 x 5 H2O
+      h3bo3:
+        g_per_100ml: 0.001
+        original_name: H3BO3
+      na2moo4:
+        g_per_100ml: 0.001
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      nitrilotriacetic_acid:
+        g_per_100ml: 0.15
+        original_name: Nitrilotriacetic acid
+      mgso4:
+        g_per_100ml: 0.3
+        original_name: MgSO4 x 7 H2O
+      nacl:
+        g_per_100ml: 0.1
+        original_name: NaCl
+      cacl2:
+        g_per_100ml: 0.01
+        original_name: CaCl2 x 2 H2O
+      alkso42:
+        g_per_100ml: 0.001
+        original_name: AlK(SO4)2
+    names:
+    - Trace minerals
+    - solution:3804
+    description: 'DSMZ MediaDive solution 3804. containing 12 chemical components.
+      used in 98 media formulations. Standard volume: 1000 mL.'
+  trace_vitamins:
+    common_name: Trace vitamins
+    mediadive_solution_id: 3861
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 221
+    synonyms:
+    - solution:3861
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.0002
+        original_name: Biotin
+      folic_acid:
+        g_per_100ml: 0.0002
+        original_name: Folic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.001
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.0005
+        original_name: Thiamine HCl
+      riboflavin:
+        g_per_100ml: 0.0005
+        original_name: Riboflavin
+      nicotinic_acid:
+        g_per_100ml: 0.0005
+        original_name: Nicotinic acid
+      vitamin_b12:
+        g_per_100ml: 1.0e-05
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.0005
+        original_name: p-Aminobenzoic acid
+    other_compounds:
+      calcium_pantothenate:
+        g_per_100ml: 0.0005
+        original_name: Calcium pantothenate
+      lipoic_acid:
+        g_per_100ml: 0.0005
+        original_name: Lipoic acid
+    names:
+    - Trace vitamins
+    - solution:3861
+    description: 'DSMZ MediaDive solution 3861. containing 10 chemical components.
+      used in 221 media formulations. Standard volume: 1000 mL.'
+  trace_element_solution_sl8:
+    common_name: Trace element solution SL8
+    mediadive_solution_id: 3851
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 7
+    synonyms:
+    - solution:3851
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      fecl2:
+        g_per_100ml: 0.15
+        original_name: FeCl2 x 4 H2O
+      zncl2:
+        g_per_100ml: 0.007000000000000001
+        original_name: ZnCl2
+      mncl2:
+        g_per_100ml: 0.01
+        original_name: MnCl2 x 4 H2O
+      h3bo3:
+        g_per_100ml: 0.0062
+        original_name: H3BO3
+      cocl2:
+        g_per_100ml: 0.019
+        original_name: CoCl2 x 6 H2O
+      cucl2:
+        g_per_100ml: 0.0017000000000000001
+        original_name: CuCl2 x 2 H2O
+      nicl2:
+        g_per_100ml: 0.0024000000000000002
+        original_name: NiCl2 x 6 H2O
+      na2moo4:
+        g_per_100ml: 0.0036
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 0.52
+        original_name: Na2-EDTA
+    names:
+    - Trace element solution SL8
+    - solution:3851
+    description: 'DSMZ MediaDive solution 3851. containing 9 chemical components.
+      used in 7 media formulations. Standard volume: 1000 mL.'
+  trace_minerals_solution:
+    common_name: Trace minerals solution
+    mediadive_solution_id: 3903
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 6
+    synonyms:
+    - solution:3903
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      na2seo3:
+        g_per_100ml: 0.01
+        original_name: Na2SeO3
+      na2moo4:
+        g_per_100ml: 0.01
+        original_name: Na2MoO4 x 2 H2O
+      na2wo4:
+        g_per_100ml: 0.1
+        original_name: Na2WO4 x 2 H2O
+      mnso4_x_n_h2o:
+        g_per_100ml: 0.01
+        original_name: MnSO4 x n H2O
+      znso4:
+        g_per_100ml: 0.01
+        original_name: ZnSO4 x 7 H2O
+      nicl2:
+        g_per_100ml: 0.0025
+        original_name: NiCl2 x 6 H2O
+      cuso4:
+        g_per_100ml: 0.001
+        original_name: CuSO4 x 5 H2O
+    other_compounds:
+      nitrilotriacetic_acid:
+        g_per_100ml: 0.15
+        original_name: Nitrilotriacetic acid
+      fenh42so42:
+        g_per_100ml: 0.02
+        original_name: Fe(NH4)2(SO4)2 x 6 H2O
+    names:
+    - Trace minerals solution
+    - solution:3903
+    description: 'DSMZ MediaDive solution 3903. containing 9 chemical components.
+      used in 6 media formulations. Standard volume: 1000 mL.'
+  trace_vitamins_solution:
+    common_name: Trace vitamins solution
+    mediadive_solution_id: 3979
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 10
+    synonyms:
+    - solution:3979
+    note: 'Standard volume: 1000 mL'
+    vitamins:
+      biotin:
+        g_per_100ml: 0.00049
+        original_name: Biotin
+      folic_acid:
+        g_per_100ml: 0.00088
+        original_name: Folic acid
+      pyridoxine_hydrochloride:
+        g_per_100ml: 0.00041000000000000005
+        original_name: Pyridoxine hydrochloride
+      thiamine_hcl:
+        g_per_100ml: 0.00067
+        original_name: Thiamine HCl
+      riboflavin:
+        g_per_100ml: 0.00075
+        original_name: Riboflavin
+      nicotinic_acid:
+        g_per_100ml: 0.00025
+        original_name: Nicotinic acid
+      vitamin_b12:
+        g_per_100ml: 0.0027099999999999997
+        original_name: Vitamin B12
+      p_aminobenzoic_acid:
+        g_per_100ml: 0.00027
+        original_name: p-Aminobenzoic acid
+    other_compounds:
+      dl_calcium_pantothenate:
+        g_per_100ml: 0.00095
+        original_name: DL-Calcium pantothenate
+      lipoic_acid:
+        g_per_100ml: 0.00041000000000000005
+        original_name: Lipoic acid
+    names:
+    - Trace vitamins solution
+    - solution:3979
+    description: 'DSMZ MediaDive solution 3979. containing 10 chemical components.
+      used in 10 media formulations. Standard volume: 1000 mL.'
+  vitamin_b12_solution_005_gl:
+    common_name: Vitamin B12 solution 0.05 g/L
+    mediadive_solution_id: 4134
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 19
+    synonyms:
+    - solution:4134
+    note: 'Standard volume: 100 mL'
+    vitamins:
+      vitamin_b12:
+        g_per_100ml: 0.005
+        original_name: Vitamin B12
+    names:
+    - Vitamin B12 solution 0.05 g/L
+    - solution:4134
+    description: 'DSMZ MediaDive solution 4134. containing 1 chemical components.
+      used in 19 media formulations. Standard volume: 100 mL.'
+  trace_mineral_solution:
+    common_name: Trace mineral solution
+    mediadive_solution_id: 5153
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:5153
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      nicl2:
+        g_per_100ml: 0.003
+        original_name: NiCl2 x 6 H2O
+      na2seo3:
+        g_per_100ml: 2.9999999999999997e-05
+        original_name: Na2SeO3 x 5 H2O
+      na2wo4:
+        g_per_100ml: 4.0e-05
+        original_name: Na2WO4 x 2 H2O
+    other_compounds:
+      ? ''
+      : g_per_100ml: 100.0
+        original_name: ''
+    names:
+    - Trace mineral solution
+    - solution:5153
+    description: 'DSMZ MediaDive solution 5153. containing 4 chemical components.
+      used in 5 media formulations. Standard volume: 1000 mL.'
+  trace_elements_piv:
+    common_name: Trace Elements (PIV)
+    mediadive_solution_id: 6103
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 8
+    synonyms:
+    - solution:6103
+    note: 'Standard volume: 1000 mL'
+    trace_elements:
+      fecl3:
+        g_per_100ml: 0.0097
+        original_name: FeCl3 x 6 H2O
+      mncl2:
+        g_per_100ml: 0.0041
+        original_name: MnCl2 x 4 H2O
+      zncl2:
+        g_per_100ml: 0.0005
+        original_name: ZnCl2
+      cocl2:
+        g_per_100ml: 0.0002
+        original_name: CoCl2 x 6 H2O
+      na2_moo4:
+        g_per_100ml: 0.0004
+        original_name: Na2 MoO4 x 2 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 0.075
+        original_name: Na2-EDTA
+    names:
+    - Trace Elements (PIV)
+    - solution:6103
+    description: 'DSMZ MediaDive solution 6103. containing 6 chemical components.
+      used in 8 media formulations. Standard volume: 1000 mL.'
+  vitamin_b1_solution:
+    common_name: Vitamin B1 solution
+    mediadive_solution_id: 6104
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 12
+    synonyms:
+    - solution:6104
+    note: 'Standard volume: 100 mL'
+    vitamins:
+      thiamine_hydrochloride:
+        g_per_100ml: 0.12
+        attribute: Vitamin B1
+        original_name: Thiamine hydrochloride
+    names:
+    - Vitamin B1 solution
+    - solution:6104
+    description: 'DSMZ MediaDive solution 6104. containing 1 chemical components.
+      used in 12 media formulations. Standard volume: 100 mL.'
+  trace_elements_x10_concentration:
+    common_name: Trace elements (x10 concentration)
+    mediadive_solution_id: 6160
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:6160
+    note: 'Standard volume: 200 mL'
+    trace_elements:
+      fecl3:
+        g_per_100ml: 3.15
+        original_name: FeCl3 x 6 H2O
+      cuso4:
+        g_per_100ml: 0.01
+        original_name: CuSO4 x 5 H2O
+      znso4:
+        g_per_100ml: 0.022
+        original_name: ZnSO4 x 7 H2O
+      cocl2:
+        g_per_100ml: 0.01
+        original_name: CoCl2 x 6 H2O
+      mncl2:
+        g_per_100ml: 0.18
+        original_name: MnCl2 x 4 H2O
+      na2moo4:
+        g_per_100ml: 0.006
+        original_name: Na2MoO4 x 2 H2O
+    other_compounds:
+      na2_edta:
+        g_per_100ml: 4.16
+        original_name: Na2-EDTA
+    names:
+    - Trace elements (x10 concentration)
+    - solution:6160
+    description: 'DSMZ MediaDive solution 6160. containing 7 chemical components.
+      used in 5 media formulations. Standard volume: 200 mL.'
+  vitamin_mix:
+    common_name: Vitamin mix
+    mediadive_solution_id: 6161
+    source_references:
+    - DSMZ_MediaDive_API
+    confidence: high
+    evidence_tier: 2
+    usage_count: 5
+    synonyms:
+    - solution:6161
+    note: 'Standard volume: 200 mL'
+    vitamins:
+      cyanocobalamine:
+        g_per_100ml: 0.5
+        attribute: 0.01 g/100 ml stock solution
+        original_name: Cyanocobalamine
+      biotin:
+        g_per_100ml: 0.5
+        attribute: 0.01 g/100 ml stock solution
+        original_name: Biotin
+      thiamine_hcl:
+        g_per_100ml: 0.01
+        original_name: Thiamine HCl
+    names:
+    - Vitamin mix
+    - solution:6161
+    description: 'DSMZ MediaDive solution 6161. containing 3 chemical components.
+      used in 5 media formulations. Standard volume: 200 mL.'
