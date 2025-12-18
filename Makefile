@@ -783,7 +783,12 @@ $(COMPOUND_MAPPINGS_STRICT_FINAL): $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
 	SEMANTIC=$$((CHEBI + PUBCHEM + FOODON + UBERON + ENVO)); \
 	echo "  Total entries:    $$TOTAL"; \
 	echo ""; \
-	echo "  Semantic IDs:     $$SEMANTIC ($$(echo "scale=1; $$SEMANTIC * 100 / $$TOTAL" | bc)%)"; \
+	if [ "$$TOTAL" -gt 0 ]; then \
+		PERCENT=$$(awk "BEGIN {printf \"%.1f\", $$SEMANTIC * 100 / $$TOTAL}"); \
+		echo "  Semantic IDs:     $$SEMANTIC ($$PERCENT%)"; \
+	else \
+		echo "  Semantic IDs:     $$SEMANTIC (0.0%)"; \
+	fi; \
 	echo "    ChEBI:          $$CHEBI"; \
 	echo "    PubChem:        $$PUBCHEM"; \
 	echo "    FOODON:         $$FOODON"; \
