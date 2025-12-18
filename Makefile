@@ -213,7 +213,7 @@ help:
 
 # Complete pipeline
 .PHONY: all
-all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings compute-properties media-summary import-mediadive-solutions expand-complex-ingredients analyze-unmapped-complex
+all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings create-hydrate-mappings compute-properties media-summary import-mediadive-solutions expand-complex-ingredients analyze-unmapped-complex
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
 	@echo "$(GREEN)       🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY! 🎉           $(NC)"
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
@@ -230,6 +230,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  ✓ Formula matching for hydrates (+5% coverage)"
 	@echo "  ✓ Microbiology products mapping (+2% coverage)"
 	@echo "  ✓ Multi-ontology mapping (UBERON, FOODON, ENVO)"
+	@echo "  ✓ Hydrate-specific compound mappings generation"
 	@echo "  ✓ Media property calculations (pH, salinity)"
 	@echo "  ✓ Comprehensive media summary generation"
 	@echo "  ✓ MediaDive solutions import (70 trace element/vitamin solutions from kg-microbe)"
@@ -240,6 +241,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo ""
 	@echo "$(BLUE)Output files:$(NC)"
 	@echo "  📄 Enhanced mappings: $(HIGH_CONFIDENCE_FINAL)"
+	@echo "  📄 Hydrate mappings: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)"
 	@echo "  📄 Media properties: $(MEDIA_PROPERTIES_DIR)"
 	@echo "  📄 Media summary: $(MEDIA_SUMMARY)"
 	@echo "  📄 Unmapped complex ingredients report: $(UNMAPPED_COMPLEX_REPORT)"
@@ -1924,6 +1926,7 @@ status:
 		CHEBI_COUNT=$$(awk -F'\t' 'NR>1 && $$3 ~ /^CHEBI:/ {print $$2}' $(HIGH_CONFIDENCE_FINAL) | sort -u | wc -l | tr -d ' '); \
 		TOTAL_COUNT=$$(awk -F'\t' 'NR>1 {print $$2}' $(HIGH_CONFIDENCE_FINAL) | sort -u | wc -l | tr -d ' '); \
 		echo "$$CHEBI_COUNT/$$TOTAL_COUNT unique compounds") || echo "✗ Final enhanced: Not run yet"
+	@[ -f $(COMPOUND_MAPPINGS_STRICT_HYDRATE) ] && echo "✓ Hydrate mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_STRICT_HYDRATE) | wc -l) entries" || echo "✗ Hydrate mappings: Not created yet (run 'make create-hydrate-mappings')"
 	@echo ""
 	@echo "$(YELLOW)Analysis Files:$(NC)"
 	@[ -d $(MEDIA_PROPERTIES_DIR) ] && echo "✓ Media properties: $$(ls $(MEDIA_PROPERTIES_DIR)/*.json 2>/dev/null | wc -l) media analyzed" || echo "✗ Media properties: Missing"
