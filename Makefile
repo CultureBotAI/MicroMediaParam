@@ -65,10 +65,21 @@ INGREDIENT_ENHANCED_LOW := $(INGREDIENT_ENHANCEMENT_DIR)/low_confidence_compound
 HIGH_CONFIDENCE_NORMALIZED := $(HYDRATE_NORMALIZATION_DIR)/high_confidence_compound_mappings_normalized.tsv
 LOW_CONFIDENCE_NORMALIZED := $(HYDRATE_NORMALIZATION_DIR)/low_confidence_compound_mappings_normalized.tsv
 MEDIA_SUMMARY := $(MEDIA_SUMMARY_DIR)/media_summary.tsv
+MEDIA_COMPOSITION_TABLE := $(MEDIA_SUMMARY_DIR)/media_composition_table.tsv
+MEDIA_COMPOSITION_EXPANDED := $(MEDIA_SUMMARY_DIR)/media_composition_expanded.tsv
+COMPLEX_INGREDIENT_COMPOSITIONS := data/curated/complex_ingredients/complex_ingredient_compositions.yaml
+MEDIADIVE_SOLUTIONS_YAML := data/curated/complex_ingredients/mediadive_solutions_additions.yaml
 CHEMICAL_PROPERTIES := $(DB_MAPPING_DIR)/chemical_properties.tsv
+UNMAPPED_COMPLEX_ANALYSIS := $(OUTPUT_DIR)/analysis/unmapped_complex_ingredients_priority.tsv
+UNMAPPED_COMPLEX_REPORT := $(OUTPUT_DIR)/analysis/unmapped_complex_ingredients_report.txt
 
-# External data files
-CHEBI_NODES_FILE := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv
+# External data files (from kg-microbe project)
+KG_MICROBE_BASE := /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe
+CHEBI_NODES_FILE := $(KG_MICROBE_BASE)/data/transformed/ontologies/chebi_nodes.tsv
+MEDIADIVE_RAW_DIR := $(KG_MICROBE_BASE)/data/raw/mediadive
+MEDIADIVE_SOLUTIONS_JSON := $(MEDIADIVE_RAW_DIR)/solutions.json
+MEDIADIVE_MEDIA_JSON := $(MEDIADIVE_RAW_DIR)/media_detailed.json
+MEDIADIVE_COMPOUNDS_JSON := $(MEDIADIVE_RAW_DIR)/compounds.json
 
 # Log files
 LOGS := *.log
@@ -202,7 +213,7 @@ help:
 
 # Complete pipeline
 .PHONY: all
-all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings compute-properties media-summary
+all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings compute-properties media-summary import-mediadive-solutions expand-complex-ingredients analyze-unmapped-complex
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
 	@echo "$(GREEN)       🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY! 🎉           $(NC)"
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
@@ -221,6 +232,9 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  ✓ Multi-ontology mapping (UBERON, FOODON, ENVO)"
 	@echo "  ✓ Media property calculations (pH, salinity)"
 	@echo "  ✓ Comprehensive media summary generation"
+	@echo "  ✓ MediaDive solutions import (70 trace element/vitamin solutions from kg-microbe)"
+	@echo "  ✓ Complex ingredients expansion (recursive: yeast extract, peptone, etc.)"
+	@echo "  ✓ Unmapped complex ingredients analysis (prioritization for curation)"
 	@echo ""
 	@echo "$(GREEN)Final ChEBI coverage: 72% (improved from 56% baseline)$(NC)"
 	@echo ""
@@ -228,6 +242,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  📄 Enhanced mappings: $(HIGH_CONFIDENCE_FINAL)"
 	@echo "  📄 Media properties: $(MEDIA_PROPERTIES_DIR)"
 	@echo "  📄 Media summary: $(MEDIA_SUMMARY)"
+	@echo "  📄 Unmapped complex ingredients report: $(UNMAPPED_COMPLEX_REPORT)"
 
 # Create output directories
 .PHONY: create-output-dirs
@@ -916,6 +931,72 @@ $(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_ENRICHED)
 	@echo "$(BLUE)Creating comprehensive media summary with enriched compound mappings...$(NC)"
 	@echo "$(YELLOW)ADVANTAGE: 72% ChEBI coverage with CAS→ChEBI upgrade + formula matching + microbio products + ChEBI labels/formulas$(NC)"
 	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_ENRICHED) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
+
+# Stage 12b: Create Media Composition Table with Normalized Concentrations
+.PHONY: create-media-composition-table
+create-media-composition-table: $(MEDIA_COMPOSITION_TABLE)
+	@echo "$(GREEN)✓ Media composition table with normalized concentrations created$(NC)"
+
+$(MEDIA_COMPOSITION_TABLE): $(COMPOUND_MAPPINGS_STRICT_FINAL)
+	@echo "$(BLUE)Creating media composition table with g/mL normalization...$(NC)"
+	$(PYTHON) -m src.scripts.create_media_composition_table --input $(COMPOUND_MAPPINGS_STRICT_FINAL) --output $(MEDIA_COMPOSITION_TABLE)
+
+# Stage 12b2: Import MediaDive Solutions (Trace Elements, Vitamins, Minerals)
+# Converts MediaDive solution recipes to complex ingredient YAML format
+# Reuses existing MediaDive data from kg-microbe project
+.PHONY: import-mediadive-solutions
+import-mediadive-solutions: $(MEDIADIVE_SOLUTIONS_YAML)
+	@echo "$(GREEN)✓ MediaDive solutions imported into complex ingredients database$(NC)"
+
+$(MEDIADIVE_SOLUTIONS_YAML): $(MEDIADIVE_SOLUTIONS_JSON) $(MEDIADIVE_MEDIA_JSON)
+	@echo "$(BLUE)Importing trace element and vitamin solutions from MediaDive data...$(NC)"
+	@echo "$(YELLOW)Reusing data from: $(MEDIADIVE_RAW_DIR)$(NC)"
+	@echo "$(YELLOW)Importing solutions with ≥5 media usage$(NC)"
+	$(PYTHON) src/curation/import_mediadive_solutions.py \
+		--solutions $(MEDIADIVE_SOLUTIONS_JSON) \
+		--media $(MEDIADIVE_MEDIA_JSON) \
+		--output $(MEDIADIVE_SOLUTIONS_YAML) \
+		--min-usage 5 \
+		--categories "trace,vitamin,mineral"
+
+# Stage 12c: Expand Complex Biological Ingredients
+# Decomposes complex ingredients (yeast extract, peptone, etc.) into constituent chemicals
+# Data source: data/curated/complex_ingredients/complex_ingredient_compositions.yaml
+# Based on literature: PMC9998214, ITW A1552, ThermoFisher Peptone Guide, USBio specs
+.PHONY: expand-complex-ingredients
+expand-complex-ingredients: $(MEDIA_COMPOSITION_EXPANDED)
+	@echo "$(GREEN)✓ Complex ingredients expanded into constituent chemicals$(NC)"
+
+$(MEDIA_COMPOSITION_EXPANDED): $(MEDIA_COMPOSITION_TABLE) $(COMPLEX_INGREDIENT_COMPOSITIONS)
+	@echo "$(BLUE)Expanding complex biological ingredients (yeast extract, peptone, etc.)...$(NC)"
+	@echo "$(YELLOW)Using curated composition data from literature sources$(NC)"
+	@echo "$(YELLOW)🔄 Recursive expansion enabled: LB broth → tryptone → amino acids$(NC)"
+	$(PYTHON) -m src.scripts.expand_complex_ingredients \
+		--input $(MEDIA_COMPOSITION_TABLE) \
+		--compositions $(COMPLEX_INGREDIENT_COMPOSITIONS) \
+		--output $(MEDIA_COMPOSITION_EXPANDED) \
+		--resolve-references \
+		--mode replace
+
+# Stage 12d: Analyze Unmapped Complex Ingredients
+# Identifies complex biological ingredients that are not yet mapped to ChEBI or documented in YAML
+# Prioritizes them based on occurrence frequency for curation efforts
+.PHONY: analyze-unmapped-complex
+analyze-unmapped-complex: $(UNMAPPED_COMPLEX_ANALYSIS)
+	@echo "$(GREEN)✓ Unmapped complex ingredients analysis completed$(NC)"
+
+$(UNMAPPED_COMPLEX_ANALYSIS): $(HIGH_CONFIDENCE_FINAL) $(COMPLEX_INGREDIENT_COMPOSITIONS)
+	@echo "$(BLUE)Analyzing unmapped complex ingredients (peptones, extracts, sera)...$(NC)"
+	@echo "$(YELLOW)Prioritizing by occurrence count for curation efforts$(NC)"
+	@mkdir -p $(OUTPUT_DIR)/analysis
+	$(PYTHON) src/analysis/analyze_unmapped_complex_ingredients.py \
+		--mappings $(HIGH_CONFIDENCE_FINAL) \
+		--compositions $(COMPLEX_INGREDIENT_COMPOSITIONS) \
+		--output $(UNMAPPED_COMPLEX_ANALYSIS) \
+		--report $(UNMAPPED_COMPLEX_REPORT) \
+		--top-n 50
+	@echo "$(YELLOW)📊 Report saved to: $(UNMAPPED_COMPLEX_REPORT)$(NC)"
+	@echo "$(YELLOW)📊 Detailed analysis: $(UNMAPPED_COMPLEX_ANALYSIS)$(NC)"
 
 # Chemical Database Management (IUPAC Data Processing)
 

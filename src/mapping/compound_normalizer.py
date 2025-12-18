@@ -81,6 +81,13 @@ class CompoundNameNormalizer:
         r'\s+HNO3\s*(?:[x×·]\s*\d*\s*H2O)?$',   # HNO3
     ]
 
+    # Concentration notation patterns to remove
+    CONCENTRATION_PATTERNS = [
+        r'\s*\([\d.,]+\s*%\s*[,;]?\s*[wv]/[wv]\)',  # (0.01 %, w/v)
+        r'\s*\([\d.,]+\s*%\)',                       # (0.01 %)
+        r'\s*[\d.,]+\s*%\s*[wv]/[wv]',              # 0.01 % w/v (without parens)
+    ]
+
     # Formula notation fixes - add missing parentheses around polyatomic ions
     # Pattern: ion followed by subscript number that needs parentheses
     FORMULA_FIXES = [
@@ -515,7 +522,7 @@ class CompoundNameNormalizer:
         # Convert to lowercase
         normalized = name.lower().strip()
 
-        # Remove concentration/quantity prefixes if requested
+        # Remove concentration/quantity prefixes and suffixes if requested
         if remove_concentrations:
             # Matches: percentages (0.2%), molarities (1 M), weights (100 mg, 1 g), or "G " prefix
             normalized = re.sub(
@@ -523,6 +530,8 @@ class CompoundNameNormalizer:
                 '',
                 normalized
             )
+            # Remove trailing concentration notation (e.g., "(0.01 %, w/v)")
+            normalized = self.remove_concentration_formatting(normalized)
 
         # Remove stereochemistry prefixes if requested
         if remove_stereochemistry:
@@ -543,6 +552,36 @@ class CompoundNameNormalizer:
         normalized = re.sub(r'[,;\s]+', ' ', normalized).strip()
 
         return normalized
+
+    def remove_concentration_formatting(self, name: str) -> str:
+        """
+        Remove concentration notation from compound names.
+
+        Removes patterns like:
+        - "yeast extract (0.01 %, w/v)" → "yeast extract"
+        - "peptone (0.01 %)" → "peptone"
+        - "natural seawater (nsw)" → "natural seawater"
+
+        Args:
+            name: Compound name possibly with concentration notation
+
+        Returns:
+            Name with concentration formatting removed
+        """
+        if not name or not isinstance(name, str):
+            return name
+
+        # Remove concentration patterns
+        for pattern in self.CONCENTRATION_PATTERNS:
+            name = re.sub(pattern, '', name, flags=re.IGNORECASE)
+
+        # Remove acronyms in parentheses at the end (e.g., "natural seawater (nsw)")
+        name = re.sub(r'\s*\([a-z]+\)\s*$', '', name, flags=re.IGNORECASE)
+
+        # Note: Don't remove multi-component notation like "tryptone/yeast/beef (tyb)"
+        # These need expansion, not normalization
+
+        return name.strip()
 
     def standardize_hydrate_notation(self, name: str) -> str:
         """

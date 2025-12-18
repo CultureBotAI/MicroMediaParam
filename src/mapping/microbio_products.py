@@ -81,7 +81,7 @@ class MicrobiologyProductMapper:
                 product_name="soytone",
                 chebi_id="CHEBI:8150",  # peptone (generic, no specific soytone ChEBI)
                 description="Enzymatic digest of soybean meal",
-                synonyms=["bacto soytone", "soy peptone"],
+                synonyms=["bacto soytone", "soy peptone", "soyton"],  # soyton is common typo
                 confidence="medium",
                 notes="Mapped to generic peptone as no specific ChEBI for soytone"
             ),
@@ -270,6 +270,98 @@ class MicrobiologyProductMapper:
                 description="Oil from olives",
                 synonyms=[],
                 confidence="high"
+            ),
+
+            # ============= PLANT EXTRACTS =============
+            ProductMapping(
+                product_name="synanthrin",
+                chebi_id="CHEBI:17522",  # inulin (primary component)
+                description="Inulin-rich extract from chicory/Jerusalem artichoke",
+                synonyms=["chicory inulin", "synanthrine"],
+                confidence="medium",
+                notes="Commercial name for inulin extract, mapped to inulin base compound"
+            ),
+            ProductMapping(
+                product_name="karaya gum",
+                chebi_id="CHEBI:77974",  # plant gum/polysaccharide
+                description="Polysaccharide from Sterculia urens tree",
+                synonyms=["sterculia gum"],
+                confidence="medium"
+            ),
+            ProductMapping(
+                product_name="dried grass extract",
+                chebi_id="ingredient:plant_extract",
+                description="Dried grass extract, complex plant material",
+                synonyms=["grass extract"],
+                confidence="low",
+                notes="No specific ChEBI available"
+            ),
+
+            # ============= MINERALS =============
+            ProductMapping(
+                product_name="goethite",
+                chebi_id="CHEBI:50828",  # iron(III) oxide-hydroxide
+                description="Iron oxyhydroxide mineral α-FeO(OH)",
+                synonyms=["α-FeO(OH)", "alpha-FeOOH"],
+                confidence="high"
+            ),
+
+            # ============= ANIMAL EXTRACTS =============
+            ProductMapping(
+                product_name="fermented rumen extract",
+                chebi_id="ingredient:fermented_rumen_extract",
+                description="Fermented clarified rumen fluid, rich in VFAs and nutrients",
+                synonyms=["rumen ferment"],
+                confidence="low",
+                notes="Complex biological mixture - no single ChEBI ID"
+            ),
+            ProductMapping(
+                product_name="rumen extract",
+                chebi_id="ingredient:rumen_extract",
+                description="Clarified rumen fluid from ruminant animals",
+                synonyms=["rumen fluid extract"],
+                confidence="low",
+                notes="Already defined at line 182, adding here for clarity"
+            ),
+            ProductMapping(
+                product_name="keratin",
+                chebi_id="CHEBI:8139",  # keratin
+                description="Structural fibrous protein from hair, nails, wool",
+                synonyms=["wool keratin", "hair keratin"],
+                confidence="medium"
+            ),
+
+            # ============= PEPTIDES (Additional) =============
+            ProductMapping(
+                product_name="proteose peptone",
+                chebi_id="CHEBI:8150",  # peptone (generic)
+                description="Peptone enriched in proteoses and peptones",
+                synonyms=["proteose", "proteose-peptone"],
+                confidence="medium",
+                notes="Special peptone fraction, mapped to generic peptone"
+            ),
+            ProductMapping(
+                product_name="polypeptone",
+                chebi_id="CHEBI:8150",  # peptone
+                description="Mixture of multiple peptone sources",
+                synonyms=["poly peptone", "multi-peptone"],
+                confidence="medium"
+            ),
+
+            # ============= OILS (Additional) =============
+            ProductMapping(
+                product_name="coconut oil",
+                chebi_id="CHEBI:84650",  # coconut oil
+                description="Oil from coconut (Cocos nucifera)",
+                synonyms=["cocos oil"],
+                confidence="high"
+            ),
+            ProductMapping(
+                product_name="cedar wood oil",
+                chebi_id="CHEBI:88695",  # cedarwood oil (essential oil)
+                description="Essential oil from cedar wood",
+                synonyms=["oil of cedar wood", "cedarwood oil"],
+                confidence="medium"
             ),
         ]
 

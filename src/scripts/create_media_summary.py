@@ -56,14 +56,14 @@ class MediaSummarizer:
         logger.info(f"Loading media properties from {self.properties_dir}")
         
         properties_data = {}
-        json_files = list(self.properties_dir.glob("*_composition_properties.json"))
-        
+        json_files = list(self.properties_dir.glob("medium_*_properties.json"))
+
         logger.info(f"Found {len(json_files)} properties files")
-        
+
         for json_file in json_files:
             try:
                 # Extract medium ID from filename
-                match = re.search(r'medium_([^_]+)_composition_properties\.json', json_file.name)
+                match = re.search(r'medium_([^_]+)_properties\.json', json_file.name)
                 if not match:
                     logger.warning(f"Could not extract medium ID from {json_file.name}")
                     continue

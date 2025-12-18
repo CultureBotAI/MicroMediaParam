@@ -77,14 +77,32 @@ class EnhancedSolutionParser:
     
     def extract_solution_name(self, content: str) -> str:
         """Extract solution name with improved pattern matching."""
-        
-        # Try JSON-like patterns first (common in DSMZ)
-        json_pattern = re.search(r'"([^"]*solution[^"]*)"', content, re.IGNORECASE)
+
+        # Try parsing as JSON first (DSMZ REST API format)
+        try:
+            import json
+            data = json.loads(content)
+
+            if isinstance(data, dict):
+                # Try data.name or data.data.name
+                if 'data' in data and isinstance(data['data'], dict):
+                    name = data['data'].get('name')
+                    if name and isinstance(name, str) and len(name) > 5:
+                        return name
+                elif 'name' in data:
+                    name = data.get('name')
+                    if name and isinstance(name, str) and len(name) > 5:
+                        return name
+        except (json.JSONDecodeError, Exception):
+            pass
+
+        # Try JSON-like patterns in text (fallback)
+        json_pattern = re.search(r'"name"\s*:\s*"([^"]+)"', content, re.IGNORECASE)
         if json_pattern:
             name = json_pattern.group(1).strip()
             if len(name) > 5:  # Reasonable length
                 return name
-        
+
         # Try other patterns
         for pattern in self.solution_name_patterns:
             match = pattern.search(content)
@@ -92,7 +110,7 @@ class EnhancedSolutionParser:
                 name = match.group(1).strip()
                 if len(name) > 5 and not any(unwanted in name.lower() for unwanted in ['page', 'table', 'figure']):
                     return name
-        
+
         return "Unknown Solution"
     
     def clean_chemical_name(self, name: str) -> str:
@@ -144,11 +162,15 @@ class EnhancedSolutionParser:
             
             # Extract solution name
             solution_name = self.extract_solution_name(content)
-            
-            # Extract chemical components
-            components = self.extract_chemical_components(content)
-            
-            # If no components found with advanced patterns, try simple extraction
+
+            # Try JSON extraction first (DSMZ REST API format)
+            components = self.extract_from_json_structure(content)
+
+            # If no components found with JSON, try text patterns
+            if not components:
+                components = self.extract_chemical_components(content)
+
+            # If still no components, try simple extraction
             if not components:
                 components = self.extract_simple_components(content)
             
@@ -206,23 +228,23 @@ class EnhancedSolutionParser:
     
     def extract_simple_components(self, content: str) -> List[Dict]:
         """Simple fallback extraction for solutions with complex formatting."""
-        
+
         components = []
-        
+
         # Look for obvious chemical patterns in parentheses or bullets
         simple_patterns = [
             r'[•\-\*]\s*([A-Z][A-Za-z0-9\s\-·\.]+)\s*\n',  # Bullet points
             r'\(([A-Z][A-Za-z0-9\s\-·\.]+)\)',  # Parentheses
             r'^([A-Z][A-Za-z0-9\s\-·\.]{3,30})$',  # Simple lines
         ]
-        
+
         for pattern in simple_patterns:
             matches = re.finditer(pattern, content, re.MULTILINE)
-            
+
             for match in matches:
                 compound = match.group(1).strip()
                 clean_name = self.clean_chemical_name(compound)
-                
+
                 if clean_name and len(clean_name) > 2:
                     components.append({
                         'name': clean_name,
@@ -231,8 +253,104 @@ class EnhancedSolutionParser:
                         'extraction_method': 'simple_pattern',
                         'original_text': compound
                     })
-        
+
         return self.deduplicate_components(components)
+
+    def extract_from_json_structure(self, content: str) -> List[Dict]:
+        """
+        Extract components from DSMZ JSON structure.
+
+        DSMZ REST API returns JSON with structure:
+        {
+            "data": {
+                "recipe": [
+                    {"compound": "Biotin", "amount": 2, "unit": "mg", "g_l": 0.002},
+                    ...
+                ]
+            }
+        }
+        """
+        import json
+
+        components = []
+
+        try:
+            # Try parsing as JSON
+            data = json.loads(content)
+
+            # Navigate to the recipe array
+            recipe = None
+
+            if isinstance(data, dict):
+                if 'data' in data and isinstance(data['data'], dict):
+                    recipe = data['data'].get('recipe', [])
+                elif 'recipe' in data:
+                    recipe = data['recipe']
+                elif 'composition' in data:
+                    recipe = data['composition']
+                elif 'components' in data:
+                    recipe = data['components']
+
+            if not recipe:
+                # Try finding any list of dicts with chemical-like fields
+                for value in (data.values() if isinstance(data, dict) else []):
+                    if isinstance(value, list) and value:
+                        if isinstance(value[0], dict) and ('compound' in value[0] or 'name' in value[0]):
+                            recipe = value
+                            break
+
+            if not recipe:
+                return []
+
+            # Extract components from recipe
+            for item in recipe:
+                if not isinstance(item, dict):
+                    continue
+
+                # Get compound name (various possible field names)
+                name = item.get('compound') or item.get('name') or item.get('ingredient')
+
+                if not name or not isinstance(name, str):
+                    continue
+
+                # Skip if it's a solution reference (these are handled elsewhere)
+                if isinstance(name, str) and name.lower().startswith('solution'):
+                    continue
+
+                # Get concentration and unit
+                amount = item.get('amount') or item.get('concentration') or 0
+                unit = item.get('unit', 'unknown')
+
+                # Also check for g_l field (grams per liter)
+                if 'g_l' in item and item['g_l']:
+                    amount = item['g_l']
+                    unit = 'g/L'
+
+                # Clean the chemical name
+                clean_name = self.clean_chemical_name(name)
+
+                if clean_name:
+                    try:
+                        conc_value = float(amount) if amount else 0.0
+                    except (ValueError, TypeError):
+                        conc_value = 0.0
+
+                    components.append({
+                        'name': clean_name,
+                        'concentration': conc_value,
+                        'unit': str(unit) if unit else 'unknown',
+                        'extraction_method': 'json_structure',
+                        'original_text': f"{name} {amount} {unit}"
+                    })
+
+            return self.deduplicate_components(components)
+
+        except json.JSONDecodeError:
+            # Not valid JSON, return empty list (will fall back to text parsing)
+            return []
+        except Exception as e:
+            logger.error(f"Error parsing JSON structure: {e}")
+            return []
     
     def deduplicate_components(self, components: List[Dict]) -> List[Dict]:
         """Remove duplicate components, keeping the one with the best information."""

@@ -83,7 +83,7 @@ class MediaPropertiesCalculator:
         db = {}
         
         # Load from external TSV file
-        properties_file = Path(__file__).parent.parent.parent / 'chemical_properties.tsv'
+        properties_file = Path(__file__).parent.parent.parent / 'pipeline_output' / 'db_mapping' / 'chemical_properties.tsv'
         
         try:
             df = pd.read_csv(properties_file, sep='\t')
@@ -945,8 +945,32 @@ def batch_process_media(args):
             
             # Load composition
             with open(comp_file, 'r') as f:
-                composition_data = json.load(f)
-            
+                full_data = json.load(f)
+
+            # Extract composition list from the structure (handle both nested and flat formats)
+            composition_data = full_data.get('composition', full_data)
+
+            # Transform field names if needed (name→compound, concentration→g_l)
+            if composition_data and isinstance(composition_data, list):
+                normalized_composition = []
+                for comp in composition_data:
+                    if isinstance(comp, dict):
+                        normalized = {}
+                        # Map 'name' to 'compound'
+                        normalized['compound'] = comp.get('compound', comp.get('name', ''))
+                        # Map 'concentration' to 'g_l' or 'value' (assuming g/L units)
+                        if 'g_l' in comp or 'value' in comp:
+                            normalized['g_l'] = comp.get('g_l', comp.get('value', 0))
+                        elif 'concentration' in comp:
+                            try:
+                                normalized['g_l'] = float(comp.get('concentration', 0))
+                            except (ValueError, TypeError):
+                                normalized['g_l'] = 0
+                        else:
+                            normalized['g_l'] = 0
+                        normalized_composition.append(normalized)
+                composition_data = normalized_composition
+
             # Calculate properties
             results = calculator.analyze_composition(composition_data)
             results['medium_id'] = medium_id
