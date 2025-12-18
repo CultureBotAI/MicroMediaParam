@@ -917,27 +917,27 @@ extend-mappings: merge-additional-mappings
 # ============================================================================
 .PHONY: compute-properties
 compute-properties: $(MEDIA_PROPERTIES_DIR)/.done
-	@echo "$(GREEN)✓ Media properties calculation completed using enhanced mappings (72% coverage)$(NC)"
+	@echo "$(GREEN)✓ Media properties calculation completed using expanded ingredients (97.6% ChEBI coverage)$(NC)"
 
-# Calculate pH, salinity, ionic strength using enriched mappings with hydration-corrected MW
-$(MEDIA_PROPERTIES_DIR)/.done: $(HIGH_CONFIDENCE_ENRICHED) $(CHEMICAL_PROPERTIES)
-	@echo "$(BLUE)Property Calculation: Using enriched mappings (72% ChEBI coverage + labels/formulas)...$(NC)"
-	@echo "$(YELLOW)ADVANTAGE: Uses CAS→ChEBI upgrade + formula matching + microbio products + ChEBI labels$(NC)"
+# Calculate pH, salinity, ionic strength using expanded complex ingredients
+$(MEDIA_PROPERTIES_DIR)/.done: $(MEDIA_COMPOSITION_EXPANDED) $(CHEMICAL_PROPERTIES)
+	@echo "$(BLUE)Property Calculation: Using expanded complex ingredients (97.6% ChEBI coverage)...$(NC)"
+	@echo "$(YELLOW)ADVANTAGE: Complex ingredients resolved to constituents (yeast extract → 34 chemicals)$(NC)"
 	@echo "$(YELLOW)Using ingredient → pKa mappings from $(CHEMICAL_PROPERTIES)$(NC)"
 	@mkdir -p $(MEDIA_PROPERTIES_DIR)
-	$(PYTHON) $(SCRIPTS_DIR)/compute_media_properties.py --input-high $(HIGH_CONFIDENCE_ENRICHED) --chemical-properties $(CHEMICAL_PROPERTIES) --output-dir $(MEDIA_PROPERTIES_DIR)
+	$(PYTHON) $(SCRIPTS_DIR)/compute_media_properties.py --input-high $(MEDIA_COMPOSITION_EXPANDED) --chemical-properties $(CHEMICAL_PROPERTIES) --output-dir $(MEDIA_PROPERTIES_DIR)
 	@touch $(MEDIA_PROPERTIES_DIR)/.done
 
-# Stage 12: Final Media Summary with Enhanced Mappings
+# Stage 12: Final Media Summary with Expanded Ingredients
 .PHONY: media-summary
 media-summary: $(MEDIA_SUMMARY)
-	@echo "$(GREEN)✓ Enhanced media summary generation completed (72% ChEBI coverage)$(NC)"
+	@echo "$(GREEN)✓ Media summary generation completed using expanded ingredients (97.6% ChEBI coverage)$(NC)"
 
-# Generate comprehensive media summary using enriched mappings
-$(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(HIGH_CONFIDENCE_ENRICHED)
-	@echo "$(BLUE)Creating comprehensive media summary with enriched compound mappings...$(NC)"
-	@echo "$(YELLOW)ADVANTAGE: 72% ChEBI coverage with CAS→ChEBI upgrade + formula matching + microbio products + ChEBI labels/formulas$(NC)"
-	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(HIGH_CONFIDENCE_ENRICHED) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
+# Generate comprehensive media summary using expanded complex ingredients
+$(MEDIA_SUMMARY): $(MEDIA_PROPERTIES_DIR)/.done $(MEDIA_COMPOSITION_EXPANDED)
+	@echo "$(BLUE)Creating comprehensive media summary with expanded complex ingredients...$(NC)"
+	@echo "$(YELLOW)ADVANTAGE: 97.6% ChEBI coverage with complex ingredients resolved to constituents$(NC)"
+	$(PYTHON) $(SCRIPTS_DIR)/create_media_summary.py --mappings-file $(MEDIA_COMPOSITION_EXPANDED) --properties-dir $(MEDIA_PROPERTIES_DIR) --output $(MEDIA_SUMMARY)
 
 # Stage 12b: Create Media Composition Table with Normalized Concentrations
 .PHONY: create-media-composition-table

@@ -86,32 +86,42 @@ class MediaSummarizer:
     def load_compound_mappings(self) -> pd.DataFrame:
         """Load high-confidence compound mappings."""
         logger.info(f"Loading compound mappings from {self.mappings_file}")
-        
+
         try:
             df = pd.read_csv(self.mappings_file, sep='\t', dtype=str, low_memory=False)
-            
+
+            # Detect format: strict_final (has 'mapped' column) or expanded (has 'ingredient_id' column)
+            if 'ingredient_id' in df.columns and 'mapped' not in df.columns:
+                # Expanded format - add 'mapped' alias for ingredient_id
+                df['mapped'] = df['ingredient_id']
+                logger.info("Detected expanded ingredient format (97.6% ChEBI coverage)")
+                self.is_expanded_format = True
+            else:
+                logger.info("Detected strict final format")
+                self.is_expanded_format = False
+
             # Convert numeric columns
             numeric_cols = ['value', 'mmol_l', 'hydration_number', 'similarity_score']
             for col in numeric_cols:
                 if col in df.columns:
                     df[col] = pd.to_numeric(df[col], errors='coerce')
-                    
+
             logger.info(f"Loaded {len(df)} mapping entries covering {df['medium_id'].nunique()} media")
             return df
-            
+
         except Exception as e:
             logger.error(f"Error loading mappings: {e}")
             raise
             
     def calculate_mapping_stats(self, medium_id: str) -> Dict:
         """Calculate mapping statistics for a specific medium."""
-        
+
         if self.mappings_df is None:
             return {}
-            
+
         # Filter mappings for this medium
         medium_mappings = self.mappings_df[self.mappings_df['medium_id'] == medium_id]
-        
+
         if len(medium_mappings) == 0:
             return {
                 'total_compounds': 0,
@@ -125,31 +135,52 @@ class MediaSummarizer:
                 'very_good_quality': 0,
                 'good_quality': 0
             }
-            
+
         total_compounds = len(medium_mappings)
-        
+
         # Count mapping status
         mapped_compounds = len(medium_mappings[
             medium_mappings['mapped'].notna() & (medium_mappings['mapped'] != '')
         ])
-        
+
         unmapped_compounds = total_compounds - mapped_compounds
         mapping_rate = (mapped_compounds / total_compounds * 100) if total_compounds > 0 else 0
-        
+
+        # For expanded format, use simplified stats (no confidence/quality columns)
+        if hasattr(self, 'is_expanded_format') and self.is_expanded_format:
+            # Count ChEBI IDs in ingredient_id column (format: CHEBI:12345)
+            chebi_matches = len(medium_mappings[
+                medium_mappings['ingredient_id'].str.startswith('CHEBI:', na=False)
+            ]) if 'ingredient_id' in medium_mappings.columns else 0
+
+            return {
+                'total_compounds': total_compounds,
+                'mapped_compounds': mapped_compounds,
+                'unmapped_compounds': unmapped_compounds,
+                'mapping_rate': round(mapping_rate, 1),
+                'chebi_matches': chebi_matches,
+                'very_high_confidence': 0,  # Not available in expanded format
+                'high_confidence': 0,
+                'excellent_quality': 0,
+                'very_good_quality': 0,
+                'good_quality': 0
+            }
+
+        # Strict final format: use full stats
         # Count ChEBI matches
         chebi_matches = len(medium_mappings[
             medium_mappings['chebi_match'].notna() & (medium_mappings['chebi_match'] != '')
-        ])
-        
+        ]) if 'chebi_match' in medium_mappings.columns else 0
+
         # Count confidence levels
-        very_high_confidence = len(medium_mappings[medium_mappings['match_confidence'] == 'very_high'])
-        high_confidence = len(medium_mappings[medium_mappings['match_confidence'] == 'high'])
-        
+        very_high_confidence = len(medium_mappings[medium_mappings['match_confidence'] == 'very_high']) if 'match_confidence' in medium_mappings.columns else 0
+        high_confidence = len(medium_mappings[medium_mappings['match_confidence'] == 'high']) if 'match_confidence' in medium_mappings.columns else 0
+
         # Count quality levels
-        excellent_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'excellent'])
-        very_good_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'very_good'])
-        good_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'good'])
-        
+        excellent_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'excellent']) if 'mapping_quality' in medium_mappings.columns else 0
+        very_good_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'very_good']) if 'mapping_quality' in medium_mappings.columns else 0
+        good_quality = len(medium_mappings[medium_mappings['mapping_quality'] == 'good']) if 'mapping_quality' in medium_mappings.columns else 0
+
         return {
             'total_compounds': total_compounds,
             'mapped_compounds': mapped_compounds,
