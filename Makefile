@@ -772,14 +772,14 @@ $(COMPOUND_MAPPINGS_STRICT_FINAL): $(COMPOUND_MAPPINGS_STRICT_UPSTREAM)
 	@echo "$(YELLOW)           FINAL STRICT MAPPING SUMMARY$(NC)"
 	@echo "$(YELLOW)════════════════════════════════════════════════════════════$(NC)"
 	@TOTAL=$$(tail -n +2 $(COMPOUND_MAPPINGS_STRICT_FINAL) | wc -l | tr -d ' '); \
-	CHEBI=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^CHEBI:" || echo "0"); \
-	PUBCHEM=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -ic "PubChem" || echo "0"); \
-	FOODON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^FOODON:" || echo "0"); \
-	UBERON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^UBERON:" || echo "0"); \
-	ENVO=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^ENVO:" || echo "0"); \
-	CAS=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^CAS-RN:" || echo "0"); \
-	INGRED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^ingredient:" || echo "0"); \
-	UNMAPPED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -c "^$$" || echo "0"); \
+	CHEBI=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^CHEBI:" | wc -l); \
+	PUBCHEM=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep -i "PubChem" | wc -l); \
+	FOODON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^FOODON:" | wc -l); \
+	UBERON=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^UBERON:" | wc -l); \
+	ENVO=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^ENVO:" | wc -l); \
+	CAS=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^CAS-RN:" | wc -l); \
+	INGRED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^ingredient:" | wc -l); \
+	UNMAPPED=$$(cut -f3 $(COMPOUND_MAPPINGS_STRICT_FINAL) | grep "^$$" | wc -l); \
 	SEMANTIC=$$((CHEBI + PUBCHEM + FOODON + UBERON + ENVO)); \
 	echo "  Total entries:    $$TOTAL"; \
 	echo ""; \
