@@ -297,7 +297,7 @@ dsmz_1007_composition	MnCl2 x 4 H2O	PubChem:30200			0.03		g			json		4							orig
 dsmz_1007_composition	Na2MoO4	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na	0.03		g			json		0							original_only	good	Na2MoO4	Na2MoO4		Na2MoO4					no_hydration	high		100.0	0.0	100.0	0.3			
 dsmz_1007_composition	NiCl2 x 6 H2O	CHEBI:34887	nickel dichloride	Cl2Ni	0.02		g			json		6							original_only	good	NiCl2	NiCl2		NiCl2.6H2O	CHEBI:34887				hydrate_pattern	high		129.6	108.09	237.69	0.084143			no_match
 dsmz_1007_composition	ZnSO4 x 7 H2O	CHEBI:32312	zinc sulfate heptahydrate	7H2O.O4S.Zn	0.1		g			json		7							original_only	good	ZnSO4	ZnSO4		ZnSO4.7H2O	CHEBI:62984				hydrate_pattern	high		161.47	126.105	287.575	0.347735			no_match
-dsmz_1008_composition	Charcoal-filtered, natural seawater	CHEBI:15377			1.0		g			json		0							original_only	good	Charcoal-filtered, natural seawater	Charcoal-filtered,naturalseawater		Charcoal-filtered,naturalseawater					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1008_composition	Charcoal-filtered, natural seawater	ingredient:2142			1.0		g			json		0							original_only	good	Charcoal-filtered, natural seawater	Charcoal-filtered,naturalseawater		Charcoal-filtered,naturalseawater					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1008_composition	Na-thioglycolate	CHEBI:30066	thioglycolate(1-)	C2H3O2S	0.5		ml			json		0							original_only	good	Na-thioglycolate	Na-thioglycolate		Na-thioglycolate					no_hydration	high		100.0	0.0	100.0	5.0			
 dsmz_1008_composition	Yeast extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1009_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	4.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	40.0			
@@ -400,7 +400,7 @@ dsmz_1019_composition	Na2MoO4 x 2 H2O	CHEBI:75215	sodium molybdate (anhydrous)	M
 dsmz_1019_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	0.1		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	1.711157			
 dsmz_1019_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1019_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
-dsmz_101_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_101_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_101_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	30.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	513.347023			
 dsmz_101_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1020_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.1		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	0.680226			no_match
@@ -954,7 +954,7 @@ dsmz_1107_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	3.0		g			json		0			
 dsmz_1107_composition	Yeast extract	CAS-RN:8013-01-2			3.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1109_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_1109_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	10.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	100.0			
-dsmz_1109_composition	Meat Extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1109_composition	Meat Extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1109_composition	Yeast Extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast Extract	YeastExtract		YeastExtract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_110a_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	5.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_110a_composition	Na2CO3	CHEBI:29377	sodium carbonate	CO3.2Na	10.0		ml			json		0							original_only	good	Na2CO3	Na2CO3		Na2CO3					no_hydration	high		100.0	0.0	100.0	100.0			
@@ -1253,7 +1253,7 @@ dsmz_1159_composition	Malt extract	PubChem:159480023			10.0		g			json		0							o
 dsmz_1159_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	100.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	1711.156742			
 dsmz_1159_composition	Yeast extract	CAS-RN:8013-01-2			4.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	40.0			
 dsmz_115_composition	Nacl	CHEBI:26710	sodium chloride	Cl.Na	1.5		%			json		0							original_only	good	Nacl	Nacl		Nacl					no_hydration	high		100.0	0.0	100.0	15.0			
-dsmz_115a_composition	Meat extract	FOODON:03315424			15.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	150.0			
+dsmz_115a_composition	Meat extract	ingredient:meat_extract			15.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_115a_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	15.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	256.673511			
 dsmz_115a_composition	Peptone	PubChem:167312541			3.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1160_composition	FeCl2 x 4 H2O	CHEBI:86249	iron dichloride tetrahydrate	Cl2Fe.4H2O	36.0		mg			json		4							original_only	good	FeCl2	FeCl2		FeCl2.4H2O					hydrate_pattern	high		100.0	72.06	172.06	209.229339			no_match
@@ -1520,14 +1520,14 @@ dsmz_119c_composition	NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na	20.0		
 dsmz_11_composition	(NH4)3 citrate	CHEBI:63037			5.0		g			json		0							original_only	good	(NH4)3 citrate	(NH4)3citrate		(NH4)3citrate					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_11_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	20.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_11_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	1.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	10.0			
-dsmz_11_composition	Meat extract	FOODON:03315424			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
+dsmz_11_composition	Meat extract	ingredient:meat_extract			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
 dsmz_11_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	2.0		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	8.114413	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_11_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_11b_composition	(NH4)3 citrate	CHEBI:63037			2.0		g			json		0							original_only	good	(NH4)3 citrate	(NH4)3citrate		(NH4)3citrate					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_11b_composition	Cysteine-HCL x H2O	CHEBI:17561	L-cysteine	C3H7NO2S	0.2		g			json		0							original_only	good	Cysteine-HCL x H2O	Cysteine-HCLxH2O		Cysteine-HCLxH2O					no_hydration	high		100.0	0.0	100.0	2.0			
 dsmz_11b_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	20.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_11b_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	1.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	10.0			
-dsmz_11b_composition	Meat extract	FOODON:03315424			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
+dsmz_11b_composition	Meat extract	ingredient:meat_extract			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
 dsmz_11b_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	5.0		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	20.286033	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_11b_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1200_composition	MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg	0.2		g			json		6							original_only	good	MgCl2	MgCl2		MgCl2.6H2O					hydrate_pattern	high		95.21	108.09	203.3	0.983768	CHEBI:86345	magnesium dichloride hexahydrate	label_match
@@ -2029,12 +2029,12 @@ dsmz_1257_composition	Na2CO3	CHEBI:29377	sodium carbonate	CO3.2Na	0.5		ml			json
 dsmz_1257_composition	Na2S x 9 H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S	0.3		g			json		9							original_only	good	Na2S	Na2S		Na2S.9H2O					hydrate_pattern	high		100.0	162.135	262.135	1.144448			no_match
 dsmz_1257_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	1.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	17.111567			
 dsmz_1258_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_1258_composition	Meat extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1258_composition	Meat extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1258_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	150.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	2566.735113			
 dsmz_1258_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1258_composition	Yeast extract	CAS-RN:8013-01-2			2.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_1259_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_1259_composition	Meat extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1259_composition	Meat extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1259_composition	Nacl	CHEBI:26710	sodium chloride	Cl.Na	5.0		g			json		0							original_only	good	Nacl	Nacl		Nacl					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1259_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1259_composition	Yeast extract	CAS-RN:8013-01-2			2.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	20.0			
@@ -2362,7 +2362,7 @@ dsmz_1305_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_onl
 dsmz_1305_composition	Ca-Pantothenate	CHEBI:29032	(R)-pantothenate	C9H16NO5	25.0		mg			json		0							original_only	good	Ca-Pantothenate	Ca-Pantothenate		Ca-Pantothenate					no_hydration	high		100.0	0.0	100.0	250.0			
 dsmz_1305_composition	CaCl2	CHEBI:3312	calcium dichloride	Ca.2Cl	50.0		mg			json		0							original_only	good	CaCl2	CaCl2		CaCl2	CHEBI:3312				no_hydration	high		110.98	0.0	110.98	450.531627			
 dsmz_1305_composition	H2O	CHEBI:15377	water	H2O	1.0		l			json		0							original_only	good	H2O	H2O		H2O					no_hydration	high		100.0	0.0	100.0	10.0			
-dsmz_1305_composition	KH2PO4 x 7 H2O	PUBCHEM.COMPOUND:516951.0			0.5		g			json		7							original_only	good	KH2PO4	KH2PO4		KH2PO4.7H2O					hydrate_pattern	high		136.09	126.105	262.195	1.906978			no_match
+dsmz_1305_composition	KH2PO4 x 7 H2O	ingredient:1161			0.5		g			json		7							original_only	good	KH2PO4	KH2PO4		KH2PO4.7H2O					hydrate_pattern	high		136.09	126.105	262.195	1.906978			no_match
 dsmz_1305_composition	Malt extract powder	FOODON:03301056			5.0		g			json		0							original_only	good	Malt extract powder	Maltextractpowder		Maltextractpowder					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1305_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	150.0		mg			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	608.580992	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_1305_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	25.0		mg			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	427.789185			
@@ -2448,7 +2448,7 @@ dsmz_1315_composition	MnSO4	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.01		g			j
 dsmz_1315_composition	NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N	0.3		g			json		0							original_only	good	NH4Cl	NH4Cl		NH4Cl					no_hydration	high		53.49	0.0	53.49	5.608525			
 dsmz_1315_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	0.05		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	0.855578			
 dsmz_1315_composition	NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na	2.52		g			json		0							original_only	good	NaHCO3	NaHCO3		NaHCO3					no_hydration	high		100.0	0.0	100.0	25.2			
-dsmz_1317_composition	Meat extract	FOODON:03315424			20.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	200.0			
+dsmz_1317_composition	Meat extract	ingredient:meat_extract			20.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_1317_composition	Peptone	PubChem:167312541			3.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1317_composition	Solution :	ingredient:485			5.0		g			json		0							original_only	good	Solution :	Solution:		Solution:					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1318_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.2		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	1.360452			no_match
@@ -2521,9 +2521,9 @@ dsmz_1331_composition	Agar	CHEBI:2509	agar		1000.0		ml			json		0							original_
 dsmz_1331_composition	Corn starch	CHEBI:28017			5.0		g			json		0							original_only	good	Corn starch	Cornstarch		Cornstarch					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1331_composition	Defibrinated Blood	UBERON:0000178			50.0		ml			json		0							original_only	good	Defibrinated Blood	DefibrinatedBlood		DefibrinatedBlood					no_hydration	high		100.0	0.0	100.0	500.0			
 dsmz_1331_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	15.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	256.673511			
-dsmz_1331_composition	Tryptic digest of beef heart	FOODON:02020929			1.0		g			json		0							original_only	good	Tryptic digest of beef heart	Trypticdigestofbeefheart		Trypticdigestofbeefheart					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1331_composition	Tryptic digest of beef heart	ingredient:662			1.0		g			json		0							original_only	good	Tryptic digest of beef heart	Trypticdigestofbeefheart		Trypticdigestofbeefheart					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1332_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.01		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	0.068023			no_match
-dsmz_1332_composition	Meat extract	FOODON:03315424			20.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	200.0			
+dsmz_1332_composition	Meat extract	ingredient:meat_extract			20.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_1332_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.2		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	0.811441	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_1332_composition	NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N	1.0		g			json		0							original_only	good	NH4Cl	NH4Cl		NH4Cl					no_hydration	high		53.49	0.0	53.49	18.695083			
 dsmz_1333_composition	CaCl2 x 6 H2O	CHEBI:91243	calcium chloride hexahydrate	Ca.2Cl.6H2O	0.09		g			json		6							original_only	good	CaCl2	CaCl2		CaCl2.6H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	108.09	219.07	0.410828			no_match
@@ -3011,7 +3011,7 @@ dsmz_1386_composition	ZnCl2	CHEBI:49976	zinc dichloride	2Cl.Zn	1.0		g			json		0	
 dsmz_1387_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.05		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	0.340113			no_match
 dsmz_1387_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	0.5		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	5.0			
 dsmz_1387_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	4.7		g			json		0							original_only	good	KCl	KCl		KCl					no_hydration	high		74.55	0.0	74.55	63.044936			
-dsmz_1387_composition	Meat extract	FOODON:03315424			2.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	20.0			
+dsmz_1387_composition	Meat extract	ingredient:meat_extract			2.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_1387_composition	MgCl2 x 6 H20	KEGG:C07755			20.0		g			json		0							original_only	good	MgCl2 x 6 H20	MgCl2x6H20		MgCl2x6H20					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_1387_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	23.3		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	94.532914	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_1387_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	200.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	3422.313484			
@@ -3154,7 +3154,7 @@ dsmz_1404_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	2.7		g			json		0			
 dsmz_1404_composition	Peptone	PubChem:167312541			0.2		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	2.0			
 dsmz_1404_composition	Yeast Extract	CAS-RN:8013-01-2			1.0		ml			json		0							original_only	good	Yeast Extract	YeastExtract		YeastExtract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1405_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	1000.0		ml			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	10000.0			
-dsmz_1405_composition	Meat Extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_1405_composition	Meat Extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1405_composition	Peptone	PubChem:167312541			3.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1405_composition	Yeast Extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast Extract	YeastExtract		YeastExtract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1406_composition	(NH4)2SO4	CHEBI:62946	ammonium sulfate	2H4N.O4S	0.08		g			json		0							original_only	good	(NH4)2SO4	(NH4)2SO4		(NH4)2SO4					no_hydration	high		100.0	0.0	100.0	0.8			
@@ -4640,7 +4640,7 @@ dsmz_1585a_composition	NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na	2.5		
 dsmz_1585a_composition	Selenite-tungstate solution	ingredient:88			1.0		ml			json		0							original_only	good	Selenite-tungstate solution	Selenite-tungstatesolution		Selenite-tungstatesolution					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1586_composition	Agar	CHEBI:2509	agar		1.0		ml			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_1588_composition	D(+)-Trehalose	CHEBI:16551	alpha,alpha-trehalose	C12H22O11	19.0		g			json		0							original_only	good	D(+)-Trehalose	D(+)-Trehalose		D(+)-Trehalose					no_hydration	high		100.0	0.0	100.0	190.0			
-dsmz_1588_composition	Meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+dsmz_1588_composition	Meat extract	ingredient:meat_extract			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1588_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	1.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	17.111567			
 dsmz_1588_composition	Peptone	PubChem:167312541			3.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1588_composition	Solution A:	ingredient:485			10.0		g			json		0							original_only	good	Solution A:	SolutionA:		SolutionA:					no_hydration	high		100.0	0.0	100.0	100.0			
@@ -5569,9 +5569,9 @@ dsmz_195c_composition	Solution A	ingredient:485			952.0		ml			json		0							orig
 dsmz_195d_composition	Solution A	ingredient:485			952.0		ml			json		0							original_only	good	Solution A	SolutionA		SolutionA					no_hydration	high		100.0	0.0	100.0	9520.0			
 dsmz_196_composition	Solution A	ingredient:485			961.0		ml			json		0							original_only	good	Solution A	SolutionA		SolutionA					no_hydration	high		100.0	0.0	100.0	9610.0			
 dsmz_198_composition	Solution A	ingredient:485			10.0		ml			json		0							original_only	good	Solution A	SolutionA		SolutionA					no_hydration	high		100.0	0.0	100.0	100.0			
-dsmz_1_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_1_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
-dsmz_1a_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_1a_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_1a_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_201_composition	Solution A	ingredient:485			930.0		ml			json		0							original_only	good	Solution A	SolutionA		SolutionA					no_hydration	high		100.0	0.0	100.0	9300.0			
 dsmz_202_composition	Solution A	ingredient:485			952.0		ml			json		0							original_only	good	Solution A	SolutionA		SolutionA					no_hydration	high		100.0	0.0	100.0	9520.0			
@@ -5671,7 +5671,7 @@ dsmz_230_composition	Yeast extract	CAS-RN:8013-01-2			10.0		g			json		0							or
 dsmz_232_composition	(NH4)2 citrate	CHEBI:63076			5.0		g			json		0							original_only	good	(NH4)2 citrate	(NH4)2citrate		(NH4)2citrate					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_232_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	20.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_232_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	1.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	10.0			
-dsmz_232_composition	Meat extract	FOODON:03315424			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
+dsmz_232_composition	Meat extract	ingredient:meat_extract			10.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	100.0			
 dsmz_232_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	2.0		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	8.114413	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_232_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_233_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.14		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	0.952316			no_match
@@ -5738,10 +5738,10 @@ dsmz_249_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	
 dsmz_249_composition	Yeast extract	CAS-RN:8013-01-2			0.5		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	5.0			
 dsmz_250_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_250_composition	Glycerol	CHEBI:15978	sn-glycerol 3-phosphate	C3H9O6P	20.0		ml			json		0							original_only	good	Glycerol	Glycerol		Glycerol					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_250_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_250_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_251_composition	Agar	CHEBI:2509	agar		150.0		ml			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	1500.0			
 dsmz_251_composition	Glycerol	CHEBI:15978	sn-glycerol 3-phosphate	C3H9O6P	20.0		g			json		0							original_only	good	Glycerol	Glycerol		Glycerol					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_251_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_251_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_252_composition	(NH4)2SO4	CHEBI:62946	ammonium sulfate	2H4N.O4S	2.0		g			json		0							original_only	good	(NH4)2SO4	(NH4)2SO4		(NH4)2SO4					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_252_composition	Agar	CHEBI:2509	agar		1.0		ml			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_252_composition	CaCO3	CHEBI:3311	calcium carbonate	CO3.Ca	2.0		g			json		0							original_only	good	CaCO3	CaCO3		CaCO3					no_hydration	high		100.0	0.0	100.0	20.0			
@@ -6081,7 +6081,7 @@ dsmz_303_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	
 dsmz_303_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	5.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	85.557837			
 dsmz_303_composition	Yeast extract	CAS-RN:8013-01-2			4.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	40.0			
 dsmz_305_composition	Agar	CHEBI:2509	agar		30.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	300.0			
-dsmz_305_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_305_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_305_composition	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_305_composition	Yeast extract	CAS-RN:8013-01-2			3.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_306_composition	Yeast Extract	CAS-RN:8013-01-2			0.5		%			json		0							original_only	good	Yeast Extract	YeastExtract		YeastExtract					no_hydration	high		100.0	0.0	100.0	5.0			
@@ -6889,7 +6889,7 @@ dsmz_466_composition	Trypticase soy broth	FOODON:03302071			30.0		g			json		0			
 dsmz_466_composition	Yeast extract	CAS-RN:8013-01-2			3.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_467_composition	Casamino acids	CHEBI:78020	heptacosanoate	C27H53O2	2.5		g			json		0							original_only	good	Casamino acids	Casaminoacids		Casaminoacids					no_hydration	high		100.0	0.0	100.0	25.0			
 dsmz_467_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	1.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	10.0			
-dsmz_467_composition	Meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+dsmz_467_composition	Meat extract	ingredient:meat_extract			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_467_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	5.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	85.557837			
 dsmz_467_composition	Peptone	PubChem:167312541			7.5		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	75.0			
 dsmz_467_composition	Yeast extract	CAS-RN:8013-01-2			2.5		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	25.0			
@@ -7322,7 +7322,7 @@ dsmz_52_composition	Na2S x 9 H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na
 dsmz_52_composition	Selenite-tungstate solution	ingredient:88			1.0		ml			json		0							original_only	good	Selenite-tungstate solution	Selenite-tungstatesolution		Selenite-tungstatesolution					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_52_composition	Yeast extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_530_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
-dsmz_530_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_530_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_530_composition	Na-Thioglycolate	CHEBI:30066	thioglycolate(1-)	C2H3O2S	0.5		g			json		0							original_only	good	Na-Thioglycolate	Na-Thioglycolate		Na-Thioglycolate					no_hydration	high		100.0	0.0	100.0	5.0			
 dsmz_531_composition	Agar	CHEBI:2509	agar		10.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	100.0			
 dsmz_531_composition	Yeast extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	10.0			
@@ -7532,7 +7532,7 @@ dsmz_579_composition	NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N	0.1		g			json		0
 dsmz_579_composition	NaH2PO4	CHEBI:37585	sodium dihydrogenphosphate	H2O4P.Na	2.5		g			json		0							original_only	good	NaH2PO4	NaH2PO4		NaH2PO4					no_hydration	high		100.0	0.0	100.0	25.0			
 dsmz_579_composition	NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na	1000.0		ml			json		0							original_only	good	NaHCO3	NaHCO3		NaHCO3					no_hydration	high		100.0	0.0	100.0	10000.0			
 dsmz_57_composition	Casamino acids	CHEBI:78020	heptacosanoate	C27H53O2	50.0		mg			json		0							original_only	good	Casamino acids	Casaminoacids		Casaminoacids					no_hydration	high		100.0	0.0	100.0	500.0			
-dsmz_57_composition	Meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+dsmz_57_composition	Meat extract	ingredient:meat_extract			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_57_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	2.5		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	10.143017	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_57_composition	Tryptone	CAS-RN:84843-69-6			5.0		g			json		0							original_only	good	Tryptone	Tryptone		Tryptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_57_composition	Yeast extract	CAS-RN:8013-01-2			7.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	70.0			
@@ -7582,7 +7582,7 @@ dsmz_58_composition	Bacto Soytone	CHEBI:8150			5.0		g			json		0							original_o
 dsmz_58_composition	Cysteine-HCl x H2O	CHEBI:17561	L-cysteine	C3H7NO2S	5.0		g			json		0							original_only	good	Cysteine-HCl x H2O	Cysteine-HClxH2O		Cysteine-HClxH2O					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_58_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	10.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	100.0			
 dsmz_58_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	2.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	20.0			
-dsmz_58_composition	Meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+dsmz_58_composition	Meat extract	ingredient:meat_extract			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_58_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.2		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	0.811441	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_58_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	1.0		ml			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	17.111567			
 dsmz_58_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
@@ -7890,7 +7890,7 @@ dsmz_638_composition	Fructose	CHEBI:28645	beta-D-fructofuranose	C6H12O6	7.0		g		
 dsmz_638_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	7.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	70.0			
 dsmz_638_composition	K2HPO4 x 3 H2O	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	2.6		g			json		3							original_only	good	K2HPO4	K2HPO4		K2HPO4.3H2O					hydrate_pattern	high		100.0	54.045	154.04500000000002	16.878185			no_match
 dsmz_638_composition	Maltose	CHEBI:18167	alpha-maltose	C12H22O11	7.0		g			json		0							original_only	good	Maltose	Maltose		Maltose					no_hydration	high		100.0	0.0	100.0	70.0			
-dsmz_638_composition	Meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+dsmz_638_composition	Meat extract	ingredient:meat_extract			5.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_638_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.1		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	0.405721	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_638_composition	MnSO4 x 4 H2O	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.05		g			json		4							original_only	good	MnSO4	MnSO4		MnSO4.4H2O	CHEBI:135251				hydrate_pattern	high		151.0	72.06	223.06	0.224155	CHEBI:86358	manganese(II) sulfate tetrahydrate	label_match
 dsmz_638_composition	Na-gluconate	CHEBI:18391	D-gluconate	C6H11O7	2.0		g			json		0							original_only	good	Na-gluconate	Na-gluconate		Na-gluconate					no_hydration	high		100.0	0.0	100.0	20.0			
@@ -8001,7 +8001,7 @@ dsmz_656_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.5		g		
 dsmz_658_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_658_composition	CoCl2 x 6 H2O	CHEBI:35696	cobalt dichloride	2Cl.Co	2.0		mg			json		6							original_only	good	CoCl2	CoCl2		CoCl2.6H2O	CHEBI:35696				hydrate_pattern	high		129.84	108.09	237.93	8.405834			no_match
 dsmz_658_composition	Dextrin	CHEBI:28675	dextrin		10.0		g			json		0							original_only	good	Dextrin	Dextrin		Dextrin					no_hydration	high		100.0	0.0	100.0	100.0			
-dsmz_658_composition	Meat extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_658_composition	Meat extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_658_composition	Yeast extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_659_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.5		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	2.028603	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_659_composition	Na2-ß-glycerolphosphate	PubChem:14754			0.25		g			json		0							original_only	good	Na2-ß-glycerolphosphate	Na2-ß-glycerolphosphate		Na2-ß-glycerolphosphate					no_hydration	high		100.0	0.0	100.0	2.5			
@@ -8172,7 +8172,7 @@ dsmz_685_composition	Na2S x 9 H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2N
 dsmz_685_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_687_composition	Corn starch	CHEBI:28017			5.0		g			json		0							original_only	good	Corn starch	Cornstarch		Cornstarch					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_687_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	15.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	256.673511			
-dsmz_687_composition	Tryptic Digest of beef heart	FOODON:02020929			1.0		g			json		0							original_only	good	Tryptic Digest of beef heart	TrypticDigestofbeefheart		TrypticDigestofbeefheart					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_687_composition	Tryptic Digest of beef heart	ingredient:662			1.0		g			json		0							original_only	good	Tryptic Digest of beef heart	TrypticDigestofbeefheart		TrypticDigestofbeefheart					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_688_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.03		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	0.204068			no_match
 dsmz_688_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	0.02		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	0.2			
 dsmz_688_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	2.0		g			json		0							original_only	good	KCl	KCl		KCl					no_hydration	high		74.55	0.0	74.55	26.827632			
@@ -8219,7 +8219,7 @@ dsmz_696_composition	Cysteine-HCl x H2O	CHEBI:17561	L-cysteine	C3H7NO2S	0.5		g		
 dsmz_696_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	5.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_696_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	2.5		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	25.0			
 dsmz_696_composition	Lactose	CHEBI:36218	beta-lactose	C12H22O11	5.0		g			json		0							original_only	good	Lactose	Lactose		Lactose					no_hydration	high		100.0	0.0	100.0	50.0			
-dsmz_696_composition	Meat extract	FOODON:03315424			8.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	80.0			
+dsmz_696_composition	Meat extract	ingredient:meat_extract			8.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	80.0			
 dsmz_696_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.2		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	0.811441	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_696_composition	MnSO4 x 4 H2O	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.05		g			json		4							original_only	good	MnSO4	MnSO4		MnSO4.4H2O	CHEBI:135251				hydrate_pattern	high		151.0	72.06	223.06	0.224155	CHEBI:86358	manganese(II) sulfate tetrahydrate	label_match
 dsmz_696_composition	Peptone	PubChem:167312541			10.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	100.0			
@@ -8232,7 +8232,7 @@ dsmz_698_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	5.0		g			jso
 dsmz_698_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	2.0		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_698_composition	MgSO4	CHEBI:32599	magnesium sulfate	Mg.O4S	0.3		g			json		0							original_only	good	MgSO4	MgSO4		MgSO4	CHEBI:32599				no_hydration	high		120.37	0.0	120.37	2.492315			
 dsmz_698_composition	Yeast extract	CAS-RN:8013-01-2			8.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	80.0			
-dsmz_699_composition	Bacto beef extract	FOODON:03302088			3.0		g			json		0							original_only	good	Bacto beef extract	Bactobeefextract		Bactobeefextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_699_composition	Bacto beef extract	ingredient:bacto_beef_extract			3.0		g			json		0							original_only	good	Bacto beef extract	Bactobeefextract		Bactobeefextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_699_composition	Bacto peptone	CAS-RN:51142-18-8			15.0		g			json		0							original_only	good	Bacto peptone	Bactopeptone		Bactopeptone					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_699_composition	Dextrose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	1.0		g			json		0							original_only	good	Dextrose	Dextrose		Dextrose					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_699_composition	FeSO4	CHEBI:75832	iron(2+) sulfate (anhydrous)	Fe.O4S	0.2		g			json		0							original_only	good	FeSO4	FeSO4		FeSO4	CHEBI:75832				no_hydration	high		151.91	0.0	151.91	1.316569			
@@ -8743,7 +8743,7 @@ dsmz_779_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	1.5		g			jso
 dsmz_779_composition	Na2HPO4	CHEBI:34683	disodium hydrogenphosphate	HO4P.2Na	4.0		g			json		0							original_only	good	Na2HPO4	Na2HPO4		Na2HPO4					no_hydration	high		141.96	0.0	141.96	28.176951			
 dsmz_781_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_781_composition	Ca(NO3)2 x 4 H2O	CHEBI:86159	calcium nitrate tetrahydrate	Ca.4H2O.2NO3	0.72		g			json		4							original_only	good	Ca(NO3)2	Ca(NO3)2		Ca(NO3)2.4H2O					hydrate_pattern	high		100.0	72.06	172.06	4.184587			no_match
-dsmz_781_composition	Dung extract	ENVO:01000492			100.0		ml			json		0							original_only	good	Dung extract	Dungextract		Dungextract					no_hydration	high		100.0	0.0	100.0	1000.0			
+dsmz_781_composition	Dung extract	ingredient:725			100.0		ml			json		0							original_only	good	Dung extract	Dungextract		Dungextract					no_hydration	high		100.0	0.0	100.0	1000.0			
 dsmz_781_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	0.25		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	2.5			
 dsmz_781_composition	Malt extract	PubChem:159480023			5.0		g			json		0							original_only	good	Malt extract	Maltextract		Maltextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_781_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.5		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	2.028603	CHEBI:31795	magnesium sulfate heptahydrate	label_match
@@ -9068,7 +9068,7 @@ dsmz_81a_composition	NaHCO3	CHEBI:32139	sodium hydrogencarbonate	CHO3.Na	0.5		g	
 dsmz_821_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	23.76		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	161.621658			no_match
 dsmz_821_composition	Hexadecane	CHEBI:45296	hexadecane	C16H34	2.0		ml			json		0							original_only	good	Hexadecane	Hexadecane		Hexadecane					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_821_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	99.4		g			json		0							original_only	good	KCl	KCl		KCl					no_hydration	high		74.55	0.0	74.55	1333.333333			
-dsmz_821_composition	Meat extract	FOODON:03315424			1.5		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	15.0			
+dsmz_821_composition	Meat extract	ingredient:meat_extract			1.5		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	15.0			
 dsmz_821_composition	MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg	2.56		g			json		6							original_only	good	MgCl2	MgCl2		MgCl2.6H2O					hydrate_pattern	high		95.21	108.09	203.3	12.592228	CHEBI:86345	magnesium dichloride hexahydrate	label_match
 dsmz_821_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	18.12		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	73.516584	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_821_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	810.0		ml			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	13860.36961			
@@ -9357,7 +9357,7 @@ dsmz_859_composition	Cysteine-HCl x H2O	CHEBI:17561	L-cysteine	C3H7NO2S	0.5		g		
 dsmz_859_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	4.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	40.0			
 dsmz_859_composition	K2HPO4 x 3 H2O	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	2.6		g			json		3							original_only	good	K2HPO4	K2HPO4		K2HPO4.3H2O					hydrate_pattern	high		100.0	54.045	154.04500000000002	16.878185			no_match
 dsmz_859_composition	Maltose	CHEBI:18167	alpha-maltose	C12H22O11	4.0		g			json		0							original_only	good	Maltose	Maltose		Maltose					no_hydration	high		100.0	0.0	100.0	40.0			
-dsmz_859_composition	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+dsmz_859_composition	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 dsmz_859_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.1		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	0.405721	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_859_composition	MnSO4 x 4 H2O	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.05		g			json		4							original_only	good	MnSO4	MnSO4		MnSO4.4H2O	CHEBI:135251				hydrate_pattern	high		151.0	72.06	223.06	0.224155	CHEBI:86358	manganese(II) sulfate tetrahydrate	label_match
 dsmz_859_composition	Tryptone	CAS-RN:84843-69-6			10.0		g			json		0							original_only	good	Tryptone	Tryptone		Tryptone					no_hydration	high		100.0	0.0	100.0	100.0			
@@ -9652,7 +9652,7 @@ dsmz_897_composition	(NH4)2SO4	CHEBI:62946	ammonium sulfate	2H4N.O4S	0.25		g			j
 dsmz_897_composition	CaCl2 x 2 H2O	CHEBI:86158	calcium chloride dihydrate	Ca.2Cl.2H2O	0.38		g			json		2							original_only	good	CaCl2	CaCl2		CaCl2.2H2O	CHEBI:3312				hydrate_pattern	very_high		110.98	36.03	147.01	2.584858			no_match
 dsmz_897_composition	H3BO3	CHEBI:33118	boric acid	H3BO3	15.0		mg			json		0							original_only	good	H3BO3	H3BO3		H3BO3					no_hydration	high		100.0	0.0	100.0	150.0			
 dsmz_897_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	0.33		g			json		0							original_only	good	KCl	KCl		KCl					no_hydration	high		74.55	0.0	74.55	4.426559			
-dsmz_897_composition	Meat extract	FOODON:03315424			0.5		ml			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	5.0			
+dsmz_897_composition	Meat extract	ingredient:meat_extract			0.5		ml			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	5.0			
 dsmz_897_composition	MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg	2.75		g			json		6							original_only	good	MgCl2	MgCl2		MgCl2.6H2O					hydrate_pattern	high		95.21	108.09	203.3	13.526808	CHEBI:86345	magnesium dichloride hexahydrate	label_match
 dsmz_897_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	3.5		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	14.200223	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_897_composition	Na2S x 9 H2O	CHEBI:76209	sodium sulfide nonahydrate	9H2O.2Na.S	5.0		g			json		9							original_only	good	Na2S	Na2S		Na2S.9H2O					hydrate_pattern	high		100.0	162.135	262.135	19.074141			no_match
@@ -10019,7 +10019,7 @@ dsmz_93_composition	DL-mevalonic acid	CHEBI:25351	mevalonic acid	C6H12O4	20.0		g
 dsmz_93_composition	Ethanol	CHEBI:16236	ethanol	C2H6O	1.0		ml			json		0							original_only	good	Ethanol	Ethanol		Ethanol					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_93_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	20.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	200.0			
 dsmz_93_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	0.5		g			json		0							original_only	good	K2HPO4	K2HPO4		K2HPO4					no_hydration	high		100.0	0.0	100.0	5.0			
-dsmz_93_composition	Meat extract	FOODON:03315424			2.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	20.0			
+dsmz_93_composition	Meat extract	ingredient:meat_extract			2.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_93_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	200.0		mg			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	811.441323	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_93_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_940_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
@@ -10106,11 +10106,11 @@ dsmz_951_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	1.0		g		
 dsmz_951_composition	Na2CO3	CHEBI:29377	sodium carbonate	CO3.2Na	2.0		g			json		0							original_only	good	Na2CO3	Na2CO3		Na2CO3					no_hydration	high		100.0	0.0	100.0	20.0			
 dsmz_951_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	15.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	256.673511			
 dsmz_952_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_952_composition	Meat extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
+dsmz_952_composition	Meat extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_952_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	0.5		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	8.555784			
 dsmz_952_composition	Peptone	PubChem:167312541			1.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	10.0			
 dsmz_953_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
-dsmz_953_composition	Meat extract	FOODON:03315424			0.1		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	1.0			
+dsmz_953_composition	Meat extract	ingredient:meat_extract			0.1		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	1.0			
 dsmz_953_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	50.0		mg			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	855.578371			
 dsmz_953_composition	Peptone	PubChem:167312541			0.1		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	1.0			
 dsmz_954_composition	Agar	CHEBI:2509	agar		20.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	200.0			
@@ -10250,7 +10250,7 @@ dsmz_973_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	0.33		g			json		0		
 dsmz_973_composition	MgCl2 x 6 H2O	CHEBI:6636	magnesium dichloride	2Cl.Mg	4.18		g			json		6							original_only	good	MgCl2	MgCl2		MgCl2.6H2O					hydrate_pattern	high		95.21	108.09	203.3	20.560748	CHEBI:86345	magnesium dichloride hexahydrate	label_match
 dsmz_973_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	3.4		g			json		7							original_only	good	MgSO4	MgSO4		MgSO4.7H2O	CHEBI:32599				hydrate_pattern	very_high		120.37	126.105	246.475	13.794502	CHEBI:31795	magnesium sulfate heptahydrate	label_match
 dsmz_973_composition	NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N	0.25		g			json		0							original_only	good	NH4Cl	NH4Cl		NH4Cl					no_hydration	high		53.49	0.0	53.49	4.673771			
-dsmz_973_composition	Na2Se3 x 5 H2O	ingredient:870			0.5		mg			json		5							original_only	good	Na2Se3	Na2Se3		Na2Se3.5H2O					hydrate_pattern	high		100.0	90.075	190.075	2.630541			no_match
+dsmz_973_composition	Na2Se3 x 5 H2O	PUBCHEM.COMPOUND:24934.0			0.5		mg			json		5							original_only	good	Na2Se3	Na2Se3		Na2Se3.5H2O					hydrate_pattern	high		100.0	90.075	190.075	2.630541			no_match
 dsmz_973_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	30.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	513.347023			
 dsmz_973_composition	NiCl2 x 6 H2O	CHEBI:34887	nickel dichloride	Cl2Ni	0.5		mg			json		6							original_only	good	NiCl2	NiCl2		NiCl2.6H2O	CHEBI:34887				hydrate_pattern	high		129.6	108.09	237.69	2.10358			no_match
 dsmz_973_composition	Tryptone	CAS-RN:84843-69-6			1.0		g			json		0							original_only	good	Tryptone	Tryptone		Tryptone					no_hydration	high		100.0	0.0	100.0	10.0			
@@ -10405,7 +10405,7 @@ dsmz_996_composition	MgSO4 x 7 H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	7.0		g		
 dsmz_996_composition	MnCl2 x 4 H2O	PubChem:30200			100.0		mg			json		4							original_only	good	MnCl2	MnCl2		MnCl2.4H2O					hydrate_pattern	high		100.0	72.06	172.06	581.192607			no_match
 dsmz_996_composition	NH4Cl	CHEBI:31206	ammonium chloride	Cl.H4N	0.2		g			json		0							original_only	good	NH4Cl	NH4Cl		NH4Cl					no_hydration	high		53.49	0.0	53.49	3.739017			
 dsmz_996_composition	Na2MoO4 x 2 H2O	CHEBI:75215	sodium molybdate (anhydrous)	MoO4.2Na	10.0		mg			json		2							original_only	good	Na2MoO4	Na2MoO4		Na2MoO4.2H2O					hydrate_pattern	high		100.0	36.03	136.03	73.513196			no_match
-dsmz_996_composition	Na2O4W x 2 H2O	PUBCHEM.COMPOUND:26052.0			30.0		mg			json		2							original_only	good	Na2O4W	Na2O4W		Na2O4W.2H2O					hydrate_pattern	high		100.0	36.03	136.03	220.539587			no_match
+dsmz_996_composition	Na2O4W x 2 H2O	ingredient:736			30.0		mg			json		2							original_only	good	Na2O4W	Na2O4W		Na2O4W.2H2O					hydrate_pattern	high		100.0	36.03	136.03	220.539587			no_match
 dsmz_996_composition	Na2S2O3 x 5 H2O	CHEBI:32150	sodium thiosulfate pentahydrate	5H2O.2Na.O3S2	2.0		g			json		5							original_only	good	Na2S2O3	Na2S2O3		Na2S2O3.5H2O					hydrate_pattern	high		100.0	90.075	190.075	10.522162			no_match
 dsmz_996_composition	NaCl	CHEBI:26710	sodium chloride	Cl.Na	29.0		g			json		0							original_only	good	NaCl	NaCl		NaCl	CHEBI:26710				no_hydration	high		58.44	0.0	58.44	496.235455			
 dsmz_996_composition	NaOH	CHEBI:32145	sodium hydroxide	HO.Na	2.0		g			json		0							original_only	good	NaOH	NaOH		NaOH					no_hydration	high		100.0	0.0	100.0	20.0			
@@ -11645,7 +11645,7 @@ jcm_1177_composition	Resazurin	CHEBI:8806	Resazurin	C12H7NO4	0.5		mg			json		0		
 jcm_1177_composition	Trace vitamins* (see Medium No.197)	ingredient:1784			10.0		ml			json		0							original_only	good	Trace vitamins* (see Medium No.197)	Tracevitamins*(seeMediumNo.197)		Tracevitamins*(seeMediumNo.197)					no_hydration	high		100.0	0.0	100.0	100.0			
 jcm_1178_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
 jcm_1178_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	10.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	100.0			
-jcm_1178_composition	Meat Extract	FOODON:03315424			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
+jcm_1178_composition	Meat Extract	ingredient:meat_extract			1.0		g			json		0							original_only	good	Meat Extract	MeatExtract		MeatExtract					no_hydration	high		100.0	0.0	100.0	10.0			
 jcm_1178_composition	Yeast extract	CAS-RN:8013-01-2			1.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	10.0			
 jcm_1179_composition	KNO3	CHEBI:17632	nitrate	NO3	1.0		g			json		0							original_only	good	KNO3	KNO3		KNO3					no_hydration	high		100.0	0.0	100.0	10.0			
 jcm_1179_composition	Methanol	CHEBI:17790	methanol	CH4O	5.0		ml			json		0							original_only	good	Methanol	Methanol		Methanol					no_hydration	high		100.0	0.0	100.0	50.0			
@@ -12707,7 +12707,7 @@ jcm_176_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	0.1		g			json		0				
 jcm_176_composition	MgSO4·7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.5		g			json		0							original_only	good	MgSO4·7H2O	MgSO4·7H2O		MgSO4·7H2O					no_hydration	high		100.0	0.0	100.0	5.0			
 jcm_176_composition	Sulfur (powder)	CHEBI:14258			10.0		g			json		0							original_only	good	Sulfur (powder)	Sulfur(powder)		Sulfur(powder)					no_hydration	high		100.0	0.0	100.0	100.0			
 jcm_177_composition	Agar	CHEBI:2509	agar		15.0		g			json		0							original_only	good	Agar	Agar		Agar					no_hydration	high		100.0	0.0	100.0	150.0			
-jcm_177_composition	Fish meat extract	FOODON:03315424			5.0		g			json		0							original_only	good	Fish meat extract	Fishmeatextract		Fishmeatextract					no_hydration	high		100.0	0.0	100.0	50.0			
+jcm_177_composition	Fish meat extract	ingredient:1672			5.0		g			json		0							original_only	good	Fish meat extract	Fishmeatextract		Fishmeatextract					no_hydration	high		100.0	0.0	100.0	50.0			
 jcm_177_composition	Glucose	CHEBI:42758	aldehydo-D-glucose	C6H12O6	1.0		g			json		0							original_only	good	Glucose	Glucose		Glucose					no_hydration	high		100.0	0.0	100.0	10.0			
 jcm_177_composition	KCl	CHEBI:32588	potassium chloride	Cl.K	1.0		g			json		0							original_only	good	KCl	KCl		KCl					no_hydration	high		74.55	0.0	74.55	13.413816			
 jcm_177_composition	MgSO4·7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	2.5		g			json		0							original_only	good	MgSO4·7H2O	MgSO4·7H2O		MgSO4·7H2O					no_hydration	high		100.0	0.0	100.0	25.0			
@@ -17594,7 +17594,7 @@ jcm_99_composition	K2HPO4	CHEBI:131527	dipotassium hydrogen phosphate	HO4P.2K	1.
 jcm_99_composition	MgSO4·7H2O	CHEBI:32599	magnesium sulfate	Mg.O4S	0.2		g			json		0							original_only	good	MgSO4·7H2O	MgSO4·7H2O		MgSO4·7H2O					no_hydration	high		100.0	0.0	100.0	2.0			
 jcm_99_composition	Xylan	CHEBI:37166	xylan		10.0		g			json		0							original_only	good	Xylan	Xylan		Xylan					no_hydration	high		100.0	0.0	100.0	100.0			
 jcm_99_composition	Yeast extract	CAS-RN:8013-01-2			5.0		g			json		0							original_only	good	Yeast extract	Yeastextract		Yeastextract					no_hydration	high		100.0	0.0	100.0	50.0			
-pdf	Meat extract	FOODON:03315424			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
+pdf	Meat extract	ingredient:meat_extract			3.0		g			json		0							original_only	good	Meat extract	Meatextract		Meatextract					no_hydration	high		100.0	0.0	100.0	30.0			
 pdf	Peptone	PubChem:167312541			5.0		g			json		0							original_only	good	Peptone	Peptone		Peptone					no_hydration	high		100.0	0.0	100.0	50.0			
 dsmz_1033_composition	MnSO4 x H2O	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.05		g			json		0	MnSO4 x H2O	CHEBI:75211	MnSO4 x H2O	100.0	very_high	manual_ingredient_mapping	original_plus_chebi_alternative	very_good	MnSO4 x H2O	MnSO4xH2O		MnSO4xH2O					no_hydration	high		100.0	0.0	100.0	0.5			
 dsmz_1061_composition	MnSO4 x H2O	CHEBI:86360	manganese(II) sulfate	Mn.O4S	0.01		g			json		0	MnSO4 x H2O	CHEBI:75211	MnSO4 x H2O	100.0	very_high	manual_ingredient_mapping	original_plus_chebi_alternative	very_good	MnSO4 x H2O	MnSO4xH2O		MnSO4xH2O					no_hydration	high		100.0	0.0	100.0	0.1			
