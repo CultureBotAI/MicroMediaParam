@@ -42,10 +42,12 @@ BRAND_NAMES = [
 # Common synonyms for ingredient types
 INGREDIENT_SYNONYMS = {
     'trypticase': ['tryptic digest', 'tryptic soy'],
+    'tryptic digest': ['trypticase'],  # Bidirectional
     'polypeptone': ['peptone'],
     'phytone peptone': ['soy peptone'],
     'soy peptone': ['soya peptone', 'soja peptone'],
     'corn steep liquor': ['maize steep liquor', 'maize extract'],
+    'dung': ['faeces', 'feces', 'manure'],  # Environmental materials
 }
 
 def normalize_ingredient_name(name: str) -> str:
@@ -101,12 +103,22 @@ def generate_search_terms(ingredient: str) -> list:
             for synonym in synonyms:
                 search_terms.append((synonym, f'synonym:{base_term}'))
 
+    # Strategy 4.5: Special handling for "digest" patterns
+    # E.g., "Tryptic digest of beef heart" → "tryptic digest" (not "beef heart")
+    words = normalized.split()
+    if 'digest' in words:
+        # Find position of "digest"
+        digest_pos = words.index('digest')
+        if digest_pos > 0:
+            # Extract "X digest" pattern (e.g., "tryptic digest")
+            digest_term = ' '.join(words[max(0, digest_pos-1):digest_pos+1])
+            search_terms.append((digest_term, 'digest_pattern'))
+
     # Strategy 5: Base ingredient (remove qualifiers)
     # E.g., "Bacto beef extract" → "beef extract", "extract"
-    words = normalized.split()
     if len(words) > 1:
-        # Try last 2 words (e.g., "beef extract")
-        if len(words) >= 2:
+        # Try last 2 words (e.g., "beef extract") - BUT skip if we found digest pattern
+        if len(words) >= 2 and 'digest' not in words[-2:]:
             search_terms.append((' '.join(words[-2:]), 'base_compound'))
         # Try last word only (e.g., "extract")
         if words[-1] in ['extract', 'peptone', 'broth', 'digest', 'liquor', 'casein']:
@@ -157,29 +169,29 @@ def extract_biological_ingredients(input_file: Path) -> dict:
 
 def run_oak_search(term: str, ontology: str = "foodon") -> list:
     """
-    Run OAK search for a term against FOODON ontology.
-    
-    Returns list of (id, label) tuples.
+    Run OAK search for a term against specified ontology.
+
+    Returns list of (id, label, ontology) tuples.
     """
     try:
         cmd = ['runoak', '-i', f'sqlite:obo:{ontology}', 'search', term]
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-        
+
         if result.returncode != 0:
-            logger.warning(f"OAK search failed for '{term}': {result.stderr}")
+            logger.debug(f"OAK search failed for '{term}' in {ontology}: {result.stderr}")
             return []
-        
-        # Parse output: "FOODON:12345 ! label"
+
+        # Parse output: "FOODON:12345 ! label" or "ENVO:12345 ! label"
         matches = []
         for line in result.stdout.strip().split('\n'):
             if '!' in line:
                 parts = line.split('!')
                 onto_id = parts[0].strip()
                 label = parts[1].strip()
-                matches.append((onto_id, label))
-        
+                matches.append((onto_id, label, ontology))
+
         return matches
-        
+
     except subprocess.TimeoutExpired:
         logger.error(f"OAK search timed out for '{term}'")
         return []
@@ -187,10 +199,31 @@ def run_oak_search(term: str, ontology: str = "foodon") -> list:
         logger.error(f"Error running OAK search for '{term}': {e}")
         return []
 
+def run_multi_ontology_search(term: str) -> list:
+    """
+    Search across multiple ontologies (FOODON, then ENVO as fallback).
+
+    Returns list of (id, label, ontology) tuples.
+    Tries FOODON first, if no match tries ENVO.
+    """
+    # Try FOODON first (food materials)
+    matches = run_oak_search(term, ontology="foodon")
+    if matches:
+        return matches
+
+    # Fallback to ENVO (environmental materials like dung, soil, etc.)
+    matches = run_oak_search(term, ontology="envo")
+    if matches:
+        logger.debug(f"Found ENVO match for '{term}' (no FOODON match)")
+        return matches
+
+    return []
+
 def map_ingredients_to_foodon(ingredients: dict) -> dict:
-    """Map ingredients to FOODON using OAK with enhanced search strategies."""
-    logger.info(f"Mapping {len(ingredients)} ingredients to FOODON...")
-    logger.info("Using multiple search strategies: exact, lowercase, normalized, synonyms, base compound")
+    """Map ingredients to FOODON/ENVO using OAK with enhanced search strategies."""
+    logger.info(f"Mapping {len(ingredients)} ingredients to FOODON/ENVO...")
+    logger.info("Using multiple search strategies: exact, lowercase, normalized, digest patterns, synonyms, base compound")
+    logger.info("Multi-ontology: FOODON (food materials) → ENVO (environmental materials) fallback")
     logger.info("Preserving existing FOODON/ENVO IDs from current_id field")
 
     mappings = {}
@@ -220,7 +253,7 @@ def map_ingredients_to_foodon(ingredients: dict) -> dict:
             continue
 
         # No existing FOODON/ENVO ID - search for new mapping
-        logger.info(f"[{i}/{len(ingredients)}] Searching FOODON for: {ingredient}")
+        logger.info(f"[{i}/{len(ingredients)}] Searching FOODON/ENVO for: {ingredient}")
 
         # Generate multiple search terms
         search_terms = generate_search_terms(ingredient)
@@ -229,18 +262,19 @@ def map_ingredients_to_foodon(ingredients: dict) -> dict:
         foodon_label = None
         successful_term = None
         successful_strategy = None
+        ontology_used = None
 
         # Try each search term until we get a match
         for term, strategy in search_terms:
             logger.debug(f"  Trying '{term}' (strategy: {strategy})")
-            matches = run_oak_search(term)
+            matches = run_multi_ontology_search(term)
 
             if matches:
                 # Take first (best) match
-                foodon_id, foodon_label = matches[0]
+                foodon_id, foodon_label, ontology_used = matches[0]
                 successful_term = term
                 successful_strategy = strategy
-                logger.info(f"  ✓ Mapped via '{term}' ({strategy}) → {foodon_id} ({foodon_label})")
+                logger.info(f"  ✓ Mapped via '{term}' ({strategy}) → {foodon_id} ({foodon_label}) [{ontology_used.upper()}]")
                 break
 
         if foodon_id:
@@ -254,13 +288,13 @@ def map_ingredients_to_foodon(ingredients: dict) -> dict:
                 'occurrences': info['count'],
                 'current_id': info['current_id'],
                 'timestamp': datetime.now().isoformat(),
-                'method': f'OAK search (strategy: {successful_strategy})',
-                'ontology_version': 'sqlite:obo:foodon'
+                'method': f'OAK search (strategy: {successful_strategy}, ontology: {ontology_used})',
+                'ontology_version': f'sqlite:obo:{ontology_used}'
             }
             newly_mapped_count += 1
         else:
             # No match found with any strategy
-            logger.warning(f"  ✗ No FOODON match for: {ingredient} (tried {len(search_terms)} strategies)")
+            logger.warning(f"  ✗ No FOODON/ENVO match for: {ingredient} (tried {len(search_terms)} strategies)")
             mappings[ingredient] = {
                 'foodon_id': '',
                 'foodon_label': '',
@@ -271,7 +305,7 @@ def map_ingredients_to_foodon(ingredients: dict) -> dict:
                 'current_id': info['current_id'],
                 'timestamp': datetime.now().isoformat(),
                 'method': f'OAK search (no match after {len(search_terms)} strategies)',
-                'ontology_version': 'sqlite:obo:foodon'
+                'ontology_version': 'sqlite:obo:foodon+envo'
             }
 
     logger.info(f"\nMapping results:")
