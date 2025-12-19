@@ -1,0 +1,60 @@
+ingredient	foodon_id	foodon_label	search_term	search_strategy	match_type	occurrences	current_id	timestamp	method	ontology_version
+Bacto Peptone			Bacto Peptone	none	none	5	CAS-RN:51142-18-8	2025-12-18T22:16:05.115158	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Bacto Tryptic Soy Broth without Dextrose			Bacto Tryptic Soy Broth without Dextrose	none	none	1	medium:1260	2025-12-18T22:15:39.134904	OAK search (no match after 4 strategies)	sqlite:obo:foodon
+Bacto beef extract	FOODON:03302088	beef extract	beef extract	normalized	exact	1	ingredient:bacto_beef_extract	2025-12-18T22:18:02.242523	OAK search (strategy: normalized)	sqlite:obo:foodon
+Bacto peptone			Bacto peptone	none	none	15	CAS-RN:51142-18-8	2025-12-18T22:14:27.415350	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Bacto-Peptone			Bacto-Peptone	none	none	1	CAS-RN:51142-18-8	2025-12-18T22:16:11.527482	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Bacto-peptone			Bacto-peptone	none	none	1	CAS-RN:51142-18-8	2025-12-18T22:16:18.033027	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Bactopeptone			Bactopeptone	none	none	7	CAS-RN:51142-18-8	2025-12-18T22:13:56.868928	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Beef Extract	FOODON:03302088	beef extract	beef extract	lowercase	exact	2	PubChem:66898	2025-12-18T22:15:58.699120	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Beef extract	FOODON:03302088	beef extract	beef extract	lowercase	exact	38	PubChem:66898	2025-12-18T22:14:20.829790	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Casein	FOODON:03420180	casein	casein	lowercase	exact	3	CHEBI:3448	2025-12-18T22:16:37.403506	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Corn steep liquor	FOODON:03309991		Corn steep liquor	preserved	preserved	1	FOODON:03309991	2025-12-18T22:18:47.619184	Preserved from current_id	existing
+Difco Marine Broth 2216			Difco Marine Broth 2216	none	none	1	ingredient:difco_marine_broth_2216	2025-12-18T22:16:33.032443	OAK search (no match after 4 strategies)	sqlite:obo:foodon
+Difco marine broth (Difco 2216)	FOODON:03309462	broth	broth	generic	exact	1	ingredient:difco_marine_broth_2216	2025-12-18T22:15:12.314686	OAK search (strategy: generic)	sqlite:obo:foodon
+Difco marine broth (Difco2216)	FOODON:03309462	broth	broth	generic	exact	1	ingredient:difco_marine_broth_2216	2025-12-18T22:17:20.751876	OAK search (strategy: generic)	sqlite:obo:foodon
+Dung extract			Dung extract	none	none	1	ingredient:725	2025-12-18T22:18:09.101318	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Fastidious Anaerobe Basal Broth (OXOID)	FOODON:03309462	broth	broth	generic	exact	1	ingredient:1079	2025-12-18T22:15:23.497838	OAK search (strategy: generic)	sqlite:obo:foodon
+Fish meat extract	FOODON:03315424	meat extract	meat extract	base_compound	exact	1	ingredient:1672	2025-12-18T22:18:47.619132	OAK search (strategy: base_compound)	sqlite:obo:foodon
+G Bacto Peptone			G Bacto Peptone	none	none	1	CAS-RN:51142-18-8	2025-12-18T22:15:30.120520	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+G Yeast Extract	FOODON:03315426	yeast extract	yeast extract	normalized	exact	1	CAS-RN:8013-01-2	2025-12-18T22:17:05.193490	OAK search (strategy: normalized)	sqlite:obo:foodon
+Gelatin	CHEBI:5291	gelatin	gelatin	lowercase	exact	1	CHEBI:5291	2025-12-18T22:18:41.089876	OAK search (strategy: lowercase)	sqlite:obo:foodon
+LB broth powder			LB broth powder	none	none	1	ingredient:1999	2025-12-18T22:18:30.462514	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Lab-Lemco beef extract	FOODON:03302088	beef extract	beef extract	normalized	exact	1	PubChem:167312535	2025-12-18T22:17:48.393708	OAK search (strategy: normalized)	sqlite:obo:foodon
+Maize extract			Maize extract	none	none	1	ingredient:575	2025-12-18T22:17:41.487383	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Malt extract	FOODON:03301056	malt extract	malt extract	lowercase	exact	37	PubChem:159480023	2025-12-18T22:14:01.134400	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Malt extract broth	FOODON:03309462	broth	broth	generic	exact	1	ingredient:malt_extract	2025-12-18T22:18:24.187224	OAK search (strategy: generic)	sqlite:obo:foodon
+Malt extract powder	FOODON:03301056		Malt extract powder	preserved	preserved	2	FOODON:03301056	2025-12-18T22:15:47.876789	Preserved from current_id	existing
+Malt extract	FOODON:03301056	malt extract	malt extract	normalized	exact	1	CAS-RN:8002-48-0	2025-12-18T22:13:39.151825	OAK search (strategy: normalized)	sqlite:obo:foodon
+Meat Extract	FOODON:03315424	meat extract	meat extract	lowercase	exact	3	ingredient:meat_extract	2025-12-18T22:14:58.862095	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Meat extract	FOODON:03315424	meat extract	meat extract	lowercase	exact	30	ingredient:meat_extract	2025-12-18T22:14:09.705301	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Mueller-Hinton broth	FOODON:03309462	broth	broth	normalized	exact	1	ingredient:748	2025-12-18T22:18:15.610124	OAK search (strategy: normalized)	sqlite:obo:foodon
+Na-Caseinate			Na-Caseinate	none	none	1	CAS-RN:9005-46-3	2025-12-18T22:14:54.275879	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Na-caseinate			Na-caseinate	none	none	1	CAS-RN:9005-46-3	2025-12-18T22:14:16.493512	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Nutrient Broth	FOODON:03309462	broth	broth	generic	exact	2	medium:J663	2025-12-18T22:16:24.440722	OAK search (strategy: generic)	sqlite:obo:foodon
+Nutrient broth	FOODON:03309462	broth	broth	generic	exact	1	medium:J663	2025-12-18T22:18:36.876215	OAK search (strategy: generic)	sqlite:obo:foodon
+PPLO Broth	FOODON:03309462	broth	broth	normalized	exact	1	ingredient:pplo_broth	2025-12-18T22:14:40.742808	OAK search (strategy: normalized)	sqlite:obo:foodon
+PPLO broth	FOODON:03309462	broth	broth	normalized	exact	2	ingredient:pplo_broth	2025-12-18T22:14:34.051326	OAK search (strategy: normalized)	sqlite:obo:foodon
+PPLO-Broth	FOODON:03309462	broth	broth	normalized	exact	1	ingredient:pplo_broth	2025-12-18T22:14:47.201522	OAK search (strategy: normalized)	sqlite:obo:foodon
+Pennassay Broth	FOODON:03309462	broth	broth	normalized	exact	1	ingredient:559	2025-12-18T22:17:34.375842	OAK search (strategy: normalized)	sqlite:obo:foodon
+Peptone			Peptone	none	none	216	PubChem:167312541	2025-12-18T22:14:05.396124	OAK search (no match after 2 strategies)	sqlite:obo:foodon
+Peptone (Oxoid)	FOODON:03302071		Peptone (Oxoid)	preserved	preserved	6	FOODON:03302071	2025-12-18T22:16:58.802922	Preserved from current_id	existing
+Peptone mixture			Peptone mixture	none	none	2	ingredient:156	2025-12-18T22:16:58.802866	OAK search (no match after 2 strategies)	sqlite:obo:foodon
+Phytone peptone	FOODON:03302071		Phytone peptone	preserved	preserved	1	FOODON:03302071	2025-12-18T22:18:02.242580	Preserved from current_id	existing
+Polypeptone	FOODON:03302071		Polypeptone	preserved	preserved	5	FOODON:03302071	2025-12-18T22:16:43.809864	Preserved from current_id	existing
+R2A Broth	FOODON:03309462	broth	broth	normalized	exact	1	medium:J839	2025-12-18T22:16:43.809806	OAK search (strategy: normalized)	sqlite:obo:foodon
+Soja peptone			Soja peptone	none	none	1	PubChem:167312541	2025-12-18T22:17:27.536383	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Soy peptone			Soy peptone	none	none	3	PubChem:167312541	2025-12-18T22:16:54.483112	OAK search (no match after 5 strategies)	sqlite:obo:foodon
+Soya peptone			Soya peptone	none	none	4	PubChem:167312541	2025-12-18T22:17:12.049216	OAK search (no match after 3 strategies)	sqlite:obo:foodon
+Tryptic Digest of beef heart	FOODON:00004410	beef heart	beef heart	base_compound	exact	1	ingredient:662	2025-12-18T22:17:55.321540	OAK search (strategy: base_compound)	sqlite:obo:foodon
+Tryptic digest of beef heart	FOODON:00004410	beef heart	beef heart	base_compound	exact	1	ingredient:662	2025-12-18T22:15:54.381284	OAK search (strategy: base_compound)	sqlite:obo:foodon
+Trypticase			Trypticase	none	none	8	CHEBI:78018	2025-12-18T22:15:47.876738	OAK search (no match after 4 strategies)	sqlite:obo:foodon
+Trypticase Soy Broth	FOODON:03302071		Trypticase Soy Broth	preserved	preserved	5	FOODON:03302071	2025-12-18T22:15:58.699172	Preserved from current_id	existing
+Trypticase soy broth	FOODON:03302071		Trypticase soy broth	preserved	preserved	6	FOODON:03302071	2025-12-18T22:14:27.415404	Preserved from current_id	existing
+Yeast Extract	FOODON:03315426	yeast extract	yeast extract	lowercase	exact	34	CAS-RN:8013-01-2	2025-12-18T22:15:03.501234	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Yeast extract	FOODON:03315426	yeast extract	yeast extract	lowercase	exact	976	CAS-RN:8013-01-2	2025-12-18T22:13:50.188735	OAK search (strategy: lowercase)	sqlite:obo:foodon
+Yeast extract	FOODON:03315426	yeast extract	yeast extract	normalized	exact	1	CAS-RN:8013-01-2	2025-12-18T22:13:45.639676	OAK search (strategy: normalized)	sqlite:obo:foodon
+beef extract	FOODON:03302088	beef extract	beef extract	exact	exact	1	PubChem:66898	2025-12-18T22:13:32.537361	OAK search (strategy: exact)	sqlite:obo:foodon
+peptone			peptone	none	none	2	PubChem:167312541	2025-12-18T22:13:30.262374	OAK search (no match after 1 strategies)	sqlite:obo:foodon
+soy peptone			soy peptone	none	none	1	PubChem:167312541	2025-12-18T22:13:28.088012	OAK search (no match after 4 strategies)	sqlite:obo:foodon
+yeast extract	FOODON:03315426	yeast extract	yeast extract	exact	exact	8	CAS-RN:8013-01-2	2025-12-18T22:13:19.453870	OAK search (strategy: exact)	sqlite:obo:foodon

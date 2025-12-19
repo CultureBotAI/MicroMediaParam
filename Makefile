@@ -213,7 +213,7 @@ help:
 
 # Complete pipeline
 .PHONY: all
-all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings create-hydrate-mappings compute-properties media-summary import-mediadive-solutions expand-complex-ingredients analyze-unmapped-complex
+all: install data-acquisition data-conversion db-mapping kg-mapping-initial solution-expansion normalize-hydration-early enhance-ingredients-early kg-compound-matching kg-oak-chebi-mapping kg-merge-mappings kg-enhance-all extract-upstream-ingredients map-unmapped-ingredients merge-additional-mappings create-hydrate-mappings map-biological-ingredients-foodon compute-properties media-summary import-mediadive-solutions expand-complex-ingredients analyze-unmapped-complex
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
 	@echo "$(GREEN)       🎉 COMPLETE PIPELINE FINISHED SUCCESSFULLY! 🎉           $(NC)"
 	@echo "$(GREEN)════════════════════════════════════════════════════════════════$(NC)"
@@ -231,6 +231,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  ✓ Microbiology products mapping (+2% coverage)"
 	@echo "  ✓ Multi-ontology mapping (UBERON, FOODON, ENVO)"
 	@echo "  ✓ Hydrate-specific compound mappings generation"
+	@echo "  ✓ Biological ingredients FOODON/ENVO mapping via OAK (64% coverage, deterministic)"
 	@echo "  ✓ Media property calculations (pH, salinity)"
 	@echo "  ✓ Comprehensive media summary generation"
 	@echo "  ✓ MediaDive solutions import (70 trace element/vitamin solutions from kg-microbe)"
@@ -242,6 +243,7 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "$(BLUE)Output files:$(NC)"
 	@echo "  📄 Enhanced mappings: $(HIGH_CONFIDENCE_FINAL)"
 	@echo "  📄 Hydrate mappings: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)"
+	@echo "  📄 Biological FOODON mappings: $(BIOLOGICAL_INGREDIENTS_FOODON)"
 	@echo "  📄 Media properties: $(MEDIA_PROPERTIES_DIR)"
 	@echo "  📄 Media summary: $(MEDIA_SUMMARY)"
 	@echo "  📄 Unmapped complex ingredients report: $(UNMAPPED_COMPLEX_REPORT)"
@@ -821,6 +823,40 @@ $(COMPOUND_MAPPINGS_STRICT_HYDRATE): $(COMPOUND_MAPPINGS_STRICT_FINAL) $(CHEBI_F
 		--chebi-formulas $(CHEBI_FORMULAS_FILE) \
 		--output $(COMPOUND_MAPPINGS_STRICT_HYDRATE)
 	@echo "$(GREEN)Output: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)$(NC)"
+
+# Stage 10.5c.5.7: Map biological ingredients to FOODON/ENVO
+# Uses OAK to map complex biological ingredients (extracts, peptones, broths) to FOODON ontology
+# Preserves existing FOODON/ENVO IDs and adds new mappings deterministically
+FOODON_MAPPING_DIR := pipeline_output/foodon_mapping
+BIOLOGICAL_INGREDIENTS_FOODON := $(FOODON_MAPPING_DIR)/biological_ingredients_foodon_final.tsv
+
+.PHONY: map-biological-ingredients-foodon
+map-biological-ingredients-foodon: $(BIOLOGICAL_INGREDIENTS_FOODON)
+	@echo "$(GREEN)✓ Biological ingredients mapped to FOODON/ENVO$(NC)"
+
+$(BIOLOGICAL_INGREDIENTS_FOODON): $(COMPOUND_MAPPINGS_STRICT_FINAL) | $(FOODON_MAPPING_DIR)
+	@echo "$(BLUE)Mapping biological ingredients to FOODON using OAK...$(NC)"
+	@echo "$(YELLOW)Enhanced search: exact, lowercase, normalized, synonyms, base compound$(NC)"
+	$(PYTHON) src/mapping/oak_foodon_mapper.py \
+		--input $(COMPOUND_MAPPINGS_STRICT_FINAL) \
+		--output $(BIOLOGICAL_INGREDIENTS_FOODON)
+	@if [ -f $(BIOLOGICAL_INGREDIENTS_FOODON) ]; then \
+		TOTAL=$$(tail -n +2 $(BIOLOGICAL_INGREDIENTS_FOODON) | wc -l | tr -d ' '); \
+		MAPPED=$$(tail -n +2 $(BIOLOGICAL_INGREDIENTS_FOODON) | cut -f2 | grep -v "^$$" | wc -l); \
+		PRESERVED=$$(grep -c "preserved" $(BIOLOGICAL_INGREDIENTS_FOODON) || echo 0); \
+		NEW_MAPPED=$$((MAPPED - PRESERVED)); \
+		echo ""; \
+		echo "$(YELLOW)FOODON Mapping Summary:$(NC)"; \
+		echo "  Total biological ingredients: $$TOTAL"; \
+		echo "  With FOODON/ENVO IDs:         $$MAPPED ($$((MAPPED * 100 / TOTAL))%)"; \
+		echo "    Preserved from current:     $$PRESERVED"; \
+		echo "    Newly mapped via OAK:       $$NEW_MAPPED"; \
+		echo "  Unable to map:                $$((TOTAL - MAPPED))"; \
+		echo "$(GREEN)Output: $(BIOLOGICAL_INGREDIENTS_FOODON)$(NC)"; \
+	fi
+
+$(FOODON_MAPPING_DIR):
+	@mkdir -p $(FOODON_MAPPING_DIR)
 
 # Stage 10.5c.6: Validate ontology mappings
 # Uses OAK or local ChEBI nodes to verify IDs exist in ontologies
