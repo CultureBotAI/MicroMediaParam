@@ -1,0 +1,7 @@
+compound_name	old_chebi_id	new_chebi_id	chebi_label	source	status
+K2HPO4	CHEBI:32031	CHEBI:131527	dipotassium hydrogen phosphate	pubchem_cid:24450	FIXED
+NH4H2PO4	CHEBI:63052	CHEBI:62982	ammonium dihydrogen phosphate	pubchem_cid:24402	FIXED
+Na-pyruvate	CHEBI:32824	CHEBI:50144	sodium pyruvate	pubchem_cid:23662274	FIXED
+Na-lactate	CHEBI:32855	CHEBI:75228	sodium lactate	pubchem_cid:23666456	FIXED
+Na-succinate	CHEBI:32849	CHEBI:63675	sodium succinate (anhydrous)	pubchem_cid:9020	FIXED
+Na-formate	CHEBI:32145	CHEBI:62965	sodium formate	pubchem_cid:2723810	FIXED

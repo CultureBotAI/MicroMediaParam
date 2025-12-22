@@ -1,0 +1,177 @@
+compound_name	old_chebi_id	new_chebi_id	chebi_label	source	status
+K2HPO4	CHEBI:32031	CHEBI:131527	dipotassium hydrogen phosphate	pubchem_cid:24450	FIXED
+NH4H2PO4	CHEBI:63052	CHEBI:62982	ammonium dihydrogen phosphate	pubchem_cid:24402	FIXED
+Na-pyruvate	CHEBI:32824	CHEBI:50144	sodium pyruvate	pubchem_cid:23662274	FIXED
+Na-lactate	CHEBI:32855	CHEBI:75228	sodium lactate	pubchem_cid:23666456	FIXED
+Na-succinate	CHEBI:32849	CHEBI:63675	sodium succinate (anhydrous)	pubchem_cid:9020	FIXED
+Na-formate	CHEBI:32145	CHEBI:62965	sodium formate	pubchem_cid:2723810	FIXED
+Na-fumarate	CHEBI:32853	CHEBI:115087	monosodium fumarate	pubchem_cid:6076814	FIXED
+MnSO4	CHEBI:132995	CHEBI:86360	manganese(II) sulfate	pubchem_cid:24580	FIXED
+NiSO4	CHEBI:53000	CHEBI:53001	nickel sulfate	pubchem_cid:24586	FIXED
+KHCO3	CHEBI:32030	CHEBI:81862	potassium hydrogencarbonate	pubchem_cid:516893	FIXED
+Na2S	CHEBI:78667	CHEBI:76208	sodium sulfide (anhydrous)	pubchem_cid:14804	FIXED
+Na2MoO4	CHEBI:53504	CHEBI:75215	sodium molybdate (anhydrous)	pubchem_cid:61424	FIXED
+NH4MoO4	CHEBI:131927	CHEBI:91249	ammonium molybdate	chebi_search	FIXED
+(NH4)6Mo7O24	CHEBI:131928	CHEBI:86244	hexaammonium heptamolybdate tetrahydrate	chebi_search	FIXED
+Na2WO4	CHEBI:132112	CHEBI:63940	sodium tungstate	pubchem_cid:26052	FIXED
+AlCl3	CHEBI:30114	CHEBI:30114	aluminium trichloride	pubchem_cid:24012	FIXED
+Na2EDTA	CHEBI:64755	CHEBI:64734	EDTA disodium salt (anhydrous)	chebi_search	FIXED
+L-Glutamate	CHEBI:29987	CHEBI:16015	L-glutamic acid	pubchem_cid:33032	FIXED
+PIPES	CHEBI:44930	CHEBI:44933	2,2'-piperazine-1,4-diylbisethanesulfonic acid	pubchem_cid:79723	FIXED
+Tween 80	CHEBI:9464	CHEBI:53426	polysorbate 80	chebi_search	FIXED
+Fe(III) citrate	CHEBI:30781	CHEBI:144421	iron(III) citrate	chebi_search	FIXED
+CoCl2·6H2O	CHEBI:35696	CHEBI:53503	cobalt chloride hexahydrate	pubchem_cid:24643	FIXED
+MnSO4·xH2O	CHEBI:132995	CHEBI:86364	manganese(II) sulfate monohydrate	pubchem_cid:177577	FIXED
+MnSO4·H2O	CHEBI:132995	CHEBI:86364	manganese(II) sulfate monohydrate	pubchem_cid:177577	FIXED
+FeSO4·7H2O	CHEBI:75832	CHEBI:75836	iron(2+) sulfate heptahydrate	pubchem_cid:62662	FIXED
+MgCl2·6H2O	CHEBI:6636	CHEBI:86345	magnesium dichloride hexahydrate	pubchem_cid:24644	FIXED
+CaCl2·2H2O	CHEBI:3312	CHEBI:86158	calcium chloride dihydrate	pubchem_cid:6093260	FIXED
+Na2S·9H2O	CHEBI:78667	CHEBI:76209	sodium sulfide nonahydrate	pubchem_cid:73972	FIXED
+Na2MoO4·2H2O	CHEBI:53504	CHEBI:75213	sodium molybdate dihydrate	pubchem_cid:16211258	FIXED
+NiCl2·6H2O	CHEBI:34887	CHEBI:53542	nickel chloride hexahydrate	pubchem_cid:24645	FIXED
+NiCl2 x 2H2O	CHEBI:34887		nickel(II) chloride dihydrate		NOT_FOUND
+AlCl3·6H2O	CHEBI:30114	CHEBI:30115	aluminium trichloride hexahydrate	chebi_search	FIXED
+FeCl3·6H2O	CHEBI:30808	CHEBI:86254	iron trichloride hexahydrate	chebi_search	FIXED
+Na2HPO4·2H2O	CHEBI:34683	CHEBI:91258	disodium hydrogenphosphate dihydrate	pubchem_cid:6451167	FIXED
+Na2HPO4·12H2O	CHEBI:34683	CHEBI:91259	disodium hydrogenphosphate dodecahydrate	pubchem_cid:61456	FIXED
+K2HPO4·3H2O	CHEBI:32031	CHEBI:131527	dipotassium hydrogen phosphate	chebi_search	FIXED
+Fe(NH4)2(SO4)2·6H2O	CHEBI:76243	CHEBI:76181	ferrous ammonium sulfate hexahydrate	chebi_search	FIXED
+Yeast extract	CHEBI:88047	CHEBI:231891	xuezhikang	chebi_search	FIXED
+Tryptone	CHEBI:78018		tryptone		NOT_FOUND
+Peptone	CHEBI:8150		peptone		NOT_FOUND
+Proteose peptone	CHEBI:8150		proteose peptone		NOT_FOUND
+Casamino acids	CHEBI:78020		casamino acids		NOT_FOUND
+Casitone	CHEBI:78018		casitone		NOT_FOUND
+Casein	CHEBI:60499	CHEBI:195199	Casein Kinase I Inhibitor, D4476	chebi_search	FIXED
+Beef extract	CHEBI:132852	CHEBI:44302	N-cyclohexyl-2-aminoethanesulfonic acid	pubchem_cid:66898	FIXED
+Malt extract	CHEBI:132851		malt extract		NOT_FOUND
+Bovine serum albumin	CHEBI:3169	CHEBI:139595	9-(2-O-methyl-alpha-L-rhamnosyloxy)nonanoylamino group	chebi_search	FIXED
+Na-malate	CHEBI:32847	CHEBI:91261	disodium (S)-malate	chebi_search	FIXED
+Na-tartrate	CHEBI:32856	CHEBI:63017	sodium L-tartrate	pubchem_cid:162637	FIXED
+Sea salts	CHEBI:35196	CHEBI:26710	sodium chloride	pubchem_cid:5234	FIXED
+Sodium dithionite	CHEBI:53143	CHEBI:66870	sodium dithionite	pubchem_cid:24489	FIXED
+Sodium selenate	CHEBI:48841	CHEBI:77775	sodium selenate	pubchem_cid:25960	FIXED
+Cerium chloride	CHEBI:53373	CHEBI:35458	cerium trichloride	chebi_search	FIXED
+Potassium tetrathionate	CHEBI:53438	CHEBI:86466	potassium tetrathionate	pubchem_cid:61701	FIXED
+Ammonium bicarbonate	CHEBI:62946	CHEBI:184335	Ammonium bicarbonate	pubchem_cid:14013	FIXED
+FeSO4·5H2O	CHEBI:75832		iron(II) sulfate pentahydrate		NOT_FOUND
+FeSO4·6H2O	CHEBI:75832	CHEBI:76181	ferrous ammonium sulfate hexahydrate	chebi_search	FIXED
+CaCl2 x H2O	CHEBI:3312		calcium chloride monohydrate		NOT_FOUND
+Fe(NH4)2(SO4)2 x 7 H2O	CHEBI:76243	CHEBI:131378	ferrous ammonium sulfate heptahydrate	pubchem_cid:118796939	FIXED
+trimethoxybenzoate	CHEBI:9768	CHEBI:454991	3,4,5-trimethoxybenzoic acid	pubchem_cid:8357	FIXED
+Na-crotonate	CHEBI:41131		sodium crotonate		NOT_FOUND
+goethite	CHEBI:33739	CHEBI:192761	ferrihydrite	chebi_search	FIXED
+synanthrin	CHEBI:28443	CHEBI:15443	inulin	chebi_search	FIXED
+EDTA·3Na	CHEBI:64758	CHEBI:63125	EDTA trisodium salt	pubchem_cid:9008	FIXED
+EDTA.Na2.2H2O	CHEBI:64755	CHEBI:64758	EDTA disodium salt dihydrate	chebi_search	FIXED
+EDTA·Fe(III)	CHEBI:64757	CHEBI:30729	ethylenediaminetetraacetatoferrate(1-)	pubchem_cid:197149	FIXED
+EDTA-iron	CHEBI:64757	CHEBI:30729	ethylenediaminetetraacetatoferrate(1-)	pubchem_cid:197149	FIXED
+EDTA·Na·Fe(III)	CHEBI:64757	CHEBI:78292	sodium feredetate	chebi_search	FIXED
+Na3-citrate	CHEBI:32142	CHEBI:53258	sodium citrate	pubchem_cid:6224	FIXED
+Trypticase soy broth	CHEBI:78018		trypticase soy broth		NOT_FOUND
+Brain heart infusion broth	CHEBI:132852		brain heart infusion		NOT_FOUND
+Marine broth 2216	CHEBI:35196	CHEBI:66310	rostratin A	chebi_search	FIXED
+Nutrient broth	CHEBI:132852		nutrient broth		NOT_FOUND
+LB Broth	CHEBI:132852		LB broth		NOT_FOUND
+R2A broth	CHEBI:132852		R2A broth		NOT_FOUND
+Phytone peptone	CHEBI:8150		phytone peptone		NOT_FOUND
+Polypeptone	CHEBI:8150		polypeptone		NOT_FOUND
+Neopeptone	CHEBI:8150		neopeptone		NOT_FOUND
+Soytone	CHEBI:8150		soytone		NOT_FOUND
+N-Z amine	CHEBI:8150	CHEBI:167624	cis-bisulepin	chebi_search	FIXED
+Tryptose	CHEBI:78018		tryptose		NOT_FOUND
+Fish peptone	CHEBI:8150		fish peptone		NOT_FOUND
+Meat peptone	CHEBI:8150		meat peptone		NOT_FOUND
+Casein peptone	CHEBI:8150		casein peptone		NOT_FOUND
+Casein hydrolysate	CHEBI:78020		casein hydrolysate		NOT_FOUND
+Peptone from soy meal	CHEBI:8150		soy peptone		NOT_FOUND
+D-Ca-pantothenate	CHEBI:7916	CHEBI:31345	Calcium pantothenate	pubchem_cid:443753	FIXED
+Fe-citrate	CHEBI:30781	CHEBI:144421	iron(III) citrate	chebi_search	FIXED
+Ammonium ferric citrate	CHEBI:76247	CHEBI:31604	ferric ammonium citrate	chebi_search	FIXED
+Fe2(SO4)3·xH2O	CHEBI:53438	CHEBI:131387	iron(3+) sulfate hydrate	pubchem_cid:167265	FIXED
+Na-silicate	CHEBI:32147	CHEBI:60720	sodium silicate	pubchem_cid:23266	FIXED
+Na-L-malate	CHEBI:32847	CHEBI:91261	disodium (S)-malate	pubchem_cid:6097189	FIXED
+Na-L-lactate	CHEBI:32855	CHEBI:232798	sodium L-lactate	pubchem_cid:23664767	FIXED
+Na-glutamate	CHEBI:29988	CHEBI:64243	monosodium L-glutamate	chebi_search	FIXED
+Na-gallate	CHEBI:66135	CHEBI:115197	sodium gallate	pubchem_cid:23674757	FIXED
+Na-orotate	CHEBI:132979	CHEBI:132101	sodium orotate	pubchem_cid:23683036	FIXED
+Na-oxalate	CHEBI:132992	CHEBI:132764	sodium oxalate	pubchem_cid:6125	FIXED
+NH4-oxalate	CHEBI:62959	CHEBI:91241	ammonium oxalate	pubchem_cid:14213	FIXED
+Sodium butyrate	CHEBI:132149	CHEBI:64103	sodium butyrate	pubchem_cid:5222465	FIXED
+Sodium propionate	CHEBI:132162	CHEBI:132106	sodium propionate	pubchem_cid:2723816	FIXED
+Sodium octanoate	CHEBI:77578	CHEBI:132100	sodium octanoate	pubchem_cid:23664772	FIXED
+Sodium ascorbate	CHEBI:113455	CHEBI:113451	sodium ascorbate	pubchem_cid:23667548	FIXED
+Na2HPO4 x H2O	CHEBI:34683		disodium hydrogen phosphate monohydrate		NOT_FOUND
+NaH2PO4 x H2O	CHEBI:37585	CHEBI:114249	sodium dihydrogenphosphate monohydrate	pubchem_cid:516949	FIXED
+Betaine x H2O	CHEBI:17750	CHEBI:91242	glycine betaine hydrate	pubchem_cid:24884197	FIXED
+NiCl2·H2O	CHEBI:34887		nickel(II) chloride monohydrate		NOT_FOUND
+NaVO3 x H2O	CHEBI:132118	CHEBI:75221	sodium metavanadate	pubchem_cid:4148882	FIXED
+Gellan gum	CHEBI:63223	CHEBI:85248	gellan gum	chebi_search	FIXED
+Nitrilotriacetic acid	CHEBI:30838	CHEBI:44557	nitrilotriacetic acid	pubchem_cid:8758	FIXED
+Xylose	CHEBI:53455	CHEBI:53455	D-xylopyranose	pubchem_cid:135191	FIXED
+Cellulose	CHEBI:18089	CHEBI:18246	(1->4)-beta-D-glucan	chebi_search	FIXED
+BICINE buffer	CHEBI:22308	CHEBI:40957	N,N-bis(2-hydroxyethyl)glycine	pubchem_cid:8761	FIXED
+Sodium Potassium phosphate buffer	CHEBI:37586		sodium potassium phosphate		NOT_FOUND
+FeCl2 x 4H2O	CHEBI:30812	CHEBI:86249	iron dichloride tetrahydrate	chebi_search	FIXED
+rumen extract	CHEBI:132852		rumen extract		NOT_FOUND
+Clarified rumen fluid	CHEBI:132852		rumen fluid		NOT_FOUND
+Liver extract	CHEBI:132852		liver extract		NOT_FOUND
+Liver digest	CHEBI:132852		liver digest		NOT_FOUND
+GAM broth	CHEBI:132852		GAM broth		NOT_FOUND
+Trypticase Pepton	CHEBI:78018		trypticase peptone		NOT_FOUND
+RbCl	CHEBI:78674	CHEBI:78672	rubidium chloride	pubchem_cid:62683	FIXED
+SrCl2	CHEBI:36867	CHEBI:36383	strontium dichloride	pubchem_cid:5362485	FIXED
+H2SeO3	CHEBI:26829	CHEBI:26642	selenous acid	pubchem_cid:1091	FIXED
+Catalase	CHEBI:28843	CHEBI:75380	EC 1.11.1.6 (catalase) inhibitor	chebi_search	FIXED
+karaya gum	CHEBI:63230		karaya gum		NOT_FOUND
+keratin	CHEBI:77246		keratin		NOT_FOUND
+VOSO4·xH2O	CHEBI:132119	CHEBI:87020	vanadyl sulfate hydrate	pubchem_cid:16211496	FIXED
+VOSO4	CHEBI:132119	CHEBI:33146	vanadyl sulfate	pubchem_cid:34007	FIXED
+CoSO47H2O	CHEBI:53470	CHEBI:91244	cobalt(2+) sulfate heptahydrate	pubchem_cid:61444	FIXED
+Cr2(SO4)3·xH2O	CHEBI:53449		chromic sulfate hydrate		NOT_FOUND
+Cr2(SO4)3	CHEBI:53449	CHEBI:53471	chromium(III) sulfate	pubchem_cid:24930	FIXED
+KI	CHEBI:32030	CHEBI:8346	potassium iodide	pubchem_cid:4875	FIXED
+Lactobacilli MRS broth	CHEBI:132852		MRS broth		NOT_FOUND
+Heart infusion broth	CHEBI:132852		heart infusion broth		NOT_FOUND
+Todd Hewitt Broth	CHEBI:132852		Todd Hewitt broth		NOT_FOUND
+Veal infusion broth	CHEBI:132852		veal infusion broth		NOT_FOUND
+Brucella broth	CHEBI:132852		Brucella broth		NOT_FOUND
+Anaerobe Basal Broth	CHEBI:132852		anaerobe basal broth		NOT_FOUND
+Reinforced clostridial medium	CHEBI:132852		reinforced clostridial medium		NOT_FOUND
+Cooked meat medium	CHEBI:132852		cooked meat medium		NOT_FOUND
+Legionella agar enrichment	CHEBI:132852		Legionella agar enrichment		NOT_FOUND
+YM broth	CHEBI:132852		YM broth		NOT_FOUND
+Czapek-Dox liquid medium	CHEBI:132852		Czapek Dox medium		NOT_FOUND
+Standard I Broth	CHEBI:132852		Standard I broth		NOT_FOUND
+PPLO broth	CHEBI:132852		PPLO broth		NOT_FOUND
+Tryptone Soy Broth	CHEBI:78018		tryptone soy broth		NOT_FOUND
+Fetal bovine serum	CHEBI:132854		fetal bovine serum		NOT_FOUND
+Bovine calf serum	CHEBI:132854		bovine calf serum		NOT_FOUND
+Horse serum	CHEBI:132854		horse serum		NOT_FOUND
+Porcine serum	CHEBI:132854		porcine serum		NOT_FOUND
+Rabbit serum	CHEBI:132854	CHEBI:60547	3-(glycinocarbonyl)-5-(leucinocarbonyl)phenylazo group	chebi_search	FIXED
+Bacto m TGE broth	CHEBI:132852		m-TGE broth		NOT_FOUND
+Natural seawater	CHEBI:35196		seawater		NOT_FOUND
+crude oil	CHEBI:37578	CHEBI:17097	biphenyl	chebi_search	FIXED
+Charcoal	CHEBI:88052	CHEBI:91090	charcoal	chebi_search	FIXED
+Phenol red	CHEBI:34879	CHEBI:31991	phenol red	pubchem_cid:4766	FIXED
+Bromocresol purple	CHEBI:141389	CHEBI:86154	bromocresol purple	pubchem_cid:8273	FIXED
+Bromothymol blue	CHEBI:141422	CHEBI:86155	bromothymol blue	pubchem_cid:6450	FIXED
+Oxgall	CHEBI:132854		ox bile		NOT_FOUND
+TAPS	CHEBI:44950	CHEBI:191055	N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid	pubchem_cid:121591	FIXED
+TAPS sodium salt	CHEBI:44950		TAPS sodium salt		NOT_FOUND
+TiCl3	CHEBI:37331		titanium(III) chloride		NOT_FOUND
+Oatmeal	CHEBI:132852		oatmeal		NOT_FOUND
+oil of cedar wood	CHEBI:77085		cedarwood oil		NOT_FOUND
+Tomato juice	CHEBI:132852		tomato juice		NOT_FOUND
+V8 canned vegetable juice	CHEBI:132852		vegetable juice		NOT_FOUND
+Potato	CHEBI:132852	CHEBI:38230	solanapyrone	chebi_search	FIXED
+Carrot	CHEBI:132852		carrot		NOT_FOUND
+Ground beef	CHEBI:132852	CHEBI:133683	2-isobutylthiazole	chebi_search	FIXED
+coconut  oil	CHEBI:133221	CHEBI:30805	dodecanoic acid	chebi_search	FIXED
+olive oil	CHEBI:88068	CHEBI:156100	(E)-2-pentenal	chebi_search	FIXED
+N-methylhydantoin	CHEBI:139474	CHEBI:16354	N-methylhydantoin	pubchem_cid:69217	FIXED
+Gentisic acid	CHEBI:16366	CHEBI:17189	2,5-dihydroxybenzoic acid	pubchem_cid:3469	FIXED
+Hexachlorocyclo-hexane	CHEBI:27711	CHEBI:39095	delta-hexachlorocyclohexane	pubchem_cid:727	FIXED
+Cyclomaltoheptaose	CHEBI:17052	CHEBI:495055	beta-cyclodextrin	pubchem_cid:444041	FIXED
+KSCN	CHEBI:30967	CHEBI:30951	potassium thiocyanate	pubchem_cid:516872	FIXED

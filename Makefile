@@ -245,6 +245,8 @@ all: install data-acquisition data-conversion db-mapping kg-mapping-initial solu
 	@echo "  📄 Hydrate mappings: $(COMPOUND_MAPPINGS_STRICT_HYDRATE)"
 	@echo "  📄 Simplified mappings: $(COMPOUND_MAPPINGS_SIMPLIFIED)"
 	@echo "  📄 Simplified hydrate mappings: $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE)"
+	@echo "  📄 Chemicals-only mappings: $(COMPOUND_MAPPINGS_CHEMICALS_ONLY)"
+	@echo "  📄 Chemicals-only hydrate mappings: $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE)"
 	@echo "  📄 Biological FOODON mappings: $(BIOLOGICAL_INGREDIENTS_FOODON)"
 	@echo "  📄 Media properties: $(MEDIA_PROPERTIES_DIR)"
 	@echo "  📄 Media summary: $(MEDIA_SUMMARY)"
@@ -830,13 +832,15 @@ $(COMPOUND_MAPPINGS_STRICT_HYDRATE): $(COMPOUND_MAPPINGS_STRICT_FINAL) $(CHEBI_F
 # Lightweight versions with just chemical name, formula, and identifiers
 COMPOUND_MAPPINGS_SIMPLIFIED := $(MERGE_MAPPINGS_DIR)/compound_mappings_simplified.tsv
 COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE := $(MERGE_MAPPINGS_DIR)/compound_mappings_simplified_hydrate.tsv
+COMPOUND_MAPPINGS_CHEMICALS_ONLY := $(MERGE_MAPPINGS_DIR)/compound_mappings_chemicals_only.tsv
+COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE := $(MERGE_MAPPINGS_DIR)/compound_mappings_chemicals_only_hydrate.tsv
 
 .PHONY: create-simplified-mappings
-create-simplified-mappings: $(COMPOUND_MAPPINGS_SIMPLIFIED) $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE)
+create-simplified-mappings: $(COMPOUND_MAPPINGS_SIMPLIFIED) $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE) $(COMPOUND_MAPPINGS_CHEMICALS_ONLY) $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE)
 	@echo "$(GREEN)✓ Simplified mapping files created$(NC)"
 
 $(COMPOUND_MAPPINGS_SIMPLIFIED) $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE): $(COMPOUND_MAPPINGS_STRICT_FINAL) $(COMPOUND_MAPPINGS_STRICT_HYDRATE)
-	@echo "$(BLUE)Creating simplified mapping files...$(NC)"
+	@echo "$(BLUE)Creating simplified mapping files (all unique chemicals)...$(NC)"
 	@echo "$(YELLOW)Extracting: chemical name, formula, and identifiers$(NC)"
 	$(PYTHON) src/scripts/create_simplified_mappings.py \
 		--strict-input $(COMPOUND_MAPPINGS_STRICT_FINAL) \
@@ -846,6 +850,18 @@ $(COMPOUND_MAPPINGS_SIMPLIFIED) $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE): $(COMPO
 	@echo "$(GREEN)Outputs:$(NC)"
 	@echo "  $(COMPOUND_MAPPINGS_SIMPLIFIED)"
 	@echo "  $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE)"
+
+$(COMPOUND_MAPPINGS_CHEMICALS_ONLY) $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE): $(COMPOUND_MAPPINGS_SIMPLIFIED) $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE)
+	@echo "$(BLUE)Creating chemicals-only mapping files (no complex ingredients/media)...$(NC)"
+	@echo "$(YELLOW)Excluding: FOODON, medium, ingredient codes$(NC)"
+	$(PYTHON) src/scripts/create_chemicals_only_mappings.py \
+		--strict-input $(COMPOUND_MAPPINGS_SIMPLIFIED) \
+		--strict-output $(COMPOUND_MAPPINGS_CHEMICALS_ONLY) \
+		--hydrate-input $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE) \
+		--hydrate-output $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE)
+	@echo "$(GREEN)Outputs:$(NC)"
+	@echo "  $(COMPOUND_MAPPINGS_CHEMICALS_ONLY)"
+	@echo "  $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE)"
 
 # Stage 10.5c.5.7: Map biological ingredients to FOODON/ENVO
 # Uses OAK to map complex biological ingredients (extracts, peptones, broths) to FOODON ontology
@@ -1988,6 +2004,8 @@ status:
 	@[ -f $(COMPOUND_MAPPINGS_STRICT_HYDRATE) ] && echo "✓ Hydrate mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_STRICT_HYDRATE) | wc -l) entries" || echo "✗ Hydrate mappings: Not created yet (run 'make create-hydrate-mappings')"
 	@[ -f $(COMPOUND_MAPPINGS_SIMPLIFIED) ] && echo "✓ Simplified mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_SIMPLIFIED) | wc -l) entries" || echo "✗ Simplified mappings: Not created yet (run 'make create-simplified-mappings')"
 	@[ -f $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE) ] && echo "✓ Simplified hydrate mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_SIMPLIFIED_HYDRATE) | wc -l) entries" || echo "✗ Simplified hydrate mappings: Not created yet (run 'make create-simplified-mappings')"
+	@[ -f $(COMPOUND_MAPPINGS_CHEMICALS_ONLY) ] && echo "✓ Chemicals-only mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_CHEMICALS_ONLY) | wc -l) entries" || echo "✗ Chemicals-only mappings: Not created yet (run 'make create-simplified-mappings')"
+	@[ -f $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE) ] && echo "✓ Chemicals-only hydrate mappings: $$(tail -n +2 $(COMPOUND_MAPPINGS_CHEMICALS_ONLY_HYDRATE) | wc -l) entries" || echo "✗ Chemicals-only hydrate mappings: Not created yet (run 'make create-simplified-mappings')"
 	@echo ""
 	@echo "$(YELLOW)Analysis Files:$(NC)"
 	@[ -d $(MEDIA_PROPERTIES_DIR) ] && echo "✓ Media properties: $$(ls $(MEDIA_PROPERTIES_DIR)/*.json 2>/dev/null | wc -l) media analyzed" || echo "✗ Media properties: Missing"

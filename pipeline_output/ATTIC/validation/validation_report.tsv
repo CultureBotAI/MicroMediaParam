@@ -1,0 +1,603 @@
+compound_name	identifier	id_type	expected_label	actual_label	status	message
+KH2PO4	CHEBI:63036	CHEBI	potassium dihydrogen phosphate	potassium dihydrogen phosphate	VALID	Label matches primary name
+K2HPO4	CHEBI:32031	CHEBI	dipotassium hydrogen phosphate	CHEBI_32031	MISMATCH	Expected 'dipotassium hydrogen phosphate', got 'CHEBI_32031'
+Na2HPO4	CHEBI:34683	CHEBI	disodium hydrogen phosphate	disodium hydrogenphosphate	VALID	Label matches synonym (primary: disodium hydrogenphosphate)
+NaH2PO4	CHEBI:37585	CHEBI	sodium dihydrogen phosphate	sodium dihydrogenphosphate	VALID	Label matches synonym (primary: sodium dihydrogenphosphate)
+NH4H2PO4	CHEBI:63052	CHEBI	ammonium dihydrogen phosphate	Jeffamine ED-2001	MISMATCH	Expected 'ammonium dihydrogen phosphate', got 'Jeffamine ED-2001'
+(NH4)2HPO4	CHEBI:63051	CHEBI	diammonium hydrogen phosphate	diammonium hydrogen phosphate	VALID	Label matches primary name
+Na-acetate	CHEBI:32954	CHEBI	sodium acetate	sodium acetate	VALID	Label matches primary name
+Na acetate	CHEBI:32954	CHEBI	sodium acetate	sodium acetate	VALID	Label matches primary name
+Sodium acetate	CHEBI:32954	CHEBI	sodium acetate	sodium acetate	VALID	Label matches primary name
+Na-pyruvate	CHEBI:32824	CHEBI	sodium pyruvate	L-threonino group	MISMATCH	Expected 'sodium pyruvate', got 'L-threonino group'
+Na pyruvate	CHEBI:32824	CHEBI	sodium pyruvate	L-threonino group	MISMATCH	Expected 'sodium pyruvate', got 'L-threonino group'
+Sodium pyruvate	CHEBI:32824	CHEBI	sodium pyruvate	L-threonino group	MISMATCH	Expected 'sodium pyruvate', got 'L-threonino group'
+Na-lactate	CHEBI:32855	CHEBI	sodium lactate	D-valinate	MISMATCH	Expected 'sodium lactate', got 'D-valinate'
+Sodium lactate	CHEBI:32855	CHEBI	sodium lactate	D-valinate	MISMATCH	Expected 'sodium lactate', got 'D-valinate'
+Na-citrate	CHEBI:32142	CHEBI	sodium citrate	sodium citrate dihydrate	VALID	Label matches synonym (primary: sodium citrate dihydrate)
+Sodium citrate	CHEBI:32142	CHEBI	sodium citrate	sodium citrate dihydrate	VALID	Label matches synonym (primary: sodium citrate dihydrate)
+Na-succinate	CHEBI:32849	CHEBI	sodium succinate	TEMPO	MISMATCH	Expected 'sodium succinate', got 'TEMPO'
+Sodium succinate	CHEBI:32849	CHEBI	sodium succinate	TEMPO	MISMATCH	Expected 'sodium succinate', got 'TEMPO'
+Na-formate	CHEBI:32145	CHEBI	sodium formate	sodium hydroxide	MISMATCH	Expected 'sodium formate', got 'sodium hydroxide'
+Sodium formate	CHEBI:32145	CHEBI	sodium formate	sodium hydroxide	MISMATCH	Expected 'sodium formate', got 'sodium hydroxide'
+Na-fumarate	CHEBI:32853	CHEBI	sodium fumarate	L-valyl group	MISMATCH	Expected 'sodium fumarate', got 'L-valyl group'
+NaCl	CHEBI:26710	CHEBI	sodium chloride	sodium chloride	VALID	Label matches primary name
+KCl	CHEBI:32588	CHEBI	potassium chloride	potassium chloride	VALID	Label matches primary name
+CaCl2	CHEBI:3312	CHEBI	calcium chloride	calcium dichloride	VALID	Label matches synonym (primary: calcium dichloride)
+MgCl2	CHEBI:6636	CHEBI	magnesium chloride	magnesium dichloride	VALID	Label matches synonym (primary: magnesium dichloride)
+NH4Cl	CHEBI:31206	CHEBI	ammonium chloride	ammonium chloride	VALID	Label matches primary name
+FeCl2	CHEBI:30812	CHEBI	iron(II) chloride	iron dichloride	VALID	Label matches synonym (primary: iron dichloride)
+FeCl3	CHEBI:30808	CHEBI	iron(III) chloride	iron trichloride	VALID	Label matches synonym (primary: iron trichloride)
+MnCl2	CHEBI:63041	CHEBI	manganese(II) chloride	manganese(II) chloride	VALID	Label matches primary name
+CoCl2	CHEBI:35696	CHEBI	cobalt(II) chloride	cobalt dichloride	VALID	Label matches synonym (primary: cobalt dichloride)
+NiCl2	CHEBI:34887	CHEBI	nickel(II) chloride	nickel dichloride	VALID	Label matches synonym (primary: nickel dichloride)
+ZnCl2	CHEBI:49976	CHEBI	zinc chloride	zinc dichloride	VALID	Label matches synonym (primary: zinc dichloride)
+CuCl2	CHEBI:49553	CHEBI	copper(II) chloride	copper(II) chloride	VALID	Label matches primary name
+MgSO4	CHEBI:32599	CHEBI	magnesium sulfate	magnesium sulfate	VALID	Label matches primary name
+Na2SO4	CHEBI:32149	CHEBI	sodium sulfate	sodium sulfate	VALID	Label matches primary name
+K2SO4	CHEBI:32036	CHEBI	potassium sulfate	potassium sulfate	VALID	Label matches primary name
+(NH4)2SO4	CHEBI:62946	CHEBI	ammonium sulfate	ammonium sulfate	VALID	Label matches primary name
+FeSO4	CHEBI:75832	CHEBI	iron(II) sulfate	iron(2+) sulfate (anhydrous)	VALID	Label matches synonym (primary: iron(2+) sulfate (anhydrous))
+ZnSO4	CHEBI:35176	CHEBI	zinc sulfate	zinc sulfate	VALID	Label matches primary name
+MnSO4	CHEBI:132995	CHEBI	manganese(II) sulfate	(E,E)-bilirubin anion	MISMATCH	Expected 'manganese(II) sulfate', got '(E,E)-bilirubin anion'
+CuSO4	CHEBI:23414	CHEBI	copper(II) sulfate	copper(II) sulfate	VALID	Label matches primary name
+CoSO4	CHEBI:53470	CHEBI	cobalt(II) sulfate	cobalt(2+) sulfate	VALID	Label matches synonym (primary: cobalt(2+) sulfate)
+NiSO4	CHEBI:53000	CHEBI	nickel sulfate	epitope	MISMATCH	Expected 'nickel sulfate', got 'epitope'
+NaNO3	CHEBI:63005	CHEBI	sodium nitrate	sodium nitrate	VALID	Label matches primary name
+KNO3	CHEBI:63043	CHEBI	potassium nitrate	potassium nitrate	VALID	Label matches primary name
+NH4NO3	CHEBI:63038	CHEBI	ammonium nitrate	ammonium nitrate	VALID	Label matches primary name
+Ca(NO3)2	CHEBI:64205	CHEBI	calcium nitrate	calcium nitrate	VALID	Label matches primary name
+Na2CO3	CHEBI:29377	CHEBI	sodium carbonate	sodium carbonate	VALID	Label matches primary name
+NaHCO3	CHEBI:32139	CHEBI	sodium bicarbonate	sodium hydrogencarbonate	VALID	Label matches synonym (primary: sodium hydrogencarbonate)
+K2CO3	CHEBI:131526	CHEBI	potassium carbonate	potassium carbonate	VALID	Label matches primary name
+KHCO3	CHEBI:32030	CHEBI	potassium bicarbonate	potassium bromide	MISMATCH	Expected 'potassium bicarbonate', got 'potassium bromide'
+CaCO3	CHEBI:3311	CHEBI	calcium carbonate	calcium carbonate	VALID	Label matches primary name
+Na2S	CHEBI:78667	CHEBI	sodium sulfide	sodium chlorite	MISMATCH	Expected 'sodium sulfide', got 'sodium chlorite'
+Na2S2O3	CHEBI:132112	CHEBI	sodium thiosulfate	sodium thiosulfate	VALID	Label matches primary name
+H2S	CHEBI:16136	CHEBI	hydrogen sulfide	hydrogen sulfide	VALID	Label matches primary name
+Na2MoO4	CHEBI:53504	CHEBI	sodium molybdate	nickel sulfate heptahydrate	MISMATCH	Expected 'sodium molybdate', got 'nickel sulfate heptahydrate'
+NH4MoO4	CHEBI:131927	CHEBI	ammonium molybdate	dicarboxylic acids and O-substituted derivatives	MISMATCH	Expected 'ammonium molybdate', got 'dicarboxylic acids and O-substituted derivatives'
+(NH4)6Mo7O24	CHEBI:131928	CHEBI	ammonium heptamolybdate	N-hydroxy-2-methylpropanamine	MISMATCH	Expected 'ammonium heptamolybdate', got 'N-hydroxy-2-methylpropanamine'
+H3BO3	CHEBI:33118	CHEBI	boric acid	boric acid	VALID	Label matches primary name
+Na2SeO3	CHEBI:48843	CHEBI	sodium selenite	disodium selenite	VALID	Label matches synonym (primary: disodium selenite)
+Na2WO4	CHEBI:132112	CHEBI	sodium tungstate	sodium thiosulfate	MISMATCH	Expected 'sodium tungstate', got 'sodium thiosulfate'
+AlCl3	CHEBI:30114	CHEBI	aluminium chloride	aluminium trichloride	MISMATCH	Expected 'aluminium chloride', got 'aluminium trichloride'
+Na2EDTA	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+EDTA	CHEBI:42191	CHEBI	EDTA	EDTA(4-)	VALID	Label partially matches
+HCl	CHEBI:17883	CHEBI	hydrochloric acid	hydrogen chloride	VALID	Label matches synonym (primary: hydrogen chloride)
+H2SO4	CHEBI:26836	CHEBI	sulfuric acid	sulfuric acid	VALID	Label matches primary name
+NaOH	CHEBI:32145	CHEBI	sodium hydroxide	sodium hydroxide	VALID	Label matches primary name
+KOH	CHEBI:32035	CHEBI	potassium hydroxide	potassium hydroxide	VALID	Label matches primary name
+NH4OH	CHEBI:18219	CHEBI	ammonium hydroxide	ammonium hydroxide	VALID	Label matches primary name
+L-Cysteine	CHEBI:17561	CHEBI	L-cysteine	L-cysteine	VALID	Label matches primary name
+L-cysteine	CHEBI:17561	CHEBI	L-cysteine	L-cysteine	VALID	Label matches primary name
+Cysteine	CHEBI:17561	CHEBI	L-cysteine	L-cysteine	VALID	Label matches primary name
+L-Cysteine HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride	L-cysteine	VALID	Label partially matches
+L-Cysteine-HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride	L-cysteine	VALID	Label partially matches
+L-Cysteine·HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride	L-cysteine	VALID	Label partially matches
+L-Cysteine·HCl·H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+L-Cysteine HCl x H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+L-Cysteine-HCl x H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+Cysteine-HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride	L-cysteine	VALID	Label partially matches
+Cysteine HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride	L-cysteine	VALID	Label partially matches
+Glycine	CHEBI:15428	CHEBI	glycine	glycine	VALID	Label matches primary name
+L-Glutamate	CHEBI:29987	CHEBI	L-glutamate	glutamate(2-)	MISMATCH	Expected 'L-glutamate', got 'glutamate(2-)'
+L-Aspartate	CHEBI:29991	CHEBI	L-aspartate	L-aspartate(1-)	VALID	Label matches synonym (primary: L-aspartate(1-))
+HEPES	CHEBI:42334	CHEBI	HEPES	2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid	VALID	Label matches synonym (primary: 2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid)
+Tris	CHEBI:9754	CHEBI	tris	tris	VALID	Label matches primary name
+PIPES	CHEBI:44930	CHEBI	PIPES	N-(p-nitrophenylphosphobutanoyl)glycine	MISMATCH	Expected 'PIPES', got 'N-(p-nitrophenylphosphobutanoyl)glycine'
+MOPS	CHEBI:44115	CHEBI	MOPS	3-(N-morpholino)propanesulfonic acid	VALID	Label matches synonym (primary: 3-(N-morpholino)propanesulfonic acid)
+MES	CHEBI:44833	CHEBI	MES	N/A	NOT_FOUND	CHEBI ID CHEBI:44833 not found in database
+ACES	CHEBI:44913	CHEBI	ACES	N/A	NOT_FOUND	CHEBI ID CHEBI:44913 not found in database
+Glucose	CHEBI:17234	CHEBI	glucose	glucose	VALID	Label matches primary name
+D-Glucose	CHEBI:17634	CHEBI	D-glucose	D-glucose	VALID	Label matches primary name
+Fructose	CHEBI:28645	CHEBI	fructose	beta-D-fructofuranose	VALID	Label matches synonym (primary: beta-D-fructofuranose)
+Sucrose	CHEBI:17992	CHEBI	sucrose	sucrose	VALID	Label matches primary name
+Lactose	CHEBI:17716	CHEBI	lactose	lactose	VALID	Label matches primary name
+Maltose	CHEBI:17306	CHEBI	maltose	maltose	VALID	Label matches primary name
+Starch	CHEBI:28017	CHEBI	starch	starch	VALID	Label matches primary name
+Soluble starch	CHEBI:28017	CHEBI	starch	starch	VALID	Label matches primary name
+Thiamine	CHEBI:18385	CHEBI	thiamine	thiamine(1+)	VALID	Label matches synonym (primary: thiamine(1+))
+Thiamine-HCl	CHEBI:49105	CHEBI	thiamine hydrochloride	thiamine hydrochloride	VALID	Label matches primary name
+Riboflavin	CHEBI:17015	CHEBI	riboflavin	riboflavin	VALID	Label matches primary name
+Biotin	CHEBI:15956	CHEBI	biotin	biotin	VALID	Label matches primary name
+Cobalamin	CHEBI:23334	CHEBI	cobalamin	cobalamins	VALID	Label partially matches
+Vitamin B12	CHEBI:176843	CHEBI	vitamin B12	vitamin B12	VALID	Label matches primary name
+Folic acid	CHEBI:27470	CHEBI	folic acid	folic acid	VALID	Label matches primary name
+Nicotinic acid	CHEBI:15940	CHEBI	nicotinic acid	nicotinic acid	VALID	Label matches primary name
+Pantothenic acid	CHEBI:7916	CHEBI	pantothenic acid	pantothenic acid	VALID	Label matches primary name
+Pyridoxine	CHEBI:16709	CHEBI	pyridoxine	pyridoxine	VALID	Label matches primary name
+p-Aminobenzoic acid	CHEBI:30753	CHEBI	4-aminobenzoic acid	4-aminobenzoic acid	VALID	Label matches primary name
+PABA	CHEBI:30753	CHEBI	4-aminobenzoic acid	4-aminobenzoic acid	VALID	Label matches primary name
+Dithiothreitol	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+DTT	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+Resazurin	CHEBI:8806	CHEBI	resazurin	Resazurin	VALID	Label matches primary name
+Methanol	CHEBI:17790	CHEBI	methanol	methanol	VALID	Label matches primary name
+Ethanol	CHEBI:16236	CHEBI	ethanol	ethanol	VALID	Label matches primary name
+Glycerol	CHEBI:17754	CHEBI	glycerol	glycerol	VALID	Label matches primary name
+Tween 80	CHEBI:9464	CHEBI	polysorbate 80	testosterone enanthate	MISMATCH	Expected 'polysorbate 80', got 'testosterone enanthate'
+SDS	CHEBI:8984	CHEBI	sodium dodecyl sulfate	sodium dodecyl sulfate	VALID	Label matches primary name
+Urea	CHEBI:16199	CHEBI	urea	urea	VALID	Label matches primary name
+Phenol	CHEBI:15882	CHEBI	phenol	phenol	VALID	Label matches primary name
+Fe(III) citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Ferric citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Iron citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Hemin	CHEBI:50385	CHEBI	hemin	hemin	VALID	Label matches primary name
+Agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Agar agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Agar-agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Agar-Agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Noble agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Agar Noble	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Bacto agar	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+Agar Difco	CHEBI:2509	CHEBI	agar	agar	VALID	Label matches primary name
+CoCl2·6H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2 x 6H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2 x 6 H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+MnSO4·xH2O	CHEBI:132995	CHEBI	manganese(II) sulfate hydrate	(E,E)-bilirubin anion	MISMATCH	Expected 'manganese(II) sulfate hydrate', got '(E,E)-bilirubin anion'
+MnSO4·H2O	CHEBI:132995	CHEBI	manganese(II) sulfate monohydrate	(E,E)-bilirubin anion	MISMATCH	Expected 'manganese(II) sulfate monohydrate', got '(E,E)-bilirubin anion'
+FeSO4·7H2O	CHEBI:75832	CHEBI	iron(II) sulfate heptahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate heptahydrate', got 'iron(2+) sulfate (anhydrous)'
+FeSO4 x 7H2O	CHEBI:75832	CHEBI	iron(II) sulfate heptahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate heptahydrate', got 'iron(2+) sulfate (anhydrous)'
+FeSO4 x 7 H2O	CHEBI:75832	CHEBI	iron(II) sulfate heptahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate heptahydrate', got 'iron(2+) sulfate (anhydrous)'
+MgSO4·7H2O	CHEBI:32599	CHEBI	magnesium sulfate heptahydrate	magnesium sulfate	VALID	Label partially matches
+MgCl2·6H2O	CHEBI:6636	CHEBI	magnesium chloride hexahydrate	magnesium dichloride	MISMATCH	Expected 'magnesium chloride hexahydrate', got 'magnesium dichloride'
+CaCl2·2H2O	CHEBI:3312	CHEBI	calcium chloride dihydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride dihydrate', got 'calcium dichloride'
+Na2S·9H2O	CHEBI:78667	CHEBI	sodium sulfide nonahydrate	sodium chlorite	MISMATCH	Expected 'sodium sulfide nonahydrate', got 'sodium chlorite'
+Na2S x 9 H2O	CHEBI:78667	CHEBI	sodium sulfide nonahydrate	sodium chlorite	MISMATCH	Expected 'sodium sulfide nonahydrate', got 'sodium chlorite'
+Na2MoO4·2H2O	CHEBI:53504	CHEBI	sodium molybdate dihydrate	nickel sulfate heptahydrate	MISMATCH	Expected 'sodium molybdate dihydrate', got 'nickel sulfate heptahydrate'
+Na2MoO4 x 2H2O	CHEBI:53504	CHEBI	sodium molybdate dihydrate	nickel sulfate heptahydrate	MISMATCH	Expected 'sodium molybdate dihydrate', got 'nickel sulfate heptahydrate'
+Na2MoO4 x 2 H2O	CHEBI:53504	CHEBI	sodium molybdate dihydrate	nickel sulfate heptahydrate	MISMATCH	Expected 'sodium molybdate dihydrate', got 'nickel sulfate heptahydrate'
+NiCl2·6H2O	CHEBI:34887	CHEBI	nickel(II) chloride hexahydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride hexahydrate', got 'nickel dichloride'
+NiCl2 x 6H2O	CHEBI:34887	CHEBI	nickel(II) chloride hexahydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride hexahydrate', got 'nickel dichloride'
+NiCl2 x 6 H2O	CHEBI:34887	CHEBI	nickel(II) chloride hexahydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride hexahydrate', got 'nickel dichloride'
+NiCl2 x 2H2O	CHEBI:34887	CHEBI	nickel(II) chloride dihydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride dihydrate', got 'nickel dichloride'
+NiCl2 x 2 H2O	CHEBI:34887	CHEBI	nickel(II) chloride dihydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride dihydrate', got 'nickel dichloride'
+ZnSO4·7H2O	CHEBI:35176	CHEBI	zinc sulfate heptahydrate	zinc sulfate	VALID	Label partially matches
+ZnSO4 x 7H2O	CHEBI:35176	CHEBI	zinc sulfate heptahydrate	zinc sulfate	VALID	Label partially matches
+ZnSO4 x 7 H2O	CHEBI:35176	CHEBI	zinc sulfate heptahydrate	zinc sulfate	VALID	Label partially matches
+AlCl3·6H2O	CHEBI:30114	CHEBI	aluminium chloride hexahydrate	aluminium trichloride	MISMATCH	Expected 'aluminium chloride hexahydrate', got 'aluminium trichloride'
+FeCl3·6H2O	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+FeCl3 x 6H2O	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+FeCl3 x 6 H2O	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+Na2HPO4·2H2O	CHEBI:34683	CHEBI	disodium hydrogen phosphate dihydrate	disodium hydrogenphosphate	MISMATCH	Expected 'disodium hydrogen phosphate dihydrate', got 'disodium hydrogenphosphate'
+Na2HPO4·12H2O	CHEBI:34683	CHEBI	disodium hydrogen phosphate dodecahydrate	disodium hydrogenphosphate	MISMATCH	Expected 'disodium hydrogen phosphate dodecahydrate', got 'disodium hydrogenphosphate'
+K2HPO4·3H2O	CHEBI:32031	CHEBI	dipotassium hydrogen phosphate trihydrate	CHEBI_32031	MISMATCH	Expected 'dipotassium hydrogen phosphate trihydrate', got 'CHEBI_32031'
+K2HPO4 x 3 H2O	CHEBI:32031	CHEBI	dipotassium hydrogen phosphate trihydrate	CHEBI_32031	MISMATCH	Expected 'dipotassium hydrogen phosphate trihydrate', got 'CHEBI_32031'
+Na2S2O3·5H2O	CHEBI:132112	CHEBI	sodium thiosulfate pentahydrate	sodium thiosulfate	VALID	Label partially matches
+Thiamine-HCl x 2 H2O	CHEBI:49105	CHEBI	thiamine hydrochloride dihydrate	thiamine hydrochloride	VALID	Label partially matches
+Thiamine-HCl·2H2O	CHEBI:49105	CHEBI	thiamine hydrochloride dihydrate	thiamine hydrochloride	VALID	Label partially matches
+Fe(NH4)2(SO4)2·6H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate hexahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate hexahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Yeast extract	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Bacto Yeast extract	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Bacto yeast extract	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Yeast extrakt	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Tryptone	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+Bacto Tryptone	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+Trypticase	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+Trypticase peptone	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+Peptone	CHEBI:8150	CHEBI	peptone	CHEBI_8150	MISMATCH	Expected 'peptone', got 'CHEBI_8150'
+Bacto peptone	CHEBI:8150	CHEBI	peptone	CHEBI_8150	MISMATCH	Expected 'peptone', got 'CHEBI_8150'
+Bacto Peptone	CHEBI:8150	CHEBI	peptone	CHEBI_8150	MISMATCH	Expected 'peptone', got 'CHEBI_8150'
+Proteose peptone	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+Bacto Proteose Peptone	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+Casamino acids	CHEBI:78020	CHEBI	casamino acids	heptacosanoate	MISMATCH	Expected 'casamino acids', got 'heptacosanoate'
+Casitone	CHEBI:78018	CHEBI	casitone	dodecylphosphocholine	MISMATCH	Expected 'casitone', got 'dodecylphosphocholine'
+Casiton	CHEBI:78018	CHEBI	casitone	dodecylphosphocholine	MISMATCH	Expected 'casitone', got 'dodecylphosphocholine'
+Casein	CHEBI:60499	CHEBI	casein	[4)-beta-D-Galp-(1->3)-beta-D-Galp-(1->3)-beta-D-GalpNAc-(1->]n	MISMATCH	Expected 'casein', got '[4)-beta-D-Galp-(1->3)-beta-D-Galp-(1->3)-beta-D-GalpNAc-(1->]n'
+Beef extract	CHEBI:132852	CHEBI	meat extract	lespedezol D1	MISMATCH	Expected 'meat extract', got 'lespedezol D1'
+Meat extract	CHEBI:132852	CHEBI	meat extract	lespedezol D1	MISMATCH	Expected 'meat extract', got 'lespedezol D1'
+Lab-Lemco	CHEBI:132852	CHEBI	meat extract	lespedezol D1	MISMATCH	Expected 'meat extract', got 'lespedezol D1'
+Malt extract	CHEBI:132851	CHEBI	malt extract	roburic acid	MISMATCH	Expected 'malt extract', got 'roburic acid'
+Bovine serum albumin	CHEBI:3169	CHEBI	bovine serum albumin	CHEBI_3169	MISMATCH	Expected 'bovine serum albumin', got 'CHEBI_3169'
+BSA	CHEBI:3169	CHEBI	bovine serum albumin	CHEBI_3169	MISMATCH	Expected 'bovine serum albumin', got 'CHEBI_3169'
+Gelatin	CHEBI:5291	CHEBI	gelatin	gelatin	VALID	Label matches primary name
+EDTA·2Na	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+EDTA-2Na	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+EDTA 2Na	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+Na2-EDTA	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+Na2EDTA	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+Na2-fumarate	CHEBI:32853	CHEBI	sodium fumarate	L-valyl group	MISMATCH	Expected 'sodium fumarate', got 'L-valyl group'
+Na-fumarate	CHEBI:32853	CHEBI	sodium fumarate	L-valyl group	MISMATCH	Expected 'sodium fumarate', got 'L-valyl group'
+Na2-succinate	CHEBI:32849	CHEBI	sodium succinate	TEMPO	MISMATCH	Expected 'sodium succinate', got 'TEMPO'
+Na-malate	CHEBI:32847	CHEBI	sodium malate	serino group	MISMATCH	Expected 'sodium malate', got 'serino group'
+Na-tartrate	CHEBI:32856	CHEBI	sodium tartrate	D-valinium	MISMATCH	Expected 'sodium tartrate', got 'D-valinium'
+Na-benzoate	CHEBI:113455	CHEBI	sodium benzoate	sodium benzoate	VALID	Label matches primary name
+Proteose peptone No. 3	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+Proteose Peptone No. 3	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+Yeastolate	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Sea salts	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+Sea salt	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+Instant ocean	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+NaHCO3solution	CHEBI:32139	CHEBI	sodium bicarbonate	sodium hydrogencarbonate	VALID	Label matches synonym (primary: sodium hydrogencarbonate)
+Sodium dithionite	CHEBI:53143	CHEBI	sodium dithionite	pyrimidine 5'-deoxyribonucleotide	MISMATCH	Expected 'sodium dithionite', got 'pyrimidine 5'-deoxyribonucleotide'
+Na2S2O4	CHEBI:53143	CHEBI	sodium dithionite	pyrimidine 5'-deoxyribonucleotide	MISMATCH	Expected 'sodium dithionite', got 'pyrimidine 5'-deoxyribonucleotide'
+Potassium phosphate	CHEBI:63036	CHEBI	potassium phosphate	potassium dihydrogen phosphate	VALID	Label matches synonym (primary: potassium dihydrogen phosphate)
+Sodium phosphate	CHEBI:37586	CHEBI	sodium phosphate	sodium phosphate	VALID	Label matches primary name
+Crotonic acid	CHEBI:41131	CHEBI	crotonic acid	crotonic acid	VALID	Label matches primary name
+Sodium sulfite	CHEBI:86477	CHEBI	sodium sulfite	sodium sulfite	VALID	Label matches primary name
+Na2SO3	CHEBI:86477	CHEBI	sodium sulfite	sodium sulfite	VALID	Label matches primary name
+Sodium selenate	CHEBI:48841	CHEBI	sodium selenate	selenite esters	MISMATCH	Expected 'sodium selenate', got 'selenite esters'
+Na2SeO4	CHEBI:48841	CHEBI	sodium selenate	selenite esters	MISMATCH	Expected 'sodium selenate', got 'selenite esters'
+Cerium chloride	CHEBI:53373	CHEBI	cerium(III) chloride	gamma-poly(glutamic acid) macromolecule	MISMATCH	Expected 'cerium(III) chloride', got 'gamma-poly(glutamic acid) macromolecule'
+CeCl3	CHEBI:53373	CHEBI	cerium(III) chloride	gamma-poly(glutamic acid) macromolecule	MISMATCH	Expected 'cerium(III) chloride', got 'gamma-poly(glutamic acid) macromolecule'
+Potassium tetrathionate	CHEBI:53438	CHEBI	potassium tetrathionate	iron(3+) sulfate	MISMATCH	Expected 'potassium tetrathionate', got 'iron(3+) sulfate'
+K2S4O6	CHEBI:53438	CHEBI	potassium tetrathionate	iron(3+) sulfate	MISMATCH	Expected 'potassium tetrathionate', got 'iron(3+) sulfate'
+Ammonium bicarbonate	CHEBI:62946	CHEBI	ammonium bicarbonate	ammonium sulfate	MISMATCH	Expected 'ammonium bicarbonate', got 'ammonium sulfate'
+NH4HCO3	CHEBI:62946	CHEBI	ammonium bicarbonate	ammonium sulfate	MISMATCH	Expected 'ammonium bicarbonate', got 'ammonium sulfate'
+Iron(III) citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Starch	CHEBI:28017	CHEBI	starch	starch	VALID	Label matches primary name
+Starch, soluble	CHEBI:28017	CHEBI	starch	starch	VALID	Label matches primary name
+FeSO4·5H2O	CHEBI:75832	CHEBI	iron(II) sulfate pentahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate pentahydrate', got 'iron(2+) sulfate (anhydrous)'
+FeSO4 x 5H2O	CHEBI:75832	CHEBI	iron(II) sulfate pentahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate pentahydrate', got 'iron(2+) sulfate (anhydrous)'
+FeSO4 x 5 H2O	CHEBI:75832	CHEBI	iron(II) sulfate pentahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate pentahydrate', got 'iron(2+) sulfate (anhydrous)'
+FeSO4·6H2O	CHEBI:75832	CHEBI	iron(II) sulfate hexahydrate	iron(2+) sulfate (anhydrous)	MISMATCH	Expected 'iron(II) sulfate hexahydrate', got 'iron(2+) sulfate (anhydrous)'
+CaCl2 x 2H2O	CHEBI:3312	CHEBI	calcium chloride dihydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride dihydrate', got 'calcium dichloride'
+CaCl2 x 2 H2O	CHEBI:3312	CHEBI	calcium chloride dihydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride dihydrate', got 'calcium dichloride'
+CaCl2 x H2O	CHEBI:3312	CHEBI	calcium chloride monohydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride monohydrate', got 'calcium dichloride'
+CaCl2·2H2O	CHEBI:3312	CHEBI	calcium chloride dihydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride dihydrate', got 'calcium dichloride'
+CaCl2·H2O	CHEBI:3312	CHEBI	calcium chloride monohydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride monohydrate', got 'calcium dichloride'
+CaCl x 2 H2O	CHEBI:3312	CHEBI	calcium chloride dihydrate	calcium dichloride	MISMATCH	Expected 'calcium chloride dihydrate', got 'calcium dichloride'
+Thiamine·HCl·2H2O	CHEBI:49105	CHEBI	thiamine hydrochloride dihydrate	thiamine hydrochloride	VALID	Label partially matches
+Fe(NH4)2(SO4)2·6H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate hexahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate hexahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Fe(NH4)2(SO4)2 x 6H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate hexahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate hexahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Fe(NH4)2(SO4)2 x 6 H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate hexahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate hexahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Fe(NH4)2(SO4)2 x 7 H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate heptahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate heptahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Fe(NH4)2(SO4)2 x 7H2O	CHEBI:76243	CHEBI	ammonium iron(II) sulfate heptahydrate	ferrous ammonium sulfate (anhydrous)	MISMATCH	Expected 'ammonium iron(II) sulfate heptahydrate', got 'ferrous ammonium sulfate (anhydrous)'
+Trypticase	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+Na2S·9H2O	CHEBI:78667	CHEBI	sodium sulfide nonahydrate	sodium chlorite	MISMATCH	Expected 'sodium sulfide nonahydrate', got 'sodium chlorite'
+Na2S x 9H2O	CHEBI:78667	CHEBI	sodium sulfide nonahydrate	sodium chlorite	MISMATCH	Expected 'sodium sulfide nonahydrate', got 'sodium chlorite'
+Na2S 9 H2O	CHEBI:78667	CHEBI	sodium sulfide nonahydrate	sodium chlorite	MISMATCH	Expected 'sodium sulfide nonahydrate', got 'sodium chlorite'
+L-Cysteine·HCl·H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+L-Cysteine HCl H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+cysteine-HCl x H2O	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+L-Cysteine·H2O·HCl	CHEBI:17561	CHEBI	L-cysteine hydrochloride monohydrate	L-cysteine	VALID	Label partially matches
+trimethoxybenzoate	CHEBI:9768	CHEBI	3,4,5-trimethoxybenzoic acid	Tryptanthrine	MISMATCH	Expected '3,4,5-trimethoxybenzoic acid', got 'Tryptanthrine'
+3,4,5-trimethoxybenzoate	CHEBI:9768	CHEBI	3,4,5-trimethoxybenzoic acid	Tryptanthrine	MISMATCH	Expected '3,4,5-trimethoxybenzoic acid', got 'Tryptanthrine'
+Crotonic acid	CHEBI:41131	CHEBI	crotonic acid	crotonic acid	VALID	Label matches primary name
+Na-crotonate	CHEBI:41131	CHEBI	sodium crotonate	crotonic acid	MISMATCH	Expected 'sodium crotonate', got 'crotonic acid'
+Sodium crotonate	CHEBI:41131	CHEBI	sodium crotonate	crotonic acid	MISMATCH	Expected 'sodium crotonate', got 'crotonic acid'
+goethite	CHEBI:33739	CHEBI	goethite	di-mu-sulfido-diiron(0)	MISMATCH	Expected 'goethite', got 'di-mu-sulfido-diiron(0)'
+synanthrin	CHEBI:28443	CHEBI	inulin	cyclohexa-1,4-diene-1-carbonyl-CoA	MISMATCH	Expected 'inulin', got 'cyclohexa-1,4-diene-1-carbonyl-CoA'
+Inulin	CHEBI:28443	CHEBI	inulin	cyclohexa-1,4-diene-1-carbonyl-CoA	MISMATCH	Expected 'inulin', got 'cyclohexa-1,4-diene-1-carbonyl-CoA'
+Sea Salt	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+sea salt	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+Instant Ocean	CHEBI:35196	CHEBI	sea salt	nitrogen oxide	MISMATCH	Expected 'sea salt', got 'nitrogen oxide'
+EDTA·3Na	CHEBI:64758	CHEBI	trisodium EDTA	EDTA disodium salt dihydrate	MISMATCH	Expected 'trisodium EDTA', got 'EDTA disodium salt dihydrate'
+EDTA-3Na	CHEBI:64758	CHEBI	trisodium EDTA	EDTA disodium salt dihydrate	MISMATCH	Expected 'trisodium EDTA', got 'EDTA disodium salt dihydrate'
+EDTA 3Na	CHEBI:64758	CHEBI	trisodium EDTA	EDTA disodium salt dihydrate	MISMATCH	Expected 'trisodium EDTA', got 'EDTA disodium salt dihydrate'
+EDTA.Na2.2H2O	CHEBI:64755	CHEBI	disodium EDTA dihydrate	EDTA(2-)	MISMATCH	Expected 'disodium EDTA dihydrate', got 'EDTA(2-)'
+Na2-EDTA x 2 H2O	CHEBI:64755	CHEBI	disodium EDTA dihydrate	EDTA(2-)	MISMATCH	Expected 'disodium EDTA dihydrate', got 'EDTA(2-)'
+Na2-EDTA*2 H2O	CHEBI:64755	CHEBI	disodium EDTA dihydrate	EDTA(2-)	MISMATCH	Expected 'disodium EDTA dihydrate', got 'EDTA(2-)'
+Na2‐EDTA x 2H2O	CHEBI:64755	CHEBI	disodium EDTA dihydrate	EDTA(2-)	MISMATCH	Expected 'disodium EDTA dihydrate', got 'EDTA(2-)'
+EDTA·Na2	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+EDTA Na2	CHEBI:64755	CHEBI	disodium EDTA	EDTA(2-)	MISMATCH	Expected 'disodium EDTA', got 'EDTA(2-)'
+EDTA·Fe(III)	CHEBI:64757	CHEBI	iron(III) EDTA	3-palmitoyl-sn-glycerol	MISMATCH	Expected 'iron(III) EDTA', got '3-palmitoyl-sn-glycerol'
+EDTA-iron	CHEBI:64757	CHEBI	iron EDTA	3-palmitoyl-sn-glycerol	MISMATCH	Expected 'iron EDTA', got '3-palmitoyl-sn-glycerol'
+EDTA·Na·Fe(III)	CHEBI:64757	CHEBI	iron(III) sodium EDTA	3-palmitoyl-sn-glycerol	MISMATCH	Expected 'iron(III) sodium EDTA', got '3-palmitoyl-sn-glycerol'
+FeNaEDTA	CHEBI:64757	CHEBI	iron(III) sodium EDTA	3-palmitoyl-sn-glycerol	MISMATCH	Expected 'iron(III) sodium EDTA', got '3-palmitoyl-sn-glycerol'
+Fe-EDTA	CHEBI:64757	CHEBI	iron EDTA	3-palmitoyl-sn-glycerol	MISMATCH	Expected 'iron EDTA', got '3-palmitoyl-sn-glycerol'
+Na3-citrate	CHEBI:32142	CHEBI	trisodium citrate	sodium citrate dihydrate	MISMATCH	Expected 'trisodium citrate', got 'sodium citrate dihydrate'
+Na3Citrat	CHEBI:32142	CHEBI	trisodium citrate	sodium citrate dihydrate	MISMATCH	Expected 'trisodium citrate', got 'sodium citrate dihydrate'
+Na3Citrate	CHEBI:32142	CHEBI	trisodium citrate	sodium citrate dihydrate	MISMATCH	Expected 'trisodium citrate', got 'sodium citrate dihydrate'
+Tri-Na citrate	CHEBI:32142	CHEBI	trisodium citrate	sodium citrate dihydrate	MISMATCH	Expected 'trisodium citrate', got 'sodium citrate dihydrate'
+Na2-citrate	CHEBI:32142	CHEBI	sodium citrate	sodium citrate dihydrate	VALID	Label matches synonym (primary: sodium citrate dihydrate)
+Trypticase soy broth	CHEBI:78018	CHEBI	trypticase soy broth	dodecylphosphocholine	MISMATCH	Expected 'trypticase soy broth', got 'dodecylphosphocholine'
+Brain heart infusion broth	CHEBI:132852	CHEBI	brain heart infusion	lespedezol D1	MISMATCH	Expected 'brain heart infusion', got 'lespedezol D1'
+Brain heart infusion	CHEBI:132852	CHEBI	brain heart infusion	lespedezol D1	MISMATCH	Expected 'brain heart infusion', got 'lespedezol D1'
+Brain Heart Infusion	CHEBI:132852	CHEBI	brain heart infusion	lespedezol D1	MISMATCH	Expected 'brain heart infusion', got 'lespedezol D1'
+Marine broth 2216	CHEBI:35196	CHEBI	marine broth	nitrogen oxide	MISMATCH	Expected 'marine broth', got 'nitrogen oxide'
+Marine Broth 2216	CHEBI:35196	CHEBI	marine broth	nitrogen oxide	MISMATCH	Expected 'marine broth', got 'nitrogen oxide'
+Marine broth	CHEBI:35196	CHEBI	marine broth	nitrogen oxide	MISMATCH	Expected 'marine broth', got 'nitrogen oxide'
+Nutrient broth	CHEBI:132852	CHEBI	nutrient broth	lespedezol D1	MISMATCH	Expected 'nutrient broth', got 'lespedezol D1'
+Nutrient Broth	CHEBI:132852	CHEBI	nutrient broth	lespedezol D1	MISMATCH	Expected 'nutrient broth', got 'lespedezol D1'
+LB Broth	CHEBI:132852	CHEBI	LB broth	lespedezol D1	MISMATCH	Expected 'LB broth', got 'lespedezol D1'
+R2A agar	CHEBI:2509	CHEBI	R2A agar	agar	VALID	Label partially matches
+R2A broth	CHEBI:132852	CHEBI	R2A broth	lespedezol D1	MISMATCH	Expected 'R2A broth', got 'lespedezol D1'
+Phytone peptone	CHEBI:8150	CHEBI	phytone peptone	CHEBI_8150	MISMATCH	Expected 'phytone peptone', got 'CHEBI_8150'
+Phytone	CHEBI:8150	CHEBI	phytone peptone	CHEBI_8150	MISMATCH	Expected 'phytone peptone', got 'CHEBI_8150'
+Polypeptone	CHEBI:8150	CHEBI	polypeptone	CHEBI_8150	MISMATCH	Expected 'polypeptone', got 'CHEBI_8150'
+polypeptone	CHEBI:8150	CHEBI	polypeptone	CHEBI_8150	MISMATCH	Expected 'polypeptone', got 'CHEBI_8150'
+Polypepton	CHEBI:8150	CHEBI	polypeptone	CHEBI_8150	MISMATCH	Expected 'polypeptone', got 'CHEBI_8150'
+Hipolypepton	CHEBI:8150	CHEBI	polypeptone	CHEBI_8150	MISMATCH	Expected 'polypeptone', got 'CHEBI_8150'
+Neopeptone	CHEBI:8150	CHEBI	neopeptone	CHEBI_8150	MISMATCH	Expected 'neopeptone', got 'CHEBI_8150'
+Soytone	CHEBI:8150	CHEBI	soytone	CHEBI_8150	MISMATCH	Expected 'soytone', got 'CHEBI_8150'
+soyton	CHEBI:8150	CHEBI	soytone	CHEBI_8150	MISMATCH	Expected 'soytone', got 'CHEBI_8150'
+N-Z amine	CHEBI:8150	CHEBI	N-Z amine	CHEBI_8150	MISMATCH	Expected 'N-Z amine', got 'CHEBI_8150'
+N-Z-Amine	CHEBI:8150	CHEBI	N-Z amine	CHEBI_8150	MISMATCH	Expected 'N-Z amine', got 'CHEBI_8150'
+Tryptose	CHEBI:78018	CHEBI	tryptose	dodecylphosphocholine	MISMATCH	Expected 'tryptose', got 'dodecylphosphocholine'
+Fish peptone	CHEBI:8150	CHEBI	fish peptone	CHEBI_8150	MISMATCH	Expected 'fish peptone', got 'CHEBI_8150'
+Meat peptone	CHEBI:8150	CHEBI	meat peptone	CHEBI_8150	MISMATCH	Expected 'meat peptone', got 'CHEBI_8150'
+Proteose peptone	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+proteose	CHEBI:8150	CHEBI	proteose peptone	CHEBI_8150	MISMATCH	Expected 'proteose peptone', got 'CHEBI_8150'
+Casein peptone	CHEBI:8150	CHEBI	casein peptone	CHEBI_8150	MISMATCH	Expected 'casein peptone', got 'CHEBI_8150'
+Casein hydrolysate	CHEBI:78020	CHEBI	casein hydrolysate	heptacosanoate	MISMATCH	Expected 'casein hydrolysate', got 'heptacosanoate'
+Peptone from casein	CHEBI:8150	CHEBI	casein peptone	CHEBI_8150	MISMATCH	Expected 'casein peptone', got 'CHEBI_8150'
+Peptone from soy meal	CHEBI:8150	CHEBI	soy peptone	CHEBI_8150	MISMATCH	Expected 'soy peptone', got 'CHEBI_8150'
+Peptone from soymeal	CHEBI:8150	CHEBI	soy peptone	CHEBI_8150	MISMATCH	Expected 'soy peptone', got 'CHEBI_8150'
+Peptone from meat	CHEBI:8150	CHEBI	meat peptone	CHEBI_8150	MISMATCH	Expected 'meat peptone', got 'CHEBI_8150'
+Tryptone Peptone	CHEBI:78018	CHEBI	tryptone	dodecylphosphocholine	MISMATCH	Expected 'tryptone', got 'dodecylphosphocholine'
+D-Ca-pantothenate	CHEBI:7916	CHEBI	calcium pantothenate	pantothenic acid	MISMATCH	Expected 'calcium pantothenate', got 'pantothenic acid'
+Ca-pantothenate	CHEBI:7916	CHEBI	calcium pantothenate	pantothenic acid	MISMATCH	Expected 'calcium pantothenate', got 'pantothenic acid'
+Calcium pantothenate	CHEBI:7916	CHEBI	calcium pantothenate	pantothenic acid	MISMATCH	Expected 'calcium pantothenate', got 'pantothenic acid'
+Thiamine HCl	CHEBI:49105	CHEBI	thiamine hydrochloride	thiamine hydrochloride	VALID	Label matches primary name
+Cyanocobalamin	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Vitamin B1	CHEBI:18385	CHEBI	thiamine	thiamine(1+)	VALID	Label matches synonym (primary: thiamine(1+))
+Pyridoxine hydrochloride	CHEBI:16709	CHEBI	pyridoxine hydrochloride	pyridoxine	VALID	Label partially matches
+Ferric citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Fe(III) citrate	CHEBI:30781	CHEBI	iron(III) citrate	butynedioic acid	MISMATCH	Expected 'iron(III) citrate', got 'butynedioic acid'
+Fe-citrate	CHEBI:30781	CHEBI	iron citrate	butynedioic acid	MISMATCH	Expected 'iron citrate', got 'butynedioic acid'
+Fe–citrate	CHEBI:30781	CHEBI	iron citrate	butynedioic acid	MISMATCH	Expected 'iron citrate', got 'butynedioic acid'
+Fe -citrate	CHEBI:30781	CHEBI	iron citrate	butynedioic acid	MISMATCH	Expected 'iron citrate', got 'butynedioic acid'
+Ammonium ferric citrate	CHEBI:76247	CHEBI	ammonium ferric citrate	4-hydroxy-2,5-dimethylfuran-3-one	MISMATCH	Expected 'ammonium ferric citrate', got '4-hydroxy-2,5-dimethylfuran-3-one'
+Fe(NH4)citrate	CHEBI:76247	CHEBI	ammonium ferric citrate	4-hydroxy-2,5-dimethylfuran-3-one	MISMATCH	Expected 'ammonium ferric citrate', got '4-hydroxy-2,5-dimethylfuran-3-one'
+Fe(NH4)2(SO4)2	CHEBI:76243	CHEBI	ammonium iron(II) sulfate	ferrous ammonium sulfate (anhydrous)	VALID	Label matches synonym (primary: ferrous ammonium sulfate (anhydrous))
+Fe2(SO4)3	CHEBI:53438	CHEBI	iron(III) sulfate	iron(3+) sulfate	VALID	Label matches synonym (primary: iron(3+) sulfate)
+Fe2(SO4)3·xH2O	CHEBI:53438	CHEBI	iron(III) sulfate hydrate	iron(3+) sulfate	MISMATCH	Expected 'iron(III) sulfate hydrate', got 'iron(3+) sulfate'
+Fe2(SO4)3·nH2O	CHEBI:53438	CHEBI	iron(III) sulfate hydrate	iron(3+) sulfate	MISMATCH	Expected 'iron(III) sulfate hydrate', got 'iron(3+) sulfate'
+MgCl x 6H2O	CHEBI:6636	CHEBI	magnesium chloride hexahydrate	magnesium dichloride	MISMATCH	Expected 'magnesium chloride hexahydrate', got 'magnesium dichloride'
+MgCl2 x 6H2O	CHEBI:6636	CHEBI	magnesium chloride hexahydrate	magnesium dichloride	MISMATCH	Expected 'magnesium chloride hexahydrate', got 'magnesium dichloride'
+MgCl2 x 6 H2O	CHEBI:6636	CHEBI	magnesium chloride hexahydrate	magnesium dichloride	MISMATCH	Expected 'magnesium chloride hexahydrate', got 'magnesium dichloride'
+CoCl 2 x 6 H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2 6 H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2*6 H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2*6H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+CoCl2-6H2O	CHEBI:35696	CHEBI	cobalt(II) chloride hexahydrate	cobalt dichloride	MISMATCH	Expected 'cobalt(II) chloride hexahydrate', got 'cobalt dichloride'
+Na-silicate	CHEBI:32147	CHEBI	sodium silicate	sodium picosulfate	MISMATCH	Expected 'sodium silicate', got 'sodium picosulfate'
+Na-resazurin	CHEBI:8806	CHEBI	resazurin sodium	Resazurin	VALID	Label partially matches
+Resazurin-Na	CHEBI:8806	CHEBI	resazurin sodium	Resazurin	VALID	Label partially matches
+Na-DL-malate	CHEBI:32847	CHEBI	sodium malate	serino group	MISMATCH	Expected 'sodium malate', got 'serino group'
+Na2-DL-malate	CHEBI:32847	CHEBI	sodium malate	serino group	MISMATCH	Expected 'sodium malate', got 'serino group'
+Na-L-malate	CHEBI:32847	CHEBI	sodium L-malate	serino group	MISMATCH	Expected 'sodium L-malate', got 'serino group'
+Na-L-lactate	CHEBI:32855	CHEBI	sodium L-lactate	D-valinate	MISMATCH	Expected 'sodium L-lactate', got 'D-valinate'
+Na-glutamate	CHEBI:29988	CHEBI	sodium glutamate	L-glutamate(2-)	MISMATCH	Expected 'sodium glutamate', got 'L-glutamate(2-)'
+Na glutamate	CHEBI:29988	CHEBI	sodium glutamate	L-glutamate(2-)	MISMATCH	Expected 'sodium glutamate', got 'L-glutamate(2-)'
+Na2-glutamate	CHEBI:29988	CHEBI	sodium glutamate	L-glutamate(2-)	MISMATCH	Expected 'sodium glutamate', got 'L-glutamate(2-)'
+Na-gallate	CHEBI:66135	CHEBI	sodium gallate	kalimantacin A	MISMATCH	Expected 'sodium gallate', got 'kalimantacin A'
+Na-orotate	CHEBI:132979	CHEBI	sodium orotate	3-hydroxydecanoate	MISMATCH	Expected 'sodium orotate', got '3-hydroxydecanoate'
+Na-oxalate	CHEBI:132992	CHEBI	sodium oxalate	radiosensitizing agent	MISMATCH	Expected 'sodium oxalate', got 'radiosensitizing agent'
+NH4-oxalate	CHEBI:62959	CHEBI	ammonium oxalate	N-acetyl-alpha-D-glucosaminyl-1-diphospho-ditrans,polycis-undecaprenol(2-)	MISMATCH	Expected 'ammonium oxalate', got 'N-acetyl-alpha-D-glucosaminyl-1-diphospho-ditrans,polycis-undecaprenol(2-)'
+Sodium L-lactate	CHEBI:32855	CHEBI	sodium L-lactate	D-valinate	MISMATCH	Expected 'sodium L-lactate', got 'D-valinate'
+Sodium butyrate	CHEBI:132149	CHEBI	sodium butyrate	prostaglandin D3(1-)	MISMATCH	Expected 'sodium butyrate', got 'prostaglandin D3(1-)'
+Sodium propionate	CHEBI:132162	CHEBI	sodium propionate	1,3'-bis(2-deoxy-5-O-phosphono-beta-D-erythro-pentofuranosyl)-6-(5,6-diamino-2-oxo-2,3,4,5-tetrahydropyrimidin-4-yl)-1,3-diazabicyclo[2.2.0]hex-4-en-2-one	MISMATCH	Expected 'sodium propionate', got '1,3'-bis(2-deoxy-5-O-phosphono-beta-D-erythro-pentofuranosyl)-6-(5,6-diamino-2-oxo-2,3,4,5-tetrahydropyrimidin-4-yl)-1,3-diazabicyclo[2.2.0]hex-4-en-2-one'
+Sodium octanoate	CHEBI:77578	CHEBI	sodium octanoate	monoalkyl-sn-glycero-3-phosphoethanolamine zwitterion	MISMATCH	Expected 'sodium octanoate', got 'monoalkyl-sn-glycero-3-phosphoethanolamine zwitterion'
+Sodium ascorbate	CHEBI:113455	CHEBI	sodium ascorbate	sodium benzoate	MISMATCH	Expected 'sodium ascorbate', got 'sodium benzoate'
+Na2HPO4 x H2O	CHEBI:34683	CHEBI	disodium hydrogen phosphate monohydrate	disodium hydrogenphosphate	MISMATCH	Expected 'disodium hydrogen phosphate monohydrate', got 'disodium hydrogenphosphate'
+NaH2PO4 x H2O	CHEBI:37585	CHEBI	sodium dihydrogen phosphate monohydrate	sodium dihydrogenphosphate	MISMATCH	Expected 'sodium dihydrogen phosphate monohydrate', got 'sodium dihydrogenphosphate'
+K2HPO4 x 3H2O	CHEBI:32031	CHEBI	dipotassium hydrogen phosphate trihydrate	CHEBI_32031	MISMATCH	Expected 'dipotassium hydrogen phosphate trihydrate', got 'CHEBI_32031'
+K2HPO4 x 3 H2O	CHEBI:32031	CHEBI	dipotassium hydrogen phosphate trihydrate	CHEBI_32031	MISMATCH	Expected 'dipotassium hydrogen phosphate trihydrate', got 'CHEBI_32031'
+Betaine x H2O	CHEBI:17750	CHEBI	betaine monohydrate	glycine betaine	MISMATCH	Expected 'betaine monohydrate', got 'glycine betaine'
+Betaine	CHEBI:17750	CHEBI	betaine	glycine betaine	VALID	Label matches synonym (primary: glycine betaine)
+DL-Dithiothreitol	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+Dithiothreitol	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+Methanol	CHEBI:17790	CHEBI	methanol	methanol	VALID	Label matches primary name
+MeOH	CHEBI:17790	CHEBI	methanol	methanol	VALID	Label matches primary name
+Ethanol absolute	CHEBI:16236	CHEBI	ethanol	ethanol	VALID	Label matches primary name
+CaSO4 x 2H2O	CHEBI:32583	CHEBI	calcium sulfate dihydrate	calcium sulfate dihydrate	VALID	Label matches primary name
+CaSO4·2H2O	CHEBI:32583	CHEBI	calcium sulfate dihydrate	calcium sulfate dihydrate	VALID	Label matches primary name
+MnSO4 x H20	CHEBI:132995	CHEBI	manganese(II) sulfate monohydrate	(E,E)-bilirubin anion	MISMATCH	Expected 'manganese(II) sulfate monohydrate', got '(E,E)-bilirubin anion'
+MnSO4 x H2O	CHEBI:132995	CHEBI	manganese(II) sulfate monohydrate	(E,E)-bilirubin anion	MISMATCH	Expected 'manganese(II) sulfate monohydrate', got '(E,E)-bilirubin anion'
+MnCl2·4H2O	CHEBI:63041	CHEBI	manganese(II) chloride tetrahydrate	manganese(II) chloride	VALID	Label partially matches
+MnCl2*4 H2O	CHEBI:63041	CHEBI	manganese(II) chloride tetrahydrate	manganese(II) chloride	VALID	Label partially matches
+MnCl2*4H2O	CHEBI:63041	CHEBI	manganese(II) chloride tetrahydrate	manganese(II) chloride	VALID	Label partially matches
+NiCl2*2H2O	CHEBI:34887	CHEBI	nickel(II) chloride dihydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride dihydrate', got 'nickel dichloride'
+NiCl2-6H2O	CHEBI:34887	CHEBI	nickel(II) chloride hexahydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride hexahydrate', got 'nickel dichloride'
+NiCl2·H2O	CHEBI:34887	CHEBI	nickel(II) chloride monohydrate	nickel dichloride	MISMATCH	Expected 'nickel(II) chloride monohydrate', got 'nickel dichloride'
+NaVO3 x H2O	CHEBI:132118	CHEBI	sodium metavanadate	S-(2-carboxy-2-methylbut-3-en-2-yl)glutathione	MISMATCH	Expected 'sodium metavanadate', got 'S-(2-carboxy-2-methylbut-3-en-2-yl)glutathione'
+NaVO3	CHEBI:132118	CHEBI	sodium metavanadate	S-(2-carboxy-2-methylbut-3-en-2-yl)glutathione	MISMATCH	Expected 'sodium metavanadate', got 'S-(2-carboxy-2-methylbut-3-en-2-yl)glutathione'
+Gellan gum	CHEBI:63223	CHEBI	gellan gum	8-oxo-dGMP	MISMATCH	Expected 'gellan gum', got '8-oxo-dGMP'
+Gellan Gum	CHEBI:63223	CHEBI	gellan gum	8-oxo-dGMP	MISMATCH	Expected 'gellan gum', got '8-oxo-dGMP'
+Gelrite	CHEBI:63223	CHEBI	gellan gum	8-oxo-dGMP	MISMATCH	Expected 'gellan gum', got '8-oxo-dGMP'
+Nitrilotriacetic acid	CHEBI:30838	CHEBI	nitrilotriacetic acid	itaconic acid	MISMATCH	Expected 'nitrilotriacetic acid', got 'itaconic acid'
+Cellobiose	CHEBI:17057	CHEBI	cellobiose	cellobiose	VALID	Label matches primary name
+Mannitol	CHEBI:16899	CHEBI	mannitol	D-mannitol	VALID	Label matches synonym (primary: D-mannitol)
+Glycerin	CHEBI:17754	CHEBI	glycerol	glycerol	VALID	Label matches primary name
+Taurine	CHEBI:15891	CHEBI	taurine	taurine	VALID	Label matches primary name
+Rhamnose	CHEBI:26546	CHEBI	rhamnose	rhamnose	VALID	Label matches primary name
+L-Rhamnose	CHEBI:26546	CHEBI	L-rhamnose	rhamnose	VALID	Label partially matches
+Xylose	CHEBI:53455	CHEBI	xylose	D-xylopyranose	MISMATCH	Expected 'xylose', got 'D-xylopyranose'
+Fructose	CHEBI:28645	CHEBI	fructose	beta-D-fructofuranose	VALID	Label matches synonym (primary: beta-D-fructofuranose)
+D-Fructose	CHEBI:37721	CHEBI	D-fructose	D-fructofuranose	VALID	Label matches synonym (primary: D-fructofuranose)
+Coenzyme M	CHEBI:17905	CHEBI	coenzyme M	coenzyme M	VALID	Label matches primary name
+Trimethylamine	CHEBI:18139	CHEBI	trimethylamine	trimethylamine	VALID	Label matches primary name
+Trimethylamine·HCl	CHEBI:18139	CHEBI	trimethylamine hydrochloride	trimethylamine	VALID	Label partially matches
+N-Acetylglucosamine	CHEBI:28009	CHEBI	N-acetyl-D-glucosamine	N-acetyl-beta-D-glucosamine	VALID	Label matches synonym (primary: N-acetyl-beta-D-glucosamine)
+N-Acetyl-D-glucosamine	CHEBI:28009	CHEBI	N-acetyl-D-glucosamine	N-acetyl-beta-D-glucosamine	VALID	Label matches synonym (primary: N-acetyl-beta-D-glucosamine)
+Colloidal chitin	CHEBI:17029	CHEBI	chitin	chitin	VALID	Label matches primary name
+Chitin	CHEBI:17029	CHEBI	chitin	chitin	VALID	Label matches primary name
+Xylan	CHEBI:37166	CHEBI	xylan	xylan	VALID	Label matches primary name
+Carboxymethylcellulose	CHEBI:85146	CHEBI	carboxymethylcellulose	carboxymethylcellulose	VALID	Label matches primary name
+Cellulose	CHEBI:18089	CHEBI	cellulose	N-benzoylglycine	MISMATCH	Expected 'cellulose', got 'N-benzoylglycine'
+Sodium thiosulfate	CHEBI:132112	CHEBI	sodium thiosulfate	sodium thiosulfate	VALID	Label matches primary name
+Potassium tetrathionate	CHEBI:53438	CHEBI	potassium tetrathionate	iron(3+) sulfate	MISMATCH	Expected 'potassium tetrathionate', got 'iron(3+) sulfate'
+Ammonium bicarbonate	CHEBI:62946	CHEBI	ammonium bicarbonate	ammonium sulfate	MISMATCH	Expected 'ammonium bicarbonate', got 'ammonium sulfate'
+HEPES buffer	CHEBI:42334	CHEBI	HEPES	2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid	VALID	Label matches synonym (primary: 2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid)
+PIPES buffer	CHEBI:44930	CHEBI	PIPES	N-(p-nitrophenylphosphobutanoyl)glycine	MISMATCH	Expected 'PIPES', got 'N-(p-nitrophenylphosphobutanoyl)glycine'
+MES buffer	CHEBI:44833	CHEBI	MES	N/A	NOT_FOUND	CHEBI ID CHEBI:44833 not found in database
+MOPS buffer	CHEBI:44115	CHEBI	MOPS	3-(N-morpholino)propanesulfonic acid	VALID	Label matches synonym (primary: 3-(N-morpholino)propanesulfonic acid)
+ACES-buffer	CHEBI:44913	CHEBI	ACES	N/A	NOT_FOUND	CHEBI ID CHEBI:44913 not found in database
+ACES buffer	CHEBI:44913	CHEBI	ACES	N/A	NOT_FOUND	CHEBI ID CHEBI:44913 not found in database
+BICINE buffer	CHEBI:22308	CHEBI	bicine	CHEBI_22308	MISMATCH	Expected 'bicine', got 'CHEBI_22308'
+BICINE	CHEBI:22308	CHEBI	bicine	CHEBI_22308	MISMATCH	Expected 'bicine', got 'CHEBI_22308'
+Tris-HCl buffer	CHEBI:9754	CHEBI	tris hydrochloride	tris	VALID	Label partially matches
+Tris-HCl	CHEBI:9754	CHEBI	tris hydrochloride	tris	VALID	Label partially matches
+Tris/HCl	CHEBI:9754	CHEBI	tris hydrochloride	tris	VALID	Label partially matches
+Tris base	CHEBI:9754	CHEBI	tris	tris	VALID	Label matches primary name
+HOMOPIPES	CHEBI:44966	CHEBI	HOMOPIPES	N/A	NOT_FOUND	CHEBI ID CHEBI:44966 not found in database
+Glycine-NaOH buffer	CHEBI:15428	CHEBI	glycine	glycine	VALID	Label matches primary name
+K-phosphate buffer	CHEBI:63036	CHEBI	potassium phosphate	potassium dihydrogen phosphate	VALID	Label matches synonym (primary: potassium dihydrogen phosphate)
+Potassium phosphate buffer	CHEBI:63036	CHEBI	potassium phosphate	potassium dihydrogen phosphate	VALID	Label matches synonym (primary: potassium dihydrogen phosphate)
+Sodium phosphate buffer	CHEBI:37586	CHEBI	sodium phosphate	sodium phosphate	VALID	Label matches primary name
+Na-phosphate buffer	CHEBI:37586	CHEBI	sodium phosphate	sodium phosphate	VALID	Label matches primary name
+Sodium Potassium phosphate buffer	CHEBI:37586	CHEBI	sodium potassium phosphate	sodium phosphate	MISMATCH	Expected 'sodium potassium phosphate', got 'sodium phosphate'
+FeCl2	CHEBI:30812	CHEBI	iron(II) chloride	iron dichloride	VALID	Label matches synonym (primary: iron dichloride)
+FeCl3·6H2O	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+FeCl2 x 4H2O	CHEBI:30812	CHEBI	iron(II) chloride tetrahydrate	iron dichloride	MISMATCH	Expected 'iron(II) chloride tetrahydrate', got 'iron dichloride'
+Fe3Cl x 6 H2O	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+FeCL3 x 6 H20	CHEBI:30808	CHEBI	iron(III) chloride hexahydrate	iron trichloride	MISMATCH	Expected 'iron(III) chloride hexahydrate', got 'iron trichloride'
+rumen extract	CHEBI:132852	CHEBI	rumen extract	lespedezol D1	MISMATCH	Expected 'rumen extract', got 'lespedezol D1'
+fermented rumen extract	CHEBI:132852	CHEBI	rumen extract	lespedezol D1	MISMATCH	Expected 'rumen extract', got 'lespedezol D1'
+Clarified rumen fluid	CHEBI:132852	CHEBI	rumen fluid	lespedezol D1	MISMATCH	Expected 'rumen fluid', got 'lespedezol D1'
+Liver extract	CHEBI:132852	CHEBI	liver extract	lespedezol D1	MISMATCH	Expected 'liver extract', got 'lespedezol D1'
+Liver digest	CHEBI:132852	CHEBI	liver digest	lespedezol D1	MISMATCH	Expected 'liver digest', got 'lespedezol D1'
+Dextrose	CHEBI:17634	CHEBI	D-glucose	D-glucose	VALID	Label matches primary name
+Casein peptone, tryptic digest	CHEBI:8150	CHEBI	casein peptone	CHEBI_8150	MISMATCH	Expected 'casein peptone', got 'CHEBI_8150'
+Casein peptone, tryptic digested	CHEBI:8150	CHEBI	casein peptone	CHEBI_8150	MISMATCH	Expected 'casein peptone', got 'CHEBI_8150'
+Casein peptone	CHEBI:8150	CHEBI	casein peptone	CHEBI_8150	MISMATCH	Expected 'casein peptone', got 'CHEBI_8150'
+Starch, soluble	CHEBI:28017	CHEBI	soluble starch	starch	VALID	Label partially matches
+Starch (soluble)	CHEBI:28017	CHEBI	soluble starch	starch	VALID	Label partially matches
+Boiled soluble starch	CHEBI:28017	CHEBI	soluble starch	starch	VALID	Label partially matches
+Starch soluble	CHEBI:28017	CHEBI	soluble starch	starch	VALID	Label partially matches
+GAM broth	CHEBI:132852	CHEBI	GAM broth	lespedezol D1	MISMATCH	Expected 'GAM broth', got 'lespedezol D1'
+GAM Broth	CHEBI:132852	CHEBI	GAM broth	lespedezol D1	MISMATCH	Expected 'GAM broth', got 'lespedezol D1'
+Trypticase soy agar	CHEBI:2509	CHEBI	trypticase soy agar	agar	VALID	Label partially matches
+Trypticase Pepton	CHEBI:78018	CHEBI	trypticase peptone	dodecylphosphocholine	MISMATCH	Expected 'trypticase peptone', got 'dodecylphosphocholine'
+Trypticase peptone	CHEBI:78018	CHEBI	trypticase peptone	dodecylphosphocholine	MISMATCH	Expected 'trypticase peptone', got 'dodecylphosphocholine'
+Yeast extract solution	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Fresh yeast extract	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+TC Yeastolate	CHEBI:88047	CHEBI	yeast extract	triazaacenaphthylene	MISMATCH	Expected 'yeast extract', got 'triazaacenaphthylene'
+Casamino acids, vitamin assay	CHEBI:78020	CHEBI	casamino acids	heptacosanoate	MISMATCH	Expected 'casamino acids', got 'heptacosanoate'
+Citric acid x H2O	CHEBI:30769	CHEBI	citric acid monohydrate	citric acid	VALID	Label partially matches
+β-NAD	CHEBI:16908	CHEBI	NAD	NADH	VALID	Label partially matches
+NAD	CHEBI:16908	CHEBI	NAD	NADH	VALID	Label partially matches
+Haemin	CHEBI:50385	CHEBI	hemin	hemin	VALID	Label matches primary name
+Haemin solution	CHEBI:50385	CHEBI	hemin	hemin	VALID	Label matches primary name
+DL-Asparagine x H2O	CHEBI:22653	CHEBI	DL-asparagine monohydrate	asparagine	VALID	Label partially matches
+DL-Asparagine	CHEBI:22653	CHEBI	DL-asparagine	asparagine	VALID	Label matches synonym (primary: asparagine)
+RbCl	CHEBI:78674	CHEBI	rubidium chloride	(E,E)-1-bromo-2,5-bis-(4-hydroxystyryl)benzene	MISMATCH	Expected 'rubidium chloride', got '(E,E)-1-bromo-2,5-bis-(4-hydroxystyryl)benzene'
+LiCl.H2O	CHEBI:48607	CHEBI	lithium chloride monohydrate	lithium chloride	VALID	Label partially matches
+LiCl	CHEBI:48607	CHEBI	lithium chloride	lithium chloride	VALID	Label matches primary name
+KBr	CHEBI:32030	CHEBI	potassium bromide	potassium bromide	VALID	Label matches primary name
+SrCl2	CHEBI:36867	CHEBI	strontium chloride	pseudohalogen	MISMATCH	Expected 'strontium chloride', got 'pseudohalogen'
+H2SeO3	CHEBI:26829	CHEBI	selenious acid	sulfoglycolipid	MISMATCH	Expected 'selenious acid', got 'sulfoglycolipid'
+Inosin	CHEBI:17596	CHEBI	inosine	inosine	VALID	Label matches primary name
+Inosine	CHEBI:17596	CHEBI	inosine	inosine	VALID	Label matches primary name
+Catalase	CHEBI:28843	CHEBI	catalase	5-amino-1-(5-phospho-D-ribosyl)imidazole	MISMATCH	Expected 'catalase', got '5-amino-1-(5-phospho-D-ribosyl)imidazole'
+karaya gum	CHEBI:63230	CHEBI	karaya gum	alpha-D-GalNpAc-(1->3)-alpha-D-GalpNAc-OMe	MISMATCH	Expected 'karaya gum', got 'alpha-D-GalNpAc-(1->3)-alpha-D-GalpNAc-OMe'
+Karaya gum	CHEBI:63230	CHEBI	karaya gum	alpha-D-GalNpAc-(1->3)-alpha-D-GalpNAc-OMe	MISMATCH	Expected 'karaya gum', got 'alpha-D-GalNpAc-(1->3)-alpha-D-GalpNAc-OMe'
+keratin	CHEBI:77246	CHEBI	keratin	(12Z,15Z,18Z,21Z,24Z)-triacontapentaenoate	MISMATCH	Expected 'keratin', got '(12Z,15Z,18Z,21Z,24Z)-triacontapentaenoate'
+Keratin	CHEBI:77246	CHEBI	keratin	(12Z,15Z,18Z,21Z,24Z)-triacontapentaenoate	MISMATCH	Expected 'keratin', got '(12Z,15Z,18Z,21Z,24Z)-triacontapentaenoate'
+Ampicillin	CHEBI:28971	CHEBI	ampicillin	ampicillin	VALID	Label matches primary name
+Na-ampicillin	CHEBI:28971	CHEBI	ampicillin sodium	ampicillin	VALID	Label partially matches
+Amphotericin B	CHEBI:2682	CHEBI	amphotericin B	amphotericin B	VALID	Label matches primary name
+DNA	CHEBI:16991	CHEBI	DNA	deoxyribonucleic acid	VALID	Label matches synonym (primary: deoxyribonucleic acid)
+Bovine serum albumin, Fraction V	CHEBI:3169	CHEBI	bovine serum albumin	CHEBI_3169	MISMATCH	Expected 'bovine serum albumin', got 'CHEBI_3169'
+Bovine serum albumin	CHEBI:3169	CHEBI	bovine serum albumin	CHEBI_3169	MISMATCH	Expected 'bovine serum albumin', got 'CHEBI_3169'
+VOSO4·xH2O	CHEBI:132119	CHEBI	vanadyl sulfate hydrate	2-glyceryl 11,12-epoxy-(5Z,8Z,14Z)-icosatrienoate	MISMATCH	Expected 'vanadyl sulfate hydrate', got '2-glyceryl 11,12-epoxy-(5Z,8Z,14Z)-icosatrienoate'
+VOSO4	CHEBI:132119	CHEBI	vanadyl sulfate	2-glyceryl 11,12-epoxy-(5Z,8Z,14Z)-icosatrienoate	MISMATCH	Expected 'vanadyl sulfate', got '2-glyceryl 11,12-epoxy-(5Z,8Z,14Z)-icosatrienoate'
+Na2S2O3	CHEBI:132112	CHEBI	sodium thiosulfate	sodium thiosulfate	VALID	Label matches primary name
+Na2S203	CHEBI:132112	CHEBI	sodium thiosulfate	sodium thiosulfate	VALID	Label matches primary name
+Ca(NO3)	CHEBI:64205	CHEBI	calcium nitrate	calcium nitrate	VALID	Label matches primary name
+CoSO47H2O	CHEBI:53470	CHEBI	cobalt(II) sulfate heptahydrate	cobalt(2+) sulfate	MISMATCH	Expected 'cobalt(II) sulfate heptahydrate', got 'cobalt(2+) sulfate'
+CoSO4·7H2	CHEBI:53470	CHEBI	cobalt(II) sulfate heptahydrate	cobalt(2+) sulfate	MISMATCH	Expected 'cobalt(II) sulfate heptahydrate', got 'cobalt(2+) sulfate'
+CoSO4·7H2O	CHEBI:53470	CHEBI	cobalt(II) sulfate heptahydrate	cobalt(2+) sulfate	MISMATCH	Expected 'cobalt(II) sulfate heptahydrate', got 'cobalt(2+) sulfate'
+Cr2(SO4)3·xH2O	CHEBI:53449	CHEBI	chromic sulfate hydrate	methoxypoly(ethylene glycol)	MISMATCH	Expected 'chromic sulfate hydrate', got 'methoxypoly(ethylene glycol)'
+Cr2(SO4)3	CHEBI:53449	CHEBI	chromic sulfate	methoxypoly(ethylene glycol)	MISMATCH	Expected 'chromic sulfate', got 'methoxypoly(ethylene glycol)'
+H2SeO3 (selenous acid)	CHEBI:26829	CHEBI	selenious acid	sulfoglycolipid	MISMATCH	Expected 'selenious acid', got 'sulfoglycolipid'
+NaF	CHEBI:28741	CHEBI	sodium fluoride	sodium fluoride	VALID	Label matches primary name
+KI	CHEBI:32030	CHEBI	potassium iodide	potassium bromide	MISMATCH	Expected 'potassium iodide', got 'potassium bromide'
+KJ	CHEBI:32030	CHEBI	potassium iodide	potassium bromide	MISMATCH	Expected 'potassium iodide', got 'potassium bromide'
+DL-Dithiothreitol (DTT)	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+Dithiothreitol (DTT)	CHEBI:18320	CHEBI	dithiothreitol	1,4-dithiothreitol	VALID	Label matches synonym (primary: 1,4-dithiothreitol)
+Lactobacilli MRS broth	CHEBI:132852	CHEBI	MRS broth	lespedezol D1	MISMATCH	Expected 'MRS broth', got 'lespedezol D1'
+Lactobacillus MRS broth	CHEBI:132852	CHEBI	MRS broth	lespedezol D1	MISMATCH	Expected 'MRS broth', got 'lespedezol D1'
+MRS broth	CHEBI:132852	CHEBI	MRS broth	lespedezol D1	MISMATCH	Expected 'MRS broth', got 'lespedezol D1'
+Man Rogosa Sharp broth	CHEBI:132852	CHEBI	MRS broth	lespedezol D1	MISMATCH	Expected 'MRS broth', got 'lespedezol D1'
+Heart infusion broth	CHEBI:132852	CHEBI	heart infusion broth	lespedezol D1	MISMATCH	Expected 'heart infusion broth', got 'lespedezol D1'
+Todd Hewitt Broth	CHEBI:132852	CHEBI	Todd Hewitt broth	lespedezol D1	MISMATCH	Expected 'Todd Hewitt broth', got 'lespedezol D1'
+Veal infusion broth	CHEBI:132852	CHEBI	veal infusion broth	lespedezol D1	MISMATCH	Expected 'veal infusion broth', got 'lespedezol D1'
+Mueller Hinton II agar	CHEBI:2509	CHEBI	Mueller Hinton agar	agar	VALID	Label partially matches
+Columbia blood agar base	CHEBI:2509	CHEBI	Columbia blood agar	agar	VALID	Label partially matches
+Brucella broth	CHEBI:132852	CHEBI	Brucella broth	lespedezol D1	MISMATCH	Expected 'Brucella broth', got 'lespedezol D1'
+Brucella agar	CHEBI:2509	CHEBI	Brucella agar	agar	VALID	Label partially matches
+BCYE agar	CHEBI:2509	CHEBI	BCYE agar	agar	VALID	Label partially matches
+Corn meal agar	CHEBI:2509	CHEBI	corn meal agar	agar	VALID	Label partially matches
+Corn meal Agar	CHEBI:2509	CHEBI	corn meal agar	agar	VALID	Label partially matches
+Oatmeal agar	CHEBI:2509	CHEBI	oatmeal agar	agar	VALID	Label partially matches
+Anaerobe Basal Broth	CHEBI:132852	CHEBI	anaerobe basal broth	lespedezol D1	MISMATCH	Expected 'anaerobe basal broth', got 'lespedezol D1'
+Reinforced clostridial medium	CHEBI:132852	CHEBI	reinforced clostridial medium	lespedezol D1	MISMATCH	Expected 'reinforced clostridial medium', got 'lespedezol D1'
+Reinforced clostridial agar	CHEBI:2509	CHEBI	reinforced clostridial agar	agar	VALID	Label partially matches
+Cooked meat medium	CHEBI:132852	CHEBI	cooked meat medium	lespedezol D1	MISMATCH	Expected 'cooked meat medium', got 'lespedezol D1'
+Legionella agar enrichment	CHEBI:132852	CHEBI	Legionella agar enrichment	lespedezol D1	MISMATCH	Expected 'Legionella agar enrichment', got 'lespedezol D1'
+Middlebrook 7H10 agar	CHEBI:2509	CHEBI	Middlebrook agar	agar	VALID	Label partially matches
+YM broth	CHEBI:132852	CHEBI	YM broth	lespedezol D1	MISMATCH	Expected 'YM broth', got 'lespedezol D1'
+Sabouraud dextrose agar	CHEBI:2509	CHEBI	Sabouraud agar	agar	VALID	Label partially matches
+Czapek Dox agar	CHEBI:2509	CHEBI	Czapek Dox agar	agar	VALID	Label partially matches
+Czapek-Dox liquid medium	CHEBI:132852	CHEBI	Czapek Dox medium	lespedezol D1	MISMATCH	Expected 'Czapek Dox medium', got 'lespedezol D1'
+Standard I Broth	CHEBI:132852	CHEBI	Standard I broth	lespedezol D1	MISMATCH	Expected 'Standard I broth', got 'lespedezol D1'
+PPLO broth	CHEBI:132852	CHEBI	PPLO broth	lespedezol D1	MISMATCH	Expected 'PPLO broth', got 'lespedezol D1'
+Trypto-soya agar	CHEBI:2509	CHEBI	tryptone soy agar	agar	VALID	Label partially matches
+Tryptone Soy Broth	CHEBI:78018	CHEBI	tryptone soy broth	dodecylphosphocholine	MISMATCH	Expected 'tryptone soy broth', got 'dodecylphosphocholine'
+Trypton Soja Broth	CHEBI:78018	CHEBI	tryptone soy broth	dodecylphosphocholine	MISMATCH	Expected 'tryptone soy broth', got 'dodecylphosphocholine'
+LB Broth, Lennox	CHEBI:132852	CHEBI	LB broth	lespedezol D1	MISMATCH	Expected 'LB broth', got 'lespedezol D1'
+Fetal bovine serum	CHEBI:132854	CHEBI	fetal bovine serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'fetal bovine serum', got '9-hydroxyundec-10-enoic acid'
+Fetal Bovine Serum	CHEBI:132854	CHEBI	fetal bovine serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'fetal bovine serum', got '9-hydroxyundec-10-enoic acid'
+Bovine calf serum	CHEBI:132854	CHEBI	bovine calf serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'bovine calf serum', got '9-hydroxyundec-10-enoic acid'
+Horse serum	CHEBI:132854	CHEBI	horse serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'horse serum', got '9-hydroxyundec-10-enoic acid'
+Porcine serum	CHEBI:132854	CHEBI	porcine serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'porcine serum', got '9-hydroxyundec-10-enoic acid'
+Swine serum	CHEBI:132854	CHEBI	porcine serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'porcine serum', got '9-hydroxyundec-10-enoic acid'
+Rabbit serum	CHEBI:132854	CHEBI	rabbit serum	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'rabbit serum', got '9-hydroxyundec-10-enoic acid'
+Bacto m TGE broth	CHEBI:132852	CHEBI	m-TGE broth	lespedezol D1	MISMATCH	Expected 'm-TGE broth', got 'lespedezol D1'
+Natural seawater	CHEBI:35196	CHEBI	seawater	nitrogen oxide	MISMATCH	Expected 'seawater', got 'nitrogen oxide'
+natural seawater	CHEBI:35196	CHEBI	seawater	nitrogen oxide	MISMATCH	Expected 'seawater', got 'nitrogen oxide'
+Natural filtered seawater	CHEBI:35196	CHEBI	seawater	nitrogen oxide	MISMATCH	Expected 'seawater', got 'nitrogen oxide'
+Seawater	CHEBI:35196	CHEBI	seawater	nitrogen oxide	MISMATCH	Expected 'seawater', got 'nitrogen oxide'
+Aged seawater	CHEBI:35196	CHEBI	seawater	nitrogen oxide	MISMATCH	Expected 'seawater', got 'nitrogen oxide'
+Tap water	CHEBI:15377	CHEBI	water	water	VALID	Label matches primary name
+crude oil	CHEBI:37578	CHEBI	crude oil	halide	MISMATCH	Expected 'crude oil', got 'halide'
+Crude oil	CHEBI:37578	CHEBI	crude oil	halide	MISMATCH	Expected 'crude oil', got 'halide'
+Charcoal	CHEBI:88052	CHEBI	charcoal	prenyl phosphate(2-)	MISMATCH	Expected 'charcoal', got 'prenyl phosphate(2-)'
+Charcoal (medical)	CHEBI:88052	CHEBI	charcoal	prenyl phosphate(2-)	MISMATCH	Expected 'charcoal', got 'prenyl phosphate(2-)'
+Vitamin B12	CHEBI:176843	CHEBI	vitamin B12	vitamin B12	VALID	Label matches primary name
+Cyanocobalamin (Vitamin B12)	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Cyanocobalamin  (Vitamin B12)	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Cyanocobalamin (vitamin B12 )	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Cyanocobalamin (vitamin B12)	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Cyanocobalamine (vitamin B12)	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Cyanocobalamin (B12)	CHEBI:17439	CHEBI	cyanocobalamin	cyanocob(III)alamin	VALID	Label matches synonym (primary: cyanocob(III)alamin)
+Thiamine HCl (Vitamin B1)	CHEBI:49105	CHEBI	thiamine hydrochloride	thiamine hydrochloride	VALID	Label matches primary name
+Thiamine HCl (B1)	CHEBI:49105	CHEBI	thiamine hydrochloride	thiamine hydrochloride	VALID	Label matches primary name
+Pirydoxin hydrocloride (B6)	CHEBI:16709	CHEBI	pyridoxine hydrochloride	pyridoxine	VALID	Label partially matches
+Niacinamide	CHEBI:17154	CHEBI	niacinamide	nicotinamide	VALID	Label matches synonym (primary: nicotinamide)
+Calcium folinic acid	CHEBI:63591	CHEBI	calcium folinate	N/A	NOT_FOUND	CHEBI ID CHEBI:63591 not found in database
+Vitamin K1	CHEBI:18067	CHEBI	vitamin K1	phylloquinone	VALID	Label matches synonym (primary: phylloquinone)
+Phenol red	CHEBI:34879	CHEBI	phenol red	NS 1619	MISMATCH	Expected 'phenol red', got 'NS 1619'
+Bromocresol purple	CHEBI:141389	CHEBI	bromocresol purple	benzobicyclon hydrolysate	MISMATCH	Expected 'bromocresol purple', got 'benzobicyclon hydrolysate'
+Bromothymol blue	CHEBI:141422	CHEBI	bromothymol blue	Asn-Leu	MISMATCH	Expected 'bromothymol blue', got 'Asn-Leu'
+Oxgall	CHEBI:132854	CHEBI	ox bile	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'ox bile', got '9-hydroxyundec-10-enoic acid'
+Ox-bile	CHEBI:132854	CHEBI	ox bile	9-hydroxyundec-10-enoic acid	MISMATCH	Expected 'ox bile', got '9-hydroxyundec-10-enoic acid'
+Purified agar	CHEBI:2509	CHEBI	purified agar	agar	VALID	Label partially matches
+Agar Noble	CHEBI:2509	CHEBI	noble agar	agar	VALID	Label partially matches
+Sigmacell	CHEBI:18089	CHEBI	cellulose	N-benzoylglycine	MISMATCH	Expected 'cellulose', got 'N-benzoylglycine'
+TAPS	CHEBI:44950	CHEBI	TAPS	CHEBI_44950	MISMATCH	Expected 'TAPS', got 'CHEBI_44950'
+TAPS sodium salt	CHEBI:44950	CHEBI	TAPS sodium salt	CHEBI_44950	MISMATCH	Expected 'TAPS sodium salt', got 'CHEBI_44950'
+TiCl3	CHEBI:37331	CHEBI	titanium(III) chloride	(E)-penta-2,4-dienoic acid	MISMATCH	Expected 'titanium(III) chloride', got '(E)-penta-2,4-dienoic acid'
+Tea	CHEBI:28621	CHEBI	tea	triethanolamine	VALID	Label matches synonym (primary: triethanolamine)
+Oatmeal	CHEBI:132852	CHEBI	oatmeal	lespedezol D1	MISMATCH	Expected 'oatmeal', got 'lespedezol D1'
+oil of cedar wood	CHEBI:77085	CHEBI	cedarwood oil	hexadecanedioyl-CoA(5-)	MISMATCH	Expected 'cedarwood oil', got 'hexadecanedioyl-CoA(5-)'
+Tomato juice	CHEBI:132852	CHEBI	tomato juice	lespedezol D1	MISMATCH	Expected 'tomato juice', got 'lespedezol D1'
+V8 canned vegetable juice	CHEBI:132852	CHEBI	vegetable juice	lespedezol D1	MISMATCH	Expected 'vegetable juice', got 'lespedezol D1'
+Potato	CHEBI:132852	CHEBI	potato	lespedezol D1	MISMATCH	Expected 'potato', got 'lespedezol D1'
+Potato, peeled and cut	CHEBI:132852	CHEBI	potato	lespedezol D1	MISMATCH	Expected 'potato', got 'lespedezol D1'
+Carrot	CHEBI:132852	CHEBI	carrot	lespedezol D1	MISMATCH	Expected 'carrot', got 'lespedezol D1'
+Carrot, peeled and cut	CHEBI:132852	CHEBI	carrot	lespedezol D1	MISMATCH	Expected 'carrot', got 'lespedezol D1'
+Skim milk	UBERON:0001913	UBERON	skimmed milk	N/A	SKIPPED	UBERON IDs validated separately
+Skimmed milk	UBERON:0001913	UBERON	skimmed milk	N/A	SKIPPED	UBERON IDs validated separately
+Ground beef	CHEBI:132852	CHEBI	beef	lespedezol D1	MISMATCH	Expected 'beef', got 'lespedezol D1'
+coconut  oil	CHEBI:133221	CHEBI	coconut oil	2-oxindole-3-acetic acid	MISMATCH	Expected 'coconut oil', got '2-oxindole-3-acetic acid'
+coconut oil	CHEBI:133221	CHEBI	coconut oil	2-oxindole-3-acetic acid	MISMATCH	Expected 'coconut oil', got '2-oxindole-3-acetic acid'
+Coconut oil	CHEBI:133221	CHEBI	coconut oil	2-oxindole-3-acetic acid	MISMATCH	Expected 'coconut oil', got '2-oxindole-3-acetic acid'
+olive oil	CHEBI:88068	CHEBI	olive oil	monosialomonoglycosylceramide(1-)	MISMATCH	Expected 'olive oil', got 'monosialomonoglycosylceramide(1-)'
+Olive oil	CHEBI:88068	CHEBI	olive oil	monosialomonoglycosylceramide(1-)	MISMATCH	Expected 'olive oil', got 'monosialomonoglycosylceramide(1-)'
+Trypsin	CHEBI:9765	CHEBI	trypsin	Trypsin	VALID	Label matches primary name
+L-Glutamine	CHEBI:18050	CHEBI	L-glutamine	L-glutamine	VALID	Label matches primary name
+L-Proline	CHEBI:17203	CHEBI	L-proline	L-proline	VALID	Label matches primary name
+L-Methionine	CHEBI:16643	CHEBI	L-methionine	L-methionine	VALID	Label matches primary name
+N-methylhydantoin	CHEBI:139474	CHEBI	N-methylhydantoin	acedapsone	MISMATCH	Expected 'N-methylhydantoin', got 'acedapsone'
+Gentisic acid	CHEBI:16366	CHEBI	gentisic acid	anthocyanidin cation	MISMATCH	Expected 'gentisic acid', got 'anthocyanidin cation'
+Hexachlorocyclo-hexane	CHEBI:27711	CHEBI	hexachlorocyclohexane	precorrin-3B	MISMATCH	Expected 'hexachlorocyclohexane', got 'precorrin-3B'
+Cyclomaltoheptaose	CHEBI:17052	CHEBI	beta-cyclodextrin	3-phosphoshikimic acid	MISMATCH	Expected 'beta-cyclodextrin', got '3-phosphoshikimic acid'
+ß-cyclodextrin	CHEBI:17052	CHEBI	beta-cyclodextrin	3-phosphoshikimic acid	MISMATCH	Expected 'beta-cyclodextrin', got '3-phosphoshikimic acid'
+β-cyclodextrin	CHEBI:17052	CHEBI	beta-cyclodextrin	3-phosphoshikimic acid	MISMATCH	Expected 'beta-cyclodextrin', got '3-phosphoshikimic acid'
+KSCN	CHEBI:30967	CHEBI	potassium thiocyanate	CHEBI_30967	MISMATCH	Expected 'potassium thiocyanate', got 'CHEBI_30967'
+Sulfur	CHEBI:26833	CHEBI	sulfur	sulfur atom	VALID	Label matches synonym (primary: sulfur atom)
+Iron	CHEBI:18248	CHEBI	iron	iron atom	VALID	Label matches synonym (primary: iron atom)
+Iron powder	CHEBI:18248	CHEBI	iron	iron atom	VALID	Label matches synonym (primary: iron atom)

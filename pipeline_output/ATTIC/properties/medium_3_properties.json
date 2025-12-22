@@ -1,0 +1,15 @@
+{
+  "error": "Composition must be a list of components",
+  "ph": {
+    "value": null,
+    "uncertainty": null,
+    "confidence": "none"
+  },
+  "salinity": {
+    "percent_nacl": null,
+    "uncertainty": null,
+    "confidence": "none"
+  },
+  "medium_id": "medium_3",
+  "source_file": "pipeline_output/data_acquisition/media_pdfs/medium_3_composition.json"
+}

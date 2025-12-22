@@ -1,0 +1,396 @@
+================================================================================
+UNMAPPED COMPLEX INGREDIENTS - CURATION PRIORITIES
+================================================================================
+
+Total unique complex ingredients analyzed: 100
+Not yet documented: 83
+Already documented (need expansion): 17
+
+================================================================================
+TOP 50 PRIORITY INGREDIENTS (by occurrence count)
+================================================================================
+
+95. Yeast extract
+   Category: extract
+   Status: ✓ DOCUMENTED
+   Occurrences: 976
+   Priority Score: 97.6
+   Typical Concentration: 8.91 g (range: 0.01-1000.00)
+
+56. Trace element solution (see Medium No.187)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 75
+   Priority Score: 75.0
+   Typical Concentration: 1.36 ml (range: 1.00-10.00)
+
+62. Trace element solution (see Medium No.439)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 33
+   Priority Score: 33.0
+   Typical Concentration: 1.82 ml (range: 1.00-10.00)
+
+39. Peptone
+   Category: peptone_digest
+   Status: ✓ DOCUMENTED
+   Occurrences: 216
+   Priority Score: 21.6
+   Typical Concentration: 4.68 g (range: 0.05-20.00)
+
+4. Bacto peptone
+   Category: peptone_digest
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 15
+   Priority Score: 15.0
+   Typical Concentration: 5.07 g (range: 1.00-15.00)
+
+52. Trace element solution (see Medium No.1079)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 11
+   Priority Score: 11.0
+   Typical Concentration: 1.09 ml (range: 1.00-2.00)
+
+83. Vitamin solution (see Medium No.403)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 9
+   Priority Score: 9.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+79. Tryptone
+   Category: peptone_digest
+   Status: ✓ DOCUMENTED
+   Occurrences: 87
+   Priority Score: 8.7
+   Typical Concentration: 6.38 g (range: 0.50-130.00)
+
+84. Vitamin solution (see Medium No.403)*
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 7
+   Priority Score: 7.0
+   Typical Concentration: 1.14 ml (range: 1.00-2.00)
+
+44. SL-6 trace element solution (see Medium No.167)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 6
+   Priority Score: 6.0
+   Typical Concentration: 35.33 ml (range: 1.00-100.00)
+
+40. Peptone (Oxoid)
+   Category: peptone_digest
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 6
+   Priority Score: 6.0
+   Typical Concentration: 2.54 g (range: 0.25-5.00)
+
+69. Trace element solution SL8 (see Medium No.190)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 6
+   Priority Score: 6.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+78. Trypticase soy broth
+   Category: complex_medium
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 6
+   Priority Score: 6.0
+   Typical Concentration: 20.20 g (range: 0.17-30.00)
+
+2. Bacto Peptone
+   Category: peptone_digest
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 5
+   Priority Score: 5.0
+   Typical Concentration: 1.60 g (range: 0.50-2.50)
+
+77. Trypticase Soy Broth
+   Category: complex_medium
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 5
+   Priority Score: 5.0
+   Typical Concentration: 222.00 g (range: 20.00-1000.00)
+
+22. Horse blood
+   Category: blood_product
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 5
+   Priority Score: 5.0
+   Typical Concentration: 50.00 ml (range: 50.00-50.00)
+
+17. Fetal Bovine Serum
+   Category: blood_product
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 4
+   Priority Score: 4.0
+   Typical Concentration: 4.25 ml (range: 2.00-5.00)
+
+50. Soya peptone
+   Category: peptone_digest
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 4
+   Priority Score: 4.0
+   Typical Concentration: 3.75 g (range: 2.00-5.00)
+
+90. Vitamin solution* (see Medium No.556)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 4
+   Priority Score: 4.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+58. Trace element solution (see Medium No.243)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 4
+   Priority Score: 4.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+26. Malt extract
+   Category: extract
+   Status: ✓ DOCUMENTED
+   Occurrences: 37
+   Priority Score: 3.7
+   Typical Concentration: 14.43 g (range: 1.00-150.00)
+
+94. Yeast Extract
+   Category: extract
+   Status: ✓ DOCUMENTED
+   Occurrences: 34
+   Priority Score: 3.4
+   Typical Concentration: 34.38 g (range: 0.05-1000.00)
+
+59. Trace element solution (see Medium No.284)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 3
+   Priority Score: 3.0
+   Typical Concentration: 4.00 ml (range: 1.00-10.00)
+
+66. Trace element solution (see Medium No.899)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+41. Peptone mixture
+   Category: peptone_digest
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 5.00 g (range: 5.00-5.00)
+
+57. Trace element solution (see Medium No.231)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 5.50 ml (range: 1.00-10.00)
+
+65. Trace element solution (see Medium No.748)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+60. Trace element solution (see Medium No.294)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+71. Trace elements solution (see Medium No.1030)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+73. Trace elements solution (see Medium No.310)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+82. Vitamin solution (see Medium No.304)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+91. Vitamin solution* (see Medium No.915)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 2.75 ml (range: 0.50-5.00)
+
+18. Fetal bovine serum
+   Category: blood_product
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 150.00 ml (range: 100.00-200.00)
+
+10. Defibrinated Blood
+   Category: blood_product
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 27.50 % (range: 5.00-50.00)
+
+28. Malt extract powder
+   Category: extract
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 5.00 g (range: 5.00-5.00)
+
+53. Trace element solution (see Medium No.128)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 2.00 ml (range: 2.00-2.00)
+
+89. Vitamin solution* (see Medium No.403)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+61. Trace element solution (see Medium No.301)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 6.75 ml (range: 1.00-12.50)
+
+54. Trace element solution (see Medium No.167)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+74. Trace mineral solution (see Medium No.197)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 2
+   Priority Score: 2.0
+   Typical Concentration: 9.50 ml (range: 9.00-10.00)
+
+63. Trace element solution (see Medium No.483)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+64. Trace element solution (see Medium No.741)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+1. 5% defibrinated sheep blood
+   Category: blood_product
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 50.00 ml (range: 50.00-50.00)
+
+67. Trace element solution SL12
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 mg (range: 1.00-1.00)
+
+68. Trace element solution SL7 (see Medium No.516)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+70. Trace element solution(see Medium No.187)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+72. Trace elements solution (see Medium No.1182)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 ml (range: 1.00-1.00)
+
+75. Tryptic Digest of beef heart
+   Category: hydrolysate
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 1.00 g (range: 1.00-1.00)
+
+80. Vitamin solution (see Medium No.197)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 10.00 ml (range: 10.00-10.00)
+
+81. Vitamin solution (see Medium No.221)
+   Category: supplement_solution
+   Status: ✗ UNDOCUMENTED
+   Occurrences: 1
+   Priority Score: 1.0
+   Typical Concentration: 0.50 ml (range: 0.50-0.50)
+
+================================================================================
+SUMMARY BY CATEGORY
+================================================================================
+
+extract: 9 unique (5 undocumented), 1061 total occurrences
+peptone_digest: 16 unique (10 undocumented), 348 total occurrences
+supplement_solution: 41 unique (41 undocumented), 202 total occurrences
+complex_medium: 16 unique (12 undocumented), 27 total occurrences
+blood_product: 9 unique (8 undocumented), 19 total occurrences
+other_complex: 6 unique (4 undocumented), 6 total occurrences
+hydrolysate: 2 unique (2 undocumented), 2 total occurrences
+solidifying_agent: 1 unique (1 undocumented), 1 total occurrences
+
+================================================================================
+RECOMMENDED ACTIONS
+================================================================================
+
+1. HIGH PRIORITY (>100 occurrences, undocumented):
+   - None found
+
+2. MEDIUM PRIORITY (10-100 occurrences, undocumented):
+   - Trace element solution (see Medium No.187) (75 occurrences)
+   - Trace element solution (see Medium No.439) (33 occurrences)
+   - Bacto peptone (15 occurrences)
+   - Trace element solution (see Medium No.1079) (11 occurrences)
+
+3. EXPAND DOCUMENTED (already in YAML, needs constituent expansion):
+   - Yeast extract (976 occurrences)
+   - Peptone (216 occurrences)
+   - Tryptone (87 occurrences)
+   - Malt extract (37 occurrences)
+   - Yeast Extract (34 occurrences)
+
+================================================================================
