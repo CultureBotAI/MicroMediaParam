@@ -72,8 +72,6 @@ Nitrilotriacetic acid, trisodium salt	CHEBI:132766	sodium nitrilotriacetate	C6H6
 Choline chloride	CHEBI:133341	choline chloride	C5H14NO.Cl		
 Mix	CHEBI:133626	mesoporphyrin IX	C34H38N4O4		
 Na2SiO3	CHEBI:1344098				
-"Glycerol
-ml"	CHEBI:134447	glycerol 1-monomycolate (C80) (Mycobacterium phlei)	C83H162O7		
 QF	CHEBI:141430	Gln-Phe	C14H19N3O4		
 Sulfur (powder)	CHEBI:14258				
 Ferric iron citrate	CHEBI:144421	iron(III) citrate	C6H5FeO7		
@@ -711,7 +709,6 @@ FeCl3.6H2O	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O
 FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O		
 FeCl3 x 6 H2O	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O		
 FeCl3*6 H2O	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O		
-"FeCl3 x 6 H2O
 NaEDTA"	CHEBI:86254	iron trichloride hexahydrate	Cl3Fe.6H2O		
 CuCl 2 x 2 H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O		
 CuCl2*2H2O	CHEBI:86318	copper(II) chloride dihydrate	Cl2Cu.2H2O		

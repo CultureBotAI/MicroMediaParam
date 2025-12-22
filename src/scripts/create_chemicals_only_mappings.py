@@ -89,13 +89,14 @@ def is_chemical(row: pd.Series) -> bool:
     """Check if entry represents a pure chemical (not complex ingredient/media).
 
     Includes:
-    - Entries with ChEBI, CAS-RN, PubChem, KEGG, UBERON IDs
+    - Pure chemicals with ChEBI, CAS-RN, PubChem, KEGG, UBERON IDs
     - ingredient: entries where the original name is a chemical formula
 
     Excludes:
     - FOODON: biological/complex ingredients
     - medium: media formulations
     - ingredient: entries that are complex mixtures/solutions
+    - Known complex ingredients even if they have chemical database IDs
     """
     mapped_id = row['mapped']
     original = row.get('original', '')
@@ -103,7 +104,33 @@ def is_chemical(row: pd.Series) -> bool:
     if pd.isna(mapped_id) or mapped_id == '':
         return False
 
-    # Include pure chemicals with database IDs
+    # Exclude FOODON and medium entries regardless of original name
+    exclude_prefixes = ['FOODON:', 'medium:']
+    if any(mapped_id.startswith(prefix) for prefix in exclude_prefixes):
+        return False
+
+    # Check if original name is a known complex biological ingredient
+    # (even if it has a ChEBI/CAS/PubChem ID, these are complex mixtures not pure chemicals)
+    original_lower = original.lower()
+
+    # Complex protein hydrolysates and enzymatic digests
+    if any(term in original_lower for term in ['peptone', 'tryptone', 'trypticase', 'polypeptone', 'proteose']):
+        return False
+
+    # Complex extracts (but allow single-word "yeast", "malt", etc. which may be pure compounds)
+    if any(extract in original_lower for extract in ['yeast extract', 'beef extract', 'meat extract',
+                                                       'malt extract', 'yeast autolysate', 'yeast extrakt']):
+        return False
+
+    # Caseinates (complex protein derivatives)
+    if 'caseinate' in original_lower:
+        return False
+
+    # Broths and agars
+    if any(term in original_lower for term in [' broth', 'agar']):
+        return False
+
+    # Include pure chemicals with database IDs (after excluding complex ingredients above)
     chemical_prefixes = ['CHEBI:', 'CAS-RN:', 'PubChem:', 'PUBCHEM.COMPOUND:', 'KEGG:', 'UBERON:']
     if any(mapped_id.startswith(prefix) for prefix in chemical_prefixes):
         return True
@@ -112,11 +139,6 @@ def is_chemical(row: pd.Series) -> bool:
     # (these are unmapped pure chemicals like NaH2PO4.2H2O, CoCl2.6H2O)
     if mapped_id.startswith('ingredient:'):
         return is_chemical_formula_name(original)
-
-    # Exclude complex biological ingredients and media
-    exclude_prefixes = ['FOODON:', 'medium:']
-    if any(mapped_id.startswith(prefix) for prefix in exclude_prefixes):
-        return False
 
     # Exclude other weird entries
     return False
@@ -130,10 +152,26 @@ def create_chemicals_only_strict(input_file: Path, output_file: Path) -> None:
     original_count = len(df)
     print(f"  Total chemicals in simplified file: {original_count:,}")
 
+    # First, exclude any rows with malformed data (empty mapped ID or malformed original name)
+    # Malformed entries have leading quotes or missing mapped IDs
+    df = df[
+        df['mapped'].notna() &
+        (df['mapped'] != '') &
+        (~df['original'].str.startswith('"', na=False))
+    ].copy()
+    if len(df) < original_count:
+        print(f"  After removing malformed entries: {len(df):,}")
+
     # Filter to only pure chemicals (pass whole row to check formula)
     df['is_chemical'] = df.apply(is_chemical, axis=1)
     chemicals = df[df['is_chemical']].copy()
     chemicals = chemicals.drop(columns=['is_chemical'])
+
+    # Ensure non-redundant (unique chemicals only)
+    before_dedup = len(chemicals)
+    chemicals = chemicals.drop_duplicates(subset='original', keep='first')
+    if before_dedup > len(chemicals):
+        print(f"  Removed {before_dedup - len(chemicals):,} duplicates")
 
     chemical_count = len(chemicals)
     excluded_count = original_count - chemical_count
@@ -171,10 +209,26 @@ def create_chemicals_only_hydrate(input_file: Path, output_file: Path) -> None:
     original_count = len(df)
     print(f"  Total chemicals in simplified file: {original_count:,}")
 
+    # First, exclude any rows with malformed data (empty mapped ID or malformed original name)
+    # Malformed entries have leading quotes or missing mapped IDs
+    df = df[
+        df['mapped'].notna() &
+        (df['mapped'] != '') &
+        (~df['original'].str.startswith('"', na=False))
+    ].copy()
+    if len(df) < original_count:
+        print(f"  After removing malformed entries: {len(df):,}")
+
     # Filter to only pure chemicals (pass whole row to check formula)
     df['is_chemical'] = df.apply(is_chemical, axis=1)
     chemicals = df[df['is_chemical']].copy()
     chemicals = chemicals.drop(columns=['is_chemical'])
+
+    # Ensure non-redundant (unique chemicals only)
+    before_dedup = len(chemicals)
+    chemicals = chemicals.drop_duplicates(subset='original', keep='first')
+    if before_dedup > len(chemicals):
+        print(f"  Removed {before_dedup - len(chemicals):,} duplicates")
 
     chemical_count = len(chemicals)
     excluded_count = original_count - chemical_count

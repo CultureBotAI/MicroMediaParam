@@ -26,6 +26,16 @@ def create_simplified_strict(input_file: Path, output_file: Path) -> None:
     original_count = len(df)
     print(f"  Total rows: {original_count:,}")
 
+    # First, exclude any rows with malformed data (empty mapped ID or malformed original name)
+    # Malformed entries have leading quotes or missing mapped IDs
+    df = df[
+        df['mapped'].notna() &
+        (df['mapped'] != '') &
+        (~df['original'].str.startswith('"', na=False))
+    ].copy()
+    if len(df) < original_count:
+        print(f"  After removing malformed entries: {len(df):,}")
+
     # Select key columns
     columns = ['original', 'mapped', 'chebi_label', 'chebi_formula']
     simplified = df[columns].copy()
@@ -65,6 +75,16 @@ def create_simplified_hydrate(input_file: Path, output_file: Path) -> None:
 
     original_count = len(df)
     print(f"  Total rows: {original_count:,}")
+
+    # First, exclude any rows with malformed data (empty mapped ID or malformed original name)
+    # Malformed entries have leading quotes or missing mapped IDs
+    df = df[
+        df['mapped'].notna() &
+        (df['mapped'] != '') &
+        (~df['original'].str.startswith('"', na=False))
+    ].copy()
+    if len(df) < original_count:
+        print(f"  After removing malformed entries: {len(df):,}")
 
     # Select key columns including hydrate-specific ones
     columns = [
