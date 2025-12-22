@@ -53,7 +53,7 @@ medium_id	ingredient_name	ingredient_label	ingredient_id	formula	raw_concentrati
 1	thiamine		CHEBI:18385		from yeast extract (0.01 g/100g)	5.00e-07	yeast extract	vitamins
 1	zinc		CHEBI:27363		from yeast extract (0.01 g/100g)	5.00e-07	yeast extract	minerals
 2	ammonium chloride	ammonium chloride	CHEBI:31206	Cl.H4N	1.0 g/L	0.001		
-2	calcium chloride	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.011 g/L	1.1e-05		
+2	calcium chloride	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.011000000000000001 g/L	1.1e-05		
 2	glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	4.0 g/L	0.004		
 2	magnesium sulfate	magnesium sulfate	CHEBI:32599	Mg.O4S	0.493 g/L	0.000493		
 2	potassium phosphate monobasic	potassium dihydrogen phosphate	CHEBI:63036	H2O4P.K	3.0 g/L	0.003		
@@ -395,7 +395,7 @@ ccap_UM_composition	NaNO3		CHEBI:63005		1.0 g	0.001
 ccap_Waris_H_composition	(1)  Ca(NO3)2.4H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.0001 g	1e-07		
 ccap_Waris_H_composition	FeSO4.7H2O	iron(2+) sulfate heptahydrate	CHEBI:75836	Fe.7H2O.O4S	10.0 ml	0.01		
 ccap_Waris_H_composition	Na2EDTA.2H2O	EDTA disodium salt dihydrate	CHEBI:64758	C10H14N2O8.2H2O.2Na	1.0 ml	0.001		
-ccap_Waris_H_composition	Waris-H		medium:C106		0.022 g	2.2e-05		
+ccap_Waris_H_composition	Waris-H		medium:C106		0.022000000000000002 g	2.2e-05		
 ccap_ZM10_composition	CoCl2.6H2O		ingredient:cocl2_6h2o		1.0 ml	0.001		
 ccap_ZM10_composition	CuSO4.5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	100.0 ml	0.1		
 ccap_ZM10_composition	FeCl3.6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.002 g	2e-06		
@@ -412,7 +412,7 @@ ccap_f2Si_heterotrophic_composition	Biotin	biotin	CHEBI:15956	C10H16N2O3S	1.0 ml
 ccap_f2Si_heterotrophic_composition	CoCl2.6H2O		ingredient:cocl2_6h2o		0.0005 g	5e-07		
 ccap_f2Si_heterotrophic_composition	CuSO4.5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	0.18 g	0.00018		
 ccap_f2Si_heterotrophic_composition	FeCl3.6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.01 g	1e-05		
-ccap_f2Si_heterotrophic_composition	NA2 EDTA	EDTA disodium salt (anhydrous)	CHEBI:64734	C10H14N2O8.2Na	0.022 g	2.2e-05		
+ccap_f2Si_heterotrophic_composition	NA2 EDTA	EDTA disodium salt (anhydrous)	CHEBI:64734	C10H14N2O8.2Na	0.022000000000000002 g	2.2e-05		
 ccap_f2Si_heterotrophic_composition	Na2MoO4.2H2O	sodium molybdate dihydrate	CHEBI:75213	2H2O.MoO4.2Na	0.0005 g	5e-07		
 ccap_f2Si_heterotrophic_composition	Na2SiO3.9H2O		CHEBI:132108		1.0 ml	0.001		
 ccap_f2Si_heterotrophic_composition	NaH2PO4.2H2O		ingredient:nah2po4_2h2o		5.0 g	0.005		
@@ -424,9 +424,9 @@ ccap_f2_composition	FeCl3.6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H
 ccap_f2_composition	Na2EDTA	EDTA disodium salt (anhydrous)	CHEBI:64734	C10H14N2O8.2Na	5.0 ml	0.005		
 ccap_f2_composition	ZnSO4.7H2O	zinc sulfate heptahydrate	CHEBI:32312	7H2O.O4S.Zn	0.1 ml	0.0001		
 cyanosite_SNA_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	35.0 g	0.035		
-dsmz_1000_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.014 g	1.4000000000000001e-05		
+dsmz_1000_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.013999999999999999 g	1.4000000000000001e-05		
 dsmz_1000_composition	Fe2(SO4)3 x X H2O		PubChem:167265		0.005 g	5e-06		
-dsmz_1000_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.014 g	1.4000000000000001e-05		
+dsmz_1000_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.013999999999999999 g	1.4000000000000001e-05		
 dsmz_1000_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.033 g	3.3e-05		
 dsmz_1000_composition	MgCl2 x 6 H20		KEGG:C07755		0.418 g	0.00041799999999999997		
 dsmz_1000_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.34 g	0.00033999999999999997		
@@ -5754,7 +5754,7 @@ dsmz_1163a_composition	riboflavin		CHEBI:17015		from Yeast extract (0.01 g/100g)
 dsmz_1163a_composition	sodium		CHEBI:26708		from Yeast extract (0.3 g/100g)	1.5e-05	Yeast extract	minerals
 dsmz_1163a_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	5.00e-07	Yeast extract	vitamins
 dsmz_1163a_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-07	Yeast extract	minerals
-dsmz_1164_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.916 g	0.000916		
+dsmz_1164_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.9159999999999999 g	0.000916		
 dsmz_1164_composition	FeCl3 x 6 H2O (0.5%)	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	7.0 g	0.006999999999999999		
 dsmz_1164_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	1.0 g	0.001		
 dsmz_1164_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	5.0 g	0.005		
@@ -6388,7 +6388,7 @@ dsmz_1180_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	30.0 g	0.03
 dsmz_1181_composition	CaCl2 x 6 H2O	calcium chloride hexahydrate	CHEBI:91243	Ca.2Cl.6H2O	0.006 g	6e-06		
 dsmz_1181_composition	Fe(III)NH4-EDTA		PubChem:88842		4.0 mg	4e-06		
 dsmz_1181_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.2 g	0.0002		
-dsmz_1181_composition	Na2HPO4 x 12 H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.717 g	0.000717		
+dsmz_1181_composition	Na2HPO4 x 12 H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.7170000000000001 g	0.000717		
 dsmz_1181_composition	NaNO3		CHEBI:63005		0.2 g	0.0002		
 dsmz_1182_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	5.0 g	0.005		
 dsmz_1182_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.2 g	0.0002		
@@ -7970,7 +7970,7 @@ dsmz_1217_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	0.2 g
 dsmz_1217_composition	MnCl2 x 4 H2O		PubChem:30200		0.2 g	0.0002		
 dsmz_1217_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.4 g	0.0004		
 dsmz_1217_composition	Na2CO3	sodium carbonate	CHEBI:29377	CO3.2Na	0.5 g	0.0005		
-dsmz_1217_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036 ml	3.6e-05		
+dsmz_1217_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036000000000000004 ml	3.6e-05		
 dsmz_1217_composition	Na2S2O3 x 5 H2O	sodium thiosulfate pentahydrate	CHEBI:32150	5H2O.2Na.O3S2	1.0 g	0.001		
 dsmz_1217_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.5 g	0.0005		
 dsmz_1217_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	2.0 g	0.002		
@@ -8048,7 +8048,7 @@ dsmz_1218_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	0.2 g
 dsmz_1218_composition	MnCl2 x 4 H2O		PubChem:30200		0.2 g	0.0002		
 dsmz_1218_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.4 g	0.0004		
 dsmz_1218_composition	Na2CO3	sodium carbonate	CHEBI:29377	CO3.2Na	5.0 g	0.005		
-dsmz_1218_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036 ml	3.6e-05		
+dsmz_1218_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036000000000000004 ml	3.6e-05		
 dsmz_1218_composition	Na2S2O3 x 5 H2O	sodium thiosulfate pentahydrate	CHEBI:32150	5H2O.2Na.O3S2	1.0 g	0.001		
 dsmz_1218_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.5 g	0.0005		
 dsmz_1218_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	40.0 g	0.04		
@@ -14364,7 +14364,7 @@ dsmz_1395_composition	L-valine		CHEBI:16414		from Peptone (3.5 g/100g)	0.000175	
 dsmz_1395_composition	L-valine		CHEBI:16414		from Yeast Extract (5.7 g/100g)	0.00057	Yeast Extract	amino_acids
 dsmz_1395_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	7.0 g	0.006999999999999999		
 dsmz_1395_composition	MgSO x 7 H2O		CHEBI:31795		9.6 g	0.0096		
-dsmz_1395_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026 g	2.6000000000000002e-05		
+dsmz_1395_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026000000000000002 g	2.6000000000000002e-05		
 dsmz_1395_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	41.0 g	0.040999999999999995		
 dsmz_1395_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	0.06 g	5.9999999999999995e-05		
 dsmz_1395_composition	adenosine		CHEBI:16335		from Peptone (0.3 g/100g)	1.5e-05	Peptone	nucleotides
@@ -14964,7 +14964,7 @@ dsmz_1407_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	1.0 g	0.001
 dsmz_1407_composition	Na2HPO4	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	4.0 g	0.004		
 dsmz_1407_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	1000.0 ml	1.0		
 dsmz_1407_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	2.0 g	0.002		
-dsmz_1407_composition	NiCl2 x 6 H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.036 g	3.6e-05		
+dsmz_1407_composition	NiCl2 x 6 H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.036000000000000004 g	3.6e-05		
 dsmz_1407_composition	ZnCl2	zinc dichloride	CHEBI:49976	2Cl.Zn	0.1 g	0.0001		
 dsmz_1407_composition	adenosine		CHEBI:16335		from Peptone (0.3 g/100g)	3e-06	Peptone	nucleotides
 dsmz_1407_composition	biotin		CHEBI:15956		from Yeast Extract (0.00012 g/100g)	1.20e-08	Yeast Extract	vitamins
@@ -15208,7 +15208,7 @@ dsmz_1415_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.5 g	0.0005
 dsmz_1415_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	1000.0 ml	1.0		
 dsmz_1415_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	1.0 g	0.001		
 dsmz_1415_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.5 g	0.0005		
-dsmz_1415_composition	NiCl2 x 6 H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.036 g	3.6e-05		
+dsmz_1415_composition	NiCl2 x 6 H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.036000000000000004 g	3.6e-05		
 dsmz_1415_composition	ZnCl2	zinc dichloride	CHEBI:49976	2Cl.Zn	0.1 g	0.0001		
 dsmz_1415_composition	biotin		CHEBI:15956		from Yeast Extract (0.00012 g/100g)	1.20e-09	Yeast Extract	vitamins
 dsmz_1415_composition	calcium		CHEBI:22984		from Yeast Extract (0.1 g/100g)	1e-06	Yeast Extract	minerals
@@ -15577,7 +15577,7 @@ dsmz_1425_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	2.
 dsmz_1425_composition	uridine		CHEBI:16704		from Peptone (0.2 g/100g)	1e-06	Peptone	nucleotides
 dsmz_1425_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	2.50e-08	Yeast extract	minerals
 dsmz_1426_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	0.1983 g	0.00019830000000000002		
-dsmz_1426_composition	Ca(NO3)2 x 4 H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.236 g	0.000236		
+dsmz_1426_composition	Ca(NO3)2 x 4 H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.23600000000000002 g	0.000236		
 dsmz_1426_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.2938 g	0.00029380000000000004		
 dsmz_1426_composition	CaSO4 x 2 H2O	calcium sulfate dihydrate	CHEBI:32583	Ca.2H2O.O4S	0.8606 g	0.0008606		
 dsmz_1426_composition	CoCl2 x 6 H2O	cobalt dichloride	CHEBI:35696	2Cl.Co	190.0 mg	0.00018999999999999998		
@@ -15621,7 +15621,7 @@ dsmz_1426_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	6
 dsmz_1426_composition	L-valine		CHEBI:16414		from Peptone (3.5 g/100g)	1.75e-05	Peptone	amino_acids
 dsmz_1426_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	1.425e-05	Yeast extract	amino_acids
 dsmz_1426_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	0.2036 g	0.00020360000000000002		
-dsmz_1426_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.739 g	0.000739		
+dsmz_1426_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.7390000000000001 g	0.000739		
 dsmz_1426_composition	MnCl2 x 4 H2O		PubChem:30200		100.0 mg	0.0001		
 dsmz_1426_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.1069 g	0.0001069		
 dsmz_1426_composition	Na NO3		CHEBI:63005		0.424 g	0.000424		
@@ -17453,7 +17453,7 @@ dsmz_1484_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-
 dsmz_1485_composition	Solution A		ingredient:485		1.0 ml	0.001		
 dsmz_1486_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.015 g	1.4999999999999999e-05		
 dsmz_1486_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.15 g	0.00015		
-dsmz_1486_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.123 g	0.000123		
+dsmz_1486_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12300000000000001 g	0.000123		
 dsmz_1486_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.107 g	0.00010700000000000001		
 dsmz_1486_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.3 g	0.0003		
 dsmz_1486_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	3.0 g	0.003		
@@ -18790,7 +18790,7 @@ dsmz_1535_composition	L-tryptophan		CHEBI:16828		from Yeast extract (1.2 g/100g)
 dsmz_1535_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	0.00012	Yeast extract	amino_acids
 dsmz_1535_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	0.000285	Yeast extract	amino_acids
 dsmz_1535_composition	MgSO4x7H2O	magnesium sulfate heptahydrate	CHEBI:31795	7H2O.Mg.O4S	36.0 g	0.036000000000000004		
-dsmz_1535_composition	MnCl2		CHEBI:7773015		0.013 g	1.3000000000000001e-05		
+dsmz_1535_composition	MnCl2		CHEBI:7773015		0.013000000000000001 g	1.3000000000000001e-05		
 dsmz_1535_composition	NaCL	sodium chloride	CHEBI:26710	Cl.Na	206.0 g	0.20600000000000002		
 dsmz_1535_composition	biotin		CHEBI:15956		from Yeast extract (0.00012 g/100g)	6.00e-09	Yeast extract	vitamins
 dsmz_1535_composition	calcium		CHEBI:22984		from Yeast extract (0.1 g/100g)	5e-06	Yeast extract	minerals
@@ -20253,7 +20253,7 @@ dsmz_1589_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K
 dsmz_1589_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.27 g	0.00027		
 dsmz_1589_composition	Na-propionate	propionate	CHEBI:17272	C3H5O2	0.48 g	0.00047999999999999996		
 dsmz_158_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	1.32 g	0.00132		
-dsmz_158_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.074 g	7.4e-05		
+dsmz_158_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.07400000000000001 g	7.4e-05		
 dsmz_158_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	20.0 g	0.02		
 dsmz_158_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.247 g	0.00024700000000000004		
 dsmz_1590_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.6 g	0.0006		
@@ -22676,7 +22676,7 @@ dsmz_1710_composition	L-threonine		CHEBI:16857		from Yeast extract (4.3 g/100g)	
 dsmz_1710_composition	L-tryptophan		CHEBI:16828		from Yeast extract (1.2 g/100g)	1.2e-05	Yeast extract	amino_acids
 dsmz_1710_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	2.4e-05	Yeast extract	amino_acids
 dsmz_1710_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	5.7e-05	Yeast extract	amino_acids
-dsmz_1710_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.123 g	0.000123		
+dsmz_1710_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12300000000000001 g	0.000123		
 dsmz_1710_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.107 g	0.00010700000000000001		
 dsmz_1710_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.3 g	0.0003		
 dsmz_1710_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	3.0 g	0.003		
@@ -23441,7 +23441,7 @@ dsmz_185_composition	L-threonine		CHEBI:16857		from Yeast extract (4.3 g/100g)	4
 dsmz_185_composition	L-tryptophan		CHEBI:16828		from Yeast extract (1.2 g/100g)	1.2e-05	Yeast extract	amino_acids
 dsmz_185_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	2.4e-05	Yeast extract	amino_acids
 dsmz_185_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	5.7e-05	Yeast extract	amino_acids
-dsmz_185_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.492 g	0.000492		
+dsmz_185_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.49200000000000005 g	0.000492		
 dsmz_185_composition	MnCl2 x 4 H2O		PubChem:30200		1000.0 ml	1.0		
 dsmz_185_composition	Na2B4O7 x 10 H2O		PubChem:16211214		840.0 mg	0.00084		
 dsmz_185_composition	Na2MoO4 x 2 H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	22.0 mg	2.2e-05		
@@ -24025,7 +24025,7 @@ dsmz_213_composition	Solution A		ingredient:485		952.0 ml	0.9520000000000001
 dsmz_214_composition	G Starch	gellan gum	CHEBI:85248		20.0 g	0.02		
 dsmz_215b_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	5.0 g	0.005		
 dsmz_215c_composition	Na2S x 9 H2O	sodium sulfide nonahydrate	CHEBI:76209	9H2O.2Na.S	0.25 g	0.00025		
-dsmz_216_composition	G Yeast Extract		CAS-RN:8013-01-2		2.0 g	0.002		
+dsmz_216_composition	G Yeast Extract		FOODON:03315426		2.0 g	0.002		
 dsmz_219_composition	Agar	agar	CHEBI:2509		0.5 g	0.0005		
 dsmz_219_composition	Glycerol	sn-glycerol 3-phosphate	CHEBI:15978	C3H9O6P	50.0 ml	0.05		
 dsmz_219_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	0.000176	Yeast extract	amino_acids
@@ -28952,7 +28952,7 @@ dsmz_434_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	0.
 dsmz_434_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	0.00057	Yeast extract	amino_acids
 dsmz_434_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	7.0 g	0.006999999999999999		
 dsmz_434_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	9.6 g	0.0096		
-dsmz_434_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026 g	2.6000000000000002e-05		
+dsmz_434_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026000000000000002 g	2.6000000000000002e-05		
 dsmz_434_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	81.0 g	0.081		
 dsmz_434_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	0.06 g	5.9999999999999995e-05		
 dsmz_434_composition	biotin		CHEBI:15956		from Yeast extract (0.00012 g/100g)	1.20e-08	Yeast extract	vitamins
@@ -32295,7 +32295,7 @@ dsmz_561_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	1.25 g	0.00125
 dsmz_561_composition	Na2WO4 x 2 H2O (0.1% w/v)	sodium tungstate dihydrate	CHEBI:63939	2H2O.2Na.O4W	0.5 ml	0.0005		
 dsmz_561_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.5 g	0.0005		
 dsmz_561_composition	NiCl2 x 6 H2O (0.1% w/v)	nickel dichloride	CHEBI:34887	Cl2Ni	5.0 ml	0.005		
-dsmz_563_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.367 g	0.000367		
+dsmz_563_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.36700000000000005 g	0.000367		
 dsmz_563_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	1.0 g	0.001		
 dsmz_563_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	0.00044	Yeast extract	amino_acids
 dsmz_563_composition	L-arginine		CHEBI:16467		from Yeast extract (5.1 g/100g)	0.000255	Yeast extract	amino_acids
@@ -32928,7 +32928,7 @@ dsmz_58_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	5.00
 dsmz_58_composition	uridine-monophosphate		CHEBI:16695		from Meat extract (0.02 g/100g)	1e-06	Meat extract	nucleotides
 dsmz_58_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-07	Yeast extract	minerals
 dsmz_591_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.33 g	0.00033		
-dsmz_592_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.074 g	7.4e-05		
+dsmz_592_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.07400000000000001 g	7.4e-05		
 dsmz_592_composition	FeCl3 x 6 H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.019 g	1.9e-05		
 dsmz_592_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	8.8e-05	Yeast extract	amino_acids
 dsmz_592_composition	L-arginine		CHEBI:16467		from Yeast extract (5.1 g/100g)	5.1e-05	Yeast extract	amino_acids
@@ -32971,7 +32971,7 @@ dsmz_593_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	1.0 g	0.001
 dsmz_593_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	2.0 g	0.002		
 dsmz_593_composition	MgCl2	magnesium dichloride	CHEBI:6636	2Cl.Mg	7.0 g	0.006999999999999999		
 dsmz_593_composition	MgSO4	magnesium sulfate	CHEBI:32599	Mg.O4S	9.6 g	0.0096		
-dsmz_593_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026 g	2.6000000000000002e-05		
+dsmz_593_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026000000000000002 g	2.6000000000000002e-05		
 dsmz_593_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	81.0 g	0.081		
 dsmz_593_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	0.06 g	5.9999999999999995e-05		
 dsmz_594_composition	CaCl2	calcium dichloride	CHEBI:3312	Ca.2Cl	0.015 g	1.4999999999999999e-05		
@@ -33372,7 +33372,7 @@ dsmz_605_composition	L-tyrosine		CHEBI:17895		from Peptone (1 g/100g)	5e-05	Pept
 dsmz_605_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	4.8e-05	Yeast extract	amino_acids
 dsmz_605_composition	L-valine		CHEBI:16414		from Peptone (3.5 g/100g)	0.000175	Peptone	amino_acids
 dsmz_605_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	0.000114	Yeast extract	amino_acids
-dsmz_605_composition	Lab-Lemco beef extract		PubChem:167312535		1.0 g	0.001		
+dsmz_605_composition	Lab-Lemco beef extract		FOODON:03302088		1.0 g	0.001		
 dsmz_605_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	5.0 g	0.005		
 dsmz_605_composition	adenosine		CHEBI:16335		from Peptone (0.3 g/100g)	1.5e-05	Peptone	nucleotides
 dsmz_605_composition	biotin		CHEBI:15956		from Yeast extract (0.00012 g/100g)	2.40e-09	Yeast extract	vitamins
@@ -33706,7 +33706,7 @@ dsmz_623_composition	L-tryptophan		CHEBI:16828		from Yeast extract (1.2 g/100g)	
 dsmz_623_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	2.4e-05	Yeast extract	amino_acids
 dsmz_623_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	5.7e-05	Yeast extract	amino_acids
 dsmz_623_composition	MgCl2 x 6 H2O	magnesium dichloride	CHEBI:6636	2Cl.Mg	12.6 g	0.0126		
-dsmz_623_composition	Na-meta-silicate		PubChem:23266		0.022 g	2.2e-05		
+dsmz_623_composition	Na-meta-silicate		PubChem:23266		0.022000000000000002 g	2.2e-05		
 dsmz_623_composition	Na2CO3	sodium carbonate	CHEBI:29377	CO3.2Na	0.61 g	0.00061		
 dsmz_623_composition	Na2HPO4	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.0016 g	1.6e-06		
 dsmz_623_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	3.42 g	0.0034200000000000003		
@@ -34145,7 +34145,7 @@ dsmz_632_composition	Fe(III)NH4-EDTA		PubChem:88842		4.0 mg	4e-06
 dsmz_632_composition	KNO3	nitrate	CHEBI:17632	NO3	1.0 g	0.001		
 dsmz_632_composition	Methanol	methanol	CHEBI:17790	CH4O	1.0 ml	0.001		
 dsmz_632_composition	MgSO4 x 7 H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	1.0 g	0.001		
-dsmz_632_composition	Na2HPO4 x 12 H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.717 g	0.000717		
+dsmz_632_composition	Na2HPO4 x 12 H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.7170000000000001 g	0.000717		
 dsmz_633_composition	Biotin	biotin	CHEBI:15956	C10H16N2O3S	1.0 mg	1e-06		
 dsmz_633_composition	CaCl2 x 2 H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.1 g	0.0001		
 dsmz_633_composition	CoCl2 x 6 H2O	cobalt dichloride	CHEBI:35696	2Cl.Co	0.5 mg	5e-07		
@@ -35770,7 +35770,7 @@ dsmz_698_composition	riboflavin		CHEBI:17015		from Yeast extract (0.01 g/100g)	8
 dsmz_698_composition	sodium		CHEBI:26708		from Yeast extract (0.3 g/100g)	2.4e-05	Yeast extract	minerals
 dsmz_698_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	8.00e-07	Yeast extract	vitamins
 dsmz_698_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	8.00e-07	Yeast extract	minerals
-dsmz_699_composition	Bacto beef extract		ingredient:bacto_beef_extract		3.0 g	0.003		
+dsmz_699_composition	Bacto beef extract		FOODON:03302088		3.0 g	0.003		
 dsmz_699_composition	Dextrose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	1.0 g	0.001		
 dsmz_699_composition	FeSO4	iron(2+) sulfate (anhydrous)	CHEBI:75832	Fe.O4S	0.2 g	0.0002		
 dsmz_699_composition	L-alanine		CHEBI:16977		from Bacto peptone (3.5 g/100g)	0.000525	Bacto peptone	amino_acids
@@ -46900,7 +46900,7 @@ jcm_1125_composition	Vitamin B12solution (see Medium No.403)*		ingredient:1845		
 jcm_1125_composition	Vitamin solution (see Medium No.403)*		ingredient:1855		1.0 ml	0.001		
 jcm_1126_composition	AlCl3	aluminium trichloride	CHEBI:30114	AlCl3	0.006 g	6e-06		
 jcm_1126_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	1.36 g	0.0013599999999999999		
-jcm_1126_composition	CuCl2·2H2O	copper(II) chloride dihydrate	CHEBI:86318	Cl2Cu.2H2O	0.007 g	7.000000000000001e-06		
+jcm_1126_composition	CuCl2·2H2O	copper(II) chloride dihydrate	CHEBI:86318	Cl2Cu.2H2O	0.006999999999999999 g	7.000000000000001e-06		
 jcm_1126_composition	FeCl3·6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.5 g	0.0005		
 jcm_1126_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.01 g	1e-05		
 jcm_1126_composition	KBr	potassium bromide	CHEBI:32030	Br.K	85.0 mg	8.499999999999999e-05		
@@ -47649,7 +47649,7 @@ jcm_1167_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	246.0 mg	0
 jcm_1167_composition	MnCl2·4H2O		PubChem:30200		0.257 mg	2.57e-07		
 jcm_1167_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.5 g	0.0005		
 jcm_1167_composition	Na2-EDTA	EDTA disodium salt (anhydrous)	CHEBI:64734	C10H14N2O8.2Na	22.59 mg	2.259e-05		
-jcm_1167_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.944 mg	9.440000000000001e-07		
+jcm_1167_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.9440000000000001 mg	9.440000000000001e-07		
 jcm_1167_composition	Na2SeO3·5H2O	disodium selenite	CHEBI:48843	2Na.O3Se	0.395 mg	3.95e-07		
 jcm_1167_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	2.25 g	0.00225		
 jcm_1167_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.584 mg	5.839999999999999e-07		
@@ -48734,7 +48734,7 @@ jcm_1219_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2
 jcm_1219_composition	HEPES	HEPES	CHEBI:46756		4.77 g	0.00477		
 jcm_1219_composition	Methanol	methanol	CHEBI:17790	CH4O	0.81 ml	0.00081		
 jcm_1219_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	0.2 g	0.0002		
-jcm_1219_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.014 g	1.4000000000000001e-05		
+jcm_1219_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.013999999999999999 g	1.4000000000000001e-05		
 jcm_1219_composition	NaNO3		CHEBI:63005		0.42 g	0.00042		
 jcm_1219_composition	Trace element solution (see Medium No.284)		ingredient:1886		10.0 ml	0.01		
 jcm_1219_composition	Trace vitamins (see Medium No.197)		ingredient:1784		10.0 ml	0.01		
@@ -49617,7 +49617,7 @@ jcm_1254_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	5.0
 jcm_1254_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-09	Yeast extract	minerals
 jcm_1255_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.015 g	1.4999999999999999e-05		
 jcm_1255_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.15 g	0.00015		
-jcm_1255_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.123 g	0.000123		
+jcm_1255_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12300000000000001 g	0.000123		
 jcm_1255_composition	Mineral solution (see Medium No.976)		ingredient:1958		5.0 ml	0.005		
 jcm_1255_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.107 g	0.00010700000000000001		
 jcm_1255_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.3 g	0.0003		
@@ -49728,7 +49728,7 @@ jcm_1262_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.2 g	0.00
 jcm_1262_composition	Na2CO3	sodium carbonate	CHEBI:29377	CO3.2Na	4.24 g	0.00424		
 jcm_1262_composition	NaNO2	sodium nitrite	CHEBI:78870	NO2.Na	0.345 g	0.00034500000000000004		
 jcm_1262_composition	NaNO3		CHEBI:63005		0.425 g	0.000425		
-jcm_1262_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.164 g	0.000164		
+jcm_1262_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.16399999999999998 g	0.000164		
 jcm_1262_composition	Sodium pyruvate	sodium pyruvate	CHEBI:50144	C3H3O3.Na	0.22 g	0.00022		
 jcm_1263_composition	Disodium oxalate	sodium oxalate	CHEBI:132764	C2O4.2Na	0.268 g	0.000268		
 jcm_1263_composition	Disodium succinate·6H2O	sodium succinate (anhydrous)	CHEBI:63675	C4H4O4.2Na	0.54 g	0.00054		
@@ -49737,7 +49737,7 @@ jcm_1263_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.2 g	0.00
 jcm_1263_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	5.0 g	0.005		
 jcm_1263_composition	NaNO2	sodium nitrite	CHEBI:78870	NO2.Na	0.345 g	0.00034500000000000004		
 jcm_1263_composition	NaNO3		CHEBI:63005		0.425 g	0.000425		
-jcm_1263_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.164 g	0.000164		
+jcm_1263_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.16399999999999998 g	0.000164		
 jcm_1263_composition	Sodium pyruvate	sodium pyruvate	CHEBI:50144	C3H3O3.Na	0.22 g	0.00022		
 jcm_1264_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.29 g	0.00029		
 jcm_1264_composition	DL-Malic acid	malic acid	CHEBI:6650	C4H6O5	0.2 g	0.0002		
@@ -50716,7 +50716,7 @@ jcm_176_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.1 g	0.0001
 jcm_176_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.5 g	0.0005		
 jcm_176_composition	Sulfur (powder)		CHEBI:14258		10.0 g	0.01		
 jcm_177_composition	Agar	agar	CHEBI:2509		15.0 g	0.015		
-jcm_177_composition	Fish meat extract		ingredient:1672		5.0 g	0.005		
+jcm_177_composition	Fish meat extract		FOODON:03315424		5.0 g	0.005		
 jcm_177_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	1.0 g	0.001		
 jcm_177_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	1.0 g	0.001		
 jcm_177_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	2.5 g	0.0025		
@@ -51109,7 +51109,7 @@ jcm_195_composition	Sulfur (powder)		CHEBI:14258		8.0 g	0.008
 jcm_196_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	0.264 g	0.000264		
 jcm_196_composition	CaSO4·2H2O	calcium sulfate dihydrate	CHEBI:32583	Ca.2H2O.O4S	0.344 g	0.000344		
 jcm_196_composition	CuCl2·2H2O	copper(II) chloride dihydrate	CHEBI:86318	Cl2Cu.2H2O	5.0 µg	5e-09		
-jcm_196_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.492 g	0.000492		
+jcm_196_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.49200000000000005 g	0.000492		
 jcm_196_composition	MnCl2·4H2O		PubChem:30200		0.18 mg	1.8e-07		
 jcm_196_composition	Na2B4O7·10H2O		PubChem:16211214		0.45 mg	4.5e-07		
 jcm_196_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	3.0 µg	3e-09		
@@ -51571,11 +51571,11 @@ jcm_231_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H
 jcm_231_composition	CuSO4·5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	0.05 g	5e-05		
 jcm_231_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.01 g	1e-05		
 jcm_231_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.15 g	0.00015		
-jcm_231_composition	KAl(SO4)2·12H2O	potassium aluminium sulfate dodecahydrate	CHEBI:86465	Al.12H2O.K.2O4S	0.018 g	1.8e-05		
+jcm_231_composition	KAl(SO4)2·12H2O	potassium aluminium sulfate dodecahydrate	CHEBI:86465	Al.12H2O.K.2O4S	0.018000000000000002 g	1.8e-05		
 jcm_231_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12 g	0.00011999999999999999		
 jcm_231_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	6.2 g	0.0062		
 jcm_231_composition	Na2CO3	sodium carbonate	CHEBI:29377	CO3.2Na	4.0 g	0.004		
-jcm_231_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.011 g	1.1e-05		
+jcm_231_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.011000000000000001 g	1.1e-05		
 jcm_231_composition	Na2S·9H2O	sodium sulfide nonahydrate	CHEBI:76209	9H2O.2Na.S	0.5 g	0.0005		
 jcm_231_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.6 g	0.0006		
 jcm_231_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	1.0 g	0.001		
@@ -51771,7 +51771,7 @@ jcm_243_composition	KHCO3	potassium hydrogencarbonate	CHEBI:81862	CHO3.K	4.0 g	0
 jcm_243_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	0.1 g	0.0001		
 jcm_243_composition	MnCl2·4H2O		PubChem:30200		0.1 g	0.0001		
 jcm_243_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	1.0 g	0.001		
-jcm_243_composition	Na2SeO3·5H2O	disodium selenite	CHEBI:48843	2Na.O3Se	0.026 g	2.6000000000000002e-05		
+jcm_243_composition	Na2SeO3·5H2O	disodium selenite	CHEBI:48843	2Na.O3Se	0.026000000000000002 g	2.6000000000000002e-05		
 jcm_243_composition	Na2S·9H2O	sodium sulfide nonahydrate	CHEBI:76209	9H2O.2Na.S	0.5 g	0.0005		
 jcm_243_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.6 g	0.0006		
 jcm_243_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	1.0 g	0.001		
@@ -52614,7 +52614,7 @@ jcm_304_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl
 jcm_304_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	29.7 g	0.0297		
 jcm_304_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	13.0 mg	1.3000000000000001e-05		
 jcm_304_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	3.917 g	0.003917		
-jcm_304_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	23.477 g	0.023477		
+jcm_304_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	23.476999999999997 g	0.023477		
 jcm_304_composition	NaF	sodium fluoride	CHEBI:28741	F.Na	3.0 mg	3e-06		
 jcm_304_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	192.0 mg	0.000192		
 jcm_304_composition	Nicotinamide	nicotinamide	CHEBI:17154	C6H6N2O	5.0 mg	5e-06		
@@ -54041,7 +54041,7 @@ jcm_417_composition	Sulfur (powder)		CHEBI:14258		10.0 g	0.01
 jcm_417_composition	Trace vitamins (see Medium No.197)		ingredient:1784		1.0 ml	0.001		
 jcm_418_composition	Maltose	alpha-maltose	CHEBI:18167	C12H22O11	5.0 g	0.005		
 jcm_419_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.08 g	8e-05		
-jcm_419_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.014 g	1.4000000000000001e-05		
+jcm_419_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.013999999999999999 g	1.4000000000000001e-05		
 jcm_419_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.33 g	0.00033		
 jcm_419_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	0.418 g	0.00041799999999999997		
 jcm_419_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.34 g	0.00033999999999999997		
@@ -55295,7 +55295,7 @@ jcm_502_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-08
 jcm_505_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	10.0 g	0.01		
 jcm_505_composition	Glycerol	sn-glycerol 3-phosphate	CHEBI:15978	C3H9O6P	10.0 g	0.01		
 jcm_506_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	1.3 g	0.0013		
-jcm_506_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.074 g	7.4e-05		
+jcm_506_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.07400000000000001 g	7.4e-05		
 jcm_506_composition	CuSO4·5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	0.016 mg	1.6e-08		
 jcm_506_composition	FeCl3·6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.28 g	0.00028		
 jcm_506_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.5 mg	5e-07		
@@ -55383,7 +55383,7 @@ jcm_512_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H
 jcm_512_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	3.04 g	0.0030399999999999997		
 jcm_512_composition	CuSO4·5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	0.01 g	1e-05		
 jcm_512_composition	Folic acid	folic acid	CHEBI:27470	C19H19N7O6	0.002 g	2e-06		
-jcm_512_composition	Galactose	galactose	CHEBI:28260	C6H12O6	0.901 g	0.000901		
+jcm_512_composition	Galactose	galactose	CHEBI:28260	C6H12O6	0.9009999999999999 g	0.000901		
 jcm_512_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.01 g	1e-05		
 jcm_512_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.77 g	0.0007700000000000001		
 jcm_512_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	21.2 g	0.0212		
@@ -56200,7 +56200,7 @@ jcm_554_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.3 g	0.0003
 jcm_554_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	0.5 g	0.0005		
 jcm_554_composition	MnCl2·4H2O		PubChem:30200		0.1 g	0.0001		
 jcm_554_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.3 g	0.0003		
-jcm_554_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036 g	3.6e-05		
+jcm_554_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	0.036000000000000004 g	3.6e-05		
 jcm_554_composition	Na2SeO3·5H2O	disodium selenite	CHEBI:48843	2Na.O3Se	0.003 g	3e-06		
 jcm_554_composition	Na2WO4·2H2O	sodium tungstate dihydrate	CHEBI:63939	2H2O.2Na.O4W	0.004 g	4e-06		
 jcm_554_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	1.0 g	0.001		
@@ -56992,7 +56992,7 @@ jcm_599_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	0.0
 jcm_599_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	0.00057	Yeast extract	amino_acids
 jcm_599_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	7.0 g	0.006999999999999999		
 jcm_599_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	9.6 g	0.0096		
-jcm_599_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026 g	2.6000000000000002e-05		
+jcm_599_composition	NaBr	sodium bromide	CHEBI:63004	Br.Na	0.026000000000000002 g	2.6000000000000002e-05		
 jcm_599_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	81.0 g	0.081		
 jcm_599_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	0.06 g	5.9999999999999995e-05		
 jcm_599_composition	biotin		CHEBI:15956		from Yeast extract (0.00012 g/100g)	1.20e-08	Yeast extract	vitamins
@@ -58002,7 +58002,7 @@ jcm_671_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.
 jcm_671_composition	Na2SeO3	disodium selenite	CHEBI:48843	2Na.O3Se	0.02 g	2e-05		
 jcm_671_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.9 g	0.0009		
 jcm_671_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	1.0 g	0.001		
-jcm_671_composition	NiCl2·6H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.026 g	2.6000000000000002e-05		
+jcm_671_composition	NiCl2·6H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.026000000000000002 g	2.6000000000000002e-05		
 jcm_671_composition	Nitrilotriacetic acid	nitrilotriacetic acid	CHEBI:44557	C6H9NO6	12.8 g	0.0128		
 jcm_671_composition	Resazurin	Resazurin	CHEBI:8806	C12H7NO4	1.0 mg	1e-06		
 jcm_671_composition	Trace vitamins (see Medium No.197)		ingredient:1784		5.0 ml	0.005		
@@ -59212,7 +59212,7 @@ jcm_735_composition	thiamine		CHEBI:18385		from Malt extract (0.0002 g/100g)	2.0
 jcm_735_composition	zinc		CHEBI:27363		from Malt extract (0.0005 g/100g)	5.00e-08	Malt extract	minerals
 jcm_736_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	1.1 g	0.0011		
 jcm_736_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	0.25 g	0.00025		
-jcm_736_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.026 g	2.6000000000000002e-05		
+jcm_736_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.026000000000000002 g	2.6000000000000002e-05		
 jcm_736_composition	K2HPO4	dipotassium hydrogen phosphate	CHEBI:131527	HO4P.2K	0.15 g	0.00015		
 jcm_736_composition	KBr	potassium bromide	CHEBI:32030	Br.K	0.096 g	9.6e-05		
 jcm_736_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.66 g	0.00066		
@@ -60153,7 +60153,7 @@ jcm_783_composition	sodium		CHEBI:26708		from Yeast extract (0.3 g/100g)	3e-06	Y
 jcm_783_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	1.00e-07	Yeast extract	vitamins
 jcm_783_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	1.00e-07	Yeast extract	minerals
 jcm_784_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	0.45 g	0.00045		
-jcm_784_composition	Ca(NO3)2·4H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.014 g	1.4000000000000001e-05		
+jcm_784_composition	Ca(NO3)2·4H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.013999999999999999 g	1.4000000000000001e-05		
 jcm_784_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.05 g	5e-05		
 jcm_784_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	4.4e-05	Yeast extract	amino_acids
 jcm_784_composition	L-arginine		CHEBI:16467		from Yeast extract (5.1 g/100g)	2.55e-05	Yeast extract	amino_acids
@@ -60901,10 +60901,10 @@ jcm_826_composition	sodium		CHEBI:26708		from Yeast extract (0.3 g/100g)	6e-06	Y
 jcm_826_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	2.00e-07	Yeast extract	vitamins
 jcm_826_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	2.00e-07	Yeast extract	minerals
 jcm_828_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.2 g	0.0002		
-jcm_828_composition	FeCl3·6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.027 g	2.7000000000000002e-05		
+jcm_828_composition	FeCl3·6H2O	iron trichloride hexahydrate	CHEBI:86254	Cl3Fe.6H2O	0.027000000000000003 g	2.7000000000000002e-05		
 jcm_828_composition	KNO3	nitrate	CHEBI:17632	NO3	1.0 g	0.001		
 jcm_828_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	1.0 g	0.001		
-jcm_828_composition	Na2HPO4·2H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.717 g	0.000717		
+jcm_828_composition	Na2HPO4·2H2O	disodium hydrogenphosphate	CHEBI:34683	HO4P.2Na	0.7170000000000001 g	0.000717		
 jcm_837_composition	Resazurin	Resazurin	CHEBI:8806	C12H7NO4	0.5 mg	5e-07		
 jcm_837_composition	Trace vitamins (see Medium No.197)*		ingredient:1784		10.0 ml	0.01		
 jcm_838_composition	Agar	agar	CHEBI:2509		15.0 g	0.015		
@@ -61249,7 +61249,7 @@ jcm_850_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.3 g	0.0003
 jcm_850_composition	Resazurin	Resazurin	CHEBI:8806	C12H7NO4	1.0 mg	1e-06		
 jcm_850_composition	Trace element solution (see Medium No.187)		ingredient:1886		1.0 ml	0.001		
 jcm_850_composition	Trace vitamins (see Medium No.197)		ingredient:1784		10.0 ml	0.01		
-jcm_852_composition	AlCl3	aluminium trichloride	CHEBI:30114	AlCl3	0.013 g	1.3000000000000001e-05		
+jcm_852_composition	AlCl3	aluminium trichloride	CHEBI:30114	AlCl3	0.013000000000000001 g	1.3000000000000001e-05		
 jcm_852_composition	Biotin	biotin	CHEBI:15956	C10H16N2O3S	4.9 mg	4.9000000000000005e-06		
 jcm_852_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	1.0 g	0.001		
 jcm_852_composition	CuCl2·2H2O	copper(II) chloride dihydrate	CHEBI:86318	Cl2Cu.2H2O	1.7 mg	1.7e-06		
@@ -61285,7 +61285,7 @@ jcm_852_composition	Na2S·9H2O	sodium sulfide nonahydrate	CHEBI:76209	9H2O.2Na.S
 jcm_852_composition	Na2WO4·2H2O	sodium tungstate dihydrate	CHEBI:63939	2H2O.2Na.O4W	3.3 mg	3.3e-06		
 jcm_852_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	25.0 g	0.025		
 jcm_852_composition	NaHCO3	sodium hydrogencarbonate	CHEBI:32139	CHO3.Na	2.0 g	0.002		
-jcm_852_composition	NiCl2·6H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.013 g	1.3000000000000001e-05		
+jcm_852_composition	NiCl2·6H2O	nickel dichloride	CHEBI:34887	Cl2Ni	0.013000000000000001 g	1.3000000000000001e-05		
 jcm_852_composition	Nicotinamide	nicotinamide	CHEBI:17154	C6H6N2O	2.5 mg	2.5e-06		
 jcm_852_composition	Pyridoxine·HCl	pyridoxamine hydrochloride	CHEBI:131531	C8H12N2O2.HCl	4.1 mg	4.1e-06		
 jcm_852_composition	Resazurin	Resazurin	CHEBI:8806	C12H7NO4	1.0 mg	1e-06		
@@ -61451,7 +61451,7 @@ jcm_864_composition	sodium		CHEBI:26708		from Yeast extract (0.3 g/100g)	1.5e-05
 jcm_864_composition	thiamine		CHEBI:18385		from Yeast extract (0.01 g/100g)	5.00e-07	Yeast extract	vitamins
 jcm_864_composition	zinc		CHEBI:27363		from Yeast extract (0.01 g/100g)	5.00e-07	Yeast extract	minerals
 jcm_865_composition	(NH4)2SO4	ammonium sulfate	CHEBI:62946	2H4N.O4S	0.45 g	0.00045		
-jcm_865_composition	Ca(NO3)2·4H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.014 g	1.4000000000000001e-05		
+jcm_865_composition	Ca(NO3)2·4H2O	calcium nitrate tetrahydrate	CHEBI:86159	Ca.4H2O.2NO3	0.013999999999999999 g	1.4000000000000001e-05		
 jcm_865_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.05 g	5e-05		
 jcm_865_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	4.4e-05	Yeast extract	amino_acids
 jcm_865_composition	L-arginine		CHEBI:16467		from Yeast extract (5.1 g/100g)	2.55e-05	Yeast extract	amino_acids
@@ -62475,7 +62475,7 @@ jcm_937_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl
 jcm_937_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.5 g	0.0005		
 jcm_937_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	5.0 g	0.005		
 jcm_937_composition	Resazurin	Resazurin	CHEBI:8806	C12H7NO4	1.0 mg	1e-06		
-jcm_937_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.164 g	0.000164		
+jcm_937_composition	Sodium acetate	sodium acetate	CHEBI:32954	C2H3O2.Na	0.16399999999999998 g	0.000164		
 jcm_937_composition	Trace minerals(see Medium No.151)		ingredient:1883		10.0 ml	0.01		
 jcm_937_composition	biotin		CHEBI:15956		from Yeast extract (0.00012 g/100g)	6.00e-09	Yeast extract	vitamins
 jcm_937_composition	calcium		CHEBI:22984		from Yeast extract (0.1 g/100g)	5e-06	Yeast extract	minerals
@@ -62871,7 +62871,7 @@ jcm_963_composition	Trace vitamins* (see Medium No.197)		ingredient:1784		10.0 m
 jcm_964_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.15 g	0.00015		
 jcm_964_composition	Co(NO3)2·6H2O	cobalt dinitrate hexahydrate	CHEBI:86214	Co.6H2O.2NO3	4.94 mg	4.94e-06		
 jcm_964_composition	CuSO4·5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	7.9 mg	7.9e-06		
-jcm_964_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.286 g	0.000286		
+jcm_964_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.28600000000000003 g	0.000286		
 jcm_964_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.3 g	0.0003		
 jcm_964_composition	L-alanine		CHEBI:16977		from Yeast extract (8.8 g/100g)	4.4e-05	Yeast extract	amino_acids
 jcm_964_composition	L-arginine		CHEBI:16467		from Yeast extract (5.1 g/100g)	2.55e-05	Yeast extract	amino_acids
@@ -62891,7 +62891,7 @@ jcm_964_composition	L-tryptophan		CHEBI:16828		from Yeast extract (1.2 g/100g)	6
 jcm_964_composition	L-tyrosine		CHEBI:17895		from Yeast extract (2.4 g/100g)	1.2e-05	Yeast extract	amino_acids
 jcm_964_composition	L-valine		CHEBI:16414		from Yeast extract (5.7 g/100g)	2.85e-05	Yeast extract	amino_acids
 jcm_964_composition	MgCl2·6H2O	magnesium dichloride hexahydrate	CHEBI:86345	2Cl.6H2O.Mg	0.35 g	0.00035		
-jcm_964_composition	MnCl2·4H2O		PubChem:30200		0.181 g	0.000181		
+jcm_964_composition	MnCl2·4H2O		PubChem:30200		0.18100000000000002 g	0.000181		
 jcm_964_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.33 g	0.00033		
 jcm_964_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	39.0 mg	3.9e-05		
 jcm_964_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.5 g	0.0005		
@@ -62949,7 +62949,7 @@ jcm_968_composition	Xylose	xylose	CHEBI:18222	C5H10O5	1.0 g	0.001
 jcm_969_composition	Agar	agar	CHEBI:2509		15.0 g	0.015		
 jcm_969_composition	Glucose	aldehydo-D-glucose	CHEBI:42758	C6H12O6	20.0 g	0.02		
 jcm_971_composition	(NH4)2Ni(SO4)2·6H2O	ammonium nickel sulfate hexahydrate	CHEBI:86149	6H2O.2H4N.Ni.2O4S	0.28 g	0.00028		
-jcm_971_composition	AlK(SO4)2·12H2O	potassium aluminium sulfate dodecahydrate	CHEBI:86465	Al.12H2O.K.2O4S	0.018 g	1.8e-05		
+jcm_971_composition	AlK(SO4)2·12H2O	potassium aluminium sulfate dodecahydrate	CHEBI:86465	Al.12H2O.K.2O4S	0.018000000000000002 g	1.8e-05		
 jcm_971_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.1 g	0.0001		
 jcm_971_composition	CuSO4·5H2O	copper(II) sulfate pentahydrate	CHEBI:31440	Cu.5H2O.O4S	0.01 g	1e-05		
 jcm_971_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.01 g	1e-05		
@@ -63009,7 +63009,7 @@ jcm_976_composition	CuCl2·2H2O	copper(II) chloride dihydrate	CHEBI:86318	Cl2Cu.
 jcm_976_composition	EDTA	EDTA(2-)	CHEBI:64755	C10H14N2O8	3.7 g	0.0037		
 jcm_976_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	31.0 mg	3.1e-05		
 jcm_976_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.15 g	0.00015		
-jcm_976_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.123 g	0.000123		
+jcm_976_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12300000000000001 g	0.000123		
 jcm_976_composition	MnCl2·4H2O		PubChem:30200		98.4 mg	9.84e-05		
 jcm_976_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.107 g	0.00010700000000000001		
 jcm_976_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	24.2 mg	2.42e-05		
@@ -63025,7 +63025,7 @@ jcm_977_composition	H3BO3	boric acid	CHEBI:33118	H3BO3	0.25 g	0.00025
 jcm_977_composition	HEPES	HEPES	CHEBI:46756		3.57 g	0.0035700000000000003		
 jcm_977_composition	KNO3	nitrate	CHEBI:17632	NO3	1.03 g	0.00103		
 jcm_977_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	1.0 g	0.001		
-jcm_977_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.027 g	2.7000000000000002e-05		
+jcm_977_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.027000000000000003 g	2.7000000000000002e-05		
 jcm_977_composition	Na2MoO4·2H2O	sodium molybdate (anhydrous)	CHEBI:75215	MoO4.2Na	12.5 mg	1.25e-05		
 jcm_977_composition	NaCl	sodium chloride	CHEBI:26710	Cl.Na	0.8 g	0.0008		
 jcm_977_composition	NaH2PO4	sodium dihydrogenphosphate	CHEBI:37585	H2O4P.Na	1.11 g	0.0011099999999999999		
@@ -63035,7 +63035,7 @@ jcm_977_composition	Trace vitamins (see Medium No.197)		ingredient:1784		10.0 ml
 jcm_977_composition	ZnSO4·7H2O	zinc sulfate heptahydrate	CHEBI:32312	7H2O.O4S.Zn	0.25 g	0.00025		
 jcm_978_composition	CaCl2·2H2O	calcium chloride dihydrate	CHEBI:86158	Ca.2Cl.2H2O	0.015 g	1.4999999999999999e-05		
 jcm_978_composition	KCl	potassium chloride	CHEBI:32588	Cl.K	0.15 g	0.00015		
-jcm_978_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.123 g	0.000123		
+jcm_978_composition	MgSO4·7H2O	magnesium sulfate	CHEBI:32599	Mg.O4S	0.12300000000000001 g	0.000123		
 jcm_978_composition	Mineral solution (see Medium No.976		ingredient:1958		5.0 ml	0.005		
 jcm_978_composition	NH4Cl	ammonium chloride	CHEBI:31206	Cl.H4N	0.107 g	0.00010700000000000001		
 jcm_978_composition	Na2SO4	sodium sulfate	CHEBI:32149	2Na.O4S	0.3 g	0.0003		
